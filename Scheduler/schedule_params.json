@@ -1,0 +1,5 @@
+{
+	"canAdjustInterval": false,
+	"step": 15,
+	"availableRange": {"location": 0, "length": 1440}
+}

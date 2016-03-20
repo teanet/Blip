@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		739AA65C1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */; };
+		739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA9311C9EEF1200565CB7 /* SLRFreeInterval.m */; };
+		739AA9331C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA9311C9EEF1200565CB7 /* SLRFreeInterval.m */; };
 		73AF52A91C9EB953009FB75A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF52A81C9EB953009FB75A /* main.m */; };
 		73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF52AB1C9EB953009FB75A /* AppDelegate.m */; };
 		73AF52B41C9EB953009FB75A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73AF52B31C9EB953009FB75A /* Assets.xcassets */; };
-		73AF52C21C9EB953009FB75A /* SchedulerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF52C11C9EB953009FB75A /* SchedulerTests.m */; };
 		73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF52CD1C9EBBC6009FB75A /* SLRRootVC.m */; };
 		73AF52D11C9EBCB6009FB75A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 73AF52D01C9EBCB6009FB75A /* Default-568h@2x.png */; };
 		73AF55A71C9EC71B009FB75A /* SLRBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55A61C9EC71B009FB75A /* SLRBaseVC.m */; };
@@ -21,6 +23,14 @@
 		73AF55B51C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55B31C9EC8BC009FB75A /* SLRSchedulerVM.m */; };
 		73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55B81C9ECA56009FB75A /* SLRScheduleCell.m */; };
 		73AF55BA1C9ECA56009FB75A /* SLRScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55B81C9ECA56009FB75A /* SLRScheduleCell.m */; };
+		73AF55BD1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55BC1C9ECC64009FB75A /* SLRScheduleModel.m */; };
+		73AF55BE1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55BC1C9ECC64009FB75A /* SLRScheduleModel.m */; };
+		73AF55C21C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55C11C9ED8CF009FB75A /* SLRScheduleCellVM.m */; };
+		73AF55C31C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55C11C9ED8CF009FB75A /* SLRScheduleCellVM.m */; };
+		73AF55C51C9EDBDD009FB75A /* schedule_params.json in Resources */ = {isa = PBXBuildFile; fileRef = 73AF55C41C9EDBDD009FB75A /* schedule_params.json */; };
+		73AF55C61C9EDBDD009FB75A /* schedule_params.json in Resources */ = {isa = PBXBuildFile; fileRef = 73AF55C41C9EDBDD009FB75A /* schedule_params.json */; };
+		73AF55C91C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55C81C9EDF32009FB75A /* SLRVisitorInterval.m */; };
+		73AF55CA1C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55C81C9EDF32009FB75A /* SLRVisitorInterval.m */; };
 		980E108386815D90CEE25BFB /* libPods-Scheduler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E93122ED689D0E6966BDAE84 /* libPods-Scheduler.a */; };
 		E946A8173DA4963C99D128F1 /* libPods-SchedulerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D31F5295C8BCD62BA815B1 /* libPods-SchedulerTests.a */; };
 /* End PBXBuildFile section */
@@ -36,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRScheduleModelSpec.m; sourceTree = "<group>"; };
+		739AA92F1C9EEB5500565CB7 /* Prefix-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prefix-Header.h"; sourceTree = "<group>"; };
+		739AA9301C9EEF1200565CB7 /* SLRFreeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFreeInterval.h; sourceTree = "<group>"; };
+		739AA9311C9EEF1200565CB7 /* SLRFreeInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFreeInterval.m; sourceTree = "<group>"; };
 		73AF52A41C9EB953009FB75A /* Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AF52A81C9EB953009FB75A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		73AF52AA1C9EB953009FB75A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,7 +57,6 @@
 		73AF52B31C9EB953009FB75A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73AF52B81C9EB953009FB75A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73AF52BD1C9EB953009FB75A /* SchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SchedulerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		73AF52C11C9EB953009FB75A /* SchedulerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SchedulerTests.m; sourceTree = "<group>"; };
 		73AF52C31C9EB953009FB75A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73AF52CC1C9EBBC6009FB75A /* SLRRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRRootVC.h; sourceTree = "<group>"; };
 		73AF52CD1C9EBBC6009FB75A /* SLRRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRRootVC.m; sourceTree = "<group>"; };
@@ -59,6 +72,14 @@
 		73AF55B31C9EC8BC009FB75A /* SLRSchedulerVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRSchedulerVM.m; sourceTree = "<group>"; };
 		73AF55B71C9ECA56009FB75A /* SLRScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRScheduleCell.h; sourceTree = "<group>"; };
 		73AF55B81C9ECA56009FB75A /* SLRScheduleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRScheduleCell.m; sourceTree = "<group>"; };
+		73AF55BB1C9ECC64009FB75A /* SLRScheduleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRScheduleModel.h; sourceTree = "<group>"; };
+		73AF55BC1C9ECC64009FB75A /* SLRScheduleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRScheduleModel.m; sourceTree = "<group>"; };
+		73AF55BF1C9ED39F009FB75A /* SLRScheduleInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRScheduleInterval.h; sourceTree = "<group>"; };
+		73AF55C01C9ED8CF009FB75A /* SLRScheduleCellVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRScheduleCellVM.h; sourceTree = "<group>"; };
+		73AF55C11C9ED8CF009FB75A /* SLRScheduleCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRScheduleCellVM.m; sourceTree = "<group>"; };
+		73AF55C41C9EDBDD009FB75A /* schedule_params.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schedule_params.json; sourceTree = "<group>"; };
+		73AF55C71C9EDF32009FB75A /* SLRVisitorInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRVisitorInterval.h; sourceTree = "<group>"; };
+		73AF55C81C9EDF32009FB75A /* SLRVisitorInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRVisitorInterval.m; sourceTree = "<group>"; };
 		7637545FD1F17F29CEBAB252 /* Pods-SchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
 		89D31F5295C8BCD62BA815B1 /* libPods-SchedulerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchedulerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD5C5F6E35F8E24C9EECE10D /* Pods-SchedulerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +160,7 @@
 				73AF52D01C9EBCB6009FB75A /* Default-568h@2x.png */,
 				73AF52CF1C9EBC5A009FB75A /* Prefix-Header.h */,
 				73AF52A81C9EB953009FB75A /* main.m */,
+				73AF55C41C9EDBDD009FB75A /* schedule_params.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -146,8 +168,9 @@
 		73AF52C01C9EB953009FB75A /* SchedulerTests */ = {
 			isa = PBXGroup;
 			children = (
-				73AF52C11C9EB953009FB75A /* SchedulerTests.m */,
 				73AF52C31C9EB953009FB75A /* Info.plist */,
+				739AA92F1C9EEB5500565CB7 /* Prefix-Header.h */,
+				739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */,
 			);
 			path = SchedulerTests;
 			sourceTree = "<group>";
@@ -155,6 +178,13 @@
 		73AF55AC1C9EC81A009FB75A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				73AF55BF1C9ED39F009FB75A /* SLRScheduleInterval.h */,
+				73AF55BB1C9ECC64009FB75A /* SLRScheduleModel.h */,
+				73AF55BC1C9ECC64009FB75A /* SLRScheduleModel.m */,
+				73AF55C71C9EDF32009FB75A /* SLRVisitorInterval.h */,
+				73AF55C81C9EDF32009FB75A /* SLRVisitorInterval.m */,
+				739AA9301C9EEF1200565CB7 /* SLRFreeInterval.h */,
+				739AA9311C9EEF1200565CB7 /* SLRFreeInterval.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -180,6 +210,8 @@
 				73AF55A91C9EC74C009FB75A /* SLRBaseVM.m */,
 				73AF55B21C9EC8BC009FB75A /* SLRSchedulerVM.h */,
 				73AF55B31C9EC8BC009FB75A /* SLRSchedulerVM.m */,
+				73AF55C01C9ED8CF009FB75A /* SLRScheduleCellVM.h */,
+				73AF55C11C9ED8CF009FB75A /* SLRScheduleCellVM.m */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -290,6 +322,7 @@
 			files = (
 				73AF52B41C9EB953009FB75A /* Assets.xcassets in Resources */,
 				73AF52D11C9EBCB6009FB75A /* Default-568h@2x.png in Resources */,
+				73AF55C51C9EDBDD009FB75A /* schedule_params.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73AF55C61C9EDBDD009FB75A /* schedule_params.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,10 +452,14 @@
 				73AF55A71C9EC71B009FB75A /* SLRBaseVC.m in Sources */,
 				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				73AF55AA1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
+				739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
+				73AF55C91C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
+				73AF55BD1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
 				73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
 				73AF52A91C9EB953009FB75A /* main.m in Sources */,
+				73AF55C21C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +468,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				73AF55AB1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
-				73AF52C21C9EB953009FB75A /* SchedulerTests.m in Sources */,
+				73AF55BE1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
+				739AA65C1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m in Sources */,
+				73AF55CA1C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,
+				739AA9331C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
+				73AF55C31C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */,
 				73AF55BA1C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				73AF55B51C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
 			);
@@ -562,6 +604,7 @@
 			baseConfigurationReference = BD5C5F6E35F8E24C9EECE10D /* Pods-SchedulerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREFIX_HEADER = "SchedulerTests/Prefix-Header.h";
 				INFOPLIST_FILE = SchedulerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.nazabore.SchedulerTests;
@@ -575,6 +618,7 @@
 			baseConfigurationReference = 7637545FD1F17F29CEBAB252 /* Pods-SchedulerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREFIX_HEADER = "SchedulerTests/Prefix-Header.h";
 				INFOPLIST_FILE = SchedulerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.nazabore.SchedulerTests;

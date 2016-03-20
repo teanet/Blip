@@ -6,9 +6,15 @@
 {
 	self = [super initWithFrame:frame];
 
-	self.contentView.backgroundColor = [UIColor redColor];
+	self.contentView.backgroundColor = [UIColor lightGrayColor];
 
 	return self;
+}
+
+- (void)setViewModel:(SLRScheduleCellVM *)viewModel
+{
+	_viewModel = viewModel;
+	self.contentView.backgroundColor = [viewModel.interval color];
 }
 
 
