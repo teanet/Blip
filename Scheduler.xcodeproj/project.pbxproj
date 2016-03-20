@@ -19,6 +19,8 @@
 		73AF55B11C9EC882009FB75A /* SLRSchedulerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55B01C9EC882009FB75A /* SLRSchedulerVC.m */; };
 		73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55B31C9EC8BC009FB75A /* SLRSchedulerVM.m */; };
 		73AF55B51C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55B31C9EC8BC009FB75A /* SLRSchedulerVM.m */; };
+		73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55B81C9ECA56009FB75A /* SLRScheduleCell.m */; };
+		73AF55BA1C9ECA56009FB75A /* SLRScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55B81C9ECA56009FB75A /* SLRScheduleCell.m */; };
 		980E108386815D90CEE25BFB /* libPods-Scheduler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E93122ED689D0E6966BDAE84 /* libPods-Scheduler.a */; };
 		E946A8173DA4963C99D128F1 /* libPods-SchedulerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D31F5295C8BCD62BA815B1 /* libPods-SchedulerTests.a */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,8 @@
 		73AF55B01C9EC882009FB75A /* SLRSchedulerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRSchedulerVC.m; sourceTree = "<group>"; };
 		73AF55B21C9EC8BC009FB75A /* SLRSchedulerVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRSchedulerVM.h; sourceTree = "<group>"; };
 		73AF55B31C9EC8BC009FB75A /* SLRSchedulerVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRSchedulerVM.m; sourceTree = "<group>"; };
+		73AF55B71C9ECA56009FB75A /* SLRScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRScheduleCell.h; sourceTree = "<group>"; };
+		73AF55B81C9ECA56009FB75A /* SLRScheduleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRScheduleCell.m; sourceTree = "<group>"; };
 		7637545FD1F17F29CEBAB252 /* Pods-SchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
 		89D31F5295C8BCD62BA815B1 /* libPods-SchedulerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchedulerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD5C5F6E35F8E24C9EECE10D /* Pods-SchedulerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 		73AF55AD1C9EC81F009FB75A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				73AF55B61C9ECA18009FB75A /* Cells */,
 				73AF52CC1C9EBBC6009FB75A /* SLRRootVC.h */,
 				73AF52CD1C9EBBC6009FB75A /* SLRRootVC.m */,
 				73AF55A51C9EC71B009FB75A /* SLRBaseVC.h */,
@@ -177,6 +182,15 @@
 				73AF55B31C9EC8BC009FB75A /* SLRSchedulerVM.m */,
 			);
 			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		73AF55B61C9ECA18009FB75A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				73AF55B71C9ECA56009FB75A /* SLRScheduleCell.h */,
+				73AF55B81C9ECA56009FB75A /* SLRScheduleCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		976C63D3CE53337BC93B599A /* Frameworks */ = {
@@ -402,6 +416,7 @@
 			files = (
 				73AF55B11C9EC882009FB75A /* SLRSchedulerVC.m in Sources */,
 				73AF55A71C9EC71B009FB75A /* SLRBaseVC.m in Sources */,
+				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				73AF55AA1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
@@ -416,6 +431,7 @@
 			files = (
 				73AF55AB1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
 				73AF52C21C9EB953009FB75A /* SchedulerTests.m in Sources */,
+				73AF55BA1C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				73AF55B51C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

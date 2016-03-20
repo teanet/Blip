@@ -1,0 +1,3 @@
+@interface SLRScheduleCell : UICollectionViewCell
+
+@end

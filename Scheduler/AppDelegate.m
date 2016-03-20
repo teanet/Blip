@@ -3,6 +3,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import "SLRRootVC.h"
+#import "SLRSchedulerVC.h"
 
 @implementation AppDelegate
 
@@ -12,7 +13,7 @@
 	[Fabric with:@[CrashlyticsKit]];
 
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[SLRRootVC alloc] init]];
+	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[SLRSchedulerVC alloc] initWithViewModel:[SLRSchedulerVM new]]];
 	[self.window makeKeyAndVisible];
 
 	return YES;
