@@ -1,3 +1,5 @@
-@interface SLRRootVC : UIViewController
+#import "SLRBaseVC.h"
+
+@interface SLRRootVC : SLRBaseVC
 
 @end

@@ -1,0 +1,2 @@
+@interface SLRBaseVM : NSObject
+@end
