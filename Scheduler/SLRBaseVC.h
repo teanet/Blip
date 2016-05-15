@@ -1,9 +1,8 @@
 #import "SLRBaseVM.h"
 
-@interface SLRBaseVC : UIViewController
+@interface SLRBaseVC<ViewModelClass> : UIViewController
 
-@property (nonatomic, strong, readonly) SLRBaseVM *viewModel;
-
-- (instancetype)initWithViewModel:(SLRBaseVM *)viewModel;
+- (instancetype)initWithViewModel:(ViewModelClass)viewModel;
+- (ViewModelClass)viewModel;
 
 @end

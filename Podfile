@@ -22,4 +22,3 @@ target 'SchedulerTests' do
 	pod 'Kiwi'
 	xcodeproj 'Scheduler.xcodeproj'
 end
-

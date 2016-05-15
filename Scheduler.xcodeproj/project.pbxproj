@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		735E213D1CE884C600A4EB54 /* SLRWorkDayVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */; };
+		735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */; };
+		7369BCD51CE094D000BFCD96 /* MSTimeRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7369BCD21CE094D000BFCD96 /* MSTimeRowHeader.m */; };
+		7369BCD61CE094D000BFCD96 /* MSDayColumnHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7369BCD41CE094D000BFCD96 /* MSDayColumnHeader.m */; };
+		73830E501CE099BE006B6074 /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E4F1CE099BE006B6074 /* MSEventCell.m */; };
+		73830E531CE0A6D3006B6074 /* MSGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E521CE0A6D3006B6074 /* MSGridline.m */; };
+		73830E561CE0AB13006B6074 /* SLRIntervalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E551CE0AB13006B6074 /* SLRIntervalView.m */; };
+		73830E591CE0C458006B6074 /* SLRIntervalVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E581CE0C458006B6074 /* SLRIntervalVM.m */; };
+		73830E5C1CE0C46C006B6074 /* SLRWorkDayVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E5B1CE0C46C006B6074 /* SLRWorkDayVM.m */; };
+		73830E5F1CE0C767006B6074 /* SLRRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E5E1CE0C767006B6074 /* SLRRange.m */; };
 		739AA65C1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */; };
 		739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA9311C9EEF1200565CB7 /* SLRFreeInterval.m */; };
 		739AA9331C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA9311C9EEF1200565CB7 /* SLRFreeInterval.m */; };
@@ -46,6 +56,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRWorkDayVMSpec.m; sourceTree = "<group>"; };
+		735E213E1CE8912100A4EB54 /* SLRSeporatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRSeporatorView.h; sourceTree = "<group>"; };
+		735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRSeporatorView.m; sourceTree = "<group>"; };
+		7369BCD11CE094D000BFCD96 /* MSTimeRowHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeRowHeader.h; sourceTree = "<group>"; };
+		7369BCD21CE094D000BFCD96 /* MSTimeRowHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeader.m; sourceTree = "<group>"; };
+		7369BCD31CE094D000BFCD96 /* MSDayColumnHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDayColumnHeader.h; sourceTree = "<group>"; };
+		7369BCD41CE094D000BFCD96 /* MSDayColumnHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDayColumnHeader.m; sourceTree = "<group>"; };
+		73830E4E1CE099BE006B6074 /* MSEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEventCell.h; sourceTree = "<group>"; };
+		73830E4F1CE099BE006B6074 /* MSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEventCell.m; sourceTree = "<group>"; };
+		73830E511CE0A6D3006B6074 /* MSGridline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGridline.h; sourceTree = "<group>"; };
+		73830E521CE0A6D3006B6074 /* MSGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGridline.m; sourceTree = "<group>"; };
+		73830E541CE0AB13006B6074 /* SLRIntervalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRIntervalView.h; sourceTree = "<group>"; };
+		73830E551CE0AB13006B6074 /* SLRIntervalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRIntervalView.m; sourceTree = "<group>"; };
+		73830E571CE0C458006B6074 /* SLRIntervalVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRIntervalVM.h; sourceTree = "<group>"; };
+		73830E581CE0C458006B6074 /* SLRIntervalVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRIntervalVM.m; sourceTree = "<group>"; };
+		73830E5A1CE0C46C006B6074 /* SLRWorkDayVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRWorkDayVM.h; sourceTree = "<group>"; };
+		73830E5B1CE0C46C006B6074 /* SLRWorkDayVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRWorkDayVM.m; sourceTree = "<group>"; };
+		73830E5D1CE0C767006B6074 /* SLRRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRRange.h; sourceTree = "<group>"; };
+		73830E5E1CE0C767006B6074 /* SLRRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRRange.m; sourceTree = "<group>"; };
 		739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRScheduleModelSpec.m; sourceTree = "<group>"; };
 		739AA92F1C9EEB5500565CB7 /* Prefix-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prefix-Header.h"; sourceTree = "<group>"; };
 		739AA9301C9EEF1200565CB7 /* SLRFreeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFreeInterval.h; sourceTree = "<group>"; };
@@ -171,6 +200,7 @@
 				73AF52C31C9EB953009FB75A /* Info.plist */,
 				739AA92F1C9EEB5500565CB7 /* Prefix-Header.h */,
 				739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */,
+				735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */,
 			);
 			path = SchedulerTests;
 			sourceTree = "<group>";
@@ -199,6 +229,8 @@
 				73AF55A61C9EC71B009FB75A /* SLRBaseVC.m */,
 				73AF55AF1C9EC882009FB75A /* SLRSchedulerVC.h */,
 				73AF55B01C9EC882009FB75A /* SLRSchedulerVC.m */,
+				735E213E1CE8912100A4EB54 /* SLRSeporatorView.h */,
+				735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -212,6 +244,12 @@
 				73AF55B31C9EC8BC009FB75A /* SLRSchedulerVM.m */,
 				73AF55C01C9ED8CF009FB75A /* SLRScheduleCellVM.h */,
 				73AF55C11C9ED8CF009FB75A /* SLRScheduleCellVM.m */,
+				73830E571CE0C458006B6074 /* SLRIntervalVM.h */,
+				73830E581CE0C458006B6074 /* SLRIntervalVM.m */,
+				73830E5A1CE0C46C006B6074 /* SLRWorkDayVM.h */,
+				73830E5B1CE0C46C006B6074 /* SLRWorkDayVM.m */,
+				73830E5D1CE0C767006B6074 /* SLRRange.h */,
+				73830E5E1CE0C767006B6074 /* SLRRange.m */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -219,8 +257,18 @@
 		73AF55B61C9ECA18009FB75A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				73830E4E1CE099BE006B6074 /* MSEventCell.h */,
+				73830E4F1CE099BE006B6074 /* MSEventCell.m */,
+				7369BCD11CE094D000BFCD96 /* MSTimeRowHeader.h */,
+				7369BCD21CE094D000BFCD96 /* MSTimeRowHeader.m */,
+				7369BCD31CE094D000BFCD96 /* MSDayColumnHeader.h */,
+				7369BCD41CE094D000BFCD96 /* MSDayColumnHeader.m */,
 				73AF55B71C9ECA56009FB75A /* SLRScheduleCell.h */,
 				73AF55B81C9ECA56009FB75A /* SLRScheduleCell.m */,
+				73830E511CE0A6D3006B6074 /* MSGridline.h */,
+				73830E521CE0A6D3006B6074 /* MSGridline.m */,
+				73830E541CE0AB13006B6074 /* SLRIntervalView.h */,
+				73830E551CE0AB13006B6074 /* SLRIntervalView.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -285,6 +333,7 @@
 		73AF529C1C9EB953009FB75A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SLR;
 				LastUpgradeCheck = 0720;
 				TargetAttributes = {
 					73AF52A31C9EB953009FB75A = {
@@ -448,17 +497,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */,
 				73AF55B11C9EC882009FB75A /* SLRSchedulerVC.m in Sources */,
+				73830E5C1CE0C46C006B6074 /* SLRWorkDayVM.m in Sources */,
 				73AF55A71C9EC71B009FB75A /* SLRBaseVC.m in Sources */,
+				73830E5F1CE0C767006B6074 /* SLRRange.m in Sources */,
 				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				73AF55AA1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
+				7369BCD51CE094D000BFCD96 /* MSTimeRowHeader.m in Sources */,
+				73830E591CE0C458006B6074 /* SLRIntervalVM.m in Sources */,
+				73830E531CE0A6D3006B6074 /* MSGridline.m in Sources */,
+				7369BCD61CE094D000BFCD96 /* MSDayColumnHeader.m in Sources */,
 				739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
 				73AF55C91C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
 				73AF55BD1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
+				73830E501CE099BE006B6074 /* MSEventCell.m in Sources */,
 				73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
 				73AF52A91C9EB953009FB75A /* main.m in Sources */,
+				73830E561CE0AB13006B6074 /* SLRIntervalView.m in Sources */,
 				73AF55C21C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,6 +530,7 @@
 				739AA65C1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m in Sources */,
 				73AF55CA1C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,
 				739AA9331C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
+				735E213D1CE884C600A4EB54 /* SLRWorkDayVMSpec.m in Sources */,
 				73AF55C31C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */,
 				73AF55BA1C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				73AF55B51C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,

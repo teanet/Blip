@@ -1,8 +1,16 @@
 #import "SLRBaseVC.h"
 
+@interface SLRBaseVC ()
+
+@property (nonatomic, strong, readonly) SLRBaseVM *viewModel;
+
+@end
+
 @implementation SLRBaseVC
 
-- (instancetype)initWithViewModel:(SLRBaseVM *)viewModel
+@synthesize viewModel = _viewModel;
+
+- (instancetype)initWithViewModel:(id)viewModel
 {
 	self = [super initWithNibName:nil bundle:nil];
 	if (self == nil) return nil;
@@ -15,6 +23,11 @@
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
 	return [self initWithViewModel:nil];
+}
+
+- (id)viewModel
+{
+	return _viewModel;
 }
 
 @end

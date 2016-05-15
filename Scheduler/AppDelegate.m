@@ -9,8 +9,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	[[Fabric sharedSDK] setDebug:YES];
-	[Fabric with:@[CrashlyticsKit]];
+//	[[Fabric sharedSDK] setDebug:YES];
+//	[Fabric with:@[CrashlyticsKit]];
 
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
