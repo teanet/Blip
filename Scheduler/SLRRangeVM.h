@@ -1,6 +1,6 @@
 extern NSInteger const kSLRMinimumLength;
 
-@interface SLRRange : NSObject
+@interface SLRRangeVM : NSObject
 
 @property (nonatomic, assign) NSInteger location;
 @property (nonatomic, assign) NSInteger length;
@@ -9,6 +9,6 @@ extern NSInteger const kSLRMinimumLength;
 - (void)dragUp:(NSInteger)delta;
 - (void)dragDown:(NSInteger)delta;
 - (BOOL)containMinute:(NSInteger)minute;
-- (BOOL)intercectRange:(SLRRange *)range;
+- (BOOL)intercectRange:(SLRRangeVM *)range;
 
 @end

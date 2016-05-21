@@ -6,13 +6,13 @@ describe(@"SLRWorkDayVM", ^{
 
 	__block SLRWorkDayVM *instance = nil;
 	__block SLRIntervalVM *intervalVM = nil;
-	__block SLRRange *range = nil;
+	__block SLRRangeVM *range = nil;
 
 	beforeEach(^{
 
 		instance = [[SLRWorkDayVM alloc] init];
 		intervalVM = [[SLRIntervalVM alloc] init];
-		range = [[SLRRange alloc] init];
+		range = [[SLRRangeVM alloc] init];
 
 	});
 

@@ -14,11 +14,14 @@ target 'Scheduler' do
 	pod 'Crashlytics'
 	pod 'Fabric'
 	pod 'Masonry'
-	xcodeproj 'Scheduler.xcodeproj'
+	pod 'AFNetworking', '~> 2.5'
+	pod 'UIDevice-Hardware'
+	pod 'SSKeychain'
+	project 'Scheduler.xcodeproj'
 end
 
 target 'SchedulerTests' do
 	import_common
 	pod 'Kiwi'
-	xcodeproj 'Scheduler.xcodeproj'
+	project 'Scheduler.xcodeproj'
 end

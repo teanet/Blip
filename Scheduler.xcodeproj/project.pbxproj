@@ -7,8 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F9754B5E9F2AEF30804174F /* libPods-SchedulerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */; };
 		735E213D1CE884C600A4EB54 /* SLRWorkDayVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */; };
 		735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */; };
+		735E21441CE8AB6B00A4EB54 /* filial.json in Resources */ = {isa = PBXBuildFile; fileRef = 735E21411CE8AB6B00A4EB54 /* filial.json */; };
+		735E21451CE8AB6B00A4EB54 /* filial.json in Resources */ = {isa = PBXBuildFile; fileRef = 735E21411CE8AB6B00A4EB54 /* filial.json */; };
+		735E21461CE8AB6B00A4EB54 /* pages.json in Resources */ = {isa = PBXBuildFile; fileRef = 735E21421CE8AB6B00A4EB54 /* pages.json */; };
+		735E21471CE8AB6B00A4EB54 /* pages.json in Resources */ = {isa = PBXBuildFile; fileRef = 735E21421CE8AB6B00A4EB54 /* pages.json */; };
+		735E214F1CE8AB7F00A4EB54 /* SLRAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21491CE8AB7F00A4EB54 /* SLRAPIController.m */; };
+		735E21501CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E214B1CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.m */; };
+		735E21511CE8AB7F00A4EB54 /* SLRDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E214D1CE8AB7F00A4EB54 /* SLRDataProvider.m */; };
+		735E21601CE8AB9700A4EB54 /* SLRFilial.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21531CE8AB9700A4EB54 /* SLRFilial.m */; };
+		735E21611CE8AB9700A4EB54 /* SLRFilial.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21531CE8AB9700A4EB54 /* SLRFilial.m */; };
+		735E21621CE8AB9700A4EB54 /* SLRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21551CE8AB9700A4EB54 /* SLRUser.m */; };
+		735E21631CE8AB9700A4EB54 /* SLRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21551CE8AB9700A4EB54 /* SLRUser.m */; };
+		735E21641CE8AB9700A4EB54 /* SLROwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21571CE8AB9700A4EB54 /* SLROwner.m */; };
+		735E21651CE8AB9700A4EB54 /* SLROwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21571CE8AB9700A4EB54 /* SLROwner.m */; };
+		735E21661CE8AB9700A4EB54 /* SLRPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21591CE8AB9700A4EB54 /* SLRPage.m */; };
+		735E21671CE8AB9700A4EB54 /* SLRPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21591CE8AB9700A4EB54 /* SLRPage.m */; };
+		735E21681CE8AB9700A4EB54 /* SLRRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E215B1CE8AB9700A4EB54 /* SLRRange.m */; };
+		735E21691CE8AB9700A4EB54 /* SLRRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E215B1CE8AB9700A4EB54 /* SLRRange.m */; };
+		735E216A1CE8AB9700A4EB54 /* SLRTimeGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E215D1CE8AB9700A4EB54 /* SLRTimeGrid.m */; };
+		735E216B1CE8AB9700A4EB54 /* SLRTimeGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E215D1CE8AB9700A4EB54 /* SLRTimeGrid.m */; };
 		7369BCD51CE094D000BFCD96 /* MSTimeRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7369BCD21CE094D000BFCD96 /* MSTimeRowHeader.m */; };
 		7369BCD61CE094D000BFCD96 /* MSDayColumnHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7369BCD41CE094D000BFCD96 /* MSDayColumnHeader.m */; };
 		73830E501CE099BE006B6074 /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E4F1CE099BE006B6074 /* MSEventCell.m */; };
@@ -16,7 +36,7 @@
 		73830E561CE0AB13006B6074 /* SLRIntervalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E551CE0AB13006B6074 /* SLRIntervalView.m */; };
 		73830E591CE0C458006B6074 /* SLRIntervalVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E581CE0C458006B6074 /* SLRIntervalVM.m */; };
 		73830E5C1CE0C46C006B6074 /* SLRWorkDayVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E5B1CE0C46C006B6074 /* SLRWorkDayVM.m */; };
-		73830E5F1CE0C767006B6074 /* SLRRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E5E1CE0C767006B6074 /* SLRRange.m */; };
+		73830E5F1CE0C767006B6074 /* SLRRangeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E5E1CE0C767006B6074 /* SLRRangeVM.m */; };
 		739AA65C1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */; };
 		739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA9311C9EEF1200565CB7 /* SLRFreeInterval.m */; };
 		739AA9331C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA9311C9EEF1200565CB7 /* SLRFreeInterval.m */; };
@@ -41,8 +61,7 @@
 		73AF55C61C9EDBDD009FB75A /* schedule_params.json in Resources */ = {isa = PBXBuildFile; fileRef = 73AF55C41C9EDBDD009FB75A /* schedule_params.json */; };
 		73AF55C91C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55C81C9EDF32009FB75A /* SLRVisitorInterval.m */; };
 		73AF55CA1C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55C81C9EDF32009FB75A /* SLRVisitorInterval.m */; };
-		980E108386815D90CEE25BFB /* libPods-Scheduler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E93122ED689D0E6966BDAE84 /* libPods-Scheduler.a */; };
-		E946A8173DA4963C99D128F1 /* libPods-SchedulerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D31F5295C8BCD62BA815B1 /* libPods-SchedulerTests.a */; };
+		9EF1342ABAD404670A1FA95D /* libPods-Scheduler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89010D5CC873F6E1C8A695F5 /* libPods-Scheduler.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +75,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchedulerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		472D3E516EE1FDDDB86413C3 /* Pods-SchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
+		56CE2249671223335EA5841D /* Pods-Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
+		59041980C96C640D0855E039 /* Pods-SchedulerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRWorkDayVMSpec.m; sourceTree = "<group>"; };
 		735E213E1CE8912100A4EB54 /* SLRSeporatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRSeporatorView.h; sourceTree = "<group>"; };
 		735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRSeporatorView.m; sourceTree = "<group>"; };
+		735E21411CE8AB6B00A4EB54 /* filial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = filial.json; path = json/filial.json; sourceTree = "<group>"; };
+		735E21421CE8AB6B00A4EB54 /* pages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pages.json; path = json/pages.json; sourceTree = "<group>"; };
+		735E21481CE8AB7F00A4EB54 /* SLRAPIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRAPIController.h; sourceTree = "<group>"; };
+		735E21491CE8AB7F00A4EB54 /* SLRAPIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRAPIController.m; sourceTree = "<group>"; };
+		735E214A1CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SLRAPIController+SLRModels.h"; sourceTree = "<group>"; };
+		735E214B1CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SLRAPIController+SLRModels.m"; sourceTree = "<group>"; };
+		735E214C1CE8AB7F00A4EB54 /* SLRDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRDataProvider.h; sourceTree = "<group>"; };
+		735E214D1CE8AB7F00A4EB54 /* SLRDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDataProvider.m; sourceTree = "<group>"; };
+		735E21521CE8AB9700A4EB54 /* SLRFilial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRFilial.h; path = Entities/SLRFilial.h; sourceTree = "<group>"; };
+		735E21531CE8AB9700A4EB54 /* SLRFilial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRFilial.m; path = Entities/SLRFilial.m; sourceTree = "<group>"; };
+		735E21541CE8AB9700A4EB54 /* SLRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRUser.h; path = Entities/SLRUser.h; sourceTree = "<group>"; };
+		735E21551CE8AB9700A4EB54 /* SLRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRUser.m; path = Entities/SLRUser.m; sourceTree = "<group>"; };
+		735E21561CE8AB9700A4EB54 /* SLROwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLROwner.h; path = Entities/SLROwner.h; sourceTree = "<group>"; };
+		735E21571CE8AB9700A4EB54 /* SLROwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLROwner.m; path = Entities/SLROwner.m; sourceTree = "<group>"; };
+		735E21581CE8AB9700A4EB54 /* SLRPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRPage.h; path = Entities/SLRPage.h; sourceTree = "<group>"; };
+		735E21591CE8AB9700A4EB54 /* SLRPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRPage.m; path = Entities/SLRPage.m; sourceTree = "<group>"; };
+		735E215A1CE8AB9700A4EB54 /* SLRRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRRange.h; path = Entities/SLRRange.h; sourceTree = "<group>"; };
+		735E215B1CE8AB9700A4EB54 /* SLRRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRRange.m; path = Entities/SLRRange.m; sourceTree = "<group>"; };
+		735E215C1CE8AB9700A4EB54 /* SLRTimeGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRTimeGrid.h; path = Entities/SLRTimeGrid.h; sourceTree = "<group>"; };
+		735E215D1CE8AB9700A4EB54 /* SLRTimeGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRTimeGrid.m; path = Entities/SLRTimeGrid.m; sourceTree = "<group>"; };
+		735E215E1CE8AB9700A4EB54 /* SLRSerializableProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRSerializableProtocol.h; sourceTree = "<group>"; };
 		7369BCD11CE094D000BFCD96 /* MSTimeRowHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeRowHeader.h; sourceTree = "<group>"; };
 		7369BCD21CE094D000BFCD96 /* MSTimeRowHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeader.m; sourceTree = "<group>"; };
 		7369BCD31CE094D000BFCD96 /* MSDayColumnHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDayColumnHeader.h; sourceTree = "<group>"; };
@@ -73,8 +117,8 @@
 		73830E581CE0C458006B6074 /* SLRIntervalVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRIntervalVM.m; sourceTree = "<group>"; };
 		73830E5A1CE0C46C006B6074 /* SLRWorkDayVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRWorkDayVM.h; sourceTree = "<group>"; };
 		73830E5B1CE0C46C006B6074 /* SLRWorkDayVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRWorkDayVM.m; sourceTree = "<group>"; };
-		73830E5D1CE0C767006B6074 /* SLRRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRRange.h; sourceTree = "<group>"; };
-		73830E5E1CE0C767006B6074 /* SLRRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRRange.m; sourceTree = "<group>"; };
+		73830E5D1CE0C767006B6074 /* SLRRangeVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRRangeVM.h; sourceTree = "<group>"; };
+		73830E5E1CE0C767006B6074 /* SLRRangeVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRRangeVM.m; sourceTree = "<group>"; };
 		739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRScheduleModelSpec.m; sourceTree = "<group>"; };
 		739AA92F1C9EEB5500565CB7 /* Prefix-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prefix-Header.h"; sourceTree = "<group>"; };
 		739AA9301C9EEF1200565CB7 /* SLRFreeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFreeInterval.h; sourceTree = "<group>"; };
@@ -109,12 +153,8 @@
 		73AF55C41C9EDBDD009FB75A /* schedule_params.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schedule_params.json; sourceTree = "<group>"; };
 		73AF55C71C9EDF32009FB75A /* SLRVisitorInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRVisitorInterval.h; sourceTree = "<group>"; };
 		73AF55C81C9EDF32009FB75A /* SLRVisitorInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRVisitorInterval.m; sourceTree = "<group>"; };
-		7637545FD1F17F29CEBAB252 /* Pods-SchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
-		89D31F5295C8BCD62BA815B1 /* libPods-SchedulerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchedulerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD5C5F6E35F8E24C9EECE10D /* Pods-SchedulerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C2670C9AD0AF22C43DCB6025 /* Pods-Scheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.release.xcconfig"; sourceTree = "<group>"; };
-		E31DFED10F874572DE43B866 /* Pods-Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
-		E93122ED689D0E6966BDAE84 /* libPods-Scheduler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scheduler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89010D5CC873F6E1C8A695F5 /* libPods-Scheduler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scheduler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC71B5BB6067145B8945C39C /* Pods-Scheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				980E108386815D90CEE25BFB /* libPods-Scheduler.a in Frameworks */,
+				9EF1342ABAD404670A1FA95D /* libPods-Scheduler.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,22 +170,65 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E946A8173DA4963C99D128F1 /* libPods-SchedulerTests.a in Frameworks */,
+				4F9754B5E9F2AEF30804174F /* libPods-SchedulerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A42D8B7C2F867FB4F97A88E /* Pods */ = {
+		7350FD2AA6B5C9CA0C6F368F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E31DFED10F874572DE43B866 /* Pods-Scheduler.debug.xcconfig */,
-				C2670C9AD0AF22C43DCB6025 /* Pods-Scheduler.release.xcconfig */,
-				BD5C5F6E35F8E24C9EECE10D /* Pods-SchedulerTests.debug.xcconfig */,
-				7637545FD1F17F29CEBAB252 /* Pods-SchedulerTests.release.xcconfig */,
+				89010D5CC873F6E1C8A695F5 /* libPods-Scheduler.a */,
+				403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */,
 			);
-			name = Pods;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		735E21431CE8AB6B00A4EB54 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				735E21411CE8AB6B00A4EB54 /* filial.json */,
+				735E21421CE8AB6B00A4EB54 /* pages.json */,
+			);
+			name = json;
+			path = ../../../../Downloads/SchedulerNetworking/SchedulerNetworking;
+			sourceTree = "<group>";
+		};
+		735E214E1CE8AB7F00A4EB54 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				735E21481CE8AB7F00A4EB54 /* SLRAPIController.h */,
+				735E21491CE8AB7F00A4EB54 /* SLRAPIController.m */,
+				735E214A1CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.h */,
+				735E214B1CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.m */,
+				735E214C1CE8AB7F00A4EB54 /* SLRDataProvider.h */,
+				735E214D1CE8AB7F00A4EB54 /* SLRDataProvider.m */,
+			);
+			name = Networking;
+			path = ../../../../Downloads/SchedulerNetworking/SchedulerNetworking;
+			sourceTree = "<group>";
+		};
+		735E215F1CE8AB9700A4EB54 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				735E21521CE8AB9700A4EB54 /* SLRFilial.h */,
+				735E21531CE8AB9700A4EB54 /* SLRFilial.m */,
+				735E21541CE8AB9700A4EB54 /* SLRUser.h */,
+				735E21551CE8AB9700A4EB54 /* SLRUser.m */,
+				735E21561CE8AB9700A4EB54 /* SLROwner.h */,
+				735E21571CE8AB9700A4EB54 /* SLROwner.m */,
+				735E21581CE8AB9700A4EB54 /* SLRPage.h */,
+				735E21591CE8AB9700A4EB54 /* SLRPage.m */,
+				735E215A1CE8AB9700A4EB54 /* SLRRange.h */,
+				735E215B1CE8AB9700A4EB54 /* SLRRange.m */,
+				735E215C1CE8AB9700A4EB54 /* SLRTimeGrid.h */,
+				735E215D1CE8AB9700A4EB54 /* SLRTimeGrid.m */,
+				735E215E1CE8AB9700A4EB54 /* SLRSerializableProtocol.h */,
+			);
+			name = Entities;
+			path = ../../../../Downloads/SchedulerNetworking/SchedulerNetworking;
 			sourceTree = "<group>";
 		};
 		73AF529B1C9EB953009FB75A = {
@@ -154,8 +237,8 @@
 				73AF52A61C9EB953009FB75A /* Scheduler */,
 				73AF52C01C9EB953009FB75A /* SchedulerTests */,
 				73AF52A51C9EB953009FB75A /* Products */,
-				4A42D8B7C2F867FB4F97A88E /* Pods */,
-				976C63D3CE53337BC93B599A /* Frameworks */,
+				75F704861AF0FA477A3DB201 /* Pods */,
+				7350FD2AA6B5C9CA0C6F368F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,6 +254,8 @@
 		73AF52A61C9EB953009FB75A /* Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				735E215F1CE8AB9700A4EB54 /* Entities */,
+				735E214E1CE8AB7F00A4EB54 /* Networking */,
 				73AF55AE1C9EC826009FB75A /* ViewModels */,
 				73AF55AD1C9EC81F009FB75A /* Views */,
 				73AF55AC1C9EC81A009FB75A /* Models */,
@@ -186,6 +271,7 @@
 		73AF52A71C9EB953009FB75A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				735E21431CE8AB6B00A4EB54 /* json */,
 				73AF52D01C9EBCB6009FB75A /* Default-568h@2x.png */,
 				73AF52CF1C9EBC5A009FB75A /* Prefix-Header.h */,
 				73AF52A81C9EB953009FB75A /* main.m */,
@@ -248,8 +334,8 @@
 				73830E581CE0C458006B6074 /* SLRIntervalVM.m */,
 				73830E5A1CE0C46C006B6074 /* SLRWorkDayVM.h */,
 				73830E5B1CE0C46C006B6074 /* SLRWorkDayVM.m */,
-				73830E5D1CE0C767006B6074 /* SLRRange.h */,
-				73830E5E1CE0C767006B6074 /* SLRRange.m */,
+				73830E5D1CE0C767006B6074 /* SLRRangeVM.h */,
+				73830E5E1CE0C767006B6074 /* SLRRangeVM.m */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -273,13 +359,15 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		976C63D3CE53337BC93B599A /* Frameworks */ = {
+		75F704861AF0FA477A3DB201 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E93122ED689D0E6966BDAE84 /* libPods-Scheduler.a */,
-				89D31F5295C8BCD62BA815B1 /* libPods-SchedulerTests.a */,
+				56CE2249671223335EA5841D /* Pods-Scheduler.debug.xcconfig */,
+				CC71B5BB6067145B8945C39C /* Pods-Scheduler.release.xcconfig */,
+				59041980C96C640D0855E039 /* Pods-SchedulerTests.debug.xcconfig */,
+				472D3E516EE1FDDDB86413C3 /* Pods-SchedulerTests.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,13 +377,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73AF52C61C9EB953009FB75A /* Build configuration list for PBXNativeTarget "Scheduler" */;
 			buildPhases = (
-				54E198C32596E3DD3C3E8103 /* Check Pods Manifest.lock */,
+				37F06EC57F9C047ACF142B5B /* 📦 Check Pods Manifest.lock */,
 				73AF52A01C9EB953009FB75A /* Sources */,
 				73AF52A11C9EB953009FB75A /* Frameworks */,
 				73AF52A21C9EB953009FB75A /* Resources */,
-				9F132AEC3A5FD94BE13088E3 /* Embed Pods Frameworks */,
-				B5AC2AA291B773223E844D84 /* Copy Pods Resources */,
 				73AF52D21C9EBD21009FB75A /* Fabric */,
+				5A33B7D0E60534561137C790 /* 📦 Embed Pods Frameworks */,
+				A7C544209663ABAB74DDEC3D /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -310,12 +398,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73AF52C91C9EB953009FB75A /* Build configuration list for PBXNativeTarget "SchedulerTests" */;
 			buildPhases = (
-				718737EDA532F895E7D591AF /* Check Pods Manifest.lock */,
+				85A7ACAB76ECE9AA770C8B9E /* 📦 Check Pods Manifest.lock */,
 				73AF52B91C9EB953009FB75A /* Sources */,
 				73AF52BA1C9EB953009FB75A /* Frameworks */,
 				73AF52BB1C9EB953009FB75A /* Resources */,
-				CF8D072FA36B2D2DC665AC48 /* Embed Pods Frameworks */,
-				B9BA68CFE1C99A3A5878F790 /* Copy Pods Resources */,
+				31A6B4992A1EA7063C666761 /* 📦 Embed Pods Frameworks */,
+				219340D66342A9A10BF9E8AA /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -369,6 +457,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				735E21461CE8AB6B00A4EB54 /* pages.json in Resources */,
+				735E21441CE8AB6B00A4EB54 /* filial.json in Resources */,
 				73AF52B41C9EB953009FB75A /* Assets.xcassets in Resources */,
 				73AF52D11C9EBCB6009FB75A /* Default-568h@2x.png in Resources */,
 				73AF55C51C9EDBDD009FB75A /* schedule_params.json in Resources */,
@@ -379,21 +469,53 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				735E21451CE8AB6B00A4EB54 /* filial.json in Resources */,
 				73AF55C61C9EDBDD009FB75A /* schedule_params.json in Resources */,
+				735E21471CE8AB6B00A4EB54 /* pages.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		54E198C32596E3DD3C3E8103 /* Check Pods Manifest.lock */ = {
+		219340D66342A9A10BF9E8AA /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31A6B4992A1EA7063C666761 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37F06EC57F9C047ACF142B5B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,19 +523,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		718737EDA532F895E7D591AF /* Check Pods Manifest.lock */ = {
+		5A33B7D0E60534561137C790 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		73AF52D21C9EBD21009FB75A /* Fabric */ = {
@@ -430,64 +552,34 @@
 			shellPath = /bin/sh;
 			shellScript = "echo \">>>>${CONFIGURATION}\"\n\nif [ \"Debug\" = \"${CONFIGURATION}\" ]; then\necho \"Running Crashlytics\"\n\"${PODS_ROOT}/Fabric/run\" 1ea87b52b1d0946ed506dcc3bd5b586f422bf03a 24581047190989dd3b32483cd77da4a030cb7d2ed58171c008823f918c327652\nfi";
 		};
-		9F132AEC3A5FD94BE13088E3 /* Embed Pods Frameworks */ = {
+		85A7ACAB76ECE9AA770C8B9E /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B5AC2AA291B773223E844D84 /* Copy Pods Resources */ = {
+		A7C544209663ABAB74DDEC3D /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B9BA68CFE1C99A3A5878F790 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CF8D072FA36B2D2DC665AC48 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -501,7 +593,7 @@
 				73AF55B11C9EC882009FB75A /* SLRSchedulerVC.m in Sources */,
 				73830E5C1CE0C46C006B6074 /* SLRWorkDayVM.m in Sources */,
 				73AF55A71C9EC71B009FB75A /* SLRBaseVC.m in Sources */,
-				73830E5F1CE0C767006B6074 /* SLRRange.m in Sources */,
+				73830E5F1CE0C767006B6074 /* SLRRangeVM.m in Sources */,
 				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				73AF55AA1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
 				7369BCD51CE094D000BFCD96 /* MSTimeRowHeader.m in Sources */,
@@ -509,14 +601,23 @@
 				73830E531CE0A6D3006B6074 /* MSGridline.m in Sources */,
 				7369BCD61CE094D000BFCD96 /* MSDayColumnHeader.m in Sources */,
 				739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
+				735E21641CE8AB9700A4EB54 /* SLROwner.m in Sources */,
+				735E214F1CE8AB7F00A4EB54 /* SLRAPIController.m in Sources */,
 				73AF55C91C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,
+				735E21601CE8AB9700A4EB54 /* SLRFilial.m in Sources */,
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
+				735E216A1CE8AB9700A4EB54 /* SLRTimeGrid.m in Sources */,
 				73AF55BD1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
 				73830E501CE099BE006B6074 /* MSEventCell.m in Sources */,
+				735E21511CE8AB7F00A4EB54 /* SLRDataProvider.m in Sources */,
+				735E21621CE8AB9700A4EB54 /* SLRUser.m in Sources */,
 				73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
+				735E21681CE8AB9700A4EB54 /* SLRRange.m in Sources */,
 				73AF52A91C9EB953009FB75A /* main.m in Sources */,
 				73830E561CE0AB13006B6074 /* SLRIntervalView.m in Sources */,
+				735E21501CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.m in Sources */,
+				735E21661CE8AB9700A4EB54 /* SLRPage.m in Sources */,
 				73AF55C21C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,13 +628,19 @@
 			files = (
 				73AF55AB1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
 				73AF55BE1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
+				735E21671CE8AB9700A4EB54 /* SLRPage.m in Sources */,
+				735E216B1CE8AB9700A4EB54 /* SLRTimeGrid.m in Sources */,
 				739AA65C1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m in Sources */,
 				73AF55CA1C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,
+				735E21611CE8AB9700A4EB54 /* SLRFilial.m in Sources */,
 				739AA9331C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
 				735E213D1CE884C600A4EB54 /* SLRWorkDayVMSpec.m in Sources */,
 				73AF55C31C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */,
+				735E21691CE8AB9700A4EB54 /* SLRRange.m in Sources */,
 				73AF55BA1C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
+				735E21651CE8AB9700A4EB54 /* SLROwner.m in Sources */,
 				73AF55B51C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
+				735E21631CE8AB9700A4EB54 /* SLRUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,7 +737,7 @@
 		};
 		73AF52C71C9EB953009FB75A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E31DFED10F874572DE43B866 /* Pods-Scheduler.debug.xcconfig */;
+			baseConfigurationReference = 56CE2249671223335EA5841D /* Pods-Scheduler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "Scheduler/Prefix-Header.h";
@@ -645,7 +752,7 @@
 		};
 		73AF52C81C9EB953009FB75A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2670C9AD0AF22C43DCB6025 /* Pods-Scheduler.release.xcconfig */;
+			baseConfigurationReference = CC71B5BB6067145B8945C39C /* Pods-Scheduler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "Scheduler/Prefix-Header.h";
@@ -660,7 +767,7 @@
 		};
 		73AF52CA1C9EB953009FB75A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD5C5F6E35F8E24C9EECE10D /* Pods-SchedulerTests.debug.xcconfig */;
+			baseConfigurationReference = 59041980C96C640D0855E039 /* Pods-SchedulerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREFIX_HEADER = "SchedulerTests/Prefix-Header.h";
@@ -674,7 +781,7 @@
 		};
 		73AF52CB1C9EB953009FB75A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7637545FD1F17F29CEBAB252 /* Pods-SchedulerTests.release.xcconfig */;
+			baseConfigurationReference = 472D3E516EE1FDDDB86413C3 /* Pods-SchedulerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREFIX_HEADER = "SchedulerTests/Prefix-Header.h";

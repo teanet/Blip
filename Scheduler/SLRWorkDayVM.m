@@ -2,18 +2,20 @@
 
 @interface SLRWorkDayVM ()
 
-@property (nonatomic, strong, readonly) NSMutableArray<SLRIntervalVM *> *intervals;
+@property (nonatomic, strong, readonly) SLRPage *page;
 
 @end
 
 @implementation SLRWorkDayVM
 
-- (instancetype)init
+- (instancetype)initWithPage:(SLRPage *)page
 {
 	self = [super init];
 	if (self == nil) return nil;
 
+	_page = page;
 	_intervals = [NSMutableArray array];
+
 	_step = 15;
 	_minInterval = 30;
 	_length = 1440;
@@ -27,14 +29,14 @@
 	[self intervalDidEndDragging:intervalVM];
 }
 
-- (void)interval:(SLRIntervalVM *)intervalVM didChangeRange:(SLRRange *)range
+- (void)interval:(SLRIntervalVM *)intervalVM didChangeRange:(SLRRangeVM *)range
 {
 	if (![self.intervals containsObject:intervalVM]) return;
 
 	intervalVM.range = range;
 }
 
-- (SLRRange *)adjustRange:(SLRRange *)range
+- (SLRRangeVM *)adjustRange:(SLRRangeVM *)range
 {
 	NSInteger section = round((double)range.location / self.step);
 	range.location = MAX(0, section * self.step);
@@ -53,14 +55,14 @@
 - (void)interval:(SLRIntervalVM *)intervalVM didUpdateLocation:(NSInteger)location
 {
 	intervalVM.editing = YES;
-	SLRRange *range = intervalVM.range;
+	SLRRangeVM *range = intervalVM.range;
 	range.location = location;
 	intervalVM.range = range;
 }
 
 - (void)intervalDidEndDragging:(SLRIntervalVM *)intervalVM
 {
-	SLRRange *adjustRange = [self adjustRange:intervalVM.range];
+	SLRRangeVM *adjustRange = [self adjustRange:intervalVM.range];
 	__block BOOL intercect = NO;
 	do
 	{
@@ -82,7 +84,7 @@
 	intervalVM.editing = NO;
 }
 
-- (NSArray<SLRIntervalVM *> *)intervalsVMAtRange:(SLRRange *)range
+- (NSArray<SLRIntervalVM *> *)intervalsVMAtRange:(SLRRangeVM *)range
 {
 	NSMutableArray *intervals = [NSMutableArray array];
 	[self.intervals enumerateObjectsUsingBlock:^(SLRIntervalVM * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

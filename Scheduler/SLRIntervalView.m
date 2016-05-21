@@ -71,7 +71,7 @@ CGFloat slr_minutesFromPoints(CGFloat points)
 	_intervalVM = intervalVM;
 	[[RACObserve(intervalVM, range)
 		takeUntil:[self rac_signalForSelector:@selector(setIntervalVM:)]]
-		subscribeNext:^(SLRRange *range) {
+		subscribeNext:^(SLRRangeVM *range) {
 			@strongify(self);
 
 			CGRect frame = self.frame;
@@ -101,7 +101,7 @@ CGFloat slr_minutesFromPoints(CGFloat points)
 {
 	if (panGR.state == UIGestureRecognizerStateChanged)
 	{
-		SLRRange *range = self.intervalVM.range;
+		SLRRangeVM *range = self.intervalVM.range;
 		NSInteger deltaMinutes = slr_minutesFromPoints([panGR translationInView:self].y);
 
 		if (panGR.view.tag == 0)

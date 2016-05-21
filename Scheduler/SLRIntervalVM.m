@@ -7,7 +7,7 @@
 	self = [super init];
 	if (self == nil) return nil;
 
-	_range = [[SLRRange alloc] init];
+	_range = [[SLRRangeVM alloc] init];
 
 	return self;
 }

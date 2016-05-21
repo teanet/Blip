@@ -1,8 +1,8 @@
 NSInteger const kSLRMinimumLength = 30;
 
-#import "SLRRange.h"
+#import "SLRRangeVM.h"
 
-@implementation SLRRange
+@implementation SLRRangeVM
 
 - (void)setLength:(NSInteger)length
 {
@@ -25,7 +25,7 @@ NSInteger const kSLRMinimumLength = 30;
 	self.length += delta;
 }
 
-- (BOOL)intercectRange:(SLRRange *)range
+- (BOOL)intercectRange:(SLRRangeVM *)range
 {
 	return !(self.end <= range.location || range.end <= self.location);
 }

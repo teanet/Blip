@@ -22,7 +22,7 @@ CGFloat const kIntervalViewDefaultInset = 50.0;
 	self = [super initWithViewModel:viewModel];
 	if (self == nil) return nil;
 
-	_workDayVM = [[SLRWorkDayVM alloc] init];
+	_workDayVM = [[SLRWorkDayVM alloc] initWithPage:[SLRPage pageTest]];
 
 	return self;
 }
@@ -105,7 +105,7 @@ CGFloat const kIntervalViewDefaultInset = 50.0;
 
 - (SLRIntervalView *)newIntervalViewAtLocation:(CGPoint)location
 {
-	SLRRange *range = [[SLRRange alloc] init];
+	SLRRangeVM *range = [[SLRRangeVM alloc] init];
 	range.location = slr_minutesFromPoints(location.y);
 	range.length = 30;
 
