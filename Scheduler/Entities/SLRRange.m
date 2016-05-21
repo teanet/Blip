@@ -45,6 +45,15 @@
 		_state = SLRRangeStateBook;
 	}
 
+	NSArray <NSDictionary *> *serviceDictionaries = dictionary[@"services"];
+	if ([serviceDictionaries isKindOfClass:[NSArray class]])
+	{
+		_services = [[serviceDictionaries rac_sequence]
+			map:^SLRService *(NSDictionary *serviceDictionary) {
+				return [[SLRService alloc] initWithDictionary:serviceDictionary];
+			}].array;
+	}
+
 	return self;
 }
 

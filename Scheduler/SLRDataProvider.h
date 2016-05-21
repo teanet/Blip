@@ -1,6 +1,7 @@
 #import "SLRFilial.h"
 #import "SLROwner.h"
 #import "SLRPage.h"
+#import "SLRService.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 /*! \return @[SLRPage] */
 - (RACSignal *)fetchPagesForOwner:(SLROwner *)owner
 							 date:(NSDate *)date;
+
+/*! \return @[SLRService] */
+- (RACSignal *)fetchServicesForPage:(SLRPage *)page
+							  range:(SLRRange *)range;
 
 @end
 

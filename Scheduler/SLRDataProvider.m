@@ -55,4 +55,11 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 	return [self.apiController fetchPagesForOwner:owner date:date];
 }
 
+/*! \return @[SLRService] */
+- (RACSignal *)fetchServicesForPage:(SLRPage *)page
+							  range:(SLRRange *)range
+{
+	return [self.apiController fetchServicesForPage:page range:range];
+}
+
 @end

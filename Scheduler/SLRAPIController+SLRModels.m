@@ -3,6 +3,7 @@
 #import "SLRFilial.h"
 #import "SLROwner.h"
 #import "SLRPage.h"
+#import "SLRService.h"
 
 @implementation SLRAPIController (TKSModels)
 
@@ -12,14 +13,14 @@
 - (RACSignal *)fetchFilials
 {
 #warning Backend required. Переделать на backend.
-	return [RACSignal return:@[[SLRFilial filialTest]]];
+	return [RACSignal return:@[[SLRFilial testFilial]]];
 }
 
 /*! \return @[SLRPage] */
 - (RACSignal *)fetchPagesForOwner:(SLROwner *)owner
 {
 #warning Backend required. Переделать на backend.
-	return [RACSignal return:@[[SLRPage pageTest]]];
+	return [RACSignal return:@[[SLRPage testPage]]];
 }
 
 /*! \return @[SLRPage] */
@@ -27,7 +28,15 @@
 							 date:(NSDate *)date
 {
 #warning Backend required. Переделать на backend.
-	return [RACSignal return:@[[SLRPage pageTest]]];
+	return [RACSignal return:@[[SLRPage testPage]]];
+}
+
+/*! \return @[SLRService] */
+- (RACSignal *)fetchServicesForPage:(SLRPage *)page
+							  range:(SLRRange *)range
+{
+#warning Backend required. Переделать на backend.
+	return [RACSignal return:[SLRService testServices]];
 }
 
 @end

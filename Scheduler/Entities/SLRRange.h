@@ -1,5 +1,6 @@
 #import "SLRSerializableProtocol.h"
 
+#import "SLRService.h"
 #import "SLRUser.h"
 
 @class SLRIntervalVM;
@@ -22,7 +23,15 @@ NS_ASSUME_NONNULL_BEGIN
 	"location" : UInteger,
 	"length" : UInteger,
 	"summary" : string,
-	"state" : "free/hold/book"
+	"state" : "free/hold/book",
+	"services" : (
+		{
+			...
+		},
+		{
+			...
+		}
+	)
  }
  */
 
@@ -34,6 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) NSInteger length;
 @property (nonatomic, copy, readonly, nullable) NSString *summary;
 @property (nonatomic, assign, readonly) SLRRangeState state;
+@property (nonatomic, copy, readonly) NSArray<SLRService *> *services;
 
 + (instancetype)rangeWithInterval:(SLRIntervalVM *)intervalVM;
 

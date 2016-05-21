@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30567E031CF0A9F900058477 /* SLRService.m in Sources */ = {isa = PBXBuildFile; fileRef = 30567E021CF0A9F900058477 /* SLRService.m */; };
+		307346F31CF0B4D80089A494 /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = 307346F21CF0B4D80089A494 /* services.json */; };
 		4F9754B5E9F2AEF30804174F /* libPods-SchedulerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */; };
 		73103FD71CF0B7AA00785073 /* SLRIntervalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73103FD61CF0B7AA00785073 /* SLRIntervalCell.m */; };
 		735E213D1CE884C600A4EB54 /* SLRWorkDayVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */; };
@@ -64,6 +66,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30567E011CF0A9F900058477 /* SLRService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRService.h; sourceTree = "<group>"; };
+		30567E021CF0A9F900058477 /* SLRService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRService.m; sourceTree = "<group>"; };
+		307346F21CF0B4D80089A494 /* services.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
 		403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchedulerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		472D3E516EE1FDDDB86413C3 /* Pods-SchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
 		56CE2249671223335EA5841D /* Pods-Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +216,8 @@
 				738314B51CF09ACA0048AFE2 /* SLRPage.m */,
 				738314B61CF09ACA0048AFE2 /* SLRRange.h */,
 				738314B71CF09ACA0048AFE2 /* SLRRange.m */,
+				30567E011CF0A9F900058477 /* SLRService.h */,
+				30567E021CF0A9F900058477 /* SLRService.m */,
 				738314B81CF09ACA0048AFE2 /* SLRTimeGrid.h */,
 				738314B91CF09ACA0048AFE2 /* SLRTimeGrid.m */,
 				738314BA1CF09ACA0048AFE2 /* SLRUser.h */,
@@ -238,6 +245,7 @@
 			children = (
 				738314D31CF09C890048AFE2 /* filial.json */,
 				738314D41CF09C890048AFE2 /* pages.json */,
+				307346F21CF0B4D80089A494 /* services.json */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -464,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				738314D61CF09C890048AFE2 /* pages.json in Resources */,
+				307346F31CF0B4D80089A494 /* services.json in Resources */,
 				738314D51CF09C890048AFE2 /* filial.json in Resources */,
 				73AF52B41C9EB953009FB75A /* Assets.xcassets in Resources */,
 				73AF52D11C9EBCB6009FB75A /* Default-568h@2x.png in Resources */,
@@ -619,6 +628,7 @@
 				738314C01CF09ACA0048AFE2 /* SLRTimeGrid.m in Sources */,
 				73AF52A91C9EB953009FB75A /* main.m in Sources */,
 				73830E561CE0AB13006B6074 /* SLRIntervalView.m in Sources */,
+				30567E031CF0A9F900058477 /* SLRService.m in Sources */,
 				73AF55C21C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -43,6 +43,6 @@
 
 @interface SLRPage (SLRTesting)
 
-+ (SLRPage *)pageTest;
++ (SLRPage *)testPage;
 
 @end

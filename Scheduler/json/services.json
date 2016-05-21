@@ -1,0 +1,19 @@
+[{
+	 "id": "erkhef98723а98ekldncsdfsdsdlfklwn",
+	 "title": "Гладить кота",
+	 "summary": "Кота будут гладить",
+	 "price_per_minute": 2,
+	 "price": 0,
+	 "duration": 0,
+	 "available": true,
+	 "selected": false
+ }, {
+	 "id": "erkhef98723а98ekldncsdfsdqweqpjv",
+	 "title": "Окрашивание кота",
+	 "summary": "Кота покрасят",
+	 "price_per_minute": 0,
+	 "price": 500,
+	 "duration": 20,
+	 "available": true,
+	 "selected": false
+}]

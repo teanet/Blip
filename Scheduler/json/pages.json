@@ -30,7 +30,28 @@
 			"location": "720",
 			"length": "30",
 			"state": "hold",
-			"summary": "Стрижка кота на 30 минут"
+			"summary": "Стрижка кота на 30 минут",
+			"services": [
+				{
+					"id": "erkhef98723а98ekldncsdfsdsdlfklwn",
+					"title": "Гладить кота",
+					"summary": "Кота будут гладить",
+					"price_per_minute": 2,
+					"price": 0,
+					"duration": 0,
+					"available": true,
+					"selected": true
+				}, {
+					"id": "erkhef98723а98ekldncsdfsdqweqpjv",
+					"title": "Окрашивание кота",
+					"summary": "Кота покрасят",
+					"price_per_minute": 0,
+					"price": 500,
+					"duration": 20,
+					"available": false,
+					"selected": false
+				}
+			]
 		}
 	],
 	"ranges_book": [
@@ -44,7 +65,28 @@
 			"location": "750",
 			"length": "30",
 			"state": "book",
-			"summary": "Надо побрить ежа"
+			"summary": "Надо побрить ежа",
+			"services": [
+				{
+					"id": "erkhef98723а98ekldncsdfsdsdlfklwn",
+					"title": "Гладить кота",
+					"summary": "Кота будут гладить",
+					"price_per_minute": 2,
+					"price": 0,
+					"duration": 0,
+					"available": false,
+					"selected": false
+				}, {
+					"id": "erkhef98723а98ekldncsdfsdqweqpjv",
+					"title": "Окрашивание кота",
+					"summary": "Кота покрасят",
+					"price_per_minute": 0,
+					"price": 500,
+					"duration": 20,
+					"available": true,
+					"selected": true
+				}
+			]
 		}
 	]
 }
