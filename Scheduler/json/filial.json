@@ -1,0 +1,14 @@
+{
+	"id" : "sdlkjfldksfjvh",
+	"title" : "Парикмахерская номер 7",
+	"address" : "Улица Пушкина, дом Колотушкина",
+	"contact" : "222-22-22",
+	"owners" : [{
+			"id" : "khgklaa",
+			"title" : "Пушкин"
+		}, {
+			"id" : "okjsdlfk",
+			"title" : "Колотушкин"
+		}
+	]
+}

@@ -10,10 +10,6 @@
 		4F9754B5E9F2AEF30804174F /* libPods-SchedulerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */; };
 		735E213D1CE884C600A4EB54 /* SLRWorkDayVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */; };
 		735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */; };
-		735E21441CE8AB6B00A4EB54 /* filial.json in Resources */ = {isa = PBXBuildFile; fileRef = 735E21411CE8AB6B00A4EB54 /* filial.json */; };
-		735E21451CE8AB6B00A4EB54 /* filial.json in Resources */ = {isa = PBXBuildFile; fileRef = 735E21411CE8AB6B00A4EB54 /* filial.json */; };
-		735E21461CE8AB6B00A4EB54 /* pages.json in Resources */ = {isa = PBXBuildFile; fileRef = 735E21421CE8AB6B00A4EB54 /* pages.json */; };
-		735E21471CE8AB6B00A4EB54 /* pages.json in Resources */ = {isa = PBXBuildFile; fileRef = 735E21421CE8AB6B00A4EB54 /* pages.json */; };
 		7369BCD51CE094D000BFCD96 /* MSTimeRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7369BCD21CE094D000BFCD96 /* MSTimeRowHeader.m */; };
 		7369BCD61CE094D000BFCD96 /* MSDayColumnHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7369BCD41CE094D000BFCD96 /* MSDayColumnHeader.m */; };
 		73830E501CE099BE006B6074 /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E4F1CE099BE006B6074 /* MSEventCell.m */; };
@@ -31,6 +27,8 @@
 		738314CA1CF09B550048AFE2 /* SLRAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 738314C51CF09B550048AFE2 /* SLRAPIController.m */; };
 		738314CB1CF09B550048AFE2 /* SLRAPIController+SLRModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 738314C71CF09B550048AFE2 /* SLRAPIController+SLRModels.m */; };
 		738314CC1CF09B550048AFE2 /* SLRDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 738314C91CF09B550048AFE2 /* SLRDataProvider.m */; };
+		738314D51CF09C890048AFE2 /* filial.json in Resources */ = {isa = PBXBuildFile; fileRef = 738314D31CF09C890048AFE2 /* filial.json */; };
+		738314D61CF09C890048AFE2 /* pages.json in Resources */ = {isa = PBXBuildFile; fileRef = 738314D41CF09C890048AFE2 /* pages.json */; };
 		739AA65C1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */; };
 		739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA9311C9EEF1200565CB7 /* SLRFreeInterval.m */; };
 		739AA9331C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA9311C9EEF1200565CB7 /* SLRFreeInterval.m */; };
@@ -76,8 +74,6 @@
 		735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRWorkDayVMSpec.m; sourceTree = "<group>"; };
 		735E213E1CE8912100A4EB54 /* SLRSeporatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRSeporatorView.h; sourceTree = "<group>"; };
 		735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRSeporatorView.m; sourceTree = "<group>"; };
-		735E21411CE8AB6B00A4EB54 /* filial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = filial.json; path = json/filial.json; sourceTree = "<group>"; };
-		735E21421CE8AB6B00A4EB54 /* pages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pages.json; path = json/pages.json; sourceTree = "<group>"; };
 		7369BCD11CE094D000BFCD96 /* MSTimeRowHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeRowHeader.h; sourceTree = "<group>"; };
 		7369BCD21CE094D000BFCD96 /* MSTimeRowHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeader.m; sourceTree = "<group>"; };
 		7369BCD31CE094D000BFCD96 /* MSDayColumnHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDayColumnHeader.h; sourceTree = "<group>"; };
@@ -112,6 +108,9 @@
 		738314C71CF09B550048AFE2 /* SLRAPIController+SLRModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SLRAPIController+SLRModels.m"; sourceTree = "<group>"; };
 		738314C81CF09B550048AFE2 /* SLRDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRDataProvider.h; sourceTree = "<group>"; };
 		738314C91CF09B550048AFE2 /* SLRDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDataProvider.m; sourceTree = "<group>"; };
+		738314CD1CF09B8A0048AFE2 /* SLRSerializableProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLRSerializableProtocol.h; sourceTree = "<group>"; };
+		738314D31CF09C890048AFE2 /* filial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = filial.json; sourceTree = "<group>"; };
+		738314D41CF09C890048AFE2 /* pages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pages.json; sourceTree = "<group>"; };
 		739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRScheduleModelSpec.m; sourceTree = "<group>"; };
 		739AA92F1C9EEB5500565CB7 /* Prefix-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prefix-Header.h"; sourceTree = "<group>"; };
 		739AA9301C9EEF1200565CB7 /* SLRFreeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFreeInterval.h; sourceTree = "<group>"; };
@@ -179,16 +178,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		735E21431CE8AB6B00A4EB54 /* json */ = {
-			isa = PBXGroup;
-			children = (
-				735E21411CE8AB6B00A4EB54 /* filial.json */,
-				735E21421CE8AB6B00A4EB54 /* pages.json */,
-			);
-			name = json;
-			path = ../../../../Downloads/SchedulerNetworking/SchedulerNetworking;
-			sourceTree = "<group>";
-		};
 		738314AF1CF09ACA0048AFE2 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,8 +206,18 @@
 				738314C71CF09B550048AFE2 /* SLRAPIController+SLRModels.m */,
 				738314C81CF09B550048AFE2 /* SLRDataProvider.h */,
 				738314C91CF09B550048AFE2 /* SLRDataProvider.m */,
+				738314CD1CF09B8A0048AFE2 /* SLRSerializableProtocol.h */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		738314D21CF09C890048AFE2 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				738314D31CF09C890048AFE2 /* filial.json */,
+				738314D41CF09C890048AFE2 /* pages.json */,
+			);
+			path = json;
 			sourceTree = "<group>";
 		};
 		73AF529B1C9EB953009FB75A = {
@@ -261,7 +260,7 @@
 		73AF52A71C9EB953009FB75A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				735E21431CE8AB6B00A4EB54 /* json */,
+				738314D21CF09C890048AFE2 /* json */,
 				73AF52D01C9EBCB6009FB75A /* Default-568h@2x.png */,
 				73AF52CF1C9EBC5A009FB75A /* Prefix-Header.h */,
 				73AF52A81C9EB953009FB75A /* main.m */,
@@ -447,8 +446,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				735E21461CE8AB6B00A4EB54 /* pages.json in Resources */,
-				735E21441CE8AB6B00A4EB54 /* filial.json in Resources */,
+				738314D61CF09C890048AFE2 /* pages.json in Resources */,
+				738314D51CF09C890048AFE2 /* filial.json in Resources */,
 				73AF52B41C9EB953009FB75A /* Assets.xcassets in Resources */,
 				73AF52D11C9EBCB6009FB75A /* Default-568h@2x.png in Resources */,
 				73AF55C51C9EDBDD009FB75A /* schedule_params.json in Resources */,
@@ -459,9 +458,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				735E21451CE8AB6B00A4EB54 /* filial.json in Resources */,
 				73AF55C61C9EDBDD009FB75A /* schedule_params.json in Resources */,
-				735E21471CE8AB6B00A4EB54 /* pages.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

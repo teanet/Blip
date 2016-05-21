@@ -1,0 +1,50 @@
+{
+	"id": "lkjfhlkhadlkjfh",
+	"date": "2016-05-09",
+	"greed": {
+		"booking_step": 15,
+		"booking_interval_min": 30,
+		"booking_interval_max": 180
+	},
+	"ranges_free": [
+		{
+			"id": "sdfljsdfsvsfvkj",
+			"location": "480",
+			"length": "240",
+			"state": "free"
+		}, {
+			"id": "sdfljsdfsvsfvkjaadssdgf",
+			"location": "780",
+			"length": "540",
+			"state": "free"
+		}
+	],
+	"ranges_hold": [
+		{
+			"user": {
+				"id": "erkhef98723а98ekldncsdfsd",
+				"full_name": "Пронин Капитан",
+				"phone": "+7-923-999-99-99"
+			},
+			"id": "sdfljsdfsvsfvkjerheh",
+			"location": "720",
+			"length": "30",
+			"state": "hold",
+			"summary": "Стрижка кота на 30 минут"
+		}
+	],
+	"ranges_book": [
+		{
+			"user": {
+				"id": "erkhef9872398ekldnc",
+				"full_name": "Александр Ренатович Ойра-Ойра",
+				"phone": "+7-913-000-00-00"
+			},
+			"id": "sdfljsdfsvsfvkjwqwds",
+			"location": "750",
+			"length": "30",
+			"state": "book",
+			"summary": "Надо побрить ежа"
+		}
+	]
+}
