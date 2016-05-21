@@ -14,21 +14,6 @@
 		735E21451CE8AB6B00A4EB54 /* filial.json in Resources */ = {isa = PBXBuildFile; fileRef = 735E21411CE8AB6B00A4EB54 /* filial.json */; };
 		735E21461CE8AB6B00A4EB54 /* pages.json in Resources */ = {isa = PBXBuildFile; fileRef = 735E21421CE8AB6B00A4EB54 /* pages.json */; };
 		735E21471CE8AB6B00A4EB54 /* pages.json in Resources */ = {isa = PBXBuildFile; fileRef = 735E21421CE8AB6B00A4EB54 /* pages.json */; };
-		735E214F1CE8AB7F00A4EB54 /* SLRAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21491CE8AB7F00A4EB54 /* SLRAPIController.m */; };
-		735E21501CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E214B1CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.m */; };
-		735E21511CE8AB7F00A4EB54 /* SLRDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E214D1CE8AB7F00A4EB54 /* SLRDataProvider.m */; };
-		735E21601CE8AB9700A4EB54 /* SLRFilial.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21531CE8AB9700A4EB54 /* SLRFilial.m */; };
-		735E21611CE8AB9700A4EB54 /* SLRFilial.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21531CE8AB9700A4EB54 /* SLRFilial.m */; };
-		735E21621CE8AB9700A4EB54 /* SLRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21551CE8AB9700A4EB54 /* SLRUser.m */; };
-		735E21631CE8AB9700A4EB54 /* SLRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21551CE8AB9700A4EB54 /* SLRUser.m */; };
-		735E21641CE8AB9700A4EB54 /* SLROwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21571CE8AB9700A4EB54 /* SLROwner.m */; };
-		735E21651CE8AB9700A4EB54 /* SLROwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21571CE8AB9700A4EB54 /* SLROwner.m */; };
-		735E21661CE8AB9700A4EB54 /* SLRPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21591CE8AB9700A4EB54 /* SLRPage.m */; };
-		735E21671CE8AB9700A4EB54 /* SLRPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E21591CE8AB9700A4EB54 /* SLRPage.m */; };
-		735E21681CE8AB9700A4EB54 /* SLRRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E215B1CE8AB9700A4EB54 /* SLRRange.m */; };
-		735E21691CE8AB9700A4EB54 /* SLRRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E215B1CE8AB9700A4EB54 /* SLRRange.m */; };
-		735E216A1CE8AB9700A4EB54 /* SLRTimeGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E215D1CE8AB9700A4EB54 /* SLRTimeGrid.m */; };
-		735E216B1CE8AB9700A4EB54 /* SLRTimeGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E215D1CE8AB9700A4EB54 /* SLRTimeGrid.m */; };
 		7369BCD51CE094D000BFCD96 /* MSTimeRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7369BCD21CE094D000BFCD96 /* MSTimeRowHeader.m */; };
 		7369BCD61CE094D000BFCD96 /* MSDayColumnHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7369BCD41CE094D000BFCD96 /* MSDayColumnHeader.m */; };
 		73830E501CE099BE006B6074 /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E4F1CE099BE006B6074 /* MSEventCell.m */; };
@@ -37,6 +22,15 @@
 		73830E591CE0C458006B6074 /* SLRIntervalVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E581CE0C458006B6074 /* SLRIntervalVM.m */; };
 		73830E5C1CE0C46C006B6074 /* SLRWorkDayVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E5B1CE0C46C006B6074 /* SLRWorkDayVM.m */; };
 		73830E5F1CE0C767006B6074 /* SLRRangeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E5E1CE0C767006B6074 /* SLRRangeVM.m */; };
+		738314BC1CF09ACA0048AFE2 /* SLRFilial.m in Sources */ = {isa = PBXBuildFile; fileRef = 738314B11CF09ACA0048AFE2 /* SLRFilial.m */; };
+		738314BD1CF09ACA0048AFE2 /* SLROwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 738314B31CF09ACA0048AFE2 /* SLROwner.m */; };
+		738314BE1CF09ACA0048AFE2 /* SLRPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 738314B51CF09ACA0048AFE2 /* SLRPage.m */; };
+		738314BF1CF09ACA0048AFE2 /* SLRRange.m in Sources */ = {isa = PBXBuildFile; fileRef = 738314B71CF09ACA0048AFE2 /* SLRRange.m */; };
+		738314C01CF09ACA0048AFE2 /* SLRTimeGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 738314B91CF09ACA0048AFE2 /* SLRTimeGrid.m */; };
+		738314C11CF09ACA0048AFE2 /* SLRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 738314BB1CF09ACA0048AFE2 /* SLRUser.m */; };
+		738314CA1CF09B550048AFE2 /* SLRAPIController.m in Sources */ = {isa = PBXBuildFile; fileRef = 738314C51CF09B550048AFE2 /* SLRAPIController.m */; };
+		738314CB1CF09B550048AFE2 /* SLRAPIController+SLRModels.m in Sources */ = {isa = PBXBuildFile; fileRef = 738314C71CF09B550048AFE2 /* SLRAPIController+SLRModels.m */; };
+		738314CC1CF09B550048AFE2 /* SLRDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 738314C91CF09B550048AFE2 /* SLRDataProvider.m */; };
 		739AA65C1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */; };
 		739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA9311C9EEF1200565CB7 /* SLRFreeInterval.m */; };
 		739AA9331C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 739AA9311C9EEF1200565CB7 /* SLRFreeInterval.m */; };
@@ -84,25 +78,6 @@
 		735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRSeporatorView.m; sourceTree = "<group>"; };
 		735E21411CE8AB6B00A4EB54 /* filial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = filial.json; path = json/filial.json; sourceTree = "<group>"; };
 		735E21421CE8AB6B00A4EB54 /* pages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = pages.json; path = json/pages.json; sourceTree = "<group>"; };
-		735E21481CE8AB7F00A4EB54 /* SLRAPIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRAPIController.h; sourceTree = "<group>"; };
-		735E21491CE8AB7F00A4EB54 /* SLRAPIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRAPIController.m; sourceTree = "<group>"; };
-		735E214A1CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SLRAPIController+SLRModels.h"; sourceTree = "<group>"; };
-		735E214B1CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SLRAPIController+SLRModels.m"; sourceTree = "<group>"; };
-		735E214C1CE8AB7F00A4EB54 /* SLRDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRDataProvider.h; sourceTree = "<group>"; };
-		735E214D1CE8AB7F00A4EB54 /* SLRDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDataProvider.m; sourceTree = "<group>"; };
-		735E21521CE8AB9700A4EB54 /* SLRFilial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRFilial.h; path = Entities/SLRFilial.h; sourceTree = "<group>"; };
-		735E21531CE8AB9700A4EB54 /* SLRFilial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRFilial.m; path = Entities/SLRFilial.m; sourceTree = "<group>"; };
-		735E21541CE8AB9700A4EB54 /* SLRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRUser.h; path = Entities/SLRUser.h; sourceTree = "<group>"; };
-		735E21551CE8AB9700A4EB54 /* SLRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRUser.m; path = Entities/SLRUser.m; sourceTree = "<group>"; };
-		735E21561CE8AB9700A4EB54 /* SLROwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLROwner.h; path = Entities/SLROwner.h; sourceTree = "<group>"; };
-		735E21571CE8AB9700A4EB54 /* SLROwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLROwner.m; path = Entities/SLROwner.m; sourceTree = "<group>"; };
-		735E21581CE8AB9700A4EB54 /* SLRPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRPage.h; path = Entities/SLRPage.h; sourceTree = "<group>"; };
-		735E21591CE8AB9700A4EB54 /* SLRPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRPage.m; path = Entities/SLRPage.m; sourceTree = "<group>"; };
-		735E215A1CE8AB9700A4EB54 /* SLRRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRRange.h; path = Entities/SLRRange.h; sourceTree = "<group>"; };
-		735E215B1CE8AB9700A4EB54 /* SLRRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRRange.m; path = Entities/SLRRange.m; sourceTree = "<group>"; };
-		735E215C1CE8AB9700A4EB54 /* SLRTimeGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRTimeGrid.h; path = Entities/SLRTimeGrid.h; sourceTree = "<group>"; };
-		735E215D1CE8AB9700A4EB54 /* SLRTimeGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRTimeGrid.m; path = Entities/SLRTimeGrid.m; sourceTree = "<group>"; };
-		735E215E1CE8AB9700A4EB54 /* SLRSerializableProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRSerializableProtocol.h; sourceTree = "<group>"; };
 		7369BCD11CE094D000BFCD96 /* MSTimeRowHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeRowHeader.h; sourceTree = "<group>"; };
 		7369BCD21CE094D000BFCD96 /* MSTimeRowHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeader.m; sourceTree = "<group>"; };
 		7369BCD31CE094D000BFCD96 /* MSDayColumnHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDayColumnHeader.h; sourceTree = "<group>"; };
@@ -119,6 +94,24 @@
 		73830E5B1CE0C46C006B6074 /* SLRWorkDayVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRWorkDayVM.m; sourceTree = "<group>"; };
 		73830E5D1CE0C767006B6074 /* SLRRangeVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRRangeVM.h; sourceTree = "<group>"; };
 		73830E5E1CE0C767006B6074 /* SLRRangeVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRRangeVM.m; sourceTree = "<group>"; };
+		738314B01CF09ACA0048AFE2 /* SLRFilial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFilial.h; sourceTree = "<group>"; };
+		738314B11CF09ACA0048AFE2 /* SLRFilial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFilial.m; sourceTree = "<group>"; };
+		738314B21CF09ACA0048AFE2 /* SLROwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLROwner.h; sourceTree = "<group>"; };
+		738314B31CF09ACA0048AFE2 /* SLROwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLROwner.m; sourceTree = "<group>"; };
+		738314B41CF09ACA0048AFE2 /* SLRPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRPage.h; sourceTree = "<group>"; };
+		738314B51CF09ACA0048AFE2 /* SLRPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRPage.m; sourceTree = "<group>"; };
+		738314B61CF09ACA0048AFE2 /* SLRRange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRRange.h; sourceTree = "<group>"; };
+		738314B71CF09ACA0048AFE2 /* SLRRange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRRange.m; sourceTree = "<group>"; };
+		738314B81CF09ACA0048AFE2 /* SLRTimeGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRTimeGrid.h; sourceTree = "<group>"; };
+		738314B91CF09ACA0048AFE2 /* SLRTimeGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRTimeGrid.m; sourceTree = "<group>"; };
+		738314BA1CF09ACA0048AFE2 /* SLRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRUser.h; sourceTree = "<group>"; };
+		738314BB1CF09ACA0048AFE2 /* SLRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRUser.m; sourceTree = "<group>"; };
+		738314C41CF09B550048AFE2 /* SLRAPIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRAPIController.h; sourceTree = "<group>"; };
+		738314C51CF09B550048AFE2 /* SLRAPIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRAPIController.m; sourceTree = "<group>"; };
+		738314C61CF09B550048AFE2 /* SLRAPIController+SLRModels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SLRAPIController+SLRModels.h"; sourceTree = "<group>"; };
+		738314C71CF09B550048AFE2 /* SLRAPIController+SLRModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SLRAPIController+SLRModels.m"; sourceTree = "<group>"; };
+		738314C81CF09B550048AFE2 /* SLRDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRDataProvider.h; sourceTree = "<group>"; };
+		738314C91CF09B550048AFE2 /* SLRDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDataProvider.m; sourceTree = "<group>"; };
 		739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRScheduleModelSpec.m; sourceTree = "<group>"; };
 		739AA92F1C9EEB5500565CB7 /* Prefix-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Prefix-Header.h"; sourceTree = "<group>"; };
 		739AA9301C9EEF1200565CB7 /* SLRFreeInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFreeInterval.h; sourceTree = "<group>"; };
@@ -196,39 +189,36 @@
 			path = ../../../../Downloads/SchedulerNetworking/SchedulerNetworking;
 			sourceTree = "<group>";
 		};
-		735E214E1CE8AB7F00A4EB54 /* Networking */ = {
+		738314AF1CF09ACA0048AFE2 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				735E21481CE8AB7F00A4EB54 /* SLRAPIController.h */,
-				735E21491CE8AB7F00A4EB54 /* SLRAPIController.m */,
-				735E214A1CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.h */,
-				735E214B1CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.m */,
-				735E214C1CE8AB7F00A4EB54 /* SLRDataProvider.h */,
-				735E214D1CE8AB7F00A4EB54 /* SLRDataProvider.m */,
+				738314B01CF09ACA0048AFE2 /* SLRFilial.h */,
+				738314B11CF09ACA0048AFE2 /* SLRFilial.m */,
+				738314B21CF09ACA0048AFE2 /* SLROwner.h */,
+				738314B31CF09ACA0048AFE2 /* SLROwner.m */,
+				738314B41CF09ACA0048AFE2 /* SLRPage.h */,
+				738314B51CF09ACA0048AFE2 /* SLRPage.m */,
+				738314B61CF09ACA0048AFE2 /* SLRRange.h */,
+				738314B71CF09ACA0048AFE2 /* SLRRange.m */,
+				738314B81CF09ACA0048AFE2 /* SLRTimeGrid.h */,
+				738314B91CF09ACA0048AFE2 /* SLRTimeGrid.m */,
+				738314BA1CF09ACA0048AFE2 /* SLRUser.h */,
+				738314BB1CF09ACA0048AFE2 /* SLRUser.m */,
 			);
-			name = Networking;
-			path = ../../../../Downloads/SchedulerNetworking/SchedulerNetworking;
+			path = Entities;
 			sourceTree = "<group>";
 		};
-		735E215F1CE8AB9700A4EB54 /* Entities */ = {
+		738314C31CF09B230048AFE2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				735E21521CE8AB9700A4EB54 /* SLRFilial.h */,
-				735E21531CE8AB9700A4EB54 /* SLRFilial.m */,
-				735E21541CE8AB9700A4EB54 /* SLRUser.h */,
-				735E21551CE8AB9700A4EB54 /* SLRUser.m */,
-				735E21561CE8AB9700A4EB54 /* SLROwner.h */,
-				735E21571CE8AB9700A4EB54 /* SLROwner.m */,
-				735E21581CE8AB9700A4EB54 /* SLRPage.h */,
-				735E21591CE8AB9700A4EB54 /* SLRPage.m */,
-				735E215A1CE8AB9700A4EB54 /* SLRRange.h */,
-				735E215B1CE8AB9700A4EB54 /* SLRRange.m */,
-				735E215C1CE8AB9700A4EB54 /* SLRTimeGrid.h */,
-				735E215D1CE8AB9700A4EB54 /* SLRTimeGrid.m */,
-				735E215E1CE8AB9700A4EB54 /* SLRSerializableProtocol.h */,
+				738314C41CF09B550048AFE2 /* SLRAPIController.h */,
+				738314C51CF09B550048AFE2 /* SLRAPIController.m */,
+				738314C61CF09B550048AFE2 /* SLRAPIController+SLRModels.h */,
+				738314C71CF09B550048AFE2 /* SLRAPIController+SLRModels.m */,
+				738314C81CF09B550048AFE2 /* SLRDataProvider.h */,
+				738314C91CF09B550048AFE2 /* SLRDataProvider.m */,
 			);
-			name = Entities;
-			path = ../../../../Downloads/SchedulerNetworking/SchedulerNetworking;
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		73AF529B1C9EB953009FB75A = {
@@ -254,8 +244,8 @@
 		73AF52A61C9EB953009FB75A /* Scheduler */ = {
 			isa = PBXGroup;
 			children = (
-				735E215F1CE8AB9700A4EB54 /* Entities */,
-				735E214E1CE8AB7F00A4EB54 /* Networking */,
+				738314C31CF09B230048AFE2 /* Networking */,
+				738314AF1CF09ACA0048AFE2 /* Entities */,
 				73AF55AE1C9EC826009FB75A /* ViewModels */,
 				73AF55AD1C9EC81F009FB75A /* Views */,
 				73AF55AC1C9EC81A009FB75A /* Models */,
@@ -589,11 +579,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				738314C11CF09ACA0048AFE2 /* SLRUser.m in Sources */,
 				735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */,
 				73AF55B11C9EC882009FB75A /* SLRSchedulerVC.m in Sources */,
 				73830E5C1CE0C46C006B6074 /* SLRWorkDayVM.m in Sources */,
+				738314CA1CF09B550048AFE2 /* SLRAPIController.m in Sources */,
+				738314BD1CF09ACA0048AFE2 /* SLROwner.m in Sources */,
+				738314CC1CF09B550048AFE2 /* SLRDataProvider.m in Sources */,
 				73AF55A71C9EC71B009FB75A /* SLRBaseVC.m in Sources */,
 				73830E5F1CE0C767006B6074 /* SLRRangeVM.m in Sources */,
+				738314BE1CF09ACA0048AFE2 /* SLRPage.m in Sources */,
+				738314CB1CF09B550048AFE2 /* SLRAPIController+SLRModels.m in Sources */,
 				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				73AF55AA1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
 				7369BCD51CE094D000BFCD96 /* MSTimeRowHeader.m in Sources */,
@@ -601,23 +597,17 @@
 				73830E531CE0A6D3006B6074 /* MSGridline.m in Sources */,
 				7369BCD61CE094D000BFCD96 /* MSDayColumnHeader.m in Sources */,
 				739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
-				735E21641CE8AB9700A4EB54 /* SLROwner.m in Sources */,
-				735E214F1CE8AB7F00A4EB54 /* SLRAPIController.m in Sources */,
 				73AF55C91C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,
-				735E21601CE8AB9700A4EB54 /* SLRFilial.m in Sources */,
+				738314BC1CF09ACA0048AFE2 /* SLRFilial.m in Sources */,
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
-				735E216A1CE8AB9700A4EB54 /* SLRTimeGrid.m in Sources */,
 				73AF55BD1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
 				73830E501CE099BE006B6074 /* MSEventCell.m in Sources */,
-				735E21511CE8AB7F00A4EB54 /* SLRDataProvider.m in Sources */,
-				735E21621CE8AB9700A4EB54 /* SLRUser.m in Sources */,
 				73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
-				735E21681CE8AB9700A4EB54 /* SLRRange.m in Sources */,
+				738314BF1CF09ACA0048AFE2 /* SLRRange.m in Sources */,
+				738314C01CF09ACA0048AFE2 /* SLRTimeGrid.m in Sources */,
 				73AF52A91C9EB953009FB75A /* main.m in Sources */,
 				73830E561CE0AB13006B6074 /* SLRIntervalView.m in Sources */,
-				735E21501CE8AB7F00A4EB54 /* SLRAPIController+SLRModels.m in Sources */,
-				735E21661CE8AB9700A4EB54 /* SLRPage.m in Sources */,
 				73AF55C21C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,19 +618,13 @@
 			files = (
 				73AF55AB1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
 				73AF55BE1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
-				735E21671CE8AB9700A4EB54 /* SLRPage.m in Sources */,
-				735E216B1CE8AB9700A4EB54 /* SLRTimeGrid.m in Sources */,
 				739AA65C1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m in Sources */,
 				73AF55CA1C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,
-				735E21611CE8AB9700A4EB54 /* SLRFilial.m in Sources */,
 				739AA9331C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
 				735E213D1CE884C600A4EB54 /* SLRWorkDayVMSpec.m in Sources */,
 				73AF55C31C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */,
-				735E21691CE8AB9700A4EB54 /* SLRRange.m in Sources */,
 				73AF55BA1C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
-				735E21651CE8AB9700A4EB54 /* SLROwner.m in Sources */,
 				73AF55B51C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
-				735E21631CE8AB9700A4EB54 /* SLRUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
