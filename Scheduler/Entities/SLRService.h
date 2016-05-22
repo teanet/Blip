@@ -27,6 +27,6 @@
 
 @interface SLRService (SLRTesting)
 
-+ (NSArray <SLRService *> *)testServices;®
++ (NSArray <SLRService *> *)testServices;
 
 @end

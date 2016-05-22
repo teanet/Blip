@@ -4,8 +4,8 @@
 @property (nonatomic, copy, readonly) NSString *applicationKey;
 
 - (instancetype)initWithSchedulerAPIKey:(NSString *)schedulerAPIKey
-						 applicationKey:(NSString *)applicationKey
-								 userId:(NSString *)userId NS_DESIGNATED_INITIALIZER;
+						 applicationKey:(NSString *)applicationKey NS_DESIGNATED_INITIALIZER;
+
 - (instancetype)init NS_UNAVAILABLE;
 
 /*! \return NSDictionary */

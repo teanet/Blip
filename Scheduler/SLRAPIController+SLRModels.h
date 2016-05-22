@@ -1,23 +1,6 @@
 #import "SLRAPIController.h"
 
-@class SLROwner;
-@class SLRPage;
-@class SLRRange;
+#import "SLRAPIControllerProtocol.h"
 
-@interface SLRAPIController (SLRModels)
-
-/*! \return @[SLRFilial] */
-- (RACSignal *)fetchFilials;
-
-/*! \return @[SLRPage] */
-- (RACSignal *)fetchPagesForOwner:(SLROwner *)owner;
-
-/*! \return @[SLRPage] */
-- (RACSignal *)fetchPagesForOwner:(SLROwner *)owner
-							 date:(NSDate *)date;
-
-/*! \return @[SLRService] */
-- (RACSignal *)fetchServicesForPage:(SLRPage *)page
-							  range:(SLRRange *)range;
-
+@interface SLRAPIController (SLRModels) <SLRAPIControllerProtocol>
 @end

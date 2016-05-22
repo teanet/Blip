@@ -16,6 +16,7 @@ typedef NS_ENUM(NSInteger, SLRRangeState) {
 NS_ASSUME_NONNULL_BEGIN
 
 /*! Диапазон времени, которое доступно для букинга, ждёт аппрува, или которое уже забукировано.
+	Страница расписания (SLRPage) состоит из таких ренджей.
  {
 	"user" : {
 		...
@@ -43,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) NSInteger length;
 @property (nonatomic, copy, readonly, nullable) NSString *summary;
 @property (nonatomic, assign, readonly) SLRRangeState state;
-@property (nonatomic, copy, readonly) NSArray<SLRService *> *services;
+@property (nonatomic, copy, readonly, nullable) NSArray<SLRService *> *services;
 
 + (instancetype)rangeWithInterval:(SLRIntervalVM *)intervalVM;
 

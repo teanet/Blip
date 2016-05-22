@@ -6,6 +6,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import <Fabric/Fabric.h>
 #import <DigitsKit/DigitsKit.h>
+#import <SSKeychain.h>
 
 #import "SLRDataProvider.h"
 
@@ -13,12 +14,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	[SSKeychain setAccessibilityType:kSecAttrAccessibleAlwaysThisDeviceOnly];
 //	[[Fabric sharedSDK] setDebug:YES];
-//	[Fabric with:@[CrashlyticsKit, DigitsKit]];
-	[[[SLRDataProvider sharedProvider] fetchServicesForPage:nil range:nil]
-		subscribeNext:^(NSArray<SLRService *> *services) {
-			NSLog(@">>> %@", services.firstObject);
-		}];
+//	[Fabric with:@[CrashlyticsKit]];
 
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 

@@ -18,14 +18,12 @@ static NSString *const kSLRSchedulerAPIBaseURLString = @"http://catalog.api.2gis
 
 - (instancetype)initWithSchedulerAPIKey:(NSString *)schedulerAPIKey
 						 applicationKey:(NSString *)applicationKey
-								 userId:(NSString *)userId
 {
 	self = [super init];
 	if (self == nil) return nil;
 
 	NSCAssert(schedulerAPIKey.length > 0, @"You should add API token for correct work with Scheduler API.");
 	NSCAssert(applicationKey.length > 0, @"You should add Application Key for correct work with Scheduler API.");
-	NSCAssert(userId.length > 0, @"You should add User Id for correct work with Scheduler API.");
 
 	_schedulerAPIKey = [schedulerAPIKey copy];
 	_applicationKey = [applicationKey copy];
@@ -41,7 +39,6 @@ static NSString *const kSLRSchedulerAPIBaseURLString = @"http://catalog.api.2gis
 		@"X-Mobile-Model": [[UIDevice currentDevice] modelName],
 		@"X-API-Token": schedulerAPIKey,
 		@"X-Application-Key": schedulerAPIKey,
-		@"X-User-Id": userId,
 	};
 	[headers enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
 		[_requestManager.requestSerializer setValue:value forHTTPHeaderField:key];

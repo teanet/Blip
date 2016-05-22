@@ -14,5 +14,12 @@
 @property (nonatomic, copy, readonly) NSString *id;
 @property (nonatomic, copy, readonly) NSString *fullName;
 @property (nonatomic, copy, readonly) NSString *phone;
+@property (nonatomic, copy, readonly) NSString *token;
+
+/*! Создаем пользователя локально и регистрируем на сервере. */
+- (instancetype)initWithFullName:(NSString *)fullName
+						   phone:(NSString *)phone;
+
+- (NSDictionary *)dictionary;
 
 @end

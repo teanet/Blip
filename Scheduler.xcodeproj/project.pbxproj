@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		30567E031CF0A9F900058477 /* SLRService.m in Sources */ = {isa = PBXBuildFile; fileRef = 30567E021CF0A9F900058477 /* SLRService.m */; };
 		307346F31CF0B4D80089A494 /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = 307346F21CF0B4D80089A494 /* services.json */; };
+		307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 307346F71CF0BD2E0089A494 /* SLRDetailsVM.m */; };
+		307346FC1CF218170089A494 /* SLRAPIMockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307346FB1CF218170089A494 /* SLRAPIMockController.m */; };
+		307347041CF21B230089A494 /* SLRDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 307347031CF21B230089A494 /* SLRDetailsVC.m */; };
+		307347071CF2226B0089A494 /* SLRRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 307347061CF2226B0089A494 /* SLRRequest.m */; };
 		4F9754B5E9F2AEF30804174F /* libPods-SchedulerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */; };
 		73103FD71CF0B7AA00785073 /* SLRIntervalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73103FD61CF0B7AA00785073 /* SLRIntervalCell.m */; };
 		735E213D1CE884C600A4EB54 /* SLRWorkDayVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */; };
@@ -69,6 +73,15 @@
 		30567E011CF0A9F900058477 /* SLRService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRService.h; sourceTree = "<group>"; };
 		30567E021CF0A9F900058477 /* SLRService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRService.m; sourceTree = "<group>"; };
 		307346F21CF0B4D80089A494 /* services.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
+		307346F61CF0BD2E0089A494 /* SLRDetailsVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRDetailsVM.h; sourceTree = "<group>"; };
+		307346F71CF0BD2E0089A494 /* SLRDetailsVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDetailsVM.m; sourceTree = "<group>"; };
+		307346F91CF217810089A494 /* SLRAPIControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRAPIControllerProtocol.h; sourceTree = "<group>"; };
+		307346FA1CF218170089A494 /* SLRAPIMockController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRAPIMockController.h; path = Mock/SLRAPIMockController.h; sourceTree = "<group>"; };
+		307346FB1CF218170089A494 /* SLRAPIMockController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRAPIMockController.m; path = Mock/SLRAPIMockController.m; sourceTree = "<group>"; };
+		307347021CF21B230089A494 /* SLRDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRDetailsVC.h; sourceTree = "<group>"; };
+		307347031CF21B230089A494 /* SLRDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDetailsVC.m; sourceTree = "<group>"; };
+		307347051CF2226B0089A494 /* SLRRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRRequest.h; sourceTree = "<group>"; };
+		307347061CF2226B0089A494 /* SLRRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRRequest.m; sourceTree = "<group>"; };
 		403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchedulerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		472D3E516EE1FDDDB86413C3 /* Pods-SchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
 		56CE2249671223335EA5841D /* Pods-Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +178,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		307346F41CF0BBFF0089A494 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				307346F61CF0BD2E0089A494 /* SLRDetailsVM.h */,
+				307346F71CF0BD2E0089A494 /* SLRDetailsVM.m */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		307346FD1CF218620089A494 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				307346FA1CF218170089A494 /* SLRAPIMockController.h */,
+				307346FB1CF218170089A494 /* SLRAPIMockController.m */,
+			);
+			name = Mock;
+			sourceTree = "<group>";
+		};
+		307346FE1CF21ACC0089A494 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				307347021CF21B230089A494 /* SLRDetailsVC.h */,
+				307347031CF21B230089A494 /* SLRDetailsVC.m */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
 		7350FD2AA6B5C9CA0C6F368F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +256,8 @@
 				738314B51CF09ACA0048AFE2 /* SLRPage.m */,
 				738314B61CF09ACA0048AFE2 /* SLRRange.h */,
 				738314B71CF09ACA0048AFE2 /* SLRRange.m */,
+				307347051CF2226B0089A494 /* SLRRequest.h */,
+				307347061CF2226B0089A494 /* SLRRequest.m */,
 				30567E011CF0A9F900058477 /* SLRService.h */,
 				30567E021CF0A9F900058477 /* SLRService.m */,
 				738314B81CF09ACA0048AFE2 /* SLRTimeGrid.h */,
@@ -229,10 +271,12 @@
 		738314C31CF09B230048AFE2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				307346FD1CF218620089A494 /* Mock */,
 				738314C41CF09B550048AFE2 /* SLRAPIController.h */,
 				738314C51CF09B550048AFE2 /* SLRAPIController.m */,
 				738314C61CF09B550048AFE2 /* SLRAPIController+SLRModels.h */,
 				738314C71CF09B550048AFE2 /* SLRAPIController+SLRModels.m */,
+				307346F91CF217810089A494 /* SLRAPIControllerProtocol.h */,
 				738314C81CF09B550048AFE2 /* SLRDataProvider.h */,
 				738314C91CF09B550048AFE2 /* SLRDataProvider.m */,
 				738314CD1CF09B8A0048AFE2 /* SLRSerializableProtocol.h */,
@@ -339,6 +383,7 @@
 		73AF55AD1C9EC81F009FB75A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				307346FE1CF21ACC0089A494 /* Details */,
 				73AF55B61C9ECA18009FB75A /* Cells */,
 				73AF52CC1C9EBBC6009FB75A /* SLRRootVC.h */,
 				73AF52CD1C9EBBC6009FB75A /* SLRRootVC.m */,
@@ -353,6 +398,7 @@
 		73AF55AE1C9EC826009FB75A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				307346F41CF0BBFF0089A494 /* Details */,
 				73AF55A81C9EC74C009FB75A /* SLRBaseVM.h */,
 				73AF55A91C9EC74C009FB75A /* SLRBaseVM.m */,
 				73AF55C01C9ED8CF009FB75A /* SLRScheduleCellVM.h */,
@@ -602,9 +648,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				307346FC1CF218170089A494 /* SLRAPIMockController.m in Sources */,
 				738314C11CF09ACA0048AFE2 /* SLRUser.m in Sources */,
 				735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */,
 				73AF55B11C9EC882009FB75A /* SLRSchedulerVC.m in Sources */,
+				307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */,
 				73830E5C1CE0C46C006B6074 /* SLRWorkDayVM.m in Sources */,
 				738314CA1CF09B550048AFE2 /* SLRAPIController.m in Sources */,
 				738314BD1CF09ACA0048AFE2 /* SLROwner.m in Sources */,
@@ -623,6 +671,9 @@
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
 				73AF55BD1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
+				307347041CF21B230089A494 /* SLRDetailsVC.m in Sources */,
+				307347071CF2226B0089A494 /* SLRRequest.m in Sources */,
+				73830E501CE099BE006B6074 /* MSEventCell.m in Sources */,
 				73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
 				738314BF1CF09ACA0048AFE2 /* SLRRange.m in Sources */,
 				738314C01CF09ACA0048AFE2 /* SLRTimeGrid.m in Sources */,
