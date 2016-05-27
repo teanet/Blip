@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		304707A41CF8A66100C57566 /* SLRServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 304707A31CF8A66100C57566 /* SLRServiceCell.m */; };
+		30470DBD1CF8B7C500C57566 /* SLRTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DBC1CF8B7C500C57566 /* SLRTableViewCell.m */; };
+		30470DC01CF8B98C00C57566 /* SLRServiceCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DBF1CF8B98C00C57566 /* SLRServiceCellVM.m */; };
+		30470DC41CF8D9BD00C57566 /* SLRAuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DC31CF8D9BD00C57566 /* SLRAuthenticationManager.m */; };
 		30567E031CF0A9F900058477 /* SLRService.m in Sources */ = {isa = PBXBuildFile; fileRef = 30567E021CF0A9F900058477 /* SLRService.m */; };
 		307346F31CF0B4D80089A494 /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = 307346F21CF0B4D80089A494 /* services.json */; };
 		307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 307346F71CF0BD2E0089A494 /* SLRDetailsVM.m */; };
@@ -70,6 +74,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		304707A21CF8A66100C57566 /* SLRServiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRServiceCell.h; sourceTree = "<group>"; };
+		304707A31CF8A66100C57566 /* SLRServiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRServiceCell.m; sourceTree = "<group>"; };
+		30470DBB1CF8B7C500C57566 /* SLRTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRTableViewCell.h; sourceTree = "<group>"; };
+		30470DBC1CF8B7C500C57566 /* SLRTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRTableViewCell.m; sourceTree = "<group>"; };
+		30470DBE1CF8B98C00C57566 /* SLRServiceCellVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRServiceCellVM.h; sourceTree = "<group>"; };
+		30470DBF1CF8B98C00C57566 /* SLRServiceCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRServiceCellVM.m; sourceTree = "<group>"; };
+		30470DC11CF8C24B00C57566 /* SLRTableViewCellVMProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRTableViewCellVMProtocol.h; sourceTree = "<group>"; };
+		30470DC21CF8D9BD00C57566 /* SLRAuthenticationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRAuthenticationManager.h; sourceTree = "<group>"; };
+		30470DC31CF8D9BD00C57566 /* SLRAuthenticationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRAuthenticationManager.m; sourceTree = "<group>"; };
 		30567E011CF0A9F900058477 /* SLRService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRService.h; sourceTree = "<group>"; };
 		30567E021CF0A9F900058477 /* SLRService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRService.m; sourceTree = "<group>"; };
 		307346F21CF0B4D80089A494 /* services.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
@@ -183,6 +196,8 @@
 			children = (
 				307346F61CF0BD2E0089A494 /* SLRDetailsVM.h */,
 				307346F71CF0BD2E0089A494 /* SLRDetailsVM.m */,
+				30470DBE1CF8B98C00C57566 /* SLRServiceCellVM.h */,
+				30470DBF1CF8B98C00C57566 /* SLRServiceCellVM.m */,
 			);
 			name = Details;
 			sourceTree = "<group>";
@@ -201,6 +216,8 @@
 			children = (
 				307347021CF21B230089A494 /* SLRDetailsVC.h */,
 				307347031CF21B230089A494 /* SLRDetailsVC.m */,
+				304707A21CF8A66100C57566 /* SLRServiceCell.h */,
+				304707A31CF8A66100C57566 /* SLRServiceCell.m */,
 			);
 			name = Details;
 			sourceTree = "<group>";
@@ -277,6 +294,8 @@
 				738314C61CF09B550048AFE2 /* SLRAPIController+SLRModels.h */,
 				738314C71CF09B550048AFE2 /* SLRAPIController+SLRModels.m */,
 				307346F91CF217810089A494 /* SLRAPIControllerProtocol.h */,
+				30470DC21CF8D9BD00C57566 /* SLRAuthenticationManager.h */,
+				30470DC31CF8D9BD00C57566 /* SLRAuthenticationManager.m */,
 				738314C81CF09B550048AFE2 /* SLRDataProvider.h */,
 				738314C91CF09B550048AFE2 /* SLRDataProvider.m */,
 				738314CD1CF09B8A0048AFE2 /* SLRSerializableProtocol.h */,
@@ -391,6 +410,8 @@
 				73AF55A61C9EC71B009FB75A /* SLRBaseVC.m */,
 				735E213E1CE8912100A4EB54 /* SLRSeporatorView.h */,
 				735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */,
+				30470DBB1CF8B7C500C57566 /* SLRTableViewCell.h */,
+				30470DBC1CF8B7C500C57566 /* SLRTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -407,6 +428,7 @@
 				73830E5B1CE0C46C006B6074 /* SLRWorkDayVM.m */,
 				73830E5D1CE0C767006B6074 /* SLRRangeVM.h */,
 				73830E5E1CE0C767006B6074 /* SLRRangeVM.m */,
+				30470DC11CF8C24B00C57566 /* SLRTableViewCellVMProtocol.h */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -652,17 +674,21 @@
 				738314C11CF09ACA0048AFE2 /* SLRUser.m in Sources */,
 				735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */,
 				73AF55B11C9EC882009FB75A /* SLRSchedulerVC.m in Sources */,
+				30470DBD1CF8B7C500C57566 /* SLRTableViewCell.m in Sources */,
 				307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */,
 				73830E5C1CE0C46C006B6074 /* SLRWorkDayVM.m in Sources */,
 				738314CA1CF09B550048AFE2 /* SLRAPIController.m in Sources */,
+				30470DC01CF8B98C00C57566 /* SLRServiceCellVM.m in Sources */,
 				738314BD1CF09ACA0048AFE2 /* SLROwner.m in Sources */,
 				738314CC1CF09B550048AFE2 /* SLRDataProvider.m in Sources */,
+				304707A41CF8A66100C57566 /* SLRServiceCell.m in Sources */,
 				73AF55A71C9EC71B009FB75A /* SLRBaseVC.m in Sources */,
 				73830E5F1CE0C767006B6074 /* SLRRangeVM.m in Sources */,
 				738314BE1CF09ACA0048AFE2 /* SLRPage.m in Sources */,
 				738314CB1CF09B550048AFE2 /* SLRAPIController+SLRModels.m in Sources */,
 				73103FD71CF0B7AA00785073 /* SLRIntervalCell.m in Sources */,
 				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
+				30470DC41CF8D9BD00C57566 /* SLRAuthenticationManager.m in Sources */,
 				73AF55AA1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
 				73830E591CE0C458006B6074 /* SLRIntervalVM.m in Sources */,
 				739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,

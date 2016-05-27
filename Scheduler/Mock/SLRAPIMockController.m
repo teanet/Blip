@@ -33,4 +33,12 @@
 	return [RACSignal return:[SLRService testServices]];
 }
 
+/*! Отправляет букинг-реквест на сервер и возвращает обработанный реквест.
+ *	\return SLRRequest
+ **/
+- (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request
+{
+	return [RACSignal error:[NSError errorWithDomain:@"" code:100 userInfo:nil]];
+}
+
 @end

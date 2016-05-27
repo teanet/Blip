@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! Выдается сервером? */
 @property (nonatomic, copy, readonly, nullable) NSString *id;
 
-/*! Текущий пользователь, выставляется при создании */
+/*! Текущий пользователь, заполняется при создании */
 @property (nonatomic, strong, readonly) SLRUser *user;
 
 /*! Состояние запроса - при создании undefined, потом выставляется сервером. */
@@ -65,8 +65,17 @@ NS_ASSUME_NONNULL_BEGIN
  **/
 - (instancetype)initWithUser:(SLRUser *)user;
 
-/*! Сериализованное представление объекта. */
+/*! Сериализованное представление объекта. 
+	Объект передается в запросах, поэтому его надо сериализовать.
+ */
+#warning Дописать методы
 - (NSDictionary *)dictionary;
+
+@end
+
+@interface SLRRequest (SLRTesting)
+
++ (SLRRequest *)testRequestReviewed;
 
 @end
 

@@ -2,6 +2,7 @@
 @class SLRPage;
 @class SLRRange;
 @class SLRUser;
+@class SLRRequest;
 
 @protocol SLRAPIControllerProtocol <NSObject>
 

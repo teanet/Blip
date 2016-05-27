@@ -48,8 +48,8 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 
 - (SLRRequest *)emptyBookingRequest
 {
-	NSCAssert(self.user, @"User should be set before using booking method.");
-	if (!self.user) return nil;
+//	NSCAssert(self.user, @"User should be set before using booking method.");
+//	if (!self.user) return nil;
 
 	return [[SLRRequest alloc] initWithUser:self.user];
 }

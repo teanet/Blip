@@ -8,7 +8,8 @@
 #import <DigitsKit/DigitsKit.h>
 #import <SSKeychain.h>
 
-#import "SLRDataProvider.h"
+#import "SLRDetailsVM.h"
+#import "SLRDetailsVC.h"
 
 @implementation AppDelegate
 
@@ -16,7 +17,7 @@
 {
 	[SSKeychain setAccessibilityType:kSecAttrAccessibleAlwaysThisDeviceOnly];
 //	[[Fabric sharedSDK] setDebug:YES];
-//	[Fabric with:@[CrashlyticsKit]];
+//	[Fabric with:@[CrashlyticsKit, DigitsKit]];
 
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
