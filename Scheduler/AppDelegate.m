@@ -1,16 +1,18 @@
 #import "AppDelegate.h"
 
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
 #import "SLRRootVC.h"
 #import "SLRSchedulerVC.h"
+
+#import <Crashlytics/Crashlytics.h>
+#import <Fabric/Fabric.h>
+#import <DigitsKit/DigitsKit.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 //	[[Fabric sharedSDK] setDebug:YES];
-//	[Fabric with:@[CrashlyticsKit]];
+//	[Fabric with:@[CrashlyticsKit, DigitsKit]];
 
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
@@ -23,6 +25,5 @@
 
 	return YES;
 }
-
 
 @end

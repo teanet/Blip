@@ -17,6 +17,7 @@ target 'Scheduler' do
 	pod 'AFNetworking', '~> 2.5'
 	pod 'UIDevice-Hardware'
 	pod 'SSKeychain'
+	pod 'Digits'
 	project 'Scheduler.xcodeproj'
 end
 
