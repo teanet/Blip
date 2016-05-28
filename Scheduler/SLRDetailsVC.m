@@ -1,6 +1,7 @@
 #import "SLRDetailsVC.h"
 
 #import "SLRServiceCell.h"
+#import "SLRDetailsPickerView.h"
 
 @interface SLRDetailsVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -16,7 +17,10 @@
 	self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
+
 	[self.tableView registerClass:[SLRServiceCell class] forCellReuseIdentifier:NSStringFromClass([SLRServiceCellVM class])];
+	[self.tableView registerClass:[SLRDetailsPickerView class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([SLRDetailsPickerVM class])];
+
 	self.tableView.tableFooterView = [[UIView alloc] init];
 	[self.view addSubview:self.tableView];
 
@@ -86,6 +90,20 @@
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	[self.viewModel didSelectRowAtIndexPath:indexPath];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+	SLRBaseVM *headerVM = [self.viewModel headerVMForSection:section];
+	SLRTableViewHeaderFooterView *headerView =
+		[tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([headerVM class])];
+	headerView.viewModel = headerVM;
+	return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	return [self.viewModel heightForHeaderInSection:section];
 }
 
 @end

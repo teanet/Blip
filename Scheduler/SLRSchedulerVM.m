@@ -5,7 +5,6 @@
 
 @interface SLRSchedulerVM ()
 
-@property (nonatomic, strong, readonly) SLRPage *page;
 @property (nonatomic, strong, readonly) NSMutableArray<SLRIntervalVM *> *intervals;
 @property (nonatomic, strong, readonly) RACSubject *didSelectRangeSubject;
 
@@ -57,7 +56,8 @@
 
 - (void)didSelectInterval:(SLRIntervalVM *)intervalVM
 {
-	SLRRange *range = [SLRRange rangeWithInterval:intervalVM];
+#warning Добавить проверку, что сюда можно попасть - self.page.timeGrid.bookingIntervalMin < чем время до следующего ренджа
+	SLRRange *range = [SLRRange rangeWithInterval:intervalVM bookingTime:self.page.timeGrid.bookingIntervalMin];
 	[self.didSelectRangeSubject sendNext:range];
 }
 

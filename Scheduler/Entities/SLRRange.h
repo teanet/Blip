@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) SLRRangeState state;
 @property (nonatomic, copy, readonly, nullable) NSArray<SLRService *> *services;
 
-+ (instancetype)rangeWithInterval:(SLRIntervalVM *)intervalVM;
++ (instancetype)rangeWithInterval:(SLRIntervalVM *)intervalVM bookingTime:(NSTimeInterval)bookingTime;
 
 @end
 

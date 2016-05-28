@@ -57,11 +57,11 @@
 	return self;
 }
 
-+ (instancetype)rangeWithInterval:(SLRIntervalVM *)intervalVM
++ (instancetype)rangeWithInterval:(SLRIntervalVM *)intervalVM bookingTime:(NSTimeInterval)bookingTime
 {
 	SLRRange *range = [[SLRRange alloc] initWithDictionary:@{}];
 	range.location = intervalVM.location;
-	range.length = intervalVM.state;
+	range.length = bookingTime;
 	range.state = SLRRangeStateHold;
 	return range;
 }

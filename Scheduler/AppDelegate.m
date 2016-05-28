@@ -8,9 +8,6 @@
 #import <DigitsKit/DigitsKit.h>
 #import <SSKeychain.h>
 
-#import "SLRDetailsVM.h"
-#import "SLRDetailsVC.h"
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -21,10 +18,7 @@
 
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-//	NSError *error = nil;
-//	NSDictionary *d = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"schedule_params.json" ofType:nil]] options:0 error:&error];
-//	SLRScheduleModel *model = [[SLRScheduleModel alloc] initWithDictionary:d];
-	SLRSchedulerVM *schedulerVM = [[SLRSchedulerVM alloc] initWithPage:[SLRPage pageTest]];
+	SLRSchedulerVM *schedulerVM = [[SLRSchedulerVM alloc] initWithPage:[SLRPage testPage]];
 	self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[SLRSchedulerVC alloc] initWithViewModel:schedulerVM]];
 	[self.window makeKeyAndVisible];
 

@@ -37,6 +37,9 @@
 @property (nonatomic, strong, readonly) RACSignal *shouldUpdateTableViewSignal;
 
 - (id<SLRTableViewCellVMProtocol>)cellVMForIndexPath:(NSIndexPath *)indexPath;
+- (SLRBaseVM *)headerVMForSection:(NSUInteger)section;
+- (CGFloat)heightForHeaderInSection:(NSInteger)section;
+
 - (NSUInteger)numberOfSections;
 - (NSUInteger)numberOfRowsForSection:(NSUInteger)section;
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath;

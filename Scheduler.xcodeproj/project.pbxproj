@@ -11,6 +11,9 @@
 		30470DBD1CF8B7C500C57566 /* SLRTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DBC1CF8B7C500C57566 /* SLRTableViewCell.m */; };
 		30470DC01CF8B98C00C57566 /* SLRServiceCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DBF1CF8B98C00C57566 /* SLRServiceCellVM.m */; };
 		30470DC41CF8D9BD00C57566 /* SLRAuthenticationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DC31CF8D9BD00C57566 /* SLRAuthenticationManager.m */; };
+		30470DCD1CF99DE000C57566 /* SLRDetailsPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DCC1CF99DE000C57566 /* SLRDetailsPickerView.m */; };
+		30470DD01CF99FFB00C57566 /* SLRDetailsPickerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DCF1CF99FFB00C57566 /* SLRDetailsPickerVM.m */; };
+		30470DD31CF9A06800C57566 /* SLRTableViewHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DD21CF9A06800C57566 /* SLRTableViewHeaderFooterView.m */; };
 		30567E031CF0A9F900058477 /* SLRService.m in Sources */ = {isa = PBXBuildFile; fileRef = 30567E021CF0A9F900058477 /* SLRService.m */; };
 		307346F31CF0B4D80089A494 /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = 307346F21CF0B4D80089A494 /* services.json */; };
 		307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 307346F71CF0BD2E0089A494 /* SLRDetailsVM.m */; };
@@ -83,6 +86,13 @@
 		30470DC11CF8C24B00C57566 /* SLRTableViewCellVMProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRTableViewCellVMProtocol.h; sourceTree = "<group>"; };
 		30470DC21CF8D9BD00C57566 /* SLRAuthenticationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRAuthenticationManager.h; sourceTree = "<group>"; };
 		30470DC31CF8D9BD00C57566 /* SLRAuthenticationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRAuthenticationManager.m; sourceTree = "<group>"; };
+		30470DCB1CF99DE000C57566 /* SLRDetailsPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRDetailsPickerView.h; sourceTree = "<group>"; };
+		30470DCC1CF99DE000C57566 /* SLRDetailsPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDetailsPickerView.m; sourceTree = "<group>"; };
+		30470DCE1CF99FFB00C57566 /* SLRDetailsPickerVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRDetailsPickerVM.h; sourceTree = "<group>"; };
+		30470DCF1CF99FFB00C57566 /* SLRDetailsPickerVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDetailsPickerVM.m; sourceTree = "<group>"; };
+		30470DD11CF9A06800C57566 /* SLRTableViewHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRTableViewHeaderFooterView.h; sourceTree = "<group>"; };
+		30470DD21CF9A06800C57566 /* SLRTableViewHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRTableViewHeaderFooterView.m; sourceTree = "<group>"; };
+		30470DD41CF9A93600C57566 /* SLRTableViewHeaderFooterViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRTableViewHeaderFooterViewProtocol.h; sourceTree = "<group>"; };
 		30567E011CF0A9F900058477 /* SLRService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRService.h; sourceTree = "<group>"; };
 		30567E021CF0A9F900058477 /* SLRService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRService.m; sourceTree = "<group>"; };
 		307346F21CF0B4D80089A494 /* services.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
@@ -191,15 +201,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		307346F41CF0BBFF0089A494 /* Details */ = {
+		30470DC51CF99D0D00C57566 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				30470DC61CF99D2600C57566 /* Cells */,
+				30470DC71CF99D3400C57566 /* Headers */,
 				307346F61CF0BD2E0089A494 /* SLRDetailsVM.h */,
 				307346F71CF0BD2E0089A494 /* SLRDetailsVM.m */,
-				30470DBE1CF8B98C00C57566 /* SLRServiceCellVM.h */,
-				30470DBF1CF8B98C00C57566 /* SLRServiceCellVM.m */,
+				307347021CF21B230089A494 /* SLRDetailsVC.h */,
+				307347031CF21B230089A494 /* SLRDetailsVC.m */,
 			);
 			name = Details;
+			sourceTree = "<group>";
+		};
+		30470DC61CF99D2600C57566 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				30470DC11CF8C24B00C57566 /* SLRTableViewCellVMProtocol.h */,
+				30470DBE1CF8B98C00C57566 /* SLRServiceCellVM.h */,
+				30470DBF1CF8B98C00C57566 /* SLRServiceCellVM.m */,
+				304707A21CF8A66100C57566 /* SLRServiceCell.h */,
+				304707A31CF8A66100C57566 /* SLRServiceCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		30470DC71CF99D3400C57566 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				30470DCB1CF99DE000C57566 /* SLRDetailsPickerView.h */,
+				30470DCC1CF99DE000C57566 /* SLRDetailsPickerView.m */,
+				30470DCE1CF99FFB00C57566 /* SLRDetailsPickerVM.h */,
+				30470DCF1CF99FFB00C57566 /* SLRDetailsPickerVM.m */,
+			);
+			name = Headers;
 			sourceTree = "<group>";
 		};
 		307346FD1CF218620089A494 /* Mock */ = {
@@ -209,17 +244,6 @@
 				307346FB1CF218170089A494 /* SLRAPIMockController.m */,
 			);
 			name = Mock;
-			sourceTree = "<group>";
-		};
-		307346FE1CF21ACC0089A494 /* Details */ = {
-			isa = PBXGroup;
-			children = (
-				307347021CF21B230089A494 /* SLRDetailsVC.h */,
-				307347031CF21B230089A494 /* SLRDetailsVC.m */,
-				304707A21CF8A66100C57566 /* SLRServiceCell.h */,
-				304707A31CF8A66100C57566 /* SLRServiceCell.m */,
-			);
-			name = Details;
 			sourceTree = "<group>";
 		};
 		7350FD2AA6B5C9CA0C6F368F /* Frameworks */ = {
@@ -234,6 +258,7 @@
 		736EE2151CF95CD700C32225 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				30470DC51CF99D0D00C57566 /* Details */,
 				736EE2161CF95CE700C32225 /* Scheduler */,
 			);
 			name = App;
@@ -402,7 +427,6 @@
 		73AF55AD1C9EC81F009FB75A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				307346FE1CF21ACC0089A494 /* Details */,
 				73AF55B61C9ECA18009FB75A /* Cells */,
 				73AF52CC1C9EBBC6009FB75A /* SLRRootVC.h */,
 				73AF52CD1C9EBBC6009FB75A /* SLRRootVC.m */,
@@ -412,6 +436,9 @@
 				735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */,
 				30470DBB1CF8B7C500C57566 /* SLRTableViewCell.h */,
 				30470DBC1CF8B7C500C57566 /* SLRTableViewCell.m */,
+				30470DD41CF9A93600C57566 /* SLRTableViewHeaderFooterViewProtocol.h */,
+				30470DD11CF9A06800C57566 /* SLRTableViewHeaderFooterView.h */,
+				30470DD21CF9A06800C57566 /* SLRTableViewHeaderFooterView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -419,7 +446,6 @@
 		73AF55AE1C9EC826009FB75A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				307346F41CF0BBFF0089A494 /* Details */,
 				73AF55A81C9EC74C009FB75A /* SLRBaseVM.h */,
 				73AF55A91C9EC74C009FB75A /* SLRBaseVM.m */,
 				73AF55C01C9ED8CF009FB75A /* SLRScheduleCellVM.h */,
@@ -428,7 +454,6 @@
 				73830E5B1CE0C46C006B6074 /* SLRWorkDayVM.m */,
 				73830E5D1CE0C767006B6074 /* SLRRangeVM.h */,
 				73830E5E1CE0C767006B6074 /* SLRRangeVM.m */,
-				30470DC11CF8C24B00C57566 /* SLRTableViewCellVMProtocol.h */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -673,6 +698,7 @@
 				307346FC1CF218170089A494 /* SLRAPIMockController.m in Sources */,
 				738314C11CF09ACA0048AFE2 /* SLRUser.m in Sources */,
 				735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */,
+				30470DD31CF9A06800C57566 /* SLRTableViewHeaderFooterView.m in Sources */,
 				73AF55B11C9EC882009FB75A /* SLRSchedulerVC.m in Sources */,
 				30470DBD1CF8B7C500C57566 /* SLRTableViewCell.m in Sources */,
 				307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */,
@@ -694,17 +720,18 @@
 				739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
 				73AF55C91C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,
 				738314BC1CF09ACA0048AFE2 /* SLRFilial.m in Sources */,
+				30470DCD1CF99DE000C57566 /* SLRDetailsPickerView.m in Sources */,
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
 				73AF55BD1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
 				307347041CF21B230089A494 /* SLRDetailsVC.m in Sources */,
 				307347071CF2226B0089A494 /* SLRRequest.m in Sources */,
-				73830E501CE099BE006B6074 /* MSEventCell.m in Sources */,
 				73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
 				738314BF1CF09ACA0048AFE2 /* SLRRange.m in Sources */,
 				738314C01CF09ACA0048AFE2 /* SLRTimeGrid.m in Sources */,
 				73AF52A91C9EB953009FB75A /* main.m in Sources */,
 				73830E561CE0AB13006B6074 /* SLRIntervalView.m in Sources */,
+				30470DD01CF99FFB00C57566 /* SLRDetailsPickerVM.m in Sources */,
 				30567E031CF0A9F900058477 /* SLRService.m in Sources */,
 				73AF55C21C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */,
 			);

@@ -1,10 +1,12 @@
 #import "SLRDetailsVM.h"
 
 #import "SLRDataProvider.h"
+#import "SLRDetailsPickerVM.h"
 
 typedef NS_ENUM(NSUInteger, SLRSection) {
 	// Порядок важен - в таком порядке будут отображаться секции в таблице
-	SLRSectionService = 0,
+	SLRSectionPicker = 0,
+	SLRSectionService = 1,
 
 	// Порядок важен - это должен быть последний элемент в енуме
 	SLRSectionCountOfSections
@@ -15,6 +17,8 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 @property (nonatomic, strong, readonly) SLRPage *page;
 @property (nonatomic, strong, readonly) SLRRange *range;
 @property (nonatomic, strong, readonly) SLRRequest *request;
+
+@property (nonatomic, strong) SLRDetailsPickerVM *pickerVM;
 
 @property (nonatomic, strong, readonly) RACSubject *shouldUpdateTableViewSubject;
 @property (atomic, assign, readwrite, getter=isServiceProcessing) BOOL serviceProcessing;
@@ -33,6 +37,7 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 	_page = page;
 	_range = selectedRange;
 	_shouldUpdateTableViewSubject = [RACSubject subject];
+	_pickerVM = [[SLRDetailsPickerVM alloc] initWithPage:page selectedRange:selectedRange];
 
 	[self updateServices];
 
@@ -118,6 +123,52 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 	return [[self sourceArrayForSection:indexPath.section] objectAtIndex:indexPath.row];
 }
 
+- (SLRBaseVM *)headerVMForSection:(NSUInteger)section
+{
+	// Все-таки говно(
+	switch ((SLRSection)section)
+	{
+		case SLRSectionPicker: {
+			return self.pickerVM;
+		} break;
+
+		case SLRSectionService: {
+			return nil;
+		} break;
+
+		case SLRSectionCountOfSections: {
+			// Заглушка на ворнинг.
+			NSCAssert(NO, @"Never will get this section.");
+			return nil;
+		} break;
+	}
+
+	return nil;
+}
+
+- (CGFloat)heightForHeaderInSection:(NSInteger)section
+{
+	// Все-таки говно(
+	switch ((SLRSection)section)
+	{
+		case SLRSectionPicker: {
+			return 150.0;
+		} break;
+
+		case SLRSectionService: {
+			return 0.0;
+		} break;
+
+		case SLRSectionCountOfSections: {
+			// Заглушка на ворнинг.
+			NSCAssert(NO, @"Never will get this section.");
+			return 0.0;
+		} break;
+	}
+
+	return 0.0;
+}
+
 - (NSUInteger)numberOfSections
 {
 	NSUInteger sectins = SLRSectionCountOfSections;
@@ -140,6 +191,10 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 {
 	switch (section)
 	{
+		case SLRSectionPicker: {
+			return nil;
+		} break;
+
 		case SLRSectionService: {
 			return self.serviceVMs;
 		} break;
