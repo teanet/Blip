@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! Misc
  *	Разные методы.
  **/
-- (SLRRequest *)emptyBookingRequest;
+- (RACSignal *)fetchEmptyBookingRequest;
 
 /*! API
  *	Интерфейс сервера.
@@ -22,8 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! Регистрирует пользователя с именем и телефоном. Возвращает уже зарегистрированного пользователя.
  *	\return @[SLRUser]
  **/
-- (RACSignal *)fetchRegisteredUserWithFullName:(NSString *)fullName
-										 phone:(NSString *)phone;
+- (RACSignal *)fetchRegisteredUserForUser:(SLRUser *)user;
 
 /*! Подтягивает все филиалы для проекта (приложения).
  *	\return @[SLRFilial]

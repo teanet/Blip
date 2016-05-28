@@ -1,20 +1,26 @@
 #import "SLRUser.h"
 
-static NSString *const kKeyId		= @"id";
-static NSString *const kKeyFullName = @"full_name";
-static NSString *const kKeyPhone	= @"phone";
-static NSString *const kKeyToken	= @"token";
+static NSString *const kKeyId				= @"user_id";
+//static NSString *const kKeyFullName			= @"full_name";
+static NSString *const kKeyPhone			= @"phone";
+static NSString *const kKeyAuthToken		= @"auth_token";
+static NSString *const kKeyAuthTokenSecret	= @"auth_token_secret";
 
 @implementation SLRUser
 
-- (instancetype)initWithFullName:(NSString *)fullName
-						   phone:(NSString *)phone
+- (instancetype)initWithUserId:(NSString *)userId
+					 authToken:(NSString *)authToken
+			   authTokenSecret:(NSString *)authTokenSecret
+						 phone:(NSString *)phone
 {
 	self = [super init];
 	if (self == nil) return nil;
 
-	_fullName = [fullName copy];
+//	_fullName = [fullName copy];
+	_userId = [userId copy];
 	_phone = [phone copy];
+	_authToken = [authToken copy];
+	_authTokenSecret = [authTokenSecret copy];
 
 	return self;
 }
@@ -24,10 +30,11 @@ static NSString *const kKeyToken	= @"token";
 	self = [super init];
 	if (self == nil) return nil;
 
-	_id = dictionary[kKeyId];
-	_fullName = dictionary[kKeyFullName];
+	_userId = dictionary[kKeyId];
+//	_fullName = dictionary[kKeyFullName];
 	_phone = dictionary[kKeyPhone];
-	_token = dictionary[kKeyToken];
+	_authToken = dictionary[kKeyAuthToken];
+	_authTokenSecret = dictionary[kKeyAuthTokenSecret];
 
 	return self;
 }
@@ -36,10 +43,11 @@ static NSString *const kKeyToken	= @"token";
 {
 	NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
 
-	[dictionary setValue:self.fullName forKey:kKeyFullName];
-	[dictionary setValue:self.id forKey:kKeyId];
+//	[dictionary setValue:self.fullName forKey:kKeyFullName];
+	[dictionary setValue:self.userId forKey:kKeyId];
 	[dictionary setValue:self.phone forKey:kKeyPhone];
-	[dictionary setValue:self.token	forKey:kKeyToken];
+	[dictionary setValue:self.authToken	forKey:kKeyAuthToken];
+	[dictionary setValue:self.authTokenSecret forKey:kKeyAuthTokenSecret];
 
 	return [dictionary copy];
 }

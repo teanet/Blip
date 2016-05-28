@@ -2,6 +2,7 @@
 
 #import "SLRAPIController+SLRModels.h"
 #import "SLRAPIMockController.h"
+#import "SLRAuthenticationManager.h"
 
 #define USE_MOCK_CONTROLLER
 
@@ -12,7 +13,7 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 @interface SLRDataProvider ()
 
 @property (nonatomic, strong, readonly) id<SLRAPIControllerProtocol> apiController;
-@property (nonatomic, strong) SLRUser *user;
+@property (nonatomic, strong, readonly) SLRAuthenticationManager *authManager;
 
 @end
 
@@ -34,6 +35,8 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 	self = [super init];
 	if (self == nil) return nil;
 
+	_authManager = [[SLRAuthenticationManager alloc] init];
+
 #ifdef USE_MOCK_CONTROLLER
 	_apiController = [[SLRAPIMockController alloc] init];
 #else
@@ -46,23 +49,26 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 
 // MARK: Misc
 
-- (SLRRequest *)emptyBookingRequest
+- (RACSignal *)fetchEmptyBookingRequest
 {
-//	NSCAssert(self.user, @"User should be set before using booking method.");
-//	if (!self.user) return nil;
+	return [[self.authManager fetchUser]
+		map:^SLRRequest *(SLRUser *user) {
+			return [self emptyBookingRequestForUser:user];
+		}];
+}
 
-	return [[SLRRequest alloc] initWithUser:self.user];
+- (SLRRequest *)emptyBookingRequestForUser:(SLRUser *)user
+{
+	NSCAssert(user, @"User should be set before using booking method.");
+	if (!user) return nil;
+
+	return [[SLRRequest alloc] initWithUser:user];
 }
 
 // MARK: API
 
-- (RACSignal *)fetchRegisteredUserWithFullName:(NSString *)fullName
-										 phone:(NSString *)phone
+- (RACSignal *)fetchRegisteredUserForUser:(SLRUser *)user;
 {
-	NSCParameterAssert(fullName.length > 0);
-	NSCParameterAssert(phone.length > 0);
-
-	SLRUser *user = [[SLRUser alloc] initWithFullName:fullName phone:phone];
 	return [self.apiController fetchRegisteredUserForUser:user];
 }
 

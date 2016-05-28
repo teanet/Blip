@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
 	self.edgesForExtendedLayout = UIRectEdgeNone;
+	self.view.backgroundColor = [UIColor whiteColor];
 
 	self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
 	self.tableView.delegate = self;

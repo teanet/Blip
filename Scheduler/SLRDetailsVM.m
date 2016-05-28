@@ -79,40 +79,50 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 
 - (void)didTapBookButton
 {
-	SLRRequest *request = [self requestWithCurrentOptions];
+	@weakify(self);
+
 	self.serviceProcessing = YES;
 
-	[[[[[SLRDataProvider sharedProvider] fetchProcessedRequestForRequest:request]
-		deliverOnMainThread]
+	[[[[self fetchRequestWithCurrentOptions]
+		flattenMap:^RACStream *(SLRRequest *request) {
+			return [[SLRDataProvider sharedProvider] fetchProcessedRequestForRequest:request];
+		}]
 		flattenMap:^RACStream *(SLRRequest *req) {
-			self.serviceProcessing = NO;
-
 			return req.state == SLRRequestStateUndefined
-			? [RACSignal error:[NSError errorWithDomain:@"" code:0 userInfo:nil]]
-			: [RACSignal return:req];
+				? [RACSignal error:[NSError errorWithDomain:@"" code:0 userInfo:nil]]
+				: [RACSignal return:req];
 		}]
 		subscribeNext:^(SLRRequest *req) {
-			// Здесь возвращаемся на предыдущий экран и обновляем таблицу
+			@strongify(self);
+
+			self.serviceProcessing = NO;
+			NSLog(@">>> %@", req);
 		} error:^(NSError *error) {
-			// Обрабатываем ошибку
+			@strongify(self);
+
+			self.serviceProcessing = NO;
+			NSLog(@">>> %@", error);
 		}];
 }
 
-- (SLRRequest *)requestWithCurrentOptions
+/*! \sendNext SLRRequest */
+- (RACSignal *)fetchRequestWithCurrentOptions
 {
-	SLRRequest *request = [[SLRDataProvider sharedProvider] emptyBookingRequest];
-	request.location = self.range.location;
-	request.length = self.pickerVM.totalSelectedLength;
-	request.summary = self.summaryVM.summary;
-	request.services = [[self.serviceVMs.rac_sequence
-		filter:^BOOL(SLRServiceCellVM *vm) {
-			return vm.service.selected;
-		}]
-		map:^id(SLRServiceCellVM *vm) {
-			return vm.service;
-		}].array;
+	return [[[SLRDataProvider sharedProvider] fetchEmptyBookingRequest]
+		map:^SLRRequest *(SLRRequest *request) {
+			request.location = self.range.location;
+			request.length = self.pickerVM.totalSelectedLength;
+			request.summary = self.summaryVM.summary;
+			request.services = [[self.serviceVMs.rac_sequence
+				filter:^BOOL(SLRServiceCellVM *vm) {
+					return vm.service.selected;
+				}]
+				map:^id(SLRServiceCellVM *vm) {
+					return vm.service;
+				}].array;
 
-	return request;
+			return request;
+		}];
 }
 
 @end

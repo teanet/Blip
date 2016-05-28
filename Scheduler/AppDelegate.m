@@ -14,7 +14,8 @@
 {
 	[SSKeychain setAccessibilityType:kSecAttrAccessibleAlwaysThisDeviceOnly];
 //	[[Fabric sharedSDK] setDebug:YES];
-//	[Fabric with:@[CrashlyticsKit, DigitsKit]];
+	[Fabric with:@[CrashlyticsKit, DigitsKit]];
+	[[Digits sharedInstance] logOut];
 
 	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 

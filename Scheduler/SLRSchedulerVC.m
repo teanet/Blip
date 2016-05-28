@@ -16,6 +16,8 @@
     [super viewDidLoad];
 	@weakify(self);
 
+	self.edgesForExtendedLayout = UIRectEdgeNone;
+
 	[self setupInterface];
 
 	[self.viewModel registerTableView:self.tableView];
