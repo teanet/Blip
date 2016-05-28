@@ -95,7 +95,7 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 {
 	SLRRequest *request = [[SLRDataProvider sharedProvider] emptyBookingRequest];
 	request.location = self.range.location;
-	request.length = self.range.length;
+	request.length = self.pickerVM.totalSelectedLength;
 	request.summary = @"Здесь будет комментарий пользователя";
 	request.services = [[self.serviceVMs.rac_sequence
 		filter:^BOOL(SLRServiceCellVM *vm) {

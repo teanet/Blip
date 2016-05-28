@@ -56,9 +56,27 @@
 
 - (void)didSelectInterval:(SLRIntervalVM *)intervalVM
 {
-#warning Добавить проверку, что сюда можно попасть - self.page.timeGrid.bookingIntervalMin < чем время до следующего ренджа
-	SLRRange *range = [SLRRange rangeWithInterval:intervalVM bookingTime:self.page.timeGrid.bookingIntervalMin];
-	[self.didSelectRangeSubject sendNext:range];
+	if ([self canBookIntervalInCurrentRange:intervalVM])
+	{
+		SLRRange *range = [SLRRange rangeWithInterval:intervalVM bookingTime:self.page.timeGrid.bookingIntervalMin];
+		[self.didSelectRangeSubject sendNext:range];
+	}
+}
+
+- (BOOL)canBookIntervalInCurrentRange:(SLRIntervalVM *)intervalVM
+{
+	__block BOOL canBook = NO;
+	[self.page.rangesFree enumerateObjectsUsingBlock:^(SLRRange *range, NSUInteger _, BOOL *stop) {
+		if ((range.location <= intervalVM.location) &&
+			(range.location + range.length > intervalVM.location))
+		{
+			NSTimeInterval lastAvailableTimeInRange = range.location + range.length;
+			canBook = (lastAvailableTimeInRange >= (intervalVM.location + self.page.timeGrid.bookingIntervalMin));
+			*stop = YES;
+		}
+	}];
+
+	return canBook;
 }
 
 #pragma mark - UICollectionViewDataSource

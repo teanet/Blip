@@ -126,7 +126,11 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-	NSLog(@">>> %@", @"SELECT!!!");
+	if (row > self.pickerData.count - 1) return;
+
+	SLRDetailsPickerRowVM *rowVM = [self.pickerData objectAtIndex:row];
+	NSString *totalLength = [NSString stringWithFormat:@"Total Length: %f", rowVM.location - self.range.location];
+	NSLog(@">>> %@", totalLength);
 }
 
 @end
