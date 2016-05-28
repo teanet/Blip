@@ -1,68 +1,94 @@
 #import "SLRSchedulerVM.h"
 
-#import "SLRScheduleCell.h"
-#import "MSDayColumnHeader.h"
-#import "MSTimeRowHeader.h"
-#import "MSEventCell.h"
-#import "MSGridline.h"
+#import "SLRIntervalCell.h"
+#import "SLRIntervalVM.h"
 
 @interface SLRSchedulerVM ()
 
-@property (nonatomic, strong, readonly) SLRScheduleModel *model;
-@property (nonatomic, strong, readonly) NSArray<SLRScheduleCellVM *> *scheduleCellVMs;
-
+@property (nonatomic, strong, readonly) SLRPage *page;
+@property (nonatomic, strong, readonly) NSMutableArray<SLRIntervalVM *> *intervals;
+@property (nonatomic, strong, readonly) RACSubject *didSelectRangeSubject;
 
 @end
 
 @implementation SLRSchedulerVM
 
-- (instancetype)initWithModel:(SLRScheduleModel *)model
+- (instancetype)initWithPage:(SLRPage *)page
 {
 	self = [super init];
 	if (self == nil) return nil;
 
-	NSCAssert(model.step > 0, @"step should be greather then 0");
-	_model = model;
+	_didSelectRangeSubject = [RACSubject subject];
+	_didSelectRangeSignal = _didSelectRangeSubject;
+
+	NSCAssert(page.timeGrid.bookingStep > 0, @"step should be greather then 0");
+	_page = page;
+
+	NSMutableArray<SLRIntervalVM *> *intervals = [NSMutableArray array];
+	[page.rangesFree enumerateObjectsUsingBlock:^(SLRRange *freeRange, NSUInteger _, BOOL *__) {
+		[intervals addObjectsFromArray:[SLRIntervalVM intervalsForRange:freeRange step:page.timeGrid.bookingStep]];
+	}];
+
+	[page.rangesBook enumerateObjectsUsingBlock:^(SLRRange *freeRange, NSUInteger _, BOOL *__) {
+		[intervals addObjectsFromArray:[SLRIntervalVM intervalsForRange:freeRange step:page.timeGrid.bookingStep]];
+	}];
+
+	[page.rangesHold enumerateObjectsUsingBlock:^(SLRRange *freeRange, NSUInteger _, BOOL *__) {
+		[intervals addObjectsFromArray:[SLRIntervalVM intervalsForRange:freeRange step:page.timeGrid.bookingStep]];
+	}];
+
+	[intervals enumerateObjectsUsingBlock:^(SLRIntervalVM *intervalVM, NSUInteger idx, BOOL * _Nonnull stop) {
+	}];
+
+	[intervals sortWithOptions:NSSortStable usingComparator:^NSComparisonResult(SLRIntervalVM *obj1, SLRIntervalVM *obj2) {
+		return obj1.location < obj2.location ? NSOrderedAscending : NSOrderedDescending;
+	}];
+	_intervals = [intervals copy];
+	
 	return self;
 }
 
-- (void)registerCollectionView:(UICollectionView *)collectionView
+- (void)registerTableView:(UITableView *)tableView
 {
-	collectionView.backgroundColor = [UIColor colorWithWhite:247/255. alpha:1.0];
-	[collectionView registerClass:[SLRScheduleCell class] forCellWithReuseIdentifier:@"SLRScheduleCell"];
-	collectionView.delegate = self;
-	collectionView.dataSource = self;
-
+	[tableView registerClass:[SLRIntervalCell class] forCellReuseIdentifier:@"cell"];
+	tableView.delegate = self;
+	tableView.dataSource = self;
 }
 
-#pragma mark cell
+- (void)didSelectInterval:(SLRIntervalVM *)intervalVM
+{
+	SLRRange *range = [SLRRange rangeWithInterval:intervalVM];
+	[self.didSelectRangeSubject sendNext:range];
+}
 
 #pragma mark - UICollectionViewDataSource
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return 2;
+	return 1;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 1;//2;//self.scheduleCellVMs.count;
+	return 30.0;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return nil;
+	return self.intervals.count;
 }
 
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return nil;
+	SLRIntervalCell *cell = (SLRIntervalCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
+	cell.intervalVM = [self.intervals objectAtIndex:indexPath.row];
+	return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[collectionView deselectItemAtIndexPath:indexPath animated:YES];
-//	[self selectEmoji:[@(indexPath.row) description]];
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	[self didSelectInterval:[self.intervals objectAtIndex:indexPath.row]];
 }
 
 @end

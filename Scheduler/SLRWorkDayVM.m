@@ -24,11 +24,11 @@
 
 - (void)insertInterval:(SLRIntervalVM *)intervalVM
 {
-	intervalVM.workDayVM = self;
+//	intervalVM.workDayVM = self;
 	[self.intervals addObject:intervalVM];
 	[self intervalDidEndDragging:intervalVM];
 }
-
+/*
 - (void)interval:(SLRIntervalVM *)intervalVM didChangeRange:(SLRRangeVM *)range
 {
 	if (![self.intervals containsObject:intervalVM]) return;
@@ -54,7 +54,7 @@
 
 - (void)interval:(SLRIntervalVM *)intervalVM didUpdateLocation:(NSInteger)location
 {
-	intervalVM.editing = YES;
+//	intervalVM.editing = YES;
 	SLRRangeVM *range = intervalVM.range;
 	range.location = location;
 	intervalVM.range = range;
@@ -81,7 +81,7 @@
 	} while (intercect);
 
 	intervalVM.range = adjustRange;
-	intervalVM.editing = NO;
+//	intervalVM.editing = NO;
 }
 
 - (NSArray<SLRIntervalVM *> *)intervalsVMAtRange:(SLRRangeVM *)range
@@ -107,5 +107,5 @@
 	}];
 	return [intervals copy];
 }
-
+*/
 @end

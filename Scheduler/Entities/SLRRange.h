@@ -2,6 +2,8 @@
 
 #import "SLRUser.h"
 
+@class SLRIntervalVM;
+
 typedef NS_ENUM(NSInteger, SLRRangeState) {
 	SLRRangeStateFree = 0,
 	SLRRangeStateHold = 1,
@@ -32,6 +34,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) NSInteger length;
 @property (nonatomic, copy, readonly, nullable) NSString *summary;
 @property (nonatomic, assign, readonly) SLRRangeState state;
+
++ (instancetype)rangeWithInterval:(SLRIntervalVM *)intervalVM;
 
 @end
 

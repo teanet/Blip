@@ -1,16 +1,19 @@
 #import "SLRBaseVM.h"
 
-#import "SLRScheduleModel.h"
+#import "SLRPage.h"
 
 @interface SLRSchedulerVM : SLRBaseVM
 <
-UICollectionViewDataSource,
-UICollectionViewDelegate
+UITableViewDelegate,
+UITableViewDataSource
 >
 
-- (instancetype)initWithModel:(SLRScheduleModel *)model NS_DESIGNATED_INITIALIZER;
+/** returns [SLRIntervalVM] */
+@property (nonatomic, strong, readonly) RACSignal *didSelectRangeSignal;
+
+- (instancetype)initWithPage:(SLRPage *)page NS_DESIGNATED_INITIALIZER;
 - (instancetype)init NS_UNAVAILABLE;
 
-- (void)registerCollectionView:(UICollectionView *)collectionView;
+- (void)registerTableView:(UITableView *)tableView;
 
 @end

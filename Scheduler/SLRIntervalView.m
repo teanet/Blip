@@ -69,57 +69,57 @@ CGFloat slr_minutesFromPoints(CGFloat points)
 {
 	@weakify(self);
 	_intervalVM = intervalVM;
-	[[RACObserve(intervalVM, range)
-		takeUntil:[self rac_signalForSelector:@selector(setIntervalVM:)]]
-		subscribeNext:^(SLRRangeVM *range) {
-			@strongify(self);
+//	[[RACObserve(intervalVM, range)
+//		takeUntil:[self rac_signalForSelector:@selector(setIntervalVM:)]]
+//		subscribeNext:^(SLRRangeVM *range) {
+//			@strongify(self);
+//
+//			CGRect frame = self.frame;
+//			frame.origin.y = slr_pointsFromMinutes(range.location);
+//			frame.size.height = slr_pointsFromMinutes(range.length);
+//			self.frame = frame;
+//		}];
 
-			CGRect frame = self.frame;
-			frame.origin.y = slr_pointsFromMinutes(range.location);
-			frame.size.height = slr_pointsFromMinutes(range.length);
-			self.frame = frame;
-		}];
-
-	[[RACObserve(intervalVM, editing)
-		takeUntil:[self rac_signalForSelector:@selector(setIntervalVM:)]]
-		subscribeNext:^(NSNumber *editing) {
-			@strongify(self);
-
-			if (editing.boolValue)
-			{
-				self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
-				self.layer.shadowOpacity = 0.5f;
-			}
-			else
-			{
-				self.layer.shadowOpacity = 0.0f;
-			}
-		}];
+//	[[RACObserve(intervalVM, editing)
+//		takeUntil:[self rac_signalForSelector:@selector(setIntervalVM:)]]
+//		subscribeNext:^(NSNumber *editing) {
+//			@strongify(self);
+//
+//			if (editing.boolValue)
+//			{
+//				self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
+//				self.layer.shadowOpacity = 0.5f;
+//			}
+//			else
+//			{
+//				self.layer.shadowOpacity = 0.0f;
+//			}
+//		}];
 }
 
 - (void)pan:(UIPanGestureRecognizer *)panGR
 {
-	if (panGR.state == UIGestureRecognizerStateChanged)
-	{
-		SLRRangeVM *range = self.intervalVM.range;
-		NSInteger deltaMinutes = slr_minutesFromPoints([panGR translationInView:self].y);
-
-		if (panGR.view.tag == 0)
-		{
-			[range dragUp:deltaMinutes];
-		}
-		else
-		{
-			[range dragDown:deltaMinutes];
-		}
-		[panGR setTranslation:CGPointZero inView:self];
-		[self.intervalVM.workDayVM interval:self.intervalVM didChangeRange:range];
-	}
-	else if (panGR.state == UIGestureRecognizerStateEnded ||
-			 panGR.state == UIGestureRecognizerStateCancelled)
-	{
-		[self.intervalVM.workDayVM intervalDidEndDragging:self.intervalVM];
-	}
+//	if (panGR.state == UIGestureRecognizerStateChanged)
+//	{
+//		SLRRangeVM *range = self.intervalVM.range;
+//		NSInteger deltaMinutes = slr_minutesFromPoints([panGR translationInView:self].y);
+//
+//		if (panGR.view.tag == 0)
+//		{
+//			[range dragUp:deltaMinutes];
+//		}
+//		else
+//		{
+//			[range dragDown:deltaMinutes];
+//		}
+//		[panGR setTranslation:CGPointZero inView:self];
+//		[self.intervalVM.workDayVM interval:self.intervalVM didChangeRange:range];
+//	}
+//	else if (panGR.state == UIGestureRecognizerStateEnded ||
+//			 panGR.state == UIGestureRecognizerStateCancelled)
+//	{
+//		[self.intervalVM.workDayVM intervalDidEndDragging:self.intervalVM];
+//	}
 }
 
 @end
