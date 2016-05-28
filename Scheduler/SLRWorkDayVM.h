@@ -13,12 +13,12 @@
 - (instancetype)init NS_UNAVAILABLE;
 
 - (void)insertInterval:(SLRIntervalVM *)intervalVM;
-- (void)interval:(SLRIntervalVM *)intervalVM didChangeRange:(SLRRangeVM *)range;
+//- (void)interval:(SLRIntervalVM *)intervalVM didChangeRange:(SLRRangeVM *)range;
 
 - (void)interval:(SLRIntervalVM *)intervalVM didUpdateLocation:(NSInteger)location;
 - (void)intervalDidEndDragging:(SLRIntervalVM *)intervalVM;
 
-- (NSArray<SLRIntervalVM *> *)intervalsVMAtMinute:(NSInteger)minute;
-- (NSArray<SLRIntervalVM *> *)intervalsVMAtRange:(SLRRangeVM *)range;
+//- (NSArray<SLRIntervalVM *> *)intervalsVMAtMinute:(NSInteger)minute;
+//- (NSArray<SLRIntervalVM *> *)intervalsVMAtRange:(SLRRangeVM *)range;
 
 @end

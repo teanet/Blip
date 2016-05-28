@@ -1,5 +1,15 @@
 #import "SLRRange.h"
 
+#import "SLRIntervalVM.h"
+
+@interface SLRRange ()
+
+@property (nonatomic, assign, readwrite) NSInteger location;
+@property (nonatomic, assign, readwrite) NSInteger length;
+@property (nonatomic, assign, readwrite) SLRRangeState state;
+
+@end
+
 @implementation SLRRange
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
@@ -36,6 +46,15 @@
 	}
 
 	return self;
+}
+
++ (instancetype)rangeWithInterval:(SLRIntervalVM *)intervalVM
+{
+	SLRRange *range = [[SLRRange alloc] initWithDictionary:@{}];
+	range.location = intervalVM.location;
+	range.length = intervalVM.state;
+	range.state = SLRRangeStateHold;
+	return range;
 }
 
 @end

@@ -1,5 +1,7 @@
 #import "SLRScheduleInterval.h"
 
+#import "SLRTimeGrid.h"
+
 @interface SLRScheduleModel : NSObject
 
 @property (nonatomic, assign, readonly) BOOL canAdjustInterval;

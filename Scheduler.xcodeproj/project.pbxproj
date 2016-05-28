@@ -8,12 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4F9754B5E9F2AEF30804174F /* libPods-SchedulerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */; };
+		73103FD71CF0B7AA00785073 /* SLRIntervalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73103FD61CF0B7AA00785073 /* SLRIntervalCell.m */; };
 		735E213D1CE884C600A4EB54 /* SLRWorkDayVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */; };
 		735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */; };
-		7369BCD51CE094D000BFCD96 /* MSTimeRowHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7369BCD21CE094D000BFCD96 /* MSTimeRowHeader.m */; };
-		7369BCD61CE094D000BFCD96 /* MSDayColumnHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7369BCD41CE094D000BFCD96 /* MSDayColumnHeader.m */; };
-		73830E501CE099BE006B6074 /* MSEventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E4F1CE099BE006B6074 /* MSEventCell.m */; };
-		73830E531CE0A6D3006B6074 /* MSGridline.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E521CE0A6D3006B6074 /* MSGridline.m */; };
 		73830E561CE0AB13006B6074 /* SLRIntervalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E551CE0AB13006B6074 /* SLRIntervalView.m */; };
 		73830E591CE0C458006B6074 /* SLRIntervalVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E581CE0C458006B6074 /* SLRIntervalVM.m */; };
 		73830E5C1CE0C46C006B6074 /* SLRWorkDayVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E5B1CE0C46C006B6074 /* SLRWorkDayVM.m */; };
@@ -71,17 +68,11 @@
 		472D3E516EE1FDDDB86413C3 /* Pods-SchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
 		56CE2249671223335EA5841D /* Pods-Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
 		59041980C96C640D0855E039 /* Pods-SchedulerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		73103FD51CF0B7AA00785073 /* SLRIntervalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRIntervalCell.h; sourceTree = "<group>"; };
+		73103FD61CF0B7AA00785073 /* SLRIntervalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRIntervalCell.m; sourceTree = "<group>"; };
 		735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRWorkDayVMSpec.m; sourceTree = "<group>"; };
 		735E213E1CE8912100A4EB54 /* SLRSeporatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRSeporatorView.h; sourceTree = "<group>"; };
 		735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRSeporatorView.m; sourceTree = "<group>"; };
-		7369BCD11CE094D000BFCD96 /* MSTimeRowHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTimeRowHeader.h; sourceTree = "<group>"; };
-		7369BCD21CE094D000BFCD96 /* MSTimeRowHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTimeRowHeader.m; sourceTree = "<group>"; };
-		7369BCD31CE094D000BFCD96 /* MSDayColumnHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDayColumnHeader.h; sourceTree = "<group>"; };
-		7369BCD41CE094D000BFCD96 /* MSDayColumnHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDayColumnHeader.m; sourceTree = "<group>"; };
-		73830E4E1CE099BE006B6074 /* MSEventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEventCell.h; sourceTree = "<group>"; };
-		73830E4F1CE099BE006B6074 /* MSEventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEventCell.m; sourceTree = "<group>"; };
-		73830E511CE0A6D3006B6074 /* MSGridline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGridline.h; sourceTree = "<group>"; };
-		73830E521CE0A6D3006B6074 /* MSGridline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGridline.m; sourceTree = "<group>"; };
 		73830E541CE0AB13006B6074 /* SLRIntervalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRIntervalView.h; sourceTree = "<group>"; };
 		73830E551CE0AB13006B6074 /* SLRIntervalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRIntervalView.m; sourceTree = "<group>"; };
 		73830E571CE0C458006B6074 /* SLRIntervalVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRIntervalVM.h; sourceTree = "<group>"; };
@@ -178,6 +169,37 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		736EE2151CF95CD700C32225 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				736EE2161CF95CE700C32225 /* Scheduler */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		736EE2161CF95CE700C32225 /* Scheduler */ = {
+			isa = PBXGroup;
+			children = (
+				736EE2171CF95CFC00C32225 /* Cell */,
+				73AF55B21C9EC8BC009FB75A /* SLRSchedulerVM.h */,
+				73AF55B31C9EC8BC009FB75A /* SLRSchedulerVM.m */,
+				73AF55AF1C9EC882009FB75A /* SLRSchedulerVC.h */,
+				73AF55B01C9EC882009FB75A /* SLRSchedulerVC.m */,
+			);
+			name = Scheduler;
+			sourceTree = "<group>";
+		};
+		736EE2171CF95CFC00C32225 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				73830E571CE0C458006B6074 /* SLRIntervalVM.h */,
+				73830E581CE0C458006B6074 /* SLRIntervalVM.m */,
+				73103FD51CF0B7AA00785073 /* SLRIntervalCell.h */,
+				73103FD61CF0B7AA00785073 /* SLRIntervalCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		738314AF1CF09ACA0048AFE2 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +242,17 @@
 			path = json;
 			sourceTree = "<group>";
 		};
+		738314D71CF0A8780048AFE2 /* Pending */ = {
+			isa = PBXGroup;
+			children = (
+				73AF55B71C9ECA56009FB75A /* SLRScheduleCell.h */,
+				73AF55B81C9ECA56009FB75A /* SLRScheduleCell.m */,
+				73830E541CE0AB13006B6074 /* SLRIntervalView.h */,
+				73830E551CE0AB13006B6074 /* SLRIntervalView.m */,
+			);
+			name = Pending;
+			sourceTree = "<group>";
+		};
 		73AF529B1C9EB953009FB75A = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +276,7 @@
 		73AF52A61C9EB953009FB75A /* Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				736EE2151CF95CD700C32225 /* App */,
 				738314C31CF09B230048AFE2 /* Networking */,
 				738314AF1CF09ACA0048AFE2 /* Entities */,
 				73AF55AE1C9EC826009FB75A /* ViewModels */,
@@ -302,8 +336,6 @@
 				73AF52CD1C9EBBC6009FB75A /* SLRRootVC.m */,
 				73AF55A51C9EC71B009FB75A /* SLRBaseVC.h */,
 				73AF55A61C9EC71B009FB75A /* SLRBaseVC.m */,
-				73AF55AF1C9EC882009FB75A /* SLRSchedulerVC.h */,
-				73AF55B01C9EC882009FB75A /* SLRSchedulerVC.m */,
 				735E213E1CE8912100A4EB54 /* SLRSeporatorView.h */,
 				735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */,
 			);
@@ -315,12 +347,8 @@
 			children = (
 				73AF55A81C9EC74C009FB75A /* SLRBaseVM.h */,
 				73AF55A91C9EC74C009FB75A /* SLRBaseVM.m */,
-				73AF55B21C9EC8BC009FB75A /* SLRSchedulerVM.h */,
-				73AF55B31C9EC8BC009FB75A /* SLRSchedulerVM.m */,
 				73AF55C01C9ED8CF009FB75A /* SLRScheduleCellVM.h */,
 				73AF55C11C9ED8CF009FB75A /* SLRScheduleCellVM.m */,
-				73830E571CE0C458006B6074 /* SLRIntervalVM.h */,
-				73830E581CE0C458006B6074 /* SLRIntervalVM.m */,
 				73830E5A1CE0C46C006B6074 /* SLRWorkDayVM.h */,
 				73830E5B1CE0C46C006B6074 /* SLRWorkDayVM.m */,
 				73830E5D1CE0C767006B6074 /* SLRRangeVM.h */,
@@ -332,18 +360,7 @@
 		73AF55B61C9ECA18009FB75A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				73830E4E1CE099BE006B6074 /* MSEventCell.h */,
-				73830E4F1CE099BE006B6074 /* MSEventCell.m */,
-				7369BCD11CE094D000BFCD96 /* MSTimeRowHeader.h */,
-				7369BCD21CE094D000BFCD96 /* MSTimeRowHeader.m */,
-				7369BCD31CE094D000BFCD96 /* MSDayColumnHeader.h */,
-				7369BCD41CE094D000BFCD96 /* MSDayColumnHeader.m */,
-				73AF55B71C9ECA56009FB75A /* SLRScheduleCell.h */,
-				73AF55B81C9ECA56009FB75A /* SLRScheduleCell.m */,
-				73830E511CE0A6D3006B6074 /* MSGridline.h */,
-				73830E521CE0A6D3006B6074 /* MSGridline.m */,
-				73830E541CE0AB13006B6074 /* SLRIntervalView.h */,
-				73830E551CE0AB13006B6074 /* SLRIntervalView.m */,
+				738314D71CF0A8780048AFE2 /* Pending */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -587,19 +604,16 @@
 				73830E5F1CE0C767006B6074 /* SLRRangeVM.m in Sources */,
 				738314BE1CF09ACA0048AFE2 /* SLRPage.m in Sources */,
 				738314CB1CF09B550048AFE2 /* SLRAPIController+SLRModels.m in Sources */,
+				73103FD71CF0B7AA00785073 /* SLRIntervalCell.m in Sources */,
 				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				73AF55AA1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
-				7369BCD51CE094D000BFCD96 /* MSTimeRowHeader.m in Sources */,
 				73830E591CE0C458006B6074 /* SLRIntervalVM.m in Sources */,
-				73830E531CE0A6D3006B6074 /* MSGridline.m in Sources */,
-				7369BCD61CE094D000BFCD96 /* MSDayColumnHeader.m in Sources */,
 				739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
 				73AF55C91C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,
 				738314BC1CF09ACA0048AFE2 /* SLRFilial.m in Sources */,
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
 				73AF55BD1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
-				73830E501CE099BE006B6074 /* MSEventCell.m in Sources */,
 				73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
 				738314BF1CF09ACA0048AFE2 /* SLRRange.m in Sources */,
 				738314C01CF09ACA0048AFE2 /* SLRTimeGrid.m in Sources */,
