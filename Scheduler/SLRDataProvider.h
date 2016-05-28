@@ -3,6 +3,7 @@
 #import "SLRPage.h"
 #import "SLRService.h"
 #import "SLRRequest.h"
+#import "SLRStoreItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,6 +15,22 @@ NS_ASSUME_NONNULL_BEGIN
  *	Разные методы.
  **/
 - (RACSignal *)fetchEmptyBookingRequest;
+
+/*! Подтянуть товары для магазина
+ *	Пока что подтягиваем просто фотки из вконтактика
+ **/
+- (RACSignal *)fetchStoreItems;
+
+/*! Добавляет/убирает товар в/из корзину/ы
+ *	Убрать потом в модель магазина
+ **/
+- (void)addStoreItemToCart:(SLRStoreItem *)storeItem;
+- (void)removeStoreItemFromCart:(SLRStoreItem *)storeItem;
+
+/*! Возвращает товары из корзины
+ *	Убрать потом в модель магазина
+ **/
+- (NSArray<SLRStoreItem *> *)cartStoreItems;
 
 /*! API
  *	Интерфейс сервера.

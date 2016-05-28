@@ -24,6 +24,14 @@
 		307346FC1CF218170089A494 /* SLRAPIMockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307346FB1CF218170089A494 /* SLRAPIMockController.m */; };
 		307347041CF21B230089A494 /* SLRDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 307347031CF21B230089A494 /* SLRDetailsVC.m */; };
 		307347071CF2226B0089A494 /* SLRRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 307347061CF2226B0089A494 /* SLRRequest.m */; };
+		3097CD3F1CFA1FDC00E28EEB /* SLRStoreVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 3097CD3E1CFA1FDC00E28EEB /* SLRStoreVM.m */; };
+		3097CD421CFA1FE700E28EEB /* SLRStoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3097CD411CFA1FE700E28EEB /* SLRStoreVC.m */; };
+		3097D0511CFA266900E28EEB /* SLRStoreItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3097D0501CFA266900E28EEB /* SLRStoreItemCell.m */; };
+		30B876321CFA169F00F2499F /* SLRStoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B876311CFA169F00F2499F /* SLRStoreItem.m */; };
+		30BB886F1CFA1F140046BEB5 /* SLRCartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB886E1CFA1F140046BEB5 /* SLRCartVC.m */; };
+		30BB88721CFA1F240046BEB5 /* SLRCartVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB88711CFA1F240046BEB5 /* SLRCartVM.m */; };
+		30DF0ACE1CFA346200DE287B /* SLRStoreItemDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DF0ACD1CFA346200DE287B /* SLRStoreItemDetailsVC.m */; };
+		30DF0AD11CFA348800DE287B /* SLRStoreItemDetailsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DF0AD01CFA348800DE287B /* SLRStoreItemDetailsVM.m */; };
 		4F9754B5E9F2AEF30804174F /* libPods-SchedulerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */; };
 		73103FD71CF0B7AA00785073 /* SLRIntervalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73103FD61CF0B7AA00785073 /* SLRIntervalCell.m */; };
 		735E213D1CE884C600A4EB54 /* SLRWorkDayVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */; };
@@ -117,6 +125,22 @@
 		307347031CF21B230089A494 /* SLRDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDetailsVC.m; sourceTree = "<group>"; };
 		307347051CF2226B0089A494 /* SLRRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRRequest.h; sourceTree = "<group>"; };
 		307347061CF2226B0089A494 /* SLRRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRRequest.m; sourceTree = "<group>"; };
+		3097CD3D1CFA1FDC00E28EEB /* SLRStoreVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreVM.h; sourceTree = "<group>"; };
+		3097CD3E1CFA1FDC00E28EEB /* SLRStoreVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreVM.m; sourceTree = "<group>"; };
+		3097CD401CFA1FE700E28EEB /* SLRStoreVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreVC.h; sourceTree = "<group>"; };
+		3097CD411CFA1FE700E28EEB /* SLRStoreVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreVC.m; sourceTree = "<group>"; };
+		3097D04F1CFA266900E28EEB /* SLRStoreItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreItemCell.h; sourceTree = "<group>"; };
+		3097D0501CFA266900E28EEB /* SLRStoreItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItemCell.m; sourceTree = "<group>"; };
+		30B876301CFA169F00F2499F /* SLRStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreItem.h; sourceTree = "<group>"; };
+		30B876311CFA169F00F2499F /* SLRStoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItem.m; sourceTree = "<group>"; };
+		30BB886D1CFA1F140046BEB5 /* SLRCartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRCartVC.h; sourceTree = "<group>"; };
+		30BB886E1CFA1F140046BEB5 /* SLRCartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRCartVC.m; sourceTree = "<group>"; };
+		30BB88701CFA1F240046BEB5 /* SLRCartVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRCartVM.h; sourceTree = "<group>"; };
+		30BB88711CFA1F240046BEB5 /* SLRCartVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRCartVM.m; sourceTree = "<group>"; };
+		30DF0ACC1CFA346200DE287B /* SLRStoreItemDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreItemDetailsVC.h; sourceTree = "<group>"; };
+		30DF0ACD1CFA346200DE287B /* SLRStoreItemDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItemDetailsVC.m; sourceTree = "<group>"; };
+		30DF0ACF1CFA348800DE287B /* SLRStoreItemDetailsVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreItemDetailsVM.h; sourceTree = "<group>"; };
+		30DF0AD01CFA348800DE287B /* SLRStoreItemDetailsVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItemDetailsVM.m; sourceTree = "<group>"; };
 		403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchedulerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		472D3E516EE1FDDDB86413C3 /* Pods-SchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
 		56CE2249671223335EA5841D /* Pods-Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +290,50 @@
 			name = Mock;
 			sourceTree = "<group>";
 		};
+		3097D04E1CFA248900E28EEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3097D04F1CFA266900E28EEB /* SLRStoreItemCell.h */,
+				3097D0501CFA266900E28EEB /* SLRStoreItemCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		30BB886B1CFA1E760046BEB5 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				30DF0AD21CFA3DD400DE287B /* Cell */,
+				30BB886D1CFA1F140046BEB5 /* SLRCartVC.h */,
+				30BB886E1CFA1F140046BEB5 /* SLRCartVC.m */,
+				30BB88701CFA1F240046BEB5 /* SLRCartVM.h */,
+				30BB88711CFA1F240046BEB5 /* SLRCartVM.m */,
+			);
+			name = Cart;
+			sourceTree = "<group>";
+		};
+		30BB886C1CFA1EB00046BEB5 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				3097D04E1CFA248900E28EEB /* Cell */,
+				3097CD401CFA1FE700E28EEB /* SLRStoreVC.h */,
+				3097CD411CFA1FE700E28EEB /* SLRStoreVC.m */,
+				3097CD3D1CFA1FDC00E28EEB /* SLRStoreVM.h */,
+				3097CD3E1CFA1FDC00E28EEB /* SLRStoreVM.m */,
+				30DF0ACC1CFA346200DE287B /* SLRStoreItemDetailsVC.h */,
+				30DF0ACD1CFA346200DE287B /* SLRStoreItemDetailsVC.m */,
+				30DF0ACF1CFA348800DE287B /* SLRStoreItemDetailsVM.h */,
+				30DF0AD01CFA348800DE287B /* SLRStoreItemDetailsVM.m */,
+			);
+			name = Store;
+			sourceTree = "<group>";
+		};
+		30DF0AD21CFA3DD400DE287B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		7350FD2AA6B5C9CA0C6F368F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +346,8 @@
 		736EE2151CF95CD700C32225 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				30BB886C1CFA1EB00046BEB5 /* Store */,
+				30BB886B1CFA1E760046BEB5 /* Cart */,
 				30470DC51CF99D0D00C57566 /* Details */,
 				736EE2161CF95CE700C32225 /* Scheduler */,
 			);
@@ -322,6 +392,8 @@
 				307347061CF2226B0089A494 /* SLRRequest.m */,
 				30567E011CF0A9F900058477 /* SLRService.h */,
 				30567E021CF0A9F900058477 /* SLRService.m */,
+				30B876301CFA169F00F2499F /* SLRStoreItem.h */,
+				30B876311CFA169F00F2499F /* SLRStoreItem.m */,
 				738314B81CF09ACA0048AFE2 /* SLRTimeGrid.h */,
 				738314B91CF09ACA0048AFE2 /* SLRTimeGrid.m */,
 				738314BA1CF09ACA0048AFE2 /* SLRUser.h */,
@@ -717,6 +789,7 @@
 			files = (
 				307346FC1CF218170089A494 /* SLRAPIMockController.m in Sources */,
 				738314C11CF09ACA0048AFE2 /* SLRUser.m in Sources */,
+				30B876321CFA169F00F2499F /* SLRStoreItem.m in Sources */,
 				735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */,
 				30470DD31CF9A06800C57566 /* SLRTableViewHeaderFooterView.m in Sources */,
 				73AF55B11C9EC882009FB75A /* SLRSchedulerVC.m in Sources */,
@@ -735,25 +808,32 @@
 				738314BE1CF09ACA0048AFE2 /* SLRPage.m in Sources */,
 				738314CB1CF09B550048AFE2 /* SLRAPIController+SLRModels.m in Sources */,
 				73103FD71CF0B7AA00785073 /* SLRIntervalCell.m in Sources */,
+				30BB886F1CFA1F140046BEB5 /* SLRCartVC.m in Sources */,
 				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				30470DC41CF8D9BD00C57566 /* SLRAuthenticationManager.m in Sources */,
+				30DF0AD11CFA348800DE287B /* SLRStoreItemDetailsVM.m in Sources */,
 				73AF55AA1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
 				73830E591CE0C458006B6074 /* SLRIntervalVM.m in Sources */,
 				739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
 				73AF55C91C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,
+				30BB88721CFA1F240046BEB5 /* SLRCartVM.m in Sources */,
 				738314BC1CF09ACA0048AFE2 /* SLRFilial.m in Sources */,
+				3097CD421CFA1FE700E28EEB /* SLRStoreVC.m in Sources */,
 				30470DCD1CF99DE000C57566 /* SLRDetailsPickerView.m in Sources */,
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
 				30470DDD1CF9D5B700C57566 /* SLRDetailsSummaryVM.m in Sources */,
+				3097CD3F1CFA1FDC00E28EEB /* SLRStoreVM.m in Sources */,
 				73AF55BD1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
 				307347041CF21B230089A494 /* SLRDetailsVC.m in Sources */,
+				30DF0ACE1CFA346200DE287B /* SLRStoreItemDetailsVC.m in Sources */,
 				307347071CF2226B0089A494 /* SLRRequest.m in Sources */,
 				73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
 				738314BF1CF09ACA0048AFE2 /* SLRRange.m in Sources */,
 				738314C01CF09ACA0048AFE2 /* SLRTimeGrid.m in Sources */,
 				73AF52A91C9EB953009FB75A /* main.m in Sources */,
 				73830E561CE0AB13006B6074 /* SLRIntervalView.m in Sources */,
+				3097D0511CFA266900E28EEB /* SLRStoreItemCell.m in Sources */,
 				30470DD01CF99FFB00C57566 /* SLRDetailsPickerVM.m in Sources */,
 				30470DE01CF9D5D800C57566 /* SLRDetailsSummaryView.m in Sources */,
 				30567E031CF0A9F900058477 /* SLRService.m in Sources */,

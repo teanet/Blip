@@ -33,7 +33,8 @@
 	[self.view addSubview:self.tableView];
 
 	self.bookButton = [[UIButton alloc] init];
-	[self.bookButton setTitle:@"Book" forState:UIControlStateNormal];
+#warning обратно поманять на book
+	[self.bookButton setTitle:@"Order"/*@"Book"*/ forState:UIControlStateNormal];
 	[self.bookButton setBackgroundColor:[UIColor grayColor]];
 	[self.bookButton addTarget:self.viewModel action:@selector(didTapBookButton)
 			  forControlEvents:UIControlEventTouchUpInside];

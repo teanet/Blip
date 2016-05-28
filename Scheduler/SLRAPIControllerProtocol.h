@@ -28,4 +28,9 @@
  **/
 - (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request;
 
+/*! Отправляет букинг-реквест на сервер и возвращает обработанный реквест.
+ *	\return @[SLRStoreItem]
+ **/
+- (RACSignal *)fetchStoreItems;
+
 @end

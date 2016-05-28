@@ -2,17 +2,9 @@
 
 #import "SLRUser.h"
 #import <DigitsKit/DigitsKit.h>
-#import <SSKeychain.h>
+
 
 @implementation SLRAuthenticationManager
-
-- (instancetype)init
-{
-	self = [super init];
-	if (self == nil) return nil;
-
-	return self;
-}
 
 - (RACSignal *)fetchUser
 {

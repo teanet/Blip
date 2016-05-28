@@ -172,8 +172,9 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 	// Все-таки говно(
 	switch ((SLRSection)section)
 	{
+#warning убрать надо
 		case SLRSectionPicker: {
-			return 150.0;
+			return 0.0;//150.0;
 		} break;
 
 		case SLRSectionService: {

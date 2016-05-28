@@ -14,6 +14,7 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 
 @property (nonatomic, strong, readonly) id<SLRAPIControllerProtocol> apiController;
 @property (nonatomic, strong, readonly) SLRAuthenticationManager *authManager;
+@property (nonatomic, strong, readonly) NSMutableArray<SLRStoreItem *> *storeItems;
 
 @end
 
@@ -35,6 +36,7 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 	self = [super init];
 	if (self == nil) return nil;
 
+	_storeItems = [NSMutableArray array];
 	_authManager = [[SLRAuthenticationManager alloc] init];
 
 #ifdef USE_MOCK_CONTROLLER
@@ -63,6 +65,33 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 	if (!user) return nil;
 
 	return [[SLRRequest alloc] initWithUser:user];
+}
+
+- (void)addStoreItemToCart:(SLRStoreItem *)storeItem
+{
+	if (storeItem)
+	{
+		@synchronized (self)
+		{
+			[self.storeItems addObject:storeItem];
+		}
+	}
+}
+
+- (void)removeStoreItemFromCart:(SLRStoreItem *)storeItem
+{
+	if (storeItem)
+	{
+		@synchronized (self)
+		{
+			[self.storeItems removeObject:storeItem];
+		}
+	}
+}
+
+- (NSArray<SLRStoreItem *> *)cartStoreItems
+{
+	return [self.storeItems copy];
 }
 
 // MARK: API
@@ -101,6 +130,11 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 - (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request
 {
 	return [self.apiController fetchProcessedRequestForRequest:request];
+}
+
+- (RACSignal *)fetchStoreItems
+{
+	return [self.apiController fetchStoreItems];
 }
 
 @end
