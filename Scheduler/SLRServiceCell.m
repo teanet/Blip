@@ -15,7 +15,7 @@
 	[super setViewModel:viewModel];
 	self.textLabel.text = viewModel.service.title;
 	self.textLabel.textColor = viewModel.service.selected
-		? [UIColor blueColor]
+		? [UIColor blackColor]
 		: [UIColor lightGrayColor];
 }
 

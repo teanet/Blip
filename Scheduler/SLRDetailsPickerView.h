@@ -3,5 +3,4 @@
 #import "SLRDetailsPickerVM.h"
 
 @interface SLRDetailsPickerView: SLRTableViewHeaderFooterView <SLRDetailsPickerVM *>
-
 @end

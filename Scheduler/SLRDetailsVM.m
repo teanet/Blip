@@ -2,11 +2,14 @@
 
 #import "SLRDataProvider.h"
 #import "SLRDetailsPickerVM.h"
+#import "SLRDetailsServicesVM.h"
+#import "SLRDetailsSummaryVM.h"
 
 typedef NS_ENUM(NSUInteger, SLRSection) {
 	// Порядок важен - в таком порядке будут отображаться секции в таблице
 	SLRSectionPicker = 0,
 	SLRSectionService = 1,
+	SLRSectionSummary = 2,
 
 	// Порядок важен - это должен быть последний элемент в енуме
 	SLRSectionCountOfSections
@@ -19,6 +22,8 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 @property (nonatomic, strong, readonly) SLRRequest *request;
 
 @property (nonatomic, strong) SLRDetailsPickerVM *pickerVM;
+@property (nonatomic, strong) SLRDetailsServicesVM *servicesVM;
+@property (nonatomic, strong) SLRDetailsSummaryVM *summaryVM;
 
 @property (nonatomic, strong, readonly) RACSubject *shouldUpdateTableViewSubject;
 @property (atomic, assign, readwrite, getter=isServiceProcessing) BOOL serviceProcessing;
@@ -38,6 +43,8 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 	_range = selectedRange;
 	_shouldUpdateTableViewSubject = [RACSubject subject];
 	_pickerVM = [[SLRDetailsPickerVM alloc] initWithPage:page selectedRange:selectedRange];
+	_servicesVM = [[SLRDetailsServicesVM alloc] initWithTitle:@"Дополнительные услуги:"];
+	_summaryVM = [[SLRDetailsSummaryVM alloc] init];
 
 	[self updateServices];
 
@@ -96,7 +103,7 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 	SLRRequest *request = [[SLRDataProvider sharedProvider] emptyBookingRequest];
 	request.location = self.range.location;
 	request.length = self.pickerVM.totalSelectedLength;
-	request.summary = @"Здесь будет комментарий пользователя";
+	request.summary = self.summaryVM.summary;
 	request.services = [[self.serviceVMs.rac_sequence
 		filter:^BOOL(SLRServiceCellVM *vm) {
 			return vm.service.selected;
@@ -133,7 +140,11 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 		} break;
 
 		case SLRSectionService: {
-			return nil;
+			return self.servicesVM;
+		} break;
+
+		case SLRSectionSummary: {
+			return self.summaryVM;
 		} break;
 
 		case SLRSectionCountOfSections: {
@@ -156,7 +167,11 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 		} break;
 
 		case SLRSectionService: {
-			return 0.0;
+			return 30.0;
+		} break;
+
+		case SLRSectionSummary: {
+			return 200.0;
 		} break;
 
 		case SLRSectionCountOfSections: {
@@ -197,6 +212,10 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 
 		case SLRSectionService: {
 			return self.serviceVMs;
+		} break;
+
+		case SLRSectionSummary: {
+			return nil;
 		} break;
 
 		case SLRSectionCountOfSections: {

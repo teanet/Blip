@@ -1,12 +1,12 @@
-#import "SLRDetailsPickerView.h"
+#import "SLRDetailsSummaryView.h"
 
-@interface SLRDetailsPickerView ()
+@interface SLRDetailsSummaryView ()
 
-@property (nonatomic, strong) UIPickerView *picker;
+@property (nonatomic, strong) UITextView *textView;
 
 @end
 
-@implementation SLRDetailsPickerView
+@implementation SLRDetailsSummaryView
 
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -14,13 +14,13 @@
 	if (self == nil) return nil;
 
 	UILabel *titleLabel = [[UILabel alloc] init];
-	titleLabel.text = @"Продолжительность:";
+	titleLabel.text = @"Комментарий:";
 	titleLabel.textAlignment = NSTextAlignmentCenter;
 	titleLabel.backgroundColor = [UIColor lightGrayColor];
 	[self.contentView addSubview:titleLabel];
 
-	_picker = [[UIPickerView alloc] init];
-	[self.contentView addSubview:_picker];
+	self.textView = [[UITextView alloc] init];
+	[self.contentView addSubview:self.textView];
 
 	[titleLabel setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh
 												forAxis:UILayoutConstraintAxisVertical];
@@ -31,25 +31,31 @@
 		make.right.equalTo(self.contentView);
 	}];
 
-	[_picker setContentCompressionResistancePriority:UILayoutPriorityDefaultLow
+	[self.textView setContentCompressionResistancePriority:UILayoutPriorityDefaultLow
 											 forAxis:UILayoutConstraintAxisVertical];
-	[_picker mas_makeConstraints:^(MASConstraintMaker *make) {
+	self.textView.backgroundColor = [UIColor lightTextColor];
+	[self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(titleLabel.mas_bottom);
 		make.left.equalTo(self.contentView);
 		make.right.equalTo(self.contentView);
 		make.bottom.equalTo(self.contentView);
 	}];
 
+	[self configureReactiveStuff];
+
 	return self;
 }
 
-- (void)setViewModel:(SLRDetailsPickerVM *)viewModel
+- (void)configureReactiveStuff
 {
-	[super setViewModel:viewModel];
+	@weakify(self);
 
-	self.picker.delegate = viewModel;
-	self.picker.dataSource = viewModel;
-	[self.picker reloadAllComponents];
+	[self.textView.rac_textSignal
+		subscribeNext:^(NSString *text) {
+			@strongify(self);
+
+			self.viewModel.summary = text;
+		}];
 }
 
 @end
