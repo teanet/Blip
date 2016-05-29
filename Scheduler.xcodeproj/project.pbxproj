@@ -32,6 +32,7 @@
 		30BB88721CFA1F240046BEB5 /* SLRCartVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB88711CFA1F240046BEB5 /* SLRCartVM.m */; };
 		30DF0ACE1CFA346200DE287B /* SLRStoreItemDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DF0ACD1CFA346200DE287B /* SLRStoreItemDetailsVC.m */; };
 		30DF0AD11CFA348800DE287B /* SLRStoreItemDetailsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DF0AD01CFA348800DE287B /* SLRStoreItemDetailsVM.m */; };
+		30DF0AD51CFAA65400DE287B /* UIColor+DGSCustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DF0AD41CFAA65400DE287B /* UIColor+DGSCustomColor.m */; };
 		4F9754B5E9F2AEF30804174F /* libPods-SchedulerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */; };
 		73103FD71CF0B7AA00785073 /* SLRIntervalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73103FD61CF0B7AA00785073 /* SLRIntervalCell.m */; };
 		735E213D1CE884C600A4EB54 /* SLRWorkDayVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */; };
@@ -141,6 +142,8 @@
 		30DF0ACD1CFA346200DE287B /* SLRStoreItemDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItemDetailsVC.m; sourceTree = "<group>"; };
 		30DF0ACF1CFA348800DE287B /* SLRStoreItemDetailsVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreItemDetailsVM.h; sourceTree = "<group>"; };
 		30DF0AD01CFA348800DE287B /* SLRStoreItemDetailsVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItemDetailsVM.m; sourceTree = "<group>"; };
+		30DF0AD31CFAA65400DE287B /* UIColor+DGSCustomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DGSCustomColor.h"; sourceTree = "<group>"; };
+		30DF0AD41CFAA65400DE287B /* UIColor+DGSCustomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DGSCustomColor.m"; sourceTree = "<group>"; };
 		403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SchedulerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		472D3E516EE1FDDDB86413C3 /* Pods-SchedulerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.release.xcconfig"; sourceTree = "<group>"; };
 		56CE2249671223335EA5841D /* Pods-Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
@@ -472,6 +475,8 @@
 				73AF55AC1C9EC81A009FB75A /* Models */,
 				73AF52AA1C9EB953009FB75A /* AppDelegate.h */,
 				73AF52AB1C9EB953009FB75A /* AppDelegate.m */,
+				30DF0AD31CFAA65400DE287B /* UIColor+DGSCustomColor.h */,
+				30DF0AD41CFAA65400DE287B /* UIColor+DGSCustomColor.m */,
 				73AF52B31C9EB953009FB75A /* Assets.xcassets */,
 				73AF52B81C9EB953009FB75A /* Info.plist */,
 				73AF52A71C9EB953009FB75A /* Supporting Files */,
@@ -802,6 +807,7 @@
 				30470DC01CF8B98C00C57566 /* SLRServiceCellVM.m in Sources */,
 				738314BD1CF09ACA0048AFE2 /* SLROwner.m in Sources */,
 				738314CC1CF09B550048AFE2 /* SLRDataProvider.m in Sources */,
+				30DF0AD51CFAA65400DE287B /* UIColor+DGSCustomColor.m in Sources */,
 				304707A41CF8A66100C57566 /* SLRServiceCell.m in Sources */,
 				73AF55A71C9EC71B009FB75A /* SLRBaseVC.m in Sources */,
 				73830E5F1CE0C767006B6074 /* SLRRangeVM.m in Sources */,
@@ -953,6 +959,7 @@
 			baseConfigurationReference = 56CE2249671223335EA5841D /* Pods-Scheduler.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "Scheduler/Prefix-Header.h";
 				INFOPLIST_FILE = Scheduler/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -968,6 +975,7 @@
 			baseConfigurationReference = CC71B5BB6067145B8945C39C /* Pods-Scheduler.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "Scheduler/Prefix-Header.h";
 				INFOPLIST_FILE = Scheduler/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

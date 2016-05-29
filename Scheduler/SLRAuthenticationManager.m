@@ -17,18 +17,26 @@
 - (RACSignal *)authenticateUserBySMSSignal
 {
 	return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-		[[Digits sharedInstance] authenticateWithCompletion:^(DGTSession *session, NSError *error) {
-			if (error)
-			{
-				[subscriber sendError:error];
-			}
-			else
-			{
-				[subscriber sendNext:[self userWithSession:session]];
-				[subscriber sendCompleted];
-			}
-		}];
-		
+		DGTAuthenticationConfiguration *c = [[DGTAuthenticationConfiguration alloc] initWithAccountFields:0];
+		DGTAppearance *a = [[DGTAppearance alloc] init];
+		a.backgroundColor = [UIColor whiteColor];
+		a.accentColor = [UIColor dgs_colorWithString:@"1976D2"];
+		a.logoImage = [UIImage imageNamed:@"logo"];
+		c.appearance = a;
+		[[Digits sharedInstance] authenticateWithViewController:nil
+												  configuration:c
+													 completion:^(DGTSession *session, NSError *error) {
+														if (error)
+														{
+															[subscriber sendError:error];
+														}
+														else
+														{
+															[subscriber sendNext:[self userWithSession:session]];
+															[subscriber sendCompleted];
+														}
+													}];
+
 		return nil;
 	}];
 }

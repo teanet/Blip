@@ -16,7 +16,7 @@
 	UILabel *titleLabel = [[UILabel alloc] init];
 	titleLabel.text = @"Комментарий:";
 	titleLabel.textAlignment = NSTextAlignmentCenter;
-	titleLabel.backgroundColor = [UIColor lightGrayColor];
+	titleLabel.backgroundColor = [UIColor dgs_colorWithString:@"F3F0EC"];
 	[self.contentView addSubview:titleLabel];
 
 	self.textView = [[UITextView alloc] init];

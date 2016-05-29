@@ -13,7 +13,7 @@
 	self = [super initWithReuseIdentifier:reuseIdentifier];
 	if (self == nil) return nil;
 
-	self.contentView.backgroundColor = [UIColor lightGrayColor];
+	self.contentView.backgroundColor = [UIColor dgs_colorWithString:@"F3F0EC"];
 
 	self.titleLabel = [[UILabel alloc] init];
 	self.titleLabel.textAlignment = NSTextAlignmentCenter;
