@@ -2,54 +2,72 @@
 
 #import "SLRIntervalCell.h"
 #import "SLRIntervalVM.h"
+#import "SLRWeekHeaderView.h"
+#import <TLIndexPathSectionInfo.h>
 
-@interface SLRSchedulerVM ()
+@interface SLRSchedulerVM () <SLRWeekHeaderViewDelegate>
 
-@property (nonatomic, strong, readonly) NSMutableArray<SLRIntervalVM *> *intervals;
 @property (nonatomic, strong, readonly) RACSubject *didSelectRangeSubject;
+@property (nonatomic, strong, readonly) RACSubject *didSelectPageSubject;
+
+@property (nonatomic, strong, readonly) NSArray<SLRWeekHeaderVM *> *weekHeaderVMs;
 
 @end
 
 @implementation SLRSchedulerVM
 
-- (instancetype)initWithPage:(SLRPage *)page
+- (void)dealloc
+{
+	[_didSelectRangeSubject sendCompleted];
+	[_didSelectPageSubject sendCompleted];
+}
+
+- (instancetype)init
 {
 	self = [super init];
 	if (self == nil) return nil;
 
+	_weekHeaderVMs = @[
+		[[SLRWeekHeaderVM alloc] init],
+		[[SLRWeekHeaderVM alloc] init],
+		[[SLRWeekHeaderVM alloc] init],
+	];
+
+	_indexPathController = [[TLIndexPathController alloc] init];
+
 	_didSelectRangeSubject = [RACSubject subject];
 	_didSelectRangeSignal = _didSelectRangeSubject;
 
-	NSCAssert(page.timeGrid.bookingStep > 0, @"step should be greather then 0");
+	_didSelectPageSubject = [RACSubject subject];
+	_didSelectPageSignal = _didSelectPageSubject;
+
+	return self;
+}
+
+- (void)setPage:(SLRPage *)page
+{
+	SLRPage *previousPage = _page;
 	_page = page;
 
-	NSMutableArray<SLRIntervalVM *> *intervals = [NSMutableArray array];
-	[page.rangesFree enumerateObjectsUsingBlock:^(SLRRange *freeRange, NSUInteger _, BOOL *__) {
-		[intervals addObjectsFromArray:[SLRIntervalVM intervalsForRange:freeRange step:page.timeGrid.bookingStep]];
+	NSMutableArray<TLIndexPathSectionInfo *> *infos = [NSMutableArray array];
+	[self.weekHeaderVMs enumerateObjectsUsingBlock:^(SLRWeekHeaderVM *weekVM, NSUInteger idx, BOOL * _Nonnull stop) {
+
+		NSArray *items = @[];
+		if ([weekVM.pages containsObject:page])
+		{
+			items = page.intervals;
+		}
+		[infos addObject:[[TLIndexPathSectionInfo alloc] initWithItems:items name:[@(idx) description]]];
 	}];
 
-	[page.rangesBook enumerateObjectsUsingBlock:^(SLRRange *freeRange, NSUInteger _, BOOL *__) {
-		[intervals addObjectsFromArray:[SLRIntervalVM intervalsForRange:freeRange step:page.timeGrid.bookingStep]];
-	}];
-
-	[page.rangesHold enumerateObjectsUsingBlock:^(SLRRange *freeRange, NSUInteger _, BOOL *__) {
-		[intervals addObjectsFromArray:[SLRIntervalVM intervalsForRange:freeRange step:page.timeGrid.bookingStep]];
-	}];
-
-	[intervals enumerateObjectsUsingBlock:^(SLRIntervalVM *intervalVM, NSUInteger idx, BOOL * _Nonnull stop) {
-	}];
-
-	[intervals sortWithOptions:NSSortStable usingComparator:^NSComparisonResult(SLRIntervalVM *obj1, SLRIntervalVM *obj2) {
-		return obj1.location < obj2.location ? NSOrderedAscending : NSOrderedDescending;
-	}];
-	_intervals = [intervals copy];
-	
-	return self;
+	self.indexPathController.dataModel = [[TLIndexPathDataModel alloc] initWithSectionInfos:infos identifierKeyPath:nil];
+	[self.didSelectPageSubject sendNext:RACTuplePack(page, previousPage)];
 }
 
 - (void)registerTableView:(UITableView *)tableView
 {
 	[tableView registerClass:[SLRIntervalCell class] forCellReuseIdentifier:@"cell"];
+	[tableView registerClass:[SLRWeekHeaderView class] forHeaderFooterViewReuseIdentifier:@"header"];
 	tableView.delegate = self;
 	tableView.dataSource = self;
 }
@@ -79,11 +97,41 @@
 	return canBook;
 }
 
+#pragma mark SLRWeekHeaderViewDelegate
+
+- (void)weekHeaderView:(SLRWeekHeaderView *)weekHeaderView didSelectPage:(SLRPage *)page
+{
+	if (self.page == page)
+	{
+		self.page.selected = NO;
+		self.page = nil;
+	}
+	else
+	{
+		self.page.selected = NO;
+		page.selected = YES;
+		self.page = page;
+	}
+}
+
 #pragma mark - UICollectionViewDataSource
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+	SLRWeekHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
+	headerView.weekVM = self.weekHeaderVMs[section];
+	headerView.delegate = self;
+	return headerView;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	return 100.0;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return 1;
+	return self.weekHeaderVMs.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -93,20 +141,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return self.intervals.count;
+	return self.weekHeaderVMs[section].selectedPage.intervals.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	SLRIntervalCell *cell = (SLRIntervalCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
-	cell.intervalVM = [self.intervals objectAtIndex:indexPath.row];
+	cell.intervalVM = self.weekHeaderVMs[indexPath.section].selectedPage.intervals[indexPath.row];
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	[self didSelectInterval:[self.intervals objectAtIndex:indexPath.row]];
+//	[self didSelectInterval:[self.intervals objectAtIndex:indexPath.row]];
 }
 
 @end

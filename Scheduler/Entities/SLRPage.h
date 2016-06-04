@@ -30,6 +30,7 @@
 
 @property (nonatomic, copy, readonly) NSString *id;
 @property (nonatomic, copy, readonly) NSDate *date;
+@property (nonatomic, copy) NSString *dateString;
 @property (nonatomic, strong, readonly) SLRTimeGrid *timeGrid;
 
 /*! @[SLRRange] */
@@ -39,10 +40,15 @@
 /*! @[SLRRange] */
 @property (nonatomic, copy, readonly) NSArray<SLRRange *> *rangesBook;
 
+@property (nonatomic, assign) BOOL selected;
+
+@property (nonatomic, strong, readonly) NSMutableArray<SLRIntervalVM *> *intervals;
+
 @end
 
 @interface SLRPage (SLRTesting)
 
 + (SLRPage *)testPage;
++ (SLRPage *)testPageWithDate:(NSString *)dateString;
 
 @end

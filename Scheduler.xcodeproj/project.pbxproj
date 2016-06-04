@@ -35,6 +35,8 @@
 		30DF0AD51CFAA65400DE287B /* UIColor+DGSCustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DF0AD41CFAA65400DE287B /* UIColor+DGSCustomColor.m */; };
 		4F9754B5E9F2AEF30804174F /* libPods-SchedulerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 403F53A60B2EED1C0D877599 /* libPods-SchedulerTests.a */; };
 		73103FD71CF0B7AA00785073 /* SLRIntervalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 73103FD61CF0B7AA00785073 /* SLRIntervalCell.m */; };
+		733708F61D03017E0071BC26 /* SLRWeekHeaderVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 733708F51D03017E0071BC26 /* SLRWeekHeaderVM.m */; };
+		733708F91D03081E0071BC26 /* SLRWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 733708F81D03081E0071BC26 /* SLRWeekDayView.m */; };
 		735E213D1CE884C600A4EB54 /* SLRWorkDayVMSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */; };
 		735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */; };
 		73830E561CE0AB13006B6074 /* SLRIntervalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73830E551CE0AB13006B6074 /* SLRIntervalView.m */; };
@@ -76,6 +78,7 @@
 		73AF55C61C9EDBDD009FB75A /* schedule_params.json in Resources */ = {isa = PBXBuildFile; fileRef = 73AF55C41C9EDBDD009FB75A /* schedule_params.json */; };
 		73AF55C91C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55C81C9EDF32009FB75A /* SLRVisitorInterval.m */; };
 		73AF55CA1C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF55C81C9EDF32009FB75A /* SLRVisitorInterval.m */; };
+		73AF6DFB1D02FA3800F3968B /* SLRWeekHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AF6DFA1D02FA3800F3968B /* SLRWeekHeaderView.m */; };
 		9EF1342ABAD404670A1FA95D /* libPods-Scheduler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89010D5CC873F6E1C8A695F5 /* libPods-Scheduler.a */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +153,10 @@
 		59041980C96C640D0855E039 /* Pods-SchedulerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SchedulerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SchedulerTests/Pods-SchedulerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73103FD51CF0B7AA00785073 /* SLRIntervalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRIntervalCell.h; sourceTree = "<group>"; };
 		73103FD61CF0B7AA00785073 /* SLRIntervalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRIntervalCell.m; sourceTree = "<group>"; };
+		733708F41D03017E0071BC26 /* SLRWeekHeaderVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRWeekHeaderVM.h; sourceTree = "<group>"; };
+		733708F51D03017E0071BC26 /* SLRWeekHeaderVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRWeekHeaderVM.m; sourceTree = "<group>"; };
+		733708F71D03081E0071BC26 /* SLRWeekDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRWeekDayView.h; sourceTree = "<group>"; };
+		733708F81D03081E0071BC26 /* SLRWeekDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRWeekDayView.m; sourceTree = "<group>"; };
 		735E213C1CE884C600A4EB54 /* SLRWorkDayVMSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRWorkDayVMSpec.m; sourceTree = "<group>"; };
 		735E213E1CE8912100A4EB54 /* SLRSeporatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRSeporatorView.h; sourceTree = "<group>"; };
 		735E213F1CE8912100A4EB54 /* SLRSeporatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRSeporatorView.m; sourceTree = "<group>"; };
@@ -216,6 +223,8 @@
 		73AF55C41C9EDBDD009FB75A /* schedule_params.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schedule_params.json; sourceTree = "<group>"; };
 		73AF55C71C9EDF32009FB75A /* SLRVisitorInterval.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRVisitorInterval.h; sourceTree = "<group>"; };
 		73AF55C81C9EDF32009FB75A /* SLRVisitorInterval.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRVisitorInterval.m; sourceTree = "<group>"; };
+		73AF6DF91D02FA3800F3968B /* SLRWeekHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRWeekHeaderView.h; sourceTree = "<group>"; };
+		73AF6DFA1D02FA3800F3968B /* SLRWeekHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRWeekHeaderView.m; sourceTree = "<group>"; };
 		89010D5CC873F6E1C8A695F5 /* libPods-Scheduler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Scheduler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC71B5BB6067145B8945C39C /* Pods-Scheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Scheduler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Scheduler/Pods-Scheduler.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -376,6 +385,12 @@
 				73830E581CE0C458006B6074 /* SLRIntervalVM.m */,
 				73103FD51CF0B7AA00785073 /* SLRIntervalCell.h */,
 				73103FD61CF0B7AA00785073 /* SLRIntervalCell.m */,
+				73AF6DF91D02FA3800F3968B /* SLRWeekHeaderView.h */,
+				73AF6DFA1D02FA3800F3968B /* SLRWeekHeaderView.m */,
+				733708F41D03017E0071BC26 /* SLRWeekHeaderVM.h */,
+				733708F51D03017E0071BC26 /* SLRWeekHeaderVM.m */,
+				733708F71D03081E0071BC26 /* SLRWeekDayView.h */,
+				733708F81D03081E0071BC26 /* SLRWeekDayView.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -630,6 +645,7 @@
 				TargetAttributes = {
 					73AF52A31C9EB953009FB75A = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = HJ648XXPWE;
 					};
 					73AF52BC1C9EB953009FB75A = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -807,6 +823,8 @@
 				30470DC01CF8B98C00C57566 /* SLRServiceCellVM.m in Sources */,
 				738314BD1CF09ACA0048AFE2 /* SLROwner.m in Sources */,
 				738314CC1CF09B550048AFE2 /* SLRDataProvider.m in Sources */,
+				733708F61D03017E0071BC26 /* SLRWeekHeaderVM.m in Sources */,
+				73AF6DFB1D02FA3800F3968B /* SLRWeekHeaderView.m in Sources */,
 				30DF0AD51CFAA65400DE287B /* UIColor+DGSCustomColor.m in Sources */,
 				304707A41CF8A66100C57566 /* SLRServiceCell.m in Sources */,
 				73AF55A71C9EC71B009FB75A /* SLRBaseVC.m in Sources */,
@@ -829,6 +847,7 @@
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
 				30470DDD1CF9D5B700C57566 /* SLRDetailsSummaryVM.m in Sources */,
+				733708F91D03081E0071BC26 /* SLRWeekDayView.m in Sources */,
 				3097CD3F1CFA1FDC00E28EEB /* SLRStoreVM.m in Sources */,
 				73AF55BD1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
 				307347041CF21B230089A494 /* SLRDetailsVC.m in Sources */,
@@ -960,6 +979,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "Scheduler/Prefix-Header.h";
 				INFOPLIST_FILE = Scheduler/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -976,6 +996,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "Scheduler/Prefix-Header.h";
 				INFOPLIST_FILE = Scheduler/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

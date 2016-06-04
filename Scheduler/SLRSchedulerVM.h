@@ -1,6 +1,7 @@
 #import "SLRBaseVM.h"
 
 #import "SLRPage.h"
+#import <TLIndexPathController.h>
 
 @interface SLRSchedulerVM : SLRBaseVM
 <
@@ -8,13 +9,14 @@ UITableViewDelegate,
 UITableViewDataSource
 >
 
-@property (nonatomic, strong, readonly) SLRPage *page;
+@property (nonatomic, strong) SLRPage *page;
 
 /** returns [SLRIntervalVM] */
 @property (nonatomic, strong, readonly) RACSignal *didSelectRangeSignal;
 
-- (instancetype)initWithPage:(SLRPage *)page NS_DESIGNATED_INITIALIZER;
-- (instancetype)init NS_UNAVAILABLE;
+@property (nonatomic, strong, readonly) RACSignal *didSelectPageSignal;
+
+@property (nonatomic, strong, readonly) TLIndexPathController *indexPathController;
 
 - (void)registerTableView:(UITableView *)tableView;
 
