@@ -3,6 +3,7 @@
 @class SLRRange;
 @class SLRUser;
 @class SLRRequest;
+@class SLRFilial;
 
 @protocol SLRAPIControllerProtocol <NSObject>
 
@@ -22,6 +23,9 @@
 /*! \return @[SLRService] */
 - (RACSignal *)fetchServicesForPage:(SLRPage *)page
 							  range:(SLRRange *)range;
+
+/*! \return @[SLROwner] */
+- (RACSignal *)fetchOwnersForFilial:(SLRFilial *)filial;
 
 /*! Отправляет букинг-реквест на сервер и возвращает обработанный реквест.
  *	\return SLRRequest

@@ -12,5 +12,17 @@
 
 @property (nonatomic, copy, readonly) NSString *id;
 @property (nonatomic, copy, readonly) NSString *title;
+@property (nonatomic, copy, readonly) NSString *subtitle;
+@property (nonatomic, copy, readonly) NSString *imageURLString;
+
+@end
+
+@interface SLROwner (SLRTesting)
+
++ (SLROwner *)testOwnerHairdresser;
+
++ (SLROwner *)testOwnerDoctorOne;
++ (SLROwner *)testOwnerDoctorTwo;
++ (SLROwner *)testOwnerDoctorThree;
 
 @end

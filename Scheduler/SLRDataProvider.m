@@ -107,6 +107,12 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 	return [self.apiController fetchFilials];
 }
 
+/*! \return @[SLROwner] */
+- (RACSignal *)fetchOwnersForFilial:(SLRFilial *)filial
+{
+	return [self.apiController fetchOwnersForFilial:filial];
+}
+
 /*! \return @[SLRPage] */
 - (RACSignal *)fetchPagesForOwner:(SLROwner *)owner
 {

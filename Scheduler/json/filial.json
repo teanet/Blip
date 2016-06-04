@@ -5,10 +5,14 @@
 	"contact" : "222-22-22",
 	"owners" : [{
 			"id" : "khgklaa",
-			"title" : "Пушкин"
+			"title" : "Писатель",
+			"subtitle" : "Пушкин",
+			"image" : "http://"
 		}, {
 			"id" : "okjsdlfk",
-			"title" : "Колотушкин"
+			"title" : "Хрен в пальто",
+			"subtitle" : "Колотушкин",
+			"image" : "http://"
 		}
 	]
 }

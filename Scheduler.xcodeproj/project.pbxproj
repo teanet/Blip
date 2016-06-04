@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301402FD1D03096B0002AFD6 /* ownerHairdresser.json in Resources */ = {isa = PBXBuildFile; fileRef = 301402FC1D03096B0002AFD6 /* ownerHairdresser.json */; };
+		301402FF1D03097A0002AFD6 /* ownerDoctorOne.json in Resources */ = {isa = PBXBuildFile; fileRef = 301402FE1D03097A0002AFD6 /* ownerDoctorOne.json */; };
+		301403011D0309840002AFD6 /* ownerDoctorTwo.json in Resources */ = {isa = PBXBuildFile; fileRef = 301403001D0309840002AFD6 /* ownerDoctorTwo.json */; };
+		301403031D03098C0002AFD6 /* ownerDoctorThree.json in Resources */ = {isa = PBXBuildFile; fileRef = 301403021D03098C0002AFD6 /* ownerDoctorThree.json */; };
+		301403071D030BD80002AFD6 /* SLRFilialVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 301403061D030BD80002AFD6 /* SLRFilialVM.m */; };
+		3014030A1D030BFC0002AFD6 /* SLRFilialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 301403091D030BFC0002AFD6 /* SLRFilialVC.m */; };
+		3014030E1D0310DD0002AFD6 /* SLRHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3014030D1D0310DD0002AFD6 /* SLRHomeVC.m */; };
+		301403111D0310EE0002AFD6 /* SLRHomeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 301403101D0310EE0002AFD6 /* SLRHomeVM.m */; };
+		301406201D0319D60002AFD6 /* UIViewController+DGSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3014061F1D0319D60002AFD6 /* UIViewController+DGSAdditions.m */; };
 		304707A41CF8A66100C57566 /* SLRServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 304707A31CF8A66100C57566 /* SLRServiceCell.m */; };
 		30470DBD1CF8B7C500C57566 /* SLRTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DBC1CF8B7C500C57566 /* SLRTableViewCell.m */; };
 		30470DC01CF8B98C00C57566 /* SLRServiceCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DBF1CF8B98C00C57566 /* SLRServiceCellVM.m */; };
@@ -93,6 +102,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		301402FC1D03096B0002AFD6 /* ownerHairdresser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ownerHairdresser.json; sourceTree = "<group>"; };
+		301402FE1D03097A0002AFD6 /* ownerDoctorOne.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ownerDoctorOne.json; sourceTree = "<group>"; };
+		301403001D0309840002AFD6 /* ownerDoctorTwo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ownerDoctorTwo.json; sourceTree = "<group>"; };
+		301403021D03098C0002AFD6 /* ownerDoctorThree.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ownerDoctorThree.json; sourceTree = "<group>"; };
+		301403051D030BD80002AFD6 /* SLRFilialVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFilialVM.h; sourceTree = "<group>"; };
+		301403061D030BD80002AFD6 /* SLRFilialVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFilialVM.m; sourceTree = "<group>"; };
+		301403081D030BFC0002AFD6 /* SLRFilialVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFilialVC.h; sourceTree = "<group>"; };
+		301403091D030BFC0002AFD6 /* SLRFilialVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFilialVC.m; sourceTree = "<group>"; };
+		3014030C1D0310DD0002AFD6 /* SLRHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRHomeVC.h; sourceTree = "<group>"; };
+		3014030D1D0310DD0002AFD6 /* SLRHomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRHomeVC.m; sourceTree = "<group>"; };
+		3014030F1D0310EE0002AFD6 /* SLRHomeVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRHomeVM.h; sourceTree = "<group>"; };
+		301403101D0310EE0002AFD6 /* SLRHomeVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRHomeVM.m; sourceTree = "<group>"; };
+		3014061E1D0319D60002AFD6 /* UIViewController+DGSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DGSAdditions.h"; sourceTree = "<group>"; };
+		3014061F1D0319D60002AFD6 /* UIViewController+DGSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DGSAdditions.m"; sourceTree = "<group>"; };
 		304707A21CF8A66100C57566 /* SLRServiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRServiceCell.h; sourceTree = "<group>"; };
 		304707A31CF8A66100C57566 /* SLRServiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRServiceCell.m; sourceTree = "<group>"; };
 		30470DBB1CF8B7C500C57566 /* SLRTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRTableViewCell.h; sourceTree = "<group>"; };
@@ -249,6 +272,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		301403041D030B120002AFD6 /* Filial */ = {
+			isa = PBXGroup;
+			children = (
+				301403051D030BD80002AFD6 /* SLRFilialVM.h */,
+				301403061D030BD80002AFD6 /* SLRFilialVM.m */,
+				301403081D030BFC0002AFD6 /* SLRFilialVC.h */,
+				301403091D030BFC0002AFD6 /* SLRFilialVC.m */,
+			);
+			name = Filial;
+			sourceTree = "<group>";
+		};
+		3014030B1D0310BF0002AFD6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				301403041D030B120002AFD6 /* Filial */,
+				3014030C1D0310DD0002AFD6 /* SLRHomeVC.h */,
+				3014030D1D0310DD0002AFD6 /* SLRHomeVC.m */,
+				3014030F1D0310EE0002AFD6 /* SLRHomeVM.h */,
+				301403101D0310EE0002AFD6 /* SLRHomeVM.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		3014061D1D0319AE0002AFD6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				30DF0AD31CFAA65400DE287B /* UIColor+DGSCustomColor.h */,
+				30DF0AD41CFAA65400DE287B /* UIColor+DGSCustomColor.m */,
+				3014061E1D0319D60002AFD6 /* UIViewController+DGSAdditions.h */,
+				3014061F1D0319D60002AFD6 /* UIViewController+DGSAdditions.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		30470DC51CF99D0D00C57566 /* Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +415,7 @@
 		736EE2151CF95CD700C32225 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				3014030B1D0310BF0002AFD6 /* Home */,
 				30BB886C1CFA1EB00046BEB5 /* Store */,
 				30BB886B1CFA1E760046BEB5 /* Cart */,
 				30470DC51CF99D0D00C57566 /* Details */,
@@ -444,6 +502,10 @@
 				738314D31CF09C890048AFE2 /* filial.json */,
 				738314D41CF09C890048AFE2 /* pages.json */,
 				307346F21CF0B4D80089A494 /* services.json */,
+				301402FC1D03096B0002AFD6 /* ownerHairdresser.json */,
+				301402FE1D03097A0002AFD6 /* ownerDoctorOne.json */,
+				301403001D0309840002AFD6 /* ownerDoctorTwo.json */,
+				301403021D03098C0002AFD6 /* ownerDoctorThree.json */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -482,6 +544,7 @@
 		73AF52A61C9EB953009FB75A /* Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				3014061D1D0319AE0002AFD6 /* Utils */,
 				736EE2151CF95CD700C32225 /* App */,
 				738314C31CF09B230048AFE2 /* Networking */,
 				738314AF1CF09ACA0048AFE2 /* Entities */,
@@ -490,8 +553,6 @@
 				73AF55AC1C9EC81A009FB75A /* Models */,
 				73AF52AA1C9EB953009FB75A /* AppDelegate.h */,
 				73AF52AB1C9EB953009FB75A /* AppDelegate.m */,
-				30DF0AD31CFAA65400DE287B /* UIColor+DGSCustomColor.h */,
-				30DF0AD41CFAA65400DE287B /* UIColor+DGSCustomColor.m */,
 				73AF52B31C9EB953009FB75A /* Assets.xcassets */,
 				73AF52B81C9EB953009FB75A /* Info.plist */,
 				73AF52A71C9EB953009FB75A /* Supporting Files */,
@@ -679,6 +740,10 @@
 			files = (
 				738314D61CF09C890048AFE2 /* pages.json in Resources */,
 				307346F31CF0B4D80089A494 /* services.json in Resources */,
+				301403011D0309840002AFD6 /* ownerDoctorTwo.json in Resources */,
+				301402FD1D03096B0002AFD6 /* ownerHairdresser.json in Resources */,
+				301402FF1D03097A0002AFD6 /* ownerDoctorOne.json in Resources */,
+				301403031D03098C0002AFD6 /* ownerDoctorThree.json in Resources */,
 				738314D51CF09C890048AFE2 /* filial.json in Resources */,
 				73AF52B41C9EB953009FB75A /* Assets.xcassets in Resources */,
 				73AF52D11C9EBCB6009FB75A /* Default-568h@2x.png in Resources */,
@@ -817,6 +882,7 @@
 				30470DBD1CF8B7C500C57566 /* SLRTableViewCell.m in Sources */,
 				307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */,
 				30470DDA1CF9D03400C57566 /* SLRDetailsServicesVM.m in Sources */,
+				3014030E1D0310DD0002AFD6 /* SLRHomeVC.m in Sources */,
 				73830E5C1CE0C46C006B6074 /* SLRWorkDayVM.m in Sources */,
 				738314CA1CF09B550048AFE2 /* SLRAPIController.m in Sources */,
 				30470DD71CF9D01B00C57566 /* SLRDetailsServicesView.m in Sources */,
@@ -833,6 +899,7 @@
 				738314CB1CF09B550048AFE2 /* SLRAPIController+SLRModels.m in Sources */,
 				73103FD71CF0B7AA00785073 /* SLRIntervalCell.m in Sources */,
 				30BB886F1CFA1F140046BEB5 /* SLRCartVC.m in Sources */,
+				301403071D030BD80002AFD6 /* SLRFilialVM.m in Sources */,
 				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				30470DC41CF8D9BD00C57566 /* SLRAuthenticationManager.m in Sources */,
 				30DF0AD11CFA348800DE287B /* SLRStoreItemDetailsVM.m in Sources */,
@@ -843,6 +910,7 @@
 				30BB88721CFA1F240046BEB5 /* SLRCartVM.m in Sources */,
 				738314BC1CF09ACA0048AFE2 /* SLRFilial.m in Sources */,
 				3097CD421CFA1FE700E28EEB /* SLRStoreVC.m in Sources */,
+				301403111D0310EE0002AFD6 /* SLRHomeVM.m in Sources */,
 				30470DCD1CF99DE000C57566 /* SLRDetailsPickerView.m in Sources */,
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
@@ -851,12 +919,14 @@
 				3097CD3F1CFA1FDC00E28EEB /* SLRStoreVM.m in Sources */,
 				73AF55BD1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
 				307347041CF21B230089A494 /* SLRDetailsVC.m in Sources */,
+				3014030A1D030BFC0002AFD6 /* SLRFilialVC.m in Sources */,
 				30DF0ACE1CFA346200DE287B /* SLRStoreItemDetailsVC.m in Sources */,
 				307347071CF2226B0089A494 /* SLRRequest.m in Sources */,
 				73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
 				738314BF1CF09ACA0048AFE2 /* SLRRange.m in Sources */,
 				738314C01CF09ACA0048AFE2 /* SLRTimeGrid.m in Sources */,
 				73AF52A91C9EB953009FB75A /* main.m in Sources */,
+				301406201D0319D60002AFD6 /* UIViewController+DGSAdditions.m in Sources */,
 				73830E561CE0AB13006B6074 /* SLRIntervalView.m in Sources */,
 				3097D0511CFA266900E28EEB /* SLRStoreItemCell.m in Sources */,
 				30470DD01CF99FFB00C57566 /* SLRDetailsPickerVM.m in Sources */,

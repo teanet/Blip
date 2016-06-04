@@ -45,6 +45,15 @@ static NSString *const kSLRVKAlbumId = @"227906560";//@"177366013";
 	return [RACSignal return:@[[SLRPage testPage]]];
 }
 
+- (RACSignal *)fetchOwnersForFilial:(SLRFilial *)filial
+{
+	return [RACSignal return:@[
+		[SLROwner testOwnerDoctorOne],
+		[SLROwner testOwnerDoctorTwo],
+		[SLROwner testOwnerDoctorThree]
+	]];
+}
+
 /*! \return @[SLRPage] */
 - (RACSignal *)fetchPagesForOwner:(SLROwner *)owner
 							 date:(NSDate *)date

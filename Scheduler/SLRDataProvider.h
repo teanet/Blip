@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedProvider;
 
 /*! Misc
- *	Разные методы.
+ *	Всякие методы.
  **/
 - (RACSignal *)fetchEmptyBookingRequest;
 
@@ -45,6 +45,11 @@ NS_ASSUME_NONNULL_BEGIN
  *	\return @[SLRFilial]
  **/
 - (RACSignal *)fetchFilials;
+
+/*! Подтягивает всех владельцев расписания для филиала.
+ *	\return @[SLROwner]
+ **/
+- (RACSignal *)fetchOwnersForFilial:(SLRFilial *)filial;
 
 ///*! Подтягивает загруженность филиала. Загруженность = [0..1] заполненности дневного расписания.
 // *	\return @{date: @(0..1)}
