@@ -1,7 +1,7 @@
 #import "AppDelegate.h"
 
 #import "SLRRootVC.h"
-//#import "SLRSchedulerVC.h"
+#import "SLRSchedulerVC.h"
 #import "SLRCartVC.h"
 #import "SLRStoreVC.h"
 
@@ -27,11 +27,15 @@
 	SLRCartVM *cartVM = [[SLRCartVM alloc] init];
 	SLRCartVC *cartVC = [[SLRCartVC alloc] initWithViewModel:cartVM];
 
-	UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:cartVC];
+	SLRSchedulerVM *schedulerVM = [[SLRSchedulerVM alloc] init];
+	SLRSchedulerVC *schedulerVC = [[SLRSchedulerVC alloc] initWithViewModel:schedulerVM];
 
 	UITabBarController *tc = [[UITabBarController alloc] init];
-	tc.viewControllers = @[storeVC, nc];
-
+	tc.viewControllers = @[
+		[[UINavigationController alloc] initWithRootViewController:schedulerVC],
+		storeVC,
+		[[UINavigationController alloc] initWithRootViewController:cartVC],
+	];
 
 	self.window.rootViewController = tc;
 	[self.window makeKeyAndVisible];

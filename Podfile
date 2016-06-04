@@ -18,6 +18,7 @@ target 'Scheduler' do
 	pod 'UIDevice-Hardware'
 	pod 'SSKeychain'
 	pod 'Digits'
+	pod 'TLIndexPathTools'
 	project 'Scheduler.xcodeproj'
 end
 
