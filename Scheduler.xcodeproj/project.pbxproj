@@ -16,6 +16,8 @@
 		3014030E1D0310DD0002AFD6 /* SLRHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3014030D1D0310DD0002AFD6 /* SLRHomeVC.m */; };
 		301403111D0310EE0002AFD6 /* SLRHomeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 301403101D0310EE0002AFD6 /* SLRHomeVM.m */; };
 		301406201D0319D60002AFD6 /* UIViewController+DGSAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3014061F1D0319D60002AFD6 /* UIViewController+DGSAdditions.m */; };
+		301406241D0320230002AFD6 /* SLROwnerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 301406231D0320230002AFD6 /* SLROwnerCell.m */; };
+		301406271D03223D0002AFD6 /* SLROwnerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 301406261D03223D0002AFD6 /* SLROwnerVM.m */; };
 		304707A41CF8A66100C57566 /* SLRServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 304707A31CF8A66100C57566 /* SLRServiceCell.m */; };
 		30470DBD1CF8B7C500C57566 /* SLRTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DBC1CF8B7C500C57566 /* SLRTableViewCell.m */; };
 		30470DC01CF8B98C00C57566 /* SLRServiceCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DBF1CF8B98C00C57566 /* SLRServiceCellVM.m */; };
@@ -116,6 +118,10 @@
 		301403101D0310EE0002AFD6 /* SLRHomeVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRHomeVM.m; sourceTree = "<group>"; };
 		3014061E1D0319D60002AFD6 /* UIViewController+DGSAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DGSAdditions.h"; sourceTree = "<group>"; };
 		3014061F1D0319D60002AFD6 /* UIViewController+DGSAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DGSAdditions.m"; sourceTree = "<group>"; };
+		301406221D0320230002AFD6 /* SLROwnerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLROwnerCell.h; sourceTree = "<group>"; };
+		301406231D0320230002AFD6 /* SLROwnerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLROwnerCell.m; sourceTree = "<group>"; };
+		301406251D03223D0002AFD6 /* SLROwnerVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLROwnerVM.h; sourceTree = "<group>"; };
+		301406261D03223D0002AFD6 /* SLROwnerVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLROwnerVM.m; sourceTree = "<group>"; };
 		304707A21CF8A66100C57566 /* SLRServiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRServiceCell.h; sourceTree = "<group>"; };
 		304707A31CF8A66100C57566 /* SLRServiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRServiceCell.m; sourceTree = "<group>"; };
 		30470DBB1CF8B7C500C57566 /* SLRTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRTableViewCell.h; sourceTree = "<group>"; };
@@ -275,6 +281,7 @@
 		301403041D030B120002AFD6 /* Filial */ = {
 			isa = PBXGroup;
 			children = (
+				301406211D031FDD0002AFD6 /* Cell */,
 				301403051D030BD80002AFD6 /* SLRFilialVM.h */,
 				301403061D030BD80002AFD6 /* SLRFilialVM.m */,
 				301403081D030BFC0002AFD6 /* SLRFilialVC.h */,
@@ -304,6 +311,17 @@
 				3014061F1D0319D60002AFD6 /* UIViewController+DGSAdditions.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		301406211D031FDD0002AFD6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				301406221D0320230002AFD6 /* SLROwnerCell.h */,
+				301406231D0320230002AFD6 /* SLROwnerCell.m */,
+				301406251D03223D0002AFD6 /* SLROwnerVM.h */,
+				301406261D03223D0002AFD6 /* SLROwnerVM.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		30470DC51CF99D0D00C57566 /* Details */ = {
@@ -544,8 +562,8 @@
 		73AF52A61C9EB953009FB75A /* Scheduler */ = {
 			isa = PBXGroup;
 			children = (
-				3014061D1D0319AE0002AFD6 /* Utils */,
 				736EE2151CF95CD700C32225 /* App */,
+				3014061D1D0319AE0002AFD6 /* Utils */,
 				738314C31CF09B230048AFE2 /* Networking */,
 				738314AF1CF09ACA0048AFE2 /* Entities */,
 				73AF55AE1C9EC826009FB75A /* ViewModels */,
@@ -884,6 +902,7 @@
 				30470DDA1CF9D03400C57566 /* SLRDetailsServicesVM.m in Sources */,
 				3014030E1D0310DD0002AFD6 /* SLRHomeVC.m in Sources */,
 				73830E5C1CE0C46C006B6074 /* SLRWorkDayVM.m in Sources */,
+				301406271D03223D0002AFD6 /* SLROwnerVM.m in Sources */,
 				738314CA1CF09B550048AFE2 /* SLRAPIController.m in Sources */,
 				30470DD71CF9D01B00C57566 /* SLRDetailsServicesView.m in Sources */,
 				30470DC01CF8B98C00C57566 /* SLRServiceCellVM.m in Sources */,
@@ -923,6 +942,7 @@
 				30DF0ACE1CFA346200DE287B /* SLRStoreItemDetailsVC.m in Sources */,
 				307347071CF2226B0089A494 /* SLRRequest.m in Sources */,
 				73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
+				301406241D0320230002AFD6 /* SLROwnerCell.m in Sources */,
 				738314BF1CF09ACA0048AFE2 /* SLRRange.m in Sources */,
 				738314C01CF09ACA0048AFE2 /* SLRTimeGrid.m in Sources */,
 				73AF52A91C9EB953009FB75A /* main.m in Sources */,

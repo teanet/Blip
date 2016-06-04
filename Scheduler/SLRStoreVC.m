@@ -21,7 +21,6 @@
 	self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Store"
 													image:[UIImage imageNamed:@"shop"]
 													  tag:0];
-
 	return self;
 }
 

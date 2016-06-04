@@ -1,6 +1,7 @@
 #import "SLRFilialVM.h"
 
 #import "SLRFilial.h"
+#import "SLROwnerVM.h"
 
 @interface SLRFilialVM ()
 
@@ -16,6 +17,10 @@
 	if (self == nil) return nil;
 
 	_filial = filial;
+	_ownerVMs = [self.filial.owners.rac_sequence
+		map:^SLROwnerVM *(SLROwner *owner) {
+			return [[SLROwnerVM alloc] initWithOwner:owner];
+		}].array;
 
 	return self;
 }
