@@ -1,5 +1,7 @@
 #import "SLRIntervalVM.h"
 
+#import "UIColor+DGSCustomColor.h"
+
 @implementation SLRIntervalVM
 
 + (NSArray<SLRIntervalVM *> *)intervalsForRange:(SLRRange *)range step:(NSInteger)step
@@ -30,15 +32,15 @@
 	switch (self.state) {
 		case SLRRangeStateFree:
 		{
-			return [UIColor greenColor];
+			return [UIColor dgs_colorWithString:@"FBFAF9"];
 		}
 		case SLRRangeStateHold:
 		{
-			return [UIColor grayColor];
+			return [UIColor dgs_colorWithString:@"F3F0EC"];
 		}
 		case SLRRangeStateBook:
 		{
-			return [UIColor redColor];
+			return [UIColor dgs_colorWithString:@"F3F0EC"];
 		}
 		case SLRRangeStateUndefined:
 		{

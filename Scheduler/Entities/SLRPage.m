@@ -58,11 +58,11 @@
 
 @implementation SLRPage (SLRTesting)
 
-+ (SLRPage *)pageTest
++ (SLRPage *)testPage
 {
 	NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"pages.json" ofType:nil]];
 	NSDictionary *testDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-	return [[SLRPage alloc] initWithDictionary:testDictionary];;
+	return [[SLRPage alloc] initWithDictionary:testDictionary];
 }
 
 @end

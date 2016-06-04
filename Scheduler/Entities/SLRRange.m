@@ -45,14 +45,23 @@
 		_state = SLRRangeStateBook;
 	}
 
+	NSArray <NSDictionary *> *serviceDictionaries = dictionary[@"services"];
+	if ([serviceDictionaries isKindOfClass:[NSArray class]])
+	{
+		_services = [[serviceDictionaries rac_sequence]
+			map:^SLRService *(NSDictionary *serviceDictionary) {
+				return [[SLRService alloc] initWithDictionary:serviceDictionary];
+			}].array;
+	}
+
 	return self;
 }
 
-+ (instancetype)rangeWithInterval:(SLRIntervalVM *)intervalVM
++ (instancetype)rangeWithInterval:(SLRIntervalVM *)intervalVM bookingTime:(NSTimeInterval)bookingTime
 {
 	SLRRange *range = [[SLRRange alloc] initWithDictionary:@{}];
 	range.location = intervalVM.location;
-	range.length = intervalVM.state;
+	range.length = bookingTime;
 	range.state = SLRRangeStateHold;
 	return range;
 }

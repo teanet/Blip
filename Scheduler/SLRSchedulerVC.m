@@ -1,5 +1,8 @@
 #import "SLRSchedulerVC.h"
 
+#import "SLRDetailsVM.h"
+#import "SLRDetailsVC.h"
+
 @interface SLRSchedulerVC ()
 
 @property (nonatomic, strong, readonly) UITableView *tableView;
@@ -13,14 +16,17 @@
     [super viewDidLoad];
 	@weakify(self);
 
+	self.edgesForExtendedLayout = UIRectEdgeNone;
+
 	[self setupInterface];
 
 	[self.viewModel registerTableView:self.tableView];
 	[self.viewModel.didSelectRangeSignal subscribeNext:^(SLRRange *range) {
 		@strongify(self);
 
-		UIViewController *vc = [UIViewController new];
-		vc.view.backgroundColor = [UIColor whiteColor];
+		SLRDetailsVM *vm = [[SLRDetailsVM alloc] initWithPage:self.viewModel.page selectedRange:range];
+		SLRDetailsVC *vc = [[SLRDetailsVC alloc] initWithViewModel:vm];
+
 		[self.navigationController pushViewController:vc animated:YES];
 	}];
 }

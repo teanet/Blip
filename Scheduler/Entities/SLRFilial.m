@@ -28,7 +28,7 @@
 
 @implementation SLRFilial (SLRTesting)
 
-+ (SLRFilial *)filialTest
++ (SLRFilial *)testFilial
 {
 
 	NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"filial.json" ofType:nil]];

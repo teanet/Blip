@@ -29,6 +29,6 @@
 
 @interface SLRFilial (SLRTesting)
 
-+ (SLRFilial *)filialTest;
++ (SLRFilial *)testFilial;
 
 @end

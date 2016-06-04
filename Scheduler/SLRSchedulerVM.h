@@ -8,6 +8,8 @@ UITableViewDelegate,
 UITableViewDataSource
 >
 
+@property (nonatomic, strong, readonly) SLRPage *page;
+
 /** returns [SLRIntervalVM] */
 @property (nonatomic, strong, readonly) RACSignal *didSelectRangeSignal;
 
