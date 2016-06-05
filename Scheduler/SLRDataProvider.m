@@ -51,9 +51,19 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 
 // MARK: Misc
 
+- (SLRUser *)user
+{
+	return self.authManager.user;
+}
+
+- (RACSignal *)fetchAuthenticatedUser
+{
+	return [self.authManager fetchAuthenticatedUser];
+}
+
 - (RACSignal *)fetchEmptyBookingRequestForPage:(SLRPage *)page
 {
-	return [[self.authManager fetchUser]
+	return [[self.authManager fetchAuthenticatedUser]
 		map:^SLRRequest *(SLRUser *user) {
 			return [self emptyBookingRequestForUser:user page:page];
 		}];
@@ -136,6 +146,14 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 - (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request
 {
 	return [self.apiController fetchProcessedRequestForRequest:request];
+}
+
+- (RACSignal *)fetchRequests
+{
+	return [[self.authManager fetchAuthenticatedUser]
+		flattenMap:^RACStream *(SLRUser *user) {
+			return [self.apiController fetchRequestsForUser:user];
+		}];
 }
 
 - (RACSignal *)fetchStoreItems

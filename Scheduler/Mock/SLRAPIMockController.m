@@ -76,6 +76,11 @@ static NSString *const kSLRVKAlbumId = @"227906560";//@"177366013";
 	return [RACSignal return:[SLRRequest testRequestReviewed]];
 }
 
+- (RACSignal *)fetchRequestsForUser:(SLRUser *)user
+{
+	return [RACSignal return:@[[SLRRequest testRequestReviewed]]];
+}
+
 //api.vk.com/method/photos.get?owner_id=&album_id=&rev=&extended=1&photo_sizes=0&v=5.52
 - (RACSignal *)fetchStoreItems
 {

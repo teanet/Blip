@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
 	@weakify(self);
 
 	self.edgesForExtendedLayout = UIRectEdgeNone;

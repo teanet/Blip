@@ -32,6 +32,11 @@
  **/
 - (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request;
 
+/*! Подтягивает все реквесты для пользователя.
+ *	\return @[SLRRequest]
+ **/
+- (RACSignal *)fetchRequestsForUser:(SLRUser *)user;
+
 /*! Отправляет букинг-реквест на сервер и возвращает обработанный реквест.
  *	\return @[SLRStoreItem]
  **/

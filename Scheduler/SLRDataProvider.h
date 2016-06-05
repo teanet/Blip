@@ -14,6 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 /*! Misc
  *	Всякие методы.
  **/
+
+/*! Текущий юзер, может быть nil */
+- (SLRUser *)user;
+
+/*! Авторизуем пользователя, запоминаем в кейчейн и возвращаем. */
+- (RACSignal *)fetchAuthenticatedUser;
+
 - (RACSignal *)fetchEmptyBookingRequestForPage:(SLRPage *)page;
 
 /*! Подтянуть товары для магазина
@@ -77,6 +84,11 @@ NS_ASSUME_NONNULL_BEGIN
  *	\return SLRRequest
  **/
 - (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request;
+
+/*! Подтягивает букинг-реквесты для пользователя. Если пользователь не залогинене, логинит его по телефону.
+ *	\return @[SLRRequest]
+ **/
+- (RACSignal *)fetchRequests;
 
 @end
 
