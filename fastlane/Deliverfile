@@ -1,0 +1,23 @@
+price_tier 0
+app_icon "Resources/Icon.png"
+
+app_review_information({
+  first_name: "Eugene",
+  last_name: "Tyutyuev",
+  phone_number: "+79833087336",
+  email_address: "tea.net@me.com",
+  demo_user: "",
+  demo_password: "",
+  notes: ""
+})
+
+submission_information({
+  add_id_info_uses_idfa: false,
+  export_compliance_uses_encryption: false,
+  export_compliance_encryption_updated: false
+})
+
+copyright "#{Time.now.year} Nazabore"
+automatic_release true
+submit_for_review true
+app_rating_config_path "Resources/ratings_config.json"
