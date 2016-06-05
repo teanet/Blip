@@ -11,6 +11,8 @@ UITableViewDataSource
 
 @property (nonatomic, strong) SLRPage *page;
 
+@property (nonatomic, copy, readonly) NSString *title;
+
 /** returns [SLRIntervalVM] */
 @property (nonatomic, strong, readonly) RACSignal *didSelectRangeSignal;
 
