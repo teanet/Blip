@@ -3,9 +3,10 @@
 /*! Пользователь, который заполняет таблицу расписаний.
 	Администратор - тоже пользователь, но его ещё не бывает.
  {
-	"id" : string,
-	"full_name" : string,
+	"user_id" : string,
 	"phone" : string,
+	"auth_token" : string,
+	"auth_token_secret" : string
  }
  */
 @interface SLRUser : NSObject <SLRSerializableProtocol>

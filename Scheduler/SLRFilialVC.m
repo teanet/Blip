@@ -1,26 +1,25 @@
-#import "SLRStoreVC.h"
+#import "SLRFilialVC.h"
 
-#import "SLRStoreItemCell.h"
-#import "SLRStoreItemDetailsVC.h"
-#import "UIColor+DGSCustomColor.h"
+#import "SLROwnerCell.h"
+#import "SLROwnerVM.h"
+#import "SLRSchedulerVC.h"
 
-@interface SLRStoreVC () <UICollectionViewDelegate, UICollectionViewDataSource>
+// Технический долг =)
+@interface SLRFilialVC () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
-@implementation SLRStoreVC
+@implementation SLRFilialVC
 
-- (instancetype)initWithViewModel:(SLRStoreVM *)viewModel
+- (instancetype)initWithViewModel:(id)viewModel
 {
 	self = [super initWithViewModel:viewModel];
 	if (self == nil) return nil;
 
-	self.title = @"Store";
-	self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Store"
-													image:[UIImage imageNamed:@"shop"]
-													  tag:0];
+	self.title = self.viewModel.title;
+
 	return self;
 }
 
@@ -38,7 +37,7 @@
 	self.collectionView.backgroundColor = [UIColor dgs_colorWithString:@"FBFAF9"];
 	self.collectionView.delegate = self;
 	self.collectionView.dataSource = self;
-	[self.collectionView registerClass:[SLRStoreItemCell class] forCellWithReuseIdentifier:@"SLRStoreItemCell"];
+	[self.collectionView registerClass:[SLROwnerCell class] forCellWithReuseIdentifier:@"SLROwnerCell"];
 
 	[self.view addSubview:self.collectionView];
 
@@ -53,13 +52,12 @@
 {
 	@weakify(self);
 
-	[[[RACObserve(self.viewModel, storeItems)
-		ignore:nil]
-		deliverOnMainThread]
-		subscribeNext:^(id x) {
+	[self.viewModel.shouldShowSchedulerSignal
+		subscribeNext:^(SLRSchedulerVM *viewModel) {
 			@strongify(self);
 
-			[self.collectionView reloadData];
+			SLRSchedulerVC *vc = [[SLRSchedulerVC alloc] initWithViewModel:viewModel];
+			[self.navigationController pushViewController:vc animated:YES];
 		}];
 }
 
@@ -72,29 +70,20 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-	return self.viewModel.storeItems.count;
+	return self.viewModel.ownerVMs.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-	SLRStoreItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SLRStoreItemCell" forIndexPath:indexPath];
-	cell.storeItem = self.viewModel.storeItems[indexPath.item];
+	SLROwnerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SLROwnerCell" forIndexPath:indexPath];
+	cell.ownerVM = self.viewModel.ownerVMs[indexPath.item];
 	return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	[collectionView deselectItemAtIndexPath:indexPath animated:YES];
-	[self showDetailsForSelectedItem:[self.viewModel.storeItems objectAtIndex:indexPath.row]];
-}
-
-- (void)showDetailsForSelectedItem:(SLRStoreItem *)storeItem
-{
-	SLRStoreItemDetailsVM *vm = [[SLRStoreItemDetailsVM alloc] initWithStoreItem:storeItem style:SLRStoreItemDetailsStyleAdd];
-	SLRStoreItemDetailsVC *vc = [[SLRStoreItemDetailsVC alloc] initWithViewModel:vm];
-	vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-
-	[self presentViewController:vc animated:YES completion:nil];
+	[self.viewModel didSelectOwnerAtIndexPath:indexPath];
 }
 
 @end

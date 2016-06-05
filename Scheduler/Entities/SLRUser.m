@@ -1,7 +1,6 @@
 #import "SLRUser.h"
 
 static NSString *const kKeyId				= @"user_id";
-//static NSString *const kKeyFullName			= @"full_name";
 static NSString *const kKeyPhone			= @"phone";
 static NSString *const kKeyAuthToken		= @"auth_token";
 static NSString *const kKeyAuthTokenSecret	= @"auth_token_secret";
@@ -16,7 +15,6 @@ static NSString *const kKeyAuthTokenSecret	= @"auth_token_secret";
 	self = [super init];
 	if (self == nil) return nil;
 
-//	_fullName = [fullName copy];
 	_userId = [userId copy];
 	_phone = [phone copy];
 	_authToken = [authToken copy];
@@ -31,7 +29,6 @@ static NSString *const kKeyAuthTokenSecret	= @"auth_token_secret";
 	if (self == nil) return nil;
 
 	_userId = dictionary[kKeyId];
-//	_fullName = dictionary[kKeyFullName];
 	_phone = dictionary[kKeyPhone];
 	_authToken = dictionary[kKeyAuthToken];
 	_authTokenSecret = dictionary[kKeyAuthTokenSecret];

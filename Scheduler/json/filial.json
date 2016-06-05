@@ -5,10 +5,14 @@
 	"contact" : "222-22-22",
 	"owners" : [{
 			"id" : "khgklaa",
-			"title" : "Пушкин"
+			"title" : "Писатель",
+			"subtitle" : "Пушкин А. С.",
+			"image" : "http://www.lib05.ru/sites/default/files/content/virtual_exhibition/pushkin-v-iskusstve_3.jpg"
 		}, {
 			"id" : "okjsdlfk",
-			"title" : "Колотушкин"
+			"title" : "Хрен в пальто",
+			"subtitle" : "Колотушкин Х. З.",
+			"image" : "http://www.tovaria.ru/upload/iblock/fe2/jgvo%20xtphkfbcwti%20qxcfyyt%20190v.jpg"
 		}
 	]
 }

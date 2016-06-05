@@ -74,7 +74,7 @@
 		subscribeNext:^(NSArray<SLRPage *> *pages) {
 			@strongify(self);
 			
-			SLRSchedulerVM *vm = [[SLRSchedulerVM alloc] init];
+			SLRSchedulerVM *vm = [[SLRSchedulerVM alloc] initWithOwner:nil];
 			vm.page = pages.firstObject;
 			SLRSchedulerVC *vc = [[SLRSchedulerVC alloc] initWithViewModel:vm];
 

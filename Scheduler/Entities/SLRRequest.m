@@ -11,13 +11,67 @@
 
 @implementation SLRRequest
 
-- (instancetype)initWithUser:(SLRUser *)user
+- (instancetype)initWithUser:(SLRUser *)user page:(SLRPage *)page
 {
 	self = [super init];
 	if (self == nil) return nil;
 
 	_user = user;
+	_page = page;
 	_state = SLRRequestStateUndefined;
+
+	return self;
+}
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+	self = [super init];
+	if (self == nil) return nil;
+
+	_id = dictionary[@"id"];
+
+	NSDictionary *pageDictionary = dictionary[@"page"];
+	if ([pageDictionary isKindOfClass:[NSDictionary class]])
+	{
+		_page = [[SLRPage alloc] initWithDictionary:pageDictionary];
+	}
+
+	NSDictionary *userDictionary = dictionary[@"user"];
+	if ([userDictionary isKindOfClass:[NSDictionary class]])
+	{
+		_user = [[SLRUser alloc] initWithDictionary:userDictionary];
+	}
+
+	_location = [dictionary[@"location"] integerValue];
+	_length = [dictionary[@"length"] integerValue];
+	_summary = dictionary[@"summary"];
+
+	_state = SLRRequestStateUndefined;
+	NSString *stateString = dictionary[@"state"];
+
+	if ([[stateString lowercaseString] isEqualToString:@"review"])
+	{
+		_state = SLRRequestStateReview;
+	}
+	else if ([[stateString lowercaseString] isEqualToString:@"approve"])
+	{
+		_state = SLRRequestStateApprove;
+	}
+	else if ([[stateString lowercaseString] isEqualToString:@"reject"])
+	{
+		_state = SLRRequestStateReject;
+	}
+
+	_stateReason = dictionary[@"state_reason"];
+
+	NSArray <NSDictionary *> *serviceDictionaries = dictionary[@"services"];
+	if ([serviceDictionaries isKindOfClass:[NSArray class]])
+	{
+		_services = [[serviceDictionaries rac_sequence]
+			map:^SLRService *(NSDictionary *serviceDictionary) {
+				return [[SLRService alloc] initWithDictionary:serviceDictionary];
+			}].array;
+	}
 
 	return self;
 }

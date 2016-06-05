@@ -1,6 +1,7 @@
 #import "SLRSerializableProtocol.h"
 #import "SLRService.h"
 #import "SLRUser.h"
+#import "SLRPage.h"
 
 typedef NS_ENUM(NSInteger, SLRRequestState) {
 	SLRRequestStateReview = 0,
@@ -16,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
  *	Очень похож на SLRRange, но служит для составления запроса + отслеживания его прогресса.
  {
 	"id": string,
+	"page" : {
+	},
 	"user" : {
 	...
 	},
@@ -37,10 +40,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SLRRequest : NSObject
 
+@property (nonatomic, copy, readonly) NSDate *date;
 @property (nonatomic, assign) NSInteger location;
 @property (nonatomic, assign) NSInteger length;
 @property (nonatomic, copy, nullable) NSString *summary;
 @property (nonatomic, copy, nullable) NSArray<SLRService *> *services;
+@property (nonatomic, strong, readonly) SLRPage *page;
 
 @end
 
@@ -63,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
 	id = nil (присваивается сервером?)
 	stateReason = nil ()
  **/
-- (instancetype)initWithUser:(SLRUser *)user;
+- (instancetype)initWithUser:(SLRUser *)user page:(SLRPage *)page;
 
 /*! Сериализованное представление объекта. 
 	Объект передается в запросах, поэтому его надо сериализовать.

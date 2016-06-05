@@ -108,6 +108,12 @@
 	return [pickerRows copy];
 }
 
+- (BOOL)isAdjustable
+{
+#warning HERE SWITCH OFF ADJUST SECTION
+	return YES;
+}
+
 // MARK: UIPickerViewDelegate, UIPickerViewDataSource
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {

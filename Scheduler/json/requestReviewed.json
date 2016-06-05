@@ -1,0 +1,41 @@
+{
+	"id": "oirjfoi2rjf93",
+	"page" : {
+		"id": "lkjfhlkhadlkjfh",
+		"date": "2016-05-09",
+		"greed": {
+			"booking_step": 15,
+			"booking_interval_min": 30,
+			"booking_interval_max": 180
+		},
+		"owner": {
+			"id" : "khgklaa",
+			"title" : "Парикмахер",
+			"subtitle" : "Петров Алексей Александрович",
+			"image" : "http://"
+		}
+	},
+	"user" : {
+		"user_id": "ldjlkjwehf84",
+		"phone": "+79137776655",
+		"auth_token": "auth_token",
+		"auth_token_secret": "auth_token_secret"
+	},
+	"location" : 480,
+	"length" : 90,
+	"summary" : "Было бы неплохо подстричь бороду.",
+	"state" : "review",
+	"state_reason": "Ждёт аппрува",
+	"services" : [
+		{
+			"id": "erkhef98723а98ekldncsdfsdsdlfklwn",
+			"title": "Гладить кота",
+			"summary": "Кота будут гладить",
+			"price_per_minute": 2,
+			"price": 0,
+			"duration": 0,
+			"available": true,
+			"selected": true
+		}
+	]
+}

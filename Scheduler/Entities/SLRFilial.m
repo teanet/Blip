@@ -30,10 +30,9 @@
 
 + (SLRFilial *)testFilial
 {
-
 	NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"filial.json" ofType:nil]];
 	NSDictionary *testDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-	return [[SLRFilial alloc] initWithDictionary:testDictionary];;
+	return [[SLRFilial alloc] initWithDictionary:testDictionary];
 }
 
 @end

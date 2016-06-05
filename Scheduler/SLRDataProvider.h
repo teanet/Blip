@@ -12,9 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedProvider;
 
 /*! Misc
- *	Разные методы.
+ *	Всякие методы.
  **/
-- (RACSignal *)fetchEmptyBookingRequest;
+
+/*! Текущий юзер, может быть nil */
+- (SLRUser *)user;
+
+/*! Авторизуем пользователя, запоминаем в кейчейн и возвращаем. */
+- (RACSignal *)fetchAuthenticatedUser;
+
+- (RACSignal *)fetchEmptyBookingRequestForPage:(SLRPage *)page;
 
 /*! Подтянуть товары для магазина
  *	Пока что подтягиваем просто фотки из вконтактика
@@ -46,6 +53,11 @@ NS_ASSUME_NONNULL_BEGIN
  **/
 - (RACSignal *)fetchFilials;
 
+/*! Подтягивает всех владельцев расписания для филиала.
+ *	\return @[SLROwner]
+ **/
+- (RACSignal *)fetchOwnersForFilial:(SLRFilial *)filial;
+
 ///*! Подтягивает загруженность филиала. Загруженность = [0..1] заполненности дневного расписания.
 // *	\return @{date: @(0..1)}
 // **/
@@ -72,6 +84,11 @@ NS_ASSUME_NONNULL_BEGIN
  *	\return SLRRequest
  **/
 - (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request;
+
+/*! Подтягивает букинг-реквесты для пользователя. Если пользователь не залогинене, логинит его по телефону.
+ *	\return @[SLRRequest]
+ **/
+- (RACSignal *)fetchRequests;
 
 @end
 

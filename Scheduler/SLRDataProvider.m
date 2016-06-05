@@ -51,20 +51,30 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 
 // MARK: Misc
 
-- (RACSignal *)fetchEmptyBookingRequest
+- (SLRUser *)user
 {
-	return [[self.authManager fetchUser]
+	return self.authManager.user;
+}
+
+- (RACSignal *)fetchAuthenticatedUser
+{
+	return [self.authManager fetchAuthenticatedUser];
+}
+
+- (RACSignal *)fetchEmptyBookingRequestForPage:(SLRPage *)page
+{
+	return [[self.authManager fetchAuthenticatedUser]
 		map:^SLRRequest *(SLRUser *user) {
-			return [self emptyBookingRequestForUser:user];
+			return [self emptyBookingRequestForUser:user page:page];
 		}];
 }
 
-- (SLRRequest *)emptyBookingRequestForUser:(SLRUser *)user
+- (SLRRequest *)emptyBookingRequestForUser:(SLRUser *)user page:(SLRPage *)page
 {
 	NSCAssert(user, @"User should be set before using booking method.");
 	if (!user) return nil;
 
-	return [[SLRRequest alloc] initWithUser:user];
+	return [[SLRRequest alloc] initWithUser:user page:page];
 }
 
 - (void)addStoreItemToCart:(SLRStoreItem *)storeItem
@@ -107,6 +117,12 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 	return [self.apiController fetchFilials];
 }
 
+/*! \return @[SLROwner] */
+- (RACSignal *)fetchOwnersForFilial:(SLRFilial *)filial
+{
+	return [self.apiController fetchOwnersForFilial:filial];
+}
+
 /*! \return @[SLRPage] */
 - (RACSignal *)fetchPagesForOwner:(SLROwner *)owner
 {
@@ -130,6 +146,14 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 - (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request
 {
 	return [self.apiController fetchProcessedRequestForRequest:request];
+}
+
+- (RACSignal *)fetchRequests
+{
+	return [[self.authManager fetchAuthenticatedUser]
+		flattenMap:^RACStream *(SLRUser *user) {
+			return [self.apiController fetchRequestsForUser:user];
+		}];
 }
 
 - (RACSignal *)fetchStoreItems

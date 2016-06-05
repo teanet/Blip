@@ -1,5 +1,7 @@
 #import "SLRBaseVC.h"
 
-@interface SLRRootVC : SLRBaseVC
+#import "SLRRootVM.h"
 
+/*! Здесь будем обрабатывать и показывать проксимити */
+@interface SLRRootVC : SLRBaseVC <SLRRootVM *>
 @end
