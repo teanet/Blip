@@ -42,7 +42,7 @@
 		subscribeNext:^(SLRBaseVM *vm) {
 			@strongify(self);
 
-			SLRBaseVC *showVC = [SLRHomeVC viewControllerForViewModel:vm];
+			UIViewController *showVC = [SLRHomeVC viewControllerForViewModel:vm];
 			[self dgs_showViewController:showVC inView:self.view];
 		}];
 }
@@ -52,9 +52,9 @@
 
 @implementation SLRHomeVC (SLRHomeVCFabric)
 
-+ (SLRBaseVC *)viewControllerForViewModel:(SLRBaseVM *)viewModel
++ (UIViewController *)viewControllerForViewModel:(SLRBaseVM *)viewModel
 {
-	SLRBaseVC *showVC = nil;
+	UIViewController *showVC = nil;
 
 	if ([viewModel isKindOfClass:[SLRSchedulerVM class]])
 	{
@@ -62,7 +62,9 @@
 	}
 	else if ([viewModel isKindOfClass:[SLRFilialVM class]])
 	{
-		showVC = [[SLRFilialVC alloc] initWithViewModel:(SLRFilialVM *)viewModel];
+		SLRFilialVC *filialVC = [[SLRFilialVC alloc] initWithViewModel:(SLRFilialVM *)viewModel];
+		UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:filialVC];
+		showVC = nc;
 	}
 
 	return showVC;

@@ -6,6 +6,7 @@
 
 @property (nonatomic, strong, readonly) UIImageView *imageView;
 @property (nonatomic, strong, readonly) UILabel *titleLabel;
+@property (nonatomic, strong, readonly) UILabel *subtitleLabel;
 
 @end
 
@@ -23,13 +24,18 @@
 	[self.contentView addSubview:_imageView];
 
 	_titleLabel = [[UILabel alloc] init];
-	self.titleLabel.numberOfLines = 3;
+	self.titleLabel.numberOfLines = 0;
+	self.titleLabel.textAlignment = NSTextAlignmentCenter;
 	self.titleLabel.font = [UIFont systemFontOfSize:14.0];
+	self.titleLabel.textColor = [UIColor blackColor];
 	[self.contentView addSubview:self.titleLabel];
 
-	UIView *maskView = [[UIView alloc] init];
-	maskView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.5];
-	[self.contentView addSubview:maskView];
+	_subtitleLabel = [[UILabel alloc] init];
+	self.subtitleLabel.numberOfLines = 0;
+	self.subtitleLabel.textAlignment = NSTextAlignmentCenter;
+	self.subtitleLabel.font = [UIFont systemFontOfSize:14.0];
+	self.titleLabel.textColor = [UIColor grayColor];
+	[self.contentView addSubview:self.subtitleLabel];
 
 	[self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(self.contentView).with.offset(8.0);
@@ -42,14 +48,13 @@
 		make.top.equalTo(self.imageView.mas_bottom).with.offset(8.0);
 		make.left.equalTo(self.imageView);
 		make.right.equalTo(self.imageView);
-		make.bottom.equalTo(self.contentView).with.offset(-8.0);
 	}];
 
-	[maskView mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.top.equalTo(self.titleLabel).with.offset(22.0);
-		make.left.equalTo(self.titleLabel);
-		make.right.equalTo(self.titleLabel);
-		make.bottom.equalTo(self.titleLabel);
+	[self.subtitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.top.equalTo(self.titleLabel.mas_bottom);
+		make.left.equalTo(self.imageView);
+		make.right.equalTo(self.imageView);
+		make.bottom.equalTo(self.contentView).with.offset(-8.0);
 	}];
 
 	return self;
@@ -64,9 +69,8 @@
 {
 	_ownerVM = ownerVM;
 	[self.imageView setImageWithURL:[NSURL URLWithString:ownerVM.imageURLString]];
-	self.titleLabel.text = [[ownerVM.title
-		stringByAppendingString:@"\n"]
-		stringByAppendingString:ownerVM.subtitle];
+	self.titleLabel.text = ownerVM.title;
+	self.subtitleLabel.text = ownerVM.subtitle;
 }
 
 @end

@@ -2,6 +2,7 @@
 
 #import "SLROwnerCell.h"
 #import "SLROwnerVM.h"
+#import "SLRSchedulerVC.h"
 
 // Технический долг =)
 @interface SLRFilialVC () <UICollectionViewDelegate, UICollectionViewDataSource>
@@ -43,6 +44,21 @@
 	[self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.edges.equalTo(self.view);
 	}];
+
+	[self setupReactiveStuff];
+}
+
+- (void)setupReactiveStuff
+{
+	@weakify(self);
+
+	[self.viewModel.shouldShowSchedulerSignal
+		subscribeNext:^(SLRSchedulerVM *viewModel) {
+			@strongify(self);
+
+			SLRSchedulerVC *vc = [[SLRSchedulerVC alloc] initWithViewModel:viewModel];
+			[self.navigationController pushViewController:vc animated:YES];
+		}];
 }
 
 // MARK: UICollectionView
@@ -67,7 +83,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 	[collectionView deselectItemAtIndexPath:indexPath animated:YES];
-//	[self showDetailsForSelectedItem:[self.viewModel.ownerVMs objectAtIndex:indexPath.row]];
+	[self.viewModel didSelectOwnerAtIndexPath:indexPath];
 }
 
 @end

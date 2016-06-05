@@ -20,8 +20,8 @@
 			{
 				SLROwner *owner = filial.owners.firstObject;
 				return [[[SLRDataProvider sharedProvider] fetchPagesForOwner:owner date:[NSDate date]]
-					map:^SLRSchedulerVM *(SLRPage *page) {
-						return [[SLRSchedulerVM alloc] initWithPage:page];
+					map:^SLRSchedulerVM *(NSArray<SLRPage *> *pages) {
+						return [[SLRSchedulerVM alloc] initWithPage:pages.firstObject];
 					}];
 			}
 		}];
