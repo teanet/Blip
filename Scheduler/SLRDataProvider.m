@@ -51,20 +51,20 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 
 // MARK: Misc
 
-- (RACSignal *)fetchEmptyBookingRequest
+- (RACSignal *)fetchEmptyBookingRequestForPage:(SLRPage *)page
 {
 	return [[self.authManager fetchUser]
 		map:^SLRRequest *(SLRUser *user) {
-			return [self emptyBookingRequestForUser:user];
+			return [self emptyBookingRequestForUser:user page:page];
 		}];
 }
 
-- (SLRRequest *)emptyBookingRequestForUser:(SLRUser *)user
+- (SLRRequest *)emptyBookingRequestForUser:(SLRUser *)user page:(SLRPage *)page
 {
 	NSCAssert(user, @"User should be set before using booking method.");
 	if (!user) return nil;
 
-	return [[SLRRequest alloc] initWithUser:user];
+	return [[SLRRequest alloc] initWithUser:user page:page];
 }
 
 - (void)addStoreItemToCart:(SLRStoreItem *)storeItem

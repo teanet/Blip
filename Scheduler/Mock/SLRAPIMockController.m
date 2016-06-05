@@ -3,6 +3,7 @@
 #import "SLRPage.h"
 #import "SLRService.h"
 #import "SLRStoreItem.h"
+#import "SLRRequest.h"
 
 #import <AFNetworking/AFNetworking.h>
 #import "SLRAPIMockController.h"
@@ -16,7 +17,6 @@ static NSString *const kSLRVKAlbumId = @"227906560";//@"177366013";
 @property (nonatomic, strong) AFHTTPRequestOperationManager *requestManager;
 
 @end
-
 
 @implementation SLRAPIMockController
 
@@ -73,7 +73,7 @@ static NSString *const kSLRVKAlbumId = @"227906560";//@"177366013";
  **/
 - (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request
 {
-	return [RACSignal error:[NSError errorWithDomain:@"" code:100 userInfo:nil]];
+	return [RACSignal return:[SLRRequest testRequestReviewed]];
 }
 
 //api.vk.com/method/photos.get?owner_id=&album_id=&rev=&extended=1&photo_sizes=0&v=5.52

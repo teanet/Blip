@@ -6,6 +6,12 @@
 		"booking_interval_min": 30,
 		"booking_interval_max": 180
 	},
+	"owner": {
+		"id" : "khgklaa",
+		"title" : "Парикмахер",
+		"subtitle" : "Петров Алексей Александрович",
+		"image" : "http://"
+	},
 	"ranges_free": [
 		{
 			"id": "sdfljsdfsvsfvkj",

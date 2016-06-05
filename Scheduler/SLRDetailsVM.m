@@ -45,6 +45,10 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 	_pickerVM = [[SLRDetailsPickerVM alloc] initWithPage:page selectedRange:selectedRange];
 	_servicesVM = [[SLRDetailsServicesVM alloc] initWithTitle:@"Дополнительные услуги:"];
 	_summaryVM = [[SLRDetailsSummaryVM alloc] init];
+	_didBookSignal = [[self rac_signalForSelector:@checkselector(self, didSuccessfullyBookWithRequest:)]
+		map:^SLRRequest *(RACTuple *tuple) {
+			return tuple.first;
+		}];
 
 	[self updateServices];
 
@@ -96,7 +100,7 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 			@strongify(self);
 
 			self.serviceProcessing = NO;
-			NSLog(@">>> %@", req);
+			[self didSuccessfullyBookWithRequest:req];
 		} error:^(NSError *error) {
 			@strongify(self);
 
@@ -105,10 +109,15 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 		}];
 }
 
+- (void)didSuccessfullyBookWithRequest:(SLRRequest *)bookingRequest
+{
+	NSLog(@">>> %@", bookingRequest);
+}
+
 /*! \sendNext SLRRequest */
 - (RACSignal *)fetchRequestWithCurrentOptions
 {
-	return [[[SLRDataProvider sharedProvider] fetchEmptyBookingRequest]
+	return [[[SLRDataProvider sharedProvider] fetchEmptyBookingRequestForPage:self.page]
 		map:^SLRRequest *(SLRRequest *request) {
 			request.location = self.range.location;
 			request.length = self.pickerVM.totalSelectedLength;
@@ -172,9 +181,11 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 	// Все-таки говно(
 	switch ((SLRSection)section)
 	{
-#warning убрать надо
 		case SLRSectionPicker: {
-			return 0.0;//150.0;
+			CGFloat pickerHeight = self.pickerVM.isAdjustable
+				? 150.0
+				: 0.0;
+			return pickerHeight;
 		} break;
 
 		case SLRSectionService: {

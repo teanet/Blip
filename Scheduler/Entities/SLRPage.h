@@ -2,6 +2,7 @@
 
 #import "SLRRange.h"
 #import "SLRTimeGrid.h"
+#import "SLROwner.h"
 
 @interface SLRPage : NSObject <SLRSerializableProtocol>
 
@@ -32,6 +33,7 @@
 @property (nonatomic, copy, readonly) NSDate *date;
 @property (nonatomic, copy) NSString *dateString;
 @property (nonatomic, strong, readonly) SLRTimeGrid *timeGrid;
+@property (nonatomic, strong, readonly) SLROwner *owner;
 
 /*! @[SLRRange] */
 @property (nonatomic, copy, readonly) NSArray<SLRRange *> *rangesFree;

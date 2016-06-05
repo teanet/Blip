@@ -37,18 +37,39 @@
 	[self.viewModel.didSelectRangeSignal subscribeNext:^(SLRRange *range) {
 		@strongify(self);
 
-		SLRDetailsVM *vm = [[SLRDetailsVM alloc] initWithPage:self.viewModel.page selectedRange:range];
-		SLRDetailsVC *vc = [[SLRDetailsVC alloc] initWithViewModel:vm];
-
-		[self.navigationController pushViewController:vc animated:YES];
+		[self showDetailsVCForSelectedRange:range];
 	}];
+}
 
-//	[self.viewModel.didSelectPageSignal subscribeNext:^(SLRPage *page) {
-//		@strongify(self);
-//
-////		[ st]
-////		[self.tableView reloadData];
-//	}];
+- (void)showDetailsVCForSelectedRange:(SLRRange *)range
+{
+	@weakify(self);
+
+	SLRDetailsVM *vm = [[SLRDetailsVM alloc] initWithPage:self.viewModel.page selectedRange:range];
+
+	[vm.didBookSignal
+		subscribeNext:^(id _) {
+			@strongify(self);
+
+			[self done];
+		}];
+
+	SLRDetailsVC *vc = [[SLRDetailsVC alloc] initWithViewModel:vm];
+
+#warning (vadim.smirnov) Убрать безобразие
+	UIBarButtonItem *closeItem = [[UIBarButtonItem alloc] initWithTitle:@"Close"
+																  style:UIBarButtonItemStyleDone
+																 target:self
+																 action:@selector(done)];
+	[vc.navigationItem setLeftBarButtonItem:closeItem];
+
+	UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+	[self presentViewController:nc animated:YES completion:nil];
+}
+
+- (void)done
+{
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setupInterface

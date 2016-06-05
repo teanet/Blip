@@ -173,7 +173,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-//	[self didSelectInterval:[self.intervals objectAtIndex:indexPath.row]];
+	[self didSelectInterval:self.weekHeaderVMs[indexPath.section].selectedPage.intervals[indexPath.row]];
 }
 
 @end

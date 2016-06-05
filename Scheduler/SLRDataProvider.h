@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 /*! Misc
  *	Всякие методы.
  **/
-- (RACSignal *)fetchEmptyBookingRequest;
+- (RACSignal *)fetchEmptyBookingRequestForPage:(SLRPage *)page;
 
 /*! Подтянуть товары для магазина
  *	Пока что подтягиваем просто фотки из вконтактика

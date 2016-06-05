@@ -33,8 +33,7 @@
 	[self.view addSubview:self.tableView];
 
 	self.bookButton = [[UIButton alloc] init];
-#warning обратно поманять на book
-	[self.bookButton setTitle:@"Order"/*@"Book"*/ forState:UIControlStateNormal];
+	[self.bookButton setTitle:@"Book" forState:UIControlStateNormal];
 	[self.bookButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	[self.bookButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
 	self.bookButton.backgroundColor = [UIColor dgs_colorWithString:@"1976D2"];

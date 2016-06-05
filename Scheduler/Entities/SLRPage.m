@@ -13,6 +13,9 @@
 	NSString *dateString = dictionary[@"date"];
 	_date = [[SLRPage dateFormatter] dateFromString:dateString];
 
+	NSDictionary *ownerDictionary = dictionary[@"owner"];
+	_owner = [[SLROwner alloc] initWithDictionary:ownerDictionary];
+
 	NSArray <NSDictionary *> *rangeFreeDictinaries = dictionary[@"ranges_free"];
 	_rangesFree = [SLRPage rangesFromDictionaries:rangeFreeDictinaries];
 

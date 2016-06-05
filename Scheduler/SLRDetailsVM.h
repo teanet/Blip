@@ -11,6 +11,11 @@
  **/
 @interface SLRDetailsVM : SLRBaseVM
 
+/*! Сигнал о том, что мы успешно забукались
+ *	\sendNext SLRRequest
+ **/
+@property (nonatomic, strong, readonly) RACSignal *didBookSignal;
+
 /*! Это результат преждевременной оптимизации.
  *	На пропертю надо подписаться, и когда YES - закрывать всё серой вьюхой с лоадером - ходим на сервер.
  **/

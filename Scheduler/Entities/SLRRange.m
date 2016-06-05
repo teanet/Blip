@@ -32,15 +32,15 @@
 	_state = SLRRangeStateUndefined;
 	NSString *stateString = dictionary[@"state"];
 
-	if ([stateString isEqualToString:@"free"])
+	if ([[stateString lowercaseString] isEqualToString:@"free"])
 	{
 		_state = SLRRangeStateFree;
 	}
-	else if ([stateString isEqualToString:@"hold"])
+	else if ([[stateString lowercaseString] isEqualToString:@"hold"])
 	{
 		_state = SLRRangeStateHold;
 	}
-	else if ([stateString isEqualToString:@"book"])
+	else if ([[stateString lowercaseString] isEqualToString:@"book"])
 	{
 		_state = SLRRangeStateBook;
 	}
