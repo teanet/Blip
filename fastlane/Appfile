@@ -1,0 +1,5 @@
+apple_id "e.tyutyuev@gmail.com"
+team_id "HJ648XXPWE"
+
+# you can even provide different app identifiers, Apple IDs and team names per lane:
+# More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md

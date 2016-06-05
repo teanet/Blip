@@ -1,0 +1,110 @@
+fastlane_version "1.91.0"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+    ENV["GYM_OUTPUT_DIRECTORY"] = "./build/"
+    ENV["GYM_USE_LEGACY_BUILD_API"] = "true"
+
+    ENV["PEM_OUTPUT_PATH"] = "./build/"
+    ENV["SNAPSHOT_SKIP_OPEN_SUMMARY"] = "true"
+    ENV["SNAPSHOT_SCHEME"] = "Scheduler"
+    ENV["GYM_SCHEME"] = "Scheduler"
+    ENV["SNAPSHOT_WORKSPACE"] = "./Scheduler.xcworkspace"
+    cocoapods
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    scan
+  end
+
+  lane :new_app do
+
+    file = File.read('newapp.json')
+    data = JSON.parse(file)
+    app_identifier = data["app_identifier"]
+    ENV["FASTLANE_APP_IDENTIFIER"] = app_identifier
+    ENV["SNAPSHOT_APP_IDENTIFIER"] = app_identifier
+    ENV["PEM_APP_IDENTIFIER"] = app_identifier
+
+    update_info_plist = '/usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ' + app_identifier + '" ../Scheduler/Info.plist'
+    sh update_info_plist
+
+    produce(
+      app_identifier: app_identifier,
+      app_name: data["app_name"],
+      language: data["language"],
+      app_version: data["version"],
+      sku: data["sku"],
+    )
+
+    app_id = ENV['PRODUCE_APPLE_ID']
+
+    gym
+
+    pem(development: true, generate_p12: true, new_profile: Proc.new do |value|
+      print ">>>" + value
+        # Code to upload PEM file to server
+      end
+    )
+
+    slack(
+      message: "Successfully generated app."
+    )
+
+    # snapshot
+
+    deliver(
+      force: true,
+      name: data["app_store_app_name"],
+    )
+
+  end
+
+  desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+    # match(type: "appstore") # more information: https://codesigning.guide
+    gym # Build your app - more options available
+    pilot
+
+  end
+  
+  desc "Deploy a new version to the App Store"
+  lane :appstore do
+    # match(type: "appstore")
+    # snapshot
+
+    pem(development: true, generate_p12: true, new_profile: Proc.new do |value|
+      print ">>>" + value
+        # Code to upload PEM file to server
+      end
+    )
+
+    increment_build_number({
+      build_number: latest_testflight_build_number + 1
+    })
+    gym # Build your app - more options available
+    # deliver(force: true)
+  end
+
+  # You can define as many lanes as you want
+
+  after_all do |lane|
+    # This block is called, only if the executed lane was successful
+
+    # slack(
+    #   message: "Successfully deployed new App Update."
+    # )
+  end
+
+  error do |lane, exception|
+    slack(
+      message: exception.message,
+      success: false
+    )
+  end
+end
