@@ -3,10 +3,12 @@
 #import "SLRIntervalCell.h"
 #import "SLRIntervalVM.h"
 #import "SLRWeekHeaderView.h"
+#import "SLRDataProvider.h"
 #import <TLIndexPathSectionInfo.h>
 
 @interface SLRSchedulerVM () <SLRWeekHeaderViewDelegate>
 
+@property (nonatomic, strong, readonly) SLROwner *owner;
 @property (nonatomic, strong, readonly) RACSubject *didSelectRangeSubject;
 @property (nonatomic, strong, readonly) RACSubject *didSelectPageSubject;
 
@@ -22,10 +24,13 @@
 	[_didSelectPageSubject sendCompleted];
 }
 
-- (instancetype)init
+- (instancetype)initWithOwner:(SLROwner *)owner
 {
 	self = [super init];
 	if (self == nil) return nil;
+
+	_owner = owner;
+	_title = owner.title;
 
 	_weekHeaderVMs = @[
 		[[SLRWeekHeaderVM alloc] init],
@@ -41,7 +46,21 @@
 	_didSelectPageSubject = [RACSubject subject];
 	_didSelectPageSignal = _didSelectPageSubject;
 
+	[self fetchTodayPage];
+
 	return self;
+}
+
+- (void)fetchTodayPage
+{
+	@weakify(self);
+
+	[[[SLRDataProvider sharedProvider] fetchPagesForOwner:self.owner date:[NSDate date]]
+		subscribeNext:^(NSArray<SLRPage *> *pages) {
+			@strongify(self);
+
+			self.page = pages.firstObject;
+		}];
 }
 
 - (void)setPage:(SLRPage *)page

@@ -16,6 +16,7 @@
 	self = [super initWithViewModel:viewModel];
 	if (self == nil) return nil;
 
+	self.title = self.viewModel.title;
 	self.tabBarItem.title = @"Scheduler";
 	self.tabBarItem.image = [UIImage imageNamed:@"cart"];
 

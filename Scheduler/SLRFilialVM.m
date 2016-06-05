@@ -38,17 +38,9 @@
 
 - (void)didSelectOwnerAtIndexPath:(NSIndexPath *)indexPath
 {
-	@weakify(self);
-
 	SLROwner *owner = [self.filial.owners objectAtIndex:indexPath.row];
-	[[[SLRDataProvider sharedProvider] fetchPagesForOwner:owner date:[NSDate date]]
-		subscribeNext:^(NSArray<SLRPage *> *pages) {
-			@strongify(self);
-
-			SLRSchedulerVM *schedulerVM = [[SLRSchedulerVM alloc] init];
-			schedulerVM.page = pages.firstObject;
-			[self shouldShowScheduler:schedulerVM];
-		}];
+	SLRSchedulerVM *schedulerVM = [[SLRSchedulerVM alloc] initWithOwner:owner];
+	[self shouldShowScheduler:schedulerVM];
 }
 
 - (void)shouldShowScheduler:(SLRSchedulerVM *)viewModel

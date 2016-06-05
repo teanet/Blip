@@ -9,23 +9,21 @@
 - (RACSignal *)initialViewModelSignal
 {
 	return [[[SLRDataProvider sharedProvider] fetchFilials]
-		flattenMap:^RACStream *(NSArray<SLRFilial *> *filials) {
+		map:^SLRBaseVM *(NSArray<SLRFilial *> *filials) {
+			SLRBaseVM *returnVM = nil;
 			SLRFilial *filial = filials.firstObject;
 
 			if (filial.owners.count > 1)
 			{
-				return [RACSignal return:[[SLRFilialVM alloc] initWithFilial:filial]];
+				returnVM = [[SLRFilialVM alloc] initWithFilial:filial];
 			}
 			else
 			{
 				SLROwner *owner = filial.owners.firstObject;
-				return [[[SLRDataProvider sharedProvider] fetchPagesForOwner:owner date:[NSDate date]]
-					map:^SLRSchedulerVM *(NSArray<SLRPage *> *pages) {
-						SLRSchedulerVM *vm = [[SLRSchedulerVM alloc] init];
-						vm.page = pages.firstObject;
-						return vm;
-					}];
+				returnVM = [[SLRSchedulerVM alloc] initWithOwner:owner];
 			}
+
+			return returnVM;
 		}];
 }
 
