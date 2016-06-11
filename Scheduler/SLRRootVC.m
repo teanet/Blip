@@ -31,7 +31,33 @@
 
 	[self dgs_showViewController:tc inView:self.view];
 
+	[self setupProximity];
+
 	return self;
 }
+
+- (void)setupProximity
+{
+	[[UIDevice currentDevice] setProximityMonitoringEnabled:YES];
+
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(sensorStateChange:)
+												 name:@"UIDeviceProximityStateDidChangeNotification"
+											   object:nil];
+}
+
+- (void)sensorStateChange:(NSNotificationCenter *)notification
+{
+	if ([[UIDevice currentDevice] proximityState] == YES)
+	{
+		NSLog(@"Device is close to user.");
+	}
+	else
+	{
+		NSLog(@"Device is ~not~ closer to user.");
+	}
+}
+
+
 
 @end
