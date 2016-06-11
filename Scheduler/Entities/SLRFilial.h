@@ -1,4 +1,5 @@
 #import "SLROwner.h"
+#import "SLRPurpose.h"
 
 #import "SLRSerializableProtocol.h"
 
@@ -10,9 +11,14 @@
 	"address" : string,
 	"contact" : string,
 	"owners" : [
- {},
- {},
- ...
+		{},
+		{},
+		...
+	],
+	"purposes" : [
+		 {},
+		 {},
+		 ...
 	],
  }
  */
@@ -24,6 +30,7 @@
 @property (nonatomic, copy, readonly) NSString *address;
 @property (nonatomic, copy, readonly) NSString *contact;
 @property (nonatomic, copy, readonly) NSArray<SLROwner *> *owners;
+@property (nonatomic, copy, readonly) NSArray<SLRPurpose *> *purposes;
 
 @end
 

@@ -35,6 +35,16 @@
 		30470DDA1CF9D03400C57566 /* SLRDetailsServicesVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DD91CF9D03400C57566 /* SLRDetailsServicesVM.m */; };
 		30470DDD1CF9D5B700C57566 /* SLRDetailsSummaryVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DDC1CF9D5B700C57566 /* SLRDetailsSummaryVM.m */; };
 		30470DE01CF9D5D800C57566 /* SLRDetailsSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30470DDF1CF9D5D800C57566 /* SLRDetailsSummaryView.m */; };
+		304B42581D0C3F05008EAF8B /* SLRPurpose.m in Sources */ = {isa = PBXBuildFile; fileRef = 304B42571D0C3F05008EAF8B /* SLRPurpose.m */; };
+		304B425B1D0C45EB008EAF8B /* purposes.json in Resources */ = {isa = PBXBuildFile; fileRef = 304B425A1D0C45EB008EAF8B /* purposes.json */; };
+		304B42601D0C5263008EAF8B /* SLROwnersVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 304B425F1D0C5263008EAF8B /* SLROwnersVC.m */; };
+		304B42631D0C526F008EAF8B /* SLROwnersVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 304B42621D0C526F008EAF8B /* SLROwnersVM.m */; };
+		304B42661D0C5311008EAF8B /* SLRPurposesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 304B42651D0C5311008EAF8B /* SLRPurposesVC.m */; };
+		304B42691D0C532E008EAF8B /* SLRPurposesVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 304B42681D0C532E008EAF8B /* SLRPurposesVM.m */; };
+		304B426E1D0C85F5008EAF8B /* SLRFilialOwnersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 304B426D1D0C85F5008EAF8B /* SLRFilialOwnersView.m */; };
+		304B42721D0C8F52008EAF8B /* SLRFilialPurposesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 304B42711D0C8F52008EAF8B /* SLRFilialPurposesCell.m */; };
+		304B42751D0C909D008EAF8B /* SLRPurposeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 304B42741D0C909D008EAF8B /* SLRPurposeCell.m */; };
+		304B42781D0C90C4008EAF8B /* SLRPurposeCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 304B42771D0C90C4008EAF8B /* SLRPurposeCellVM.m */; };
 		30567E031CF0A9F900058477 /* SLRService.m in Sources */ = {isa = PBXBuildFile; fileRef = 30567E021CF0A9F900058477 /* SLRService.m */; };
 		307346F31CF0B4D80089A494 /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = 307346F21CF0B4D80089A494 /* services.json */; };
 		307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 307346F71CF0BD2E0089A494 /* SLRDetailsVM.m */; };
@@ -163,6 +173,25 @@
 		30470DDC1CF9D5B700C57566 /* SLRDetailsSummaryVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDetailsSummaryVM.m; sourceTree = "<group>"; };
 		30470DDE1CF9D5D800C57566 /* SLRDetailsSummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRDetailsSummaryView.h; sourceTree = "<group>"; };
 		30470DDF1CF9D5D800C57566 /* SLRDetailsSummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDetailsSummaryView.m; sourceTree = "<group>"; };
+		304B42561D0C3F05008EAF8B /* SLRPurpose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRPurpose.h; sourceTree = "<group>"; };
+		304B42571D0C3F05008EAF8B /* SLRPurpose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRPurpose.m; sourceTree = "<group>"; };
+		304B425A1D0C45EB008EAF8B /* purposes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = purposes.json; sourceTree = "<group>"; };
+		304B425E1D0C5263008EAF8B /* SLROwnersVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLROwnersVC.h; sourceTree = "<group>"; };
+		304B425F1D0C5263008EAF8B /* SLROwnersVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLROwnersVC.m; sourceTree = "<group>"; };
+		304B42611D0C526F008EAF8B /* SLROwnersVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLROwnersVM.h; sourceTree = "<group>"; };
+		304B42621D0C526F008EAF8B /* SLROwnersVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLROwnersVM.m; sourceTree = "<group>"; };
+		304B42641D0C5311008EAF8B /* SLRPurposesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRPurposesVC.h; sourceTree = "<group>"; };
+		304B42651D0C5311008EAF8B /* SLRPurposesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRPurposesVC.m; sourceTree = "<group>"; };
+		304B42671D0C532E008EAF8B /* SLRPurposesVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRPurposesVM.h; sourceTree = "<group>"; };
+		304B42681D0C532E008EAF8B /* SLRPurposesVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRPurposesVM.m; sourceTree = "<group>"; };
+		304B426C1D0C85F5008EAF8B /* SLRFilialOwnersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFilialOwnersView.h; sourceTree = "<group>"; };
+		304B426D1D0C85F5008EAF8B /* SLRFilialOwnersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFilialOwnersView.m; sourceTree = "<group>"; };
+		304B42701D0C8F52008EAF8B /* SLRFilialPurposesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFilialPurposesCell.h; sourceTree = "<group>"; };
+		304B42711D0C8F52008EAF8B /* SLRFilialPurposesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFilialPurposesCell.m; sourceTree = "<group>"; };
+		304B42731D0C909D008EAF8B /* SLRPurposeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRPurposeCell.h; sourceTree = "<group>"; };
+		304B42741D0C909D008EAF8B /* SLRPurposeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRPurposeCell.m; sourceTree = "<group>"; };
+		304B42761D0C90C4008EAF8B /* SLRPurposeCellVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRPurposeCellVM.h; sourceTree = "<group>"; };
+		304B42771D0C90C4008EAF8B /* SLRPurposeCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRPurposeCellVM.m; sourceTree = "<group>"; };
 		30567E011CF0A9F900058477 /* SLRService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRService.h; sourceTree = "<group>"; };
 		30567E021CF0A9F900058477 /* SLRService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRService.m; sourceTree = "<group>"; };
 		307346F21CF0B4D80089A494 /* services.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
@@ -232,7 +261,7 @@
 		738314C71CF09B550048AFE2 /* SLRAPIController+SLRModels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SLRAPIController+SLRModels.m"; sourceTree = "<group>"; };
 		738314C81CF09B550048AFE2 /* SLRDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRDataProvider.h; sourceTree = "<group>"; };
 		738314C91CF09B550048AFE2 /* SLRDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDataProvider.m; sourceTree = "<group>"; };
-		738314CD1CF09B8A0048AFE2 /* SLRSerializableProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLRSerializableProtocol.h; sourceTree = "<group>"; };
+		738314CD1CF09B8A0048AFE2 /* SLRSerializableProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SLRSerializableProtocol.h; path = ../SLRSerializableProtocol.h; sourceTree = "<group>"; };
 		738314D31CF09C890048AFE2 /* filial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = filial.json; sourceTree = "<group>"; };
 		738314D41CF09C890048AFE2 /* pages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pages.json; sourceTree = "<group>"; };
 		739AA65B1C9EEA8E00565CB7 /* SLRScheduleModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRScheduleModelSpec.m; sourceTree = "<group>"; };
@@ -298,7 +327,8 @@
 		301403041D030B120002AFD6 /* Filial */ = {
 			isa = PBXGroup;
 			children = (
-				301406211D031FDD0002AFD6 /* Cell */,
+				304B426F1D0C8ECB008EAF8B /* Cell */,
+				304B426B1D0C84D1008EAF8B /* Header */,
 				301403081D030BFC0002AFD6 /* SLRFilialVC.h */,
 				301403091D030BFC0002AFD6 /* SLRFilialVC.m */,
 				301403051D030BD80002AFD6 /* SLRFilialVM.h */,
@@ -322,10 +352,11 @@
 		3014061D1D0319AE0002AFD6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				30DF0AD31CFAA65400DE287B /* UIColor+DGSCustomColor.h */,
-				30DF0AD41CFAA65400DE287B /* UIColor+DGSCustomColor.m */,
-				3014061E1D0319D60002AFD6 /* UIViewController+DGSAdditions.h */,
-				3014061F1D0319D60002AFD6 /* UIViewController+DGSAdditions.m */,
+				304B42591D0C41A4008EAF8B /* Categories */,
+				30470DC21CF8D9BD00C57566 /* SLRAuthenticationManager.h */,
+				30470DC31CF8D9BD00C57566 /* SLRAuthenticationManager.m */,
+				738314C81CF09B550048AFE2 /* SLRDataProvider.h */,
+				738314C91CF09B550048AFE2 /* SLRDataProvider.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -407,6 +438,70 @@
 			name = Headers;
 			sourceTree = "<group>";
 		};
+		304B42591D0C41A4008EAF8B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				30DF0AD31CFAA65400DE287B /* UIColor+DGSCustomColor.h */,
+				30DF0AD41CFAA65400DE287B /* UIColor+DGSCustomColor.m */,
+				3014061E1D0319D60002AFD6 /* UIViewController+DGSAdditions.h */,
+				3014061F1D0319D60002AFD6 /* UIViewController+DGSAdditions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		304B425C1D0C4D56008EAF8B /* Purposes */ = {
+			isa = PBXGroup;
+			children = (
+				304B426A1D0C7E4F008EAF8B /* Cell */,
+				304B42641D0C5311008EAF8B /* SLRPurposesVC.h */,
+				304B42651D0C5311008EAF8B /* SLRPurposesVC.m */,
+				304B42671D0C532E008EAF8B /* SLRPurposesVM.h */,
+				304B42681D0C532E008EAF8B /* SLRPurposesVM.m */,
+			);
+			name = Purposes;
+			sourceTree = "<group>";
+		};
+		304B425D1D0C51F7008EAF8B /* Owners */ = {
+			isa = PBXGroup;
+			children = (
+				301406211D031FDD0002AFD6 /* Cell */,
+				304B425E1D0C5263008EAF8B /* SLROwnersVC.h */,
+				304B425F1D0C5263008EAF8B /* SLROwnersVC.m */,
+				304B42611D0C526F008EAF8B /* SLROwnersVM.h */,
+				304B42621D0C526F008EAF8B /* SLROwnersVM.m */,
+			);
+			name = Owners;
+			sourceTree = "<group>";
+		};
+		304B426A1D0C7E4F008EAF8B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				304B42731D0C909D008EAF8B /* SLRPurposeCell.h */,
+				304B42741D0C909D008EAF8B /* SLRPurposeCell.m */,
+				304B42761D0C90C4008EAF8B /* SLRPurposeCellVM.h */,
+				304B42771D0C90C4008EAF8B /* SLRPurposeCellVM.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		304B426B1D0C84D1008EAF8B /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				304B426C1D0C85F5008EAF8B /* SLRFilialOwnersView.h */,
+				304B426D1D0C85F5008EAF8B /* SLRFilialOwnersView.m */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
+		304B426F1D0C8ECB008EAF8B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				304B42701D0C8F52008EAF8B /* SLRFilialPurposesCell.h */,
+				304B42711D0C8F52008EAF8B /* SLRFilialPurposesCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		307346FD1CF218620089A494 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +571,8 @@
 				30BB886B1CFA1E760046BEB5 /* Cart */,
 				30470DC51CF99D0D00C57566 /* Details */,
 				3014030B1D0310BF0002AFD6 /* Home */,
+				304B425D1D0C51F7008EAF8B /* Owners */,
+				304B425C1D0C4D56008EAF8B /* Purposes */,
 				736EE2161CF95CE700C32225 /* Scheduler */,
 				30BB886C1CFA1EB00046BEB5 /* Store */,
 			);
@@ -514,12 +611,15 @@
 		738314AF1CF09ACA0048AFE2 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				738314CD1CF09B8A0048AFE2 /* SLRSerializableProtocol.h */,
 				738314B01CF09ACA0048AFE2 /* SLRFilial.h */,
 				738314B11CF09ACA0048AFE2 /* SLRFilial.m */,
 				738314B21CF09ACA0048AFE2 /* SLROwner.h */,
 				738314B31CF09ACA0048AFE2 /* SLROwner.m */,
 				738314B41CF09ACA0048AFE2 /* SLRPage.h */,
 				738314B51CF09ACA0048AFE2 /* SLRPage.m */,
+				304B42561D0C3F05008EAF8B /* SLRPurpose.h */,
+				304B42571D0C3F05008EAF8B /* SLRPurpose.m */,
 				738314B61CF09ACA0048AFE2 /* SLRRange.h */,
 				738314B71CF09ACA0048AFE2 /* SLRRange.m */,
 				307347051CF2226B0089A494 /* SLRRequest.h */,
@@ -545,11 +645,6 @@
 				738314C61CF09B550048AFE2 /* SLRAPIController+SLRModels.h */,
 				738314C71CF09B550048AFE2 /* SLRAPIController+SLRModels.m */,
 				307346F91CF217810089A494 /* SLRAPIControllerProtocol.h */,
-				30470DC21CF8D9BD00C57566 /* SLRAuthenticationManager.h */,
-				30470DC31CF8D9BD00C57566 /* SLRAuthenticationManager.m */,
-				738314C81CF09B550048AFE2 /* SLRDataProvider.h */,
-				738314C91CF09B550048AFE2 /* SLRDataProvider.m */,
-				738314CD1CF09B8A0048AFE2 /* SLRSerializableProtocol.h */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -566,6 +661,7 @@
 				301403001D0309840002AFD6 /* ownerDoctorTwo.json */,
 				301403021D03098C0002AFD6 /* ownerDoctorThree.json */,
 				301406281D0421DF0002AFD6 /* requestReviewed.json */,
+				304B425A1D0C45EB008EAF8B /* purposes.json */,
 			);
 			path = json;
 			sourceTree = "<group>";
@@ -802,6 +898,7 @@
 			files = (
 				738314D61CF09C890048AFE2 /* pages.json in Resources */,
 				307346F31CF0B4D80089A494 /* services.json in Resources */,
+				304B425B1D0C45EB008EAF8B /* purposes.json in Resources */,
 				301403011D0309840002AFD6 /* ownerDoctorTwo.json in Resources */,
 				301402FD1D03096B0002AFD6 /* ownerHairdresser.json in Resources */,
 				301402FF1D03097A0002AFD6 /* ownerDoctorOne.json in Resources */,
@@ -937,11 +1034,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				307346FC1CF218170089A494 /* SLRAPIMockController.m in Sources */,
+				304B42661D0C5311008EAF8B /* SLRPurposesVC.m in Sources */,
 				738314C11CF09ACA0048AFE2 /* SLRUser.m in Sources */,
 				30B876321CFA169F00F2499F /* SLRStoreItem.m in Sources */,
 				735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */,
 				30470DD31CF9A06800C57566 /* SLRTableViewHeaderFooterView.m in Sources */,
 				73AF55B11C9EC882009FB75A /* SLRSchedulerVC.m in Sources */,
+				304B42721D0C8F52008EAF8B /* SLRFilialPurposesCell.m in Sources */,
 				30470DBD1CF8B7C500C57566 /* SLRTableViewCell.m in Sources */,
 				307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */,
 				30470DDA1CF9D03400C57566 /* SLRDetailsServicesVM.m in Sources */,
@@ -958,6 +1057,7 @@
 				73AF6DFB1D02FA3800F3968B /* SLRWeekHeaderView.m in Sources */,
 				30DF0AD51CFAA65400DE287B /* UIColor+DGSCustomColor.m in Sources */,
 				304707A41CF8A66100C57566 /* SLRServiceCell.m in Sources */,
+				304B42691D0C532E008EAF8B /* SLRPurposesVM.m in Sources */,
 				73AF55A71C9EC71B009FB75A /* SLRBaseVC.m in Sources */,
 				73830E5F1CE0C767006B6074 /* SLRRangeVM.m in Sources */,
 				738314BE1CF09ACA0048AFE2 /* SLRPage.m in Sources */,
@@ -973,7 +1073,9 @@
 				73AF55AA1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
 				73830E591CE0C458006B6074 /* SLRIntervalVM.m in Sources */,
 				739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
+				304B42751D0C909D008EAF8B /* SLRPurposeCell.m in Sources */,
 				73AF55C91C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,
+				304B42601D0C5263008EAF8B /* SLROwnersVC.m in Sources */,
 				30BB88721CFA1F240046BEB5 /* SLRCartVM.m in Sources */,
 				738314BC1CF09ACA0048AFE2 /* SLRFilial.m in Sources */,
 				3097CD421CFA1FE700E28EEB /* SLRStoreVC.m in Sources */,
@@ -989,6 +1091,8 @@
 				3014030A1D030BFC0002AFD6 /* SLRFilialVC.m in Sources */,
 				30DF0ACE1CFA346200DE287B /* SLRStoreItemDetailsVC.m in Sources */,
 				307347071CF2226B0089A494 /* SLRRequest.m in Sources */,
+				304B42631D0C526F008EAF8B /* SLROwnersVM.m in Sources */,
+				304B426E1D0C85F5008EAF8B /* SLRFilialOwnersView.m in Sources */,
 				73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
 				3014062D1D0431790002AFD6 /* SLRAppointmentsVM.m in Sources */,
 				301406241D0320230002AFD6 /* SLROwnerCell.m in Sources */,
@@ -1002,7 +1106,9 @@
 				301406371D0451290002AFD6 /* SLRAppointmentCellVM.m in Sources */,
 				30470DE01CF9D5D800C57566 /* SLRDetailsSummaryView.m in Sources */,
 				30567E031CF0A9F900058477 /* SLRService.m in Sources */,
+				304B42581D0C3F05008EAF8B /* SLRPurpose.m in Sources */,
 				73AF55C21C9ED8CF009FB75A /* SLRScheduleCellVM.m in Sources */,
+				304B42781D0C90C4008EAF8B /* SLRPurposeCellVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

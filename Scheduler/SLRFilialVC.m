@@ -1,13 +1,13 @@
 #import "SLRFilialVC.h"
 
-#import "SLROwnerCell.h"
-#import "SLROwnerVM.h"
+#import "SLROwnersVC.h"
 #import "SLRSchedulerVC.h"
+#import "UIViewController+DGSAdditions.h"
 
-// Технический долг =)
-@interface SLRFilialVC () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface SLRFilialVC () <UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UIView *ownersContainerView;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -25,27 +25,33 @@
 
 - (void)viewDidLoad
 {
-	UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-	flowLayout.itemSize = CGSizeMake(136.0, 176.0);
-	flowLayout.minimumInteritemSpacing = 16.0;
-	flowLayout.minimumLineSpacing = 16.0;
-	flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-	flowLayout.sectionInset = UIEdgeInsetsMake(16.0, 16.0, 16.0, 16.0);
+	[super viewDidLoad];
 
-	self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-	self.collectionView.contentInset = UIEdgeInsetsMake(20.0, 0.0, 64.0, 0.0);
-	self.collectionView.backgroundColor = [UIColor dgs_colorWithString:@"FBFAF9"];
-	self.collectionView.delegate = self;
-	self.collectionView.dataSource = self;
-	[self.collectionView registerClass:[SLROwnerCell class] forCellWithReuseIdentifier:@"SLROwnerCell"];
+	[self setupInterface];
 
-	[self.view addSubview:self.collectionView];
+	[self setupReactiveStuff];
+}
 
-	[self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+
+	[self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
+- (void)setupInterface
+{
+	self.view.backgroundColor = [UIColor whiteColor];
+	self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+	self.tableView.tableFooterView = [[UIView alloc] init];
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	self.tableView.showsVerticalScrollIndicator = NO;
+	[self.view addSubview:self.tableView];
+	[self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.edges.equalTo(self.view);
 	}];
 
-	[self setupReactiveStuff];
+	[self.viewModel registerTableView:self.tableView];
 }
 
 - (void)setupReactiveStuff
@@ -59,31 +65,6 @@
 			SLRSchedulerVC *vc = [[SLRSchedulerVC alloc] initWithViewModel:viewModel];
 			[self.navigationController pushViewController:vc animated:YES];
 		}];
-}
-
-// MARK: UICollectionView
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-	return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-	return self.viewModel.ownerVMs.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-	SLROwnerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SLROwnerCell" forIndexPath:indexPath];
-	cell.ownerVM = self.viewModel.ownerVMs[indexPath.item];
-	return cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-	[collectionView deselectItemAtIndexPath:indexPath animated:YES];
-	[self.viewModel didSelectOwnerAtIndexPath:indexPath];
 }
 
 @end

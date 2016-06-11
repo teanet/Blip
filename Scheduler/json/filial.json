@@ -10,9 +10,76 @@
 			"image" : "http://www.lib05.ru/sites/default/files/content/virtual_exhibition/pushkin-v-iskusstve_3.jpg"
 		}, {
 			"id" : "okjsdlfk",
-			"title" : "Хрен в пальто",
-			"subtitle" : "Колотушкин Х. З.",
-			"image" : "http://www.tovaria.ru/upload/iblock/fe2/jgvo%20xtphkfbcwti%20qxcfyyt%20190v.jpg"
+			"title" : "Писатель",
+			"subtitle" : "Лермонтов М.Ю.",
+			"image" : "http://lermont-moscow.ru/images/stories/Images/01/lermontov.jpg"
+		}, {
+			"id" : "khgklaa",
+			"title" : "Писатель",
+			"subtitle" : "Гончаров Иван",
+			"image" : "http://bibliotekar.ru/pisateli-19-veka/15.files/image001.jpg"
+		}, {
+			"id" : "okjsdlfk",
+			"title" : "Писатель",
+			"subtitle" : "Чехов Антон Палыч",
+			"image" : "http://www.calend.ru/img/content_events/i1/1292.jpg"
+		}
+	],
+	"purposes" : [{
+			 "id": "erkhef98723а98ekldncsdfsdsdlfklwn",
+			 "title": "Репетиция",
+			 "subtitle": "Репетиция в большом зале (3 часа)",
+			 "image": "https://carclew.com.au/images/pages/slider/Carclew_Band_Rehearsal_Room.jpg",
+			 "price": 500,
+			 "price_per_time_unit": 500,
+			 "time_unit": 180,
+			 "can_multiple_select": false,
+			 "booking_interval_min" : 180,
+			 "booking_interval_max" : 180
+		 }, {
+			 "id": "erkhef98723а98ekldncsdfsddsfsdlfklwn",
+			 "title": "Репетиция",
+			 "subtitle": "Репетиция в маленьком зале",
+			 "image": "http://www.stonecutterstudios.com/wp-content/uploads/2013/03/liveroom.jpg",
+			 "price": 0,
+			 "price_per_time_unit": 200,
+			 "time_unit": 60,
+			 "can_multiple_select": false,
+			 "booking_interval_min" : 120,
+			 "booking_interval_max" : 180
+		 }, {
+			 "id": "erkhef98723а98ekldncsdfsddsfsdlfklwn",
+			 "title": "Замена масла",
+			 "subtitle": "Без стоимости расходных материалов.",
+			 "image": "http://www.driveprime.com/Media/Default/images/oil-change-fr.jpg",
+			 "price": 300,
+			 "price_per_time_unit": 0,
+			 "time_unit": 0,
+			 "can_multiple_select": true,
+			 "booking_interval_min" : 30,
+			 "booking_interval_max" : 30
+		 }, {
+			 "id": "erkhef98723а98ekldncsdfsddsfsdlfklwn",
+			 "title": "Мужская стрижка",
+			 "subtitle": "Модная мужская стрижка",
+			 "image": "https://s-media-cache-ak0.pinimg.com/736x/22/a3/2e/22a32ebe78c2d3e83d8cc944efc44c0d.jpg",
+			 "price": 700,
+			 "price_per_time_unit": 0,
+			 "time_unit": 0,
+			 "can_multiple_select": true,
+			 "booking_interval_min" : 60,
+			 "booking_interval_max" : 60
+		 }, {
+			 "id": "erkhef98723а98ekldncsdfsddsfsdlfklwn",
+			 "title": "Заправка картриджей",
+			 "subtitle": "Указана средняя цена за заправку",
+			 "image": "http://www.geiohio.com/blog/wp-content/uploads/2013/04/Change-Printer-Cartridge.jpg",
+			 "price": 300,
+			 "price_per_time_unit": 0,
+			 "time_unit": 0,
+			 "can_multiple_select": true,
+			 "booking_interval_min" : 30,
+			 "booking_interval_max" : 30
 		}
 	]
 }

@@ -11,9 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedProvider;
 
-/*! Misc
- *	Всякие методы.
- **/
+@end
+
+@interface SLRDataProvider (Authenticate)
 
 /*! Текущий юзер, может быть nil */
 - (SLRUser *)user;
@@ -21,49 +21,37 @@ NS_ASSUME_NONNULL_BEGIN
 /*! Авторизуем пользователя, запоминаем в кейчейн и возвращаем. */
 - (RACSignal *)fetchAuthenticatedUser;
 
+@end
+
+@interface SLRDataProvider (CreateEntities)
+
 - (RACSignal *)fetchEmptyBookingRequestForPage:(SLRPage *)page;
 
-/*! Подтянуть товары для магазина
- *	Пока что подтягиваем просто фотки из вконтактика
- **/
-- (RACSignal *)fetchStoreItems;
+@end
 
-/*! Добавляет/убирает товар в/из корзину/ы
- *	Убрать потом в модель магазина
- **/
-- (void)addStoreItemToCart:(SLRStoreItem *)storeItem;
-- (void)removeStoreItemFromCart:(SLRStoreItem *)storeItem;
-
-/*! Возвращает товары из корзины
- *	Убрать потом в модель магазина
- **/
-- (NSArray<SLRStoreItem *> *)cartStoreItems;
-
-/*! API
- *	Интерфейс сервера.
- **/
-
-/*! Регистрирует пользователя с именем и телефоном. Возвращает уже зарегистрированного пользователя.
- *	\return @[SLRUser]
- **/
-- (RACSignal *)fetchRegisteredUserForUser:(SLRUser *)user;
-
-/*! Подтягивает все филиалы для проекта (приложения).
- *	\return @[SLRFilial]
- **/
-- (RACSignal *)fetchFilials;
-
-/*! Подтягивает всех владельцев расписания для филиала.
- *	\return @[SLROwner]
- **/
-- (RACSignal *)fetchOwnersForFilial:(SLRFilial *)filial;
+@interface SLRDataProvider (SchedulerService)
 
 ///*! Подтягивает загруженность филиала. Загруженность = [0..1] заполненности дневного расписания.
 // *	\return @{date: @(0..1)}
 // **/
 //- (RACSignal *)fetchWorkloadForFilial:(SLRFilial *)filial;
 
-/*! Подтягивает страницы расписания для владельца расписания (мастера/комнаты/бокса..) на дефолтные даты.
+/*! Подтягивает все филиалы для проекта (приложения).
+ *	\return @[SLRFilial]
+ **/
+- (RACSignal *)fetchFilials;
+
+/*! Подтягивает все виды целевых услуг филиала
+ *	\return @[SLRPurpose]
+ **/
+- (RACSignal *)fetchPurposesForFilial:(SLRFilial *)filial;
+
+/*! Подтягивает всех владельцев расписания для филиала.
+ *	\return @[SLROwner]
+ **/
+- (RACSignal *)fetchOwnersForFilial:(SLRFilial *)filial;
+
+/*! Подтягивает страницы расписания для владельца расписания (мастера/комнаты/бокса..) на дефолтную дату (сегодня).
  *	\return @[SLRPage]
  **/
 - (RACSignal *)fetchPagesForOwner:(SLROwner *)owner;
@@ -80,15 +68,40 @@ NS_ASSUME_NONNULL_BEGIN
 - (RACSignal *)fetchServicesForPage:(SLRPage *)page
 							  range:(SLRRange *)range;
 
+/*! Регистрирует пользователя с именем и телефоном. Возвращает уже зарегистрированного пользователя.
+ *	\return @[SLRUser]
+ **/
+- (RACSignal *)fetchRegisteredUserForUser:(SLRUser *)user;
+
 /*! Отправляет букинг-реквест на сервер и возвращает обработанный реквест.
  *	\return SLRRequest
  **/
 - (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request;
 
-/*! Подтягивает букинг-реквесты для пользователя. Если пользователь не залогинене, логинит его по телефону.
+/*! Подтягивает букинг-реквесты для пользователя. Если пользователь не залогинен, логинит его по телефону.
  *	\return @[SLRRequest]
  **/
 - (RACSignal *)fetchRequests;
+
+@end
+
+@interface SLRDataProvider (StoreService)
+
+/*! Подтянуть товары для магазина
+ *	Пока что подтягиваем просто фотки из вконтактика
+ **/
+- (RACSignal *)fetchStoreItems;
+
+/*! Добавляет/убирает товар в/из корзину/ы
+ *	Убрать потом в модель магазина
+ **/
+- (void)addStoreItemToCart:(SLRStoreItem *)storeItem;
+- (void)removeStoreItemFromCart:(SLRStoreItem *)storeItem;
+
+/*! Возвращает товары из корзины
+ *	Убрать потом в модель магазина
+ **/
+- (NSArray<SLRStoreItem *> *)cartStoreItems;
 
 @end
 

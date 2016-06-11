@@ -21,6 +21,15 @@
 			}].array;
 	}
 
+	NSArray <NSDictionary *> *purposeDictionaries = dictionary[@"purposes"];
+	if ([ownerDictionaries isKindOfClass:[NSArray class]])
+	{
+		_purposes = [[purposeDictionaries rac_sequence]
+		   map:^SLRPurpose *(NSDictionary *purposDictionariy) {
+			   return [[SLRPurpose alloc] initWithDictionary:purposDictionariy];
+		   }].array;
+	}
+
 	return self;
 }
 

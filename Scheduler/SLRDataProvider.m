@@ -49,7 +49,12 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 	return self;
 }
 
-// MARK: Misc
+@end
+
+
+// MARK: Authenticate API
+
+@implementation SLRDataProvider (Authenticate)
 
 - (SLRUser *)user
 {
@@ -60,6 +65,10 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 {
 	return [self.authManager fetchAuthenticatedUser];
 }
+
+@end
+
+@implementation SLRDataProvider (CreateEntities)
 
 - (RACSignal *)fetchEmptyBookingRequestForPage:(SLRPage *)page
 {
@@ -77,34 +86,12 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 	return [[SLRRequest alloc] initWithUser:user page:page];
 }
 
-- (void)addStoreItemToCart:(SLRStoreItem *)storeItem
-{
-	if (storeItem)
-	{
-		@synchronized (self)
-		{
-			[self.storeItems addObject:storeItem];
-		}
-	}
-}
+@end
 
-- (void)removeStoreItemFromCart:(SLRStoreItem *)storeItem
-{
-	if (storeItem)
-	{
-		@synchronized (self)
-		{
-			[self.storeItems removeObject:storeItem];
-		}
-	}
-}
 
-- (NSArray<SLRStoreItem *> *)cartStoreItems
-{
-	return [self.storeItems copy];
-}
+// MARK: Scheduler API
 
-// MARK: API
+@implementation SLRDataProvider (SchedulerService)
 
 - (RACSignal *)fetchRegisteredUserForUser:(SLRUser *)user;
 {
@@ -115,6 +102,12 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 - (RACSignal *)fetchFilials
 {
 	return [self.apiController fetchFilials];
+}
+
+/*! \return @[SLRPurpose] */
+- (RACSignal *)fetchPurposesForFilial:(SLRFilial *)filial
+{
+	return nil;
 }
 
 /*! \return @[SLROwner] */
@@ -151,14 +144,48 @@ static NSString *const kSLRShedulerUserId = @"0987654321";
 - (RACSignal *)fetchRequests
 {
 	return [[self.authManager fetchAuthenticatedUser]
-		flattenMap:^RACStream *(SLRUser *user) {
-			return [self.apiController fetchRequestsForUser:user];
-		}];
+			flattenMap:^RACStream *(SLRUser *user) {
+				return [self.apiController fetchRequestsForUser:user];
+			}];
 }
+
+@end
+
+
+// MARK: Store API
+
+@implementation SLRDataProvider (StoreService)
 
 - (RACSignal *)fetchStoreItems
 {
 	return [self.apiController fetchStoreItems];
+}
+
+- (void)addStoreItemToCart:(SLRStoreItem *)storeItem
+{
+	if (storeItem)
+	{
+		@synchronized (self)
+		{
+			[self.storeItems addObject:storeItem];
+		}
+	}
+}
+
+- (void)removeStoreItemFromCart:(SLRStoreItem *)storeItem
+{
+	if (storeItem)
+	{
+		@synchronized (self)
+		{
+			[self.storeItems removeObject:storeItem];
+		}
+	}
+}
+
+- (NSArray<SLRStoreItem *> *)cartStoreItems
+{
+	return [self.storeItems copy];
 }
 
 @end

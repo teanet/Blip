@@ -1,6 +1,7 @@
 #import "SLRFilial.h"
 #import "SLROwner.h"
 #import "SLRPage.h"
+#import "SLRPurpose.h"
 #import "SLRService.h"
 #import "SLRStoreItem.h"
 #import "SLRRequest.h"
@@ -37,6 +38,12 @@ static NSString *const kSLRVKAlbumId = @"227906560";//@"177366013";
 - (RACSignal *)fetchFilials
 {
 	return [RACSignal return:@[[SLRFilial testFilial]]];
+}
+
+/*! \return @[SLRPage] */
+- (RACSignal *)fetchPurposesForFilial:(SLRFilial *)filial
+{
+	return [RACSignal return:[SLRPurpose testPurposes]];
 }
 
 /*! \return @[SLRPage] */

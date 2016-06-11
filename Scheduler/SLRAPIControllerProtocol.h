@@ -13,6 +13,11 @@
 /*! \return @[SLRFilial] */
 - (RACSignal *)fetchFilials;
 
+/*! Подтягивает все виды целевых услуг филиала
+ *	\return @[SLRPurpose]
+ **/
+- (RACSignal *)fetchPurposesForFilial:(SLRFilial *)filial;
+
 /*! \return @[SLRPage] */
 - (RACSignal *)fetchPagesForOwner:(SLROwner *)owner;
 
