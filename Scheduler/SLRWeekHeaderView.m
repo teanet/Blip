@@ -48,7 +48,8 @@
 
 - (void)selectDay:(SLRWeekDayView *)button
 {
-	[self.delegate weekHeaderView:self didSelectPage:button.page];
+	[self.viewModel didSelectDay:button.viewModel];
+	[self.delegate weekHeaderView:self didSelectDay:button.viewModel];
 }
 
 - (SLRWeekDayView *)newDayView
@@ -57,11 +58,12 @@
 	return dayView;
 }
 
-- (void)setWeekVM:(SLRWeekHeaderVM *)weekVM
+- (void)setViewModel:(id)viewModel
 {
-	_weekVM = weekVM;
+	[super setViewModel:viewModel];
+
 	[self.days enumerateObjectsUsingBlock:^(SLRWeekDayView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-		obj.page = weekVM.pages[idx];
+		obj.viewModel = self.viewModel.dayVMs[idx];
 	}];
 }
 

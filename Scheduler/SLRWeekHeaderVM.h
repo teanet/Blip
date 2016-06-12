@@ -1,8 +1,18 @@
+#import "SLRBaseVM.h"
+
 #import "SLRPage.h"
 
-@interface SLRWeekHeaderVM : NSObject
+@class SLRWeekDayVM;
 
-@property (nonatomic, strong, readonly) NSArray<SLRPage *> *pages;
-@property (nonatomic, weak, readonly) SLRPage *selectedPage;
+@interface SLRWeekHeaderVM : SLRBaseVM
+
+@property (nonatomic, weak) SLRPage *selectedPage;
+
+@property (nonatomic, copy, readonly) NSArray<SLRWeekDayVM *> *dayVMs;
+
+- (instancetype)initWithStartDate:(NSDate *)startDate month:(NSInteger)month;
+- (instancetype)init NS_UNAVAILABLE;
+
+- (void)didSelectDay:(SLRWeekDayVM *)selectedDayVM;
 
 @end

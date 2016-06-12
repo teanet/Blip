@@ -73,12 +73,13 @@
 	[[[SLRDataProvider sharedProvider] fetchPagesForOwner:nil]
 		subscribeNext:^(NSArray<SLRPage *> *pages) {
 			@strongify(self);
-			
-			SLRSchedulerVM *vm = [[SLRSchedulerVM alloc] initWithOwner:nil];
-			vm.page = pages.firstObject;
-			SLRSchedulerVC *vc = [[SLRSchedulerVC alloc] initWithViewModel:vm];
 
-			[self.navigationController pushViewController:vc animated:YES];
+			NSLog(@">>> %@", @"DID TAP ORDER BUTTON");
+//			SLRSchedulerVM *vm = [[SLRSchedulerVM alloc] initWithOwner:nil];
+//			vm.page = pages.firstObject;
+//			SLRSchedulerVC *vc = [[SLRSchedulerVC alloc] initWithViewModel:vm];
+//
+//			[self.navigationController pushViewController:vc animated:YES];
 		}];
 
 }

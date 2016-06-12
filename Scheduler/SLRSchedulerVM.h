@@ -6,25 +6,26 @@
 @class SLROwner;
 
 @interface SLRSchedulerVM : SLRBaseVM
-<
-UITableViewDelegate,
-UITableViewDataSource
->
 
 @property (nonatomic, strong) SLRPage *page;
 
 @property (nonatomic, copy, readonly) NSString *title;
 
-/** returns [SLRIntervalVM] */
+/*! \sendNext NSDate */
+@property (nonatomic, strong, readonly) RACSignal *didSelectDateSignal;
+
+/*! returns [SLRIntervalVM] */
 @property (nonatomic, strong, readonly) RACSignal *didSelectRangeSignal;
 
+/*! Не используется */
 @property (nonatomic, strong, readonly) RACSignal *didSelectPageSignal;
 
 @property (nonatomic, strong, readonly) TLIndexPathController *indexPathController;
 
-- (void)registerTableView:(UITableView *)tableView;
+/*! На два месяца */
+- (instancetype)init;
+- (instancetype)initWithWeeksCountSinceNow:(NSInteger)weeksCount;
 
-- (instancetype)initWithOwner:(SLROwner *)owner;
-- (instancetype)init NS_UNAVAILABLE;
+- (void)registerTableView:(UITableView *)tableView;
 
 @end

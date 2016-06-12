@@ -12,7 +12,6 @@
 @property (nonatomic, strong) SLRSchedulerVM *schedulerVM;
 @property (nonatomic, copy, readonly) NSArray <SLRPurpose *> *purposes;
 
-
 @end
 
 @implementation SLRFilialSchedulerVM
@@ -24,6 +23,7 @@
 
 	_purposes = [purposes copy];
 	_pagesProvider = [[SLRSchedulerPagesProvider alloc] init];
+	_schedulerVM = [[SLRSchedulerVM alloc] init];
 	[self setupReactiveStuff];
 
 	return self;
@@ -39,6 +39,16 @@
 
 			self.ownersVM = [[SLROwnersVM alloc] initWithOwners:owners];
 			return [self.pagesProvider fetchPageForOwners:owners date:[NSDate date]];
+		}]
+		subscribeNext:^(SLRPage *page) {
+			self.schedulerVM.page = page;
+		}];
+
+	[[self.schedulerVM.didSelectDateSignal
+		flattenMap:^RACStream *(NSDate *date) {
+			@strongify(self);
+
+			return [self.pagesProvider fetchPageForOwners:self.ownersVM.owners date:date];
 		}]
 		subscribeNext:^(SLRPage *page) {
 			self.schedulerVM.page = page;

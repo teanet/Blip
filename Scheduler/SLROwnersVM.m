@@ -5,7 +5,6 @@
 
 @interface SLROwnersVM () <UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (nonatomic, copy, readonly) NSArray <SLROwner *> *owners;
 @property (nonatomic, copy, readonly) NSString *ownerCellReuseIdentifier;
 
 @end

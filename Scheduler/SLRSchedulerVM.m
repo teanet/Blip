@@ -2,17 +2,29 @@
 
 #import "SLRIntervalCell.h"
 #import "SLRIntervalVM.h"
+#import "SLRMonthHeaderView.h"
 #import "SLRWeekHeaderView.h"
 #import "SLRDataProvider.h"
+#import "SLRWeekDayVM.h"
 #import <TLIndexPathSectionInfo.h>
 
-@interface SLRSchedulerVM () <SLRWeekHeaderViewDelegate>
+static NSTimeInterval kSecondsInWeek = 604800.0;
 
+@interface SLRSchedulerVM ()
+<
+SLRWeekHeaderViewDelegate,
+UITableViewDelegate,
+UITableViewDataSource
+>
+
+@property (nonatomic, strong) SLRWeekDayVM *selectedDayVM;
 @property (nonatomic, strong, readonly) SLROwner *owner;
 @property (nonatomic, strong, readonly) RACSubject *didSelectRangeSubject;
 @property (nonatomic, strong, readonly) RACSubject *didSelectPageSubject;
+@property (nonatomic, strong, readonly) RACSubject *didSelectDateSubject;
+@property (nonatomic, strong, readonly) NSCalendar *calendar;
 
-@property (nonatomic, strong, readonly) NSArray<SLRWeekHeaderVM *> *weekHeaderVMs;
+@property (nonatomic, strong, readonly) NSArray<SLRBaseVM *> *headerVMs;
 
 @end
 
@@ -22,22 +34,23 @@
 {
 	[_didSelectRangeSubject sendCompleted];
 	[_didSelectPageSubject sendCompleted];
+	[_didSelectDateSubject sendCompleted];
 }
 
-- (instancetype)initWithOwner:(SLROwner *)owner
+- (instancetype)init
+{
+	return [self initWithWeeksCountSinceNow:12];
+}
+
+- (instancetype)initWithWeeksCountSinceNow:(NSInteger)weeksCount
 {
 	self = [super init];
 	if (self == nil) return nil;
 
-	_owner = owner;
-	_title = owner.title;
-
-	_weekHeaderVMs = @[
-		[[SLRWeekHeaderVM alloc] init],
-		[[SLRWeekHeaderVM alloc] init],
-		[[SLRWeekHeaderVM alloc] init],
-	];
-
+	_calendar = [NSCalendar currentCalendar];
+	[_calendar setFirstWeekday:2];
+	[_calendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+	
 	_indexPathController = [[TLIndexPathController alloc] init];
 
 	_didSelectRangeSubject = [RACSubject subject];
@@ -46,47 +59,100 @@
 	_didSelectPageSubject = [RACSubject subject];
 	_didSelectPageSignal = _didSelectPageSubject;
 
-	[self fetchTodayPage];
+	_didSelectDateSubject = [RACSubject subject];
+	_didSelectDateSignal = _didSelectDateSubject;
+
+	[self createCalendarHeadersWithWeeksCount:weeksCount];
 
 	return self;
 }
 
-- (void)fetchTodayPage
+- (void)createCalendarHeadersWithWeeksCount:(NSInteger)weeksCount
 {
-	@weakify(self);
+	// Здесь мы создаём хедэры для календаря:
+	// Хедер для месяца:
+	// -------------------
+	// Июнь			  2016
+	// -------------------
+	// 27 28 29 30 [1 2 3]
+	// -------------------
+	// Июль			  2016
+	// [27 28 29 30] 1 2 3
+	// 4  5  6  7  8  9 10
 
-	[[[SLRDataProvider sharedProvider] fetchPagesForOwner:self.owner date:[NSDate date]]
-		subscribeNext:^(NSArray<SLRPage *> *pages) {
-			@strongify(self);
-
-			self.page = pages.firstObject;
-		}];
+	// Create weeks
+	NSArray<NSDate *> *weekDatesArray = [self weekStartDatesSinceNowForWeeksCount:weeksCount];
+	_headerVMs = [self weekVMsForWeekStartDates:weekDatesArray];
 }
 
-- (void)setPage:(SLRPage *)page
+- (NSArray<SLRBaseVM *> *)weekVMsForWeekStartDates:(NSArray<NSDate *> *)startDates
 {
-	SLRPage *previousPage = _page;
-	_page = page;
+	NSMutableArray<SLRBaseVM *> *schedulerHeaderVMs = [[NSMutableArray alloc] init];
 
-	NSMutableArray<TLIndexPathSectionInfo *> *infos = [NSMutableArray array];
-	[self.weekHeaderVMs enumerateObjectsUsingBlock:^(SLRWeekHeaderVM *weekVM, NSUInteger idx, BOOL * _Nonnull stop) {
+	// Create first Month header
+	NSDate *firstMonthDate = startDates.firstObject;
+	NSDateComponents *firstMonthDateComponents = [self.calendar components:NSCalendarUnitMonth | NSCalendarUnitYear
+																  fromDate:firstMonthDate];
+	[schedulerHeaderVMs addObject:[[SLRMonthHeaderVM alloc] initWithDateComponents:firstMonthDateComponents]];
 
-		NSArray *items = @[];
-		if ([weekVM.pages containsObject:page])
+	__block NSInteger lastMonth = firstMonthDateComponents.month;
+
+	[startDates enumerateObjectsUsingBlock:^(NSDate *date, NSUInteger idx, BOOL *stop) {
+
+		NSDateComponents *startDateComponents = [self.calendar components:NSCalendarUnitMonth | NSCalendarUnitYear
+																 fromDate:date];
+		NSDate *endWeekDate = [date dateByAddingTimeInterval:kSecondsInWeek - 1.0];
+		NSDateComponents *endDateComponents = [self.calendar components:NSCalendarUnitMonth | NSCalendarUnitYear
+															   fromDate:endWeekDate];
+
+		// Добавляем неделю если она фигурирует в старом месяце
+		if (lastMonth == startDateComponents.month)
 		{
-			items = page.intervals;
+			[schedulerHeaderVMs addObject:[[SLRWeekHeaderVM alloc] initWithStartDate:date month:startDateComponents.month]];
 		}
-		[infos addObject:[[TLIndexPathSectionInfo alloc] initWithItems:items name:[@(idx) description]]];
+
+		// Если сменился месяц, то добавляем месяц и неделю
+		if (lastMonth != endDateComponents.month)
+		{
+			[schedulerHeaderVMs addObject:[[SLRMonthHeaderVM alloc] initWithDateComponents:endDateComponents]];
+			[schedulerHeaderVMs addObject:[[SLRWeekHeaderVM alloc] initWithStartDate:date month:startDateComponents.month]];
+			lastMonth = endDateComponents.month;
+		}
 	}];
 
-	self.indexPathController.dataModel = [[TLIndexPathDataModel alloc] initWithSectionInfos:infos identifierKeyPath:nil];
-	[self.didSelectPageSubject sendNext:RACTuplePack(page, previousPage)];
+	return [schedulerHeaderVMs copy];
+}
+
+- (NSArray<NSDate *> *)weekStartDatesSinceNowForWeeksCount:(NSInteger)weeksCount
+{
+	NSMutableArray<NSDate *> *weekDatesArray = [[NSMutableArray alloc] initWithCapacity:weeksCount];
+	NSDate *now = [NSDate date];
+
+	NSDate *startOfTheWeek;
+	NSDate *endOfWeek;
+	NSTimeInterval interval;
+
+	for (NSUInteger week = 0; week < weeksCount; week++)
+	{
+		NSDate *periodicDate = [now dateByAddingTimeInterval:week * kSecondsInWeek];
+		[self.calendar rangeOfUnit:NSCalendarUnitWeekOfMonth
+						 startDate:&startOfTheWeek
+						  interval:&interval
+						   forDate:periodicDate];
+
+		endOfWeek = [startOfTheWeek dateByAddingTimeInterval:interval-1];
+		NSDate *startWeekDate = [startOfTheWeek copy];
+		[weekDatesArray addObject:startWeekDate];
+	}
+
+	return [weekDatesArray copy];
 }
 
 - (void)registerTableView:(UITableView *)tableView
 {
 	[tableView registerClass:[SLRIntervalCell class] forCellReuseIdentifier:@"cell"];
-	[tableView registerClass:[SLRWeekHeaderView class] forHeaderFooterViewReuseIdentifier:@"header"];
+	[tableView registerClass:[SLRWeekHeaderView class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([SLRWeekHeaderVM class])];
+	[tableView registerClass:[SLRMonthHeaderView class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([SLRMonthHeaderVM class])];
 	tableView.delegate = self;
 	tableView.dataSource = self;
 }
@@ -116,20 +182,52 @@
 	return canBook;
 }
 
+- (void)setPage:(SLRPage *)page
+{
+	SLRPage *previousPage = _page;
+	_page = page;
+
+	NSMutableArray<TLIndexPathSectionInfo *> *infos = [NSMutableArray array];
+	[self.headerVMs enumerateObjectsUsingBlock:^(SLRBaseVM *baseVM, NSUInteger idx, BOOL *stop) {
+		NSArray *items = @[];
+		if ([baseVM isKindOfClass:[SLRWeekHeaderVM class]])
+		{
+			SLRWeekHeaderVM *weekVM = (SLRWeekHeaderVM *)baseVM;
+			if ([weekVM.dayVMs containsObject:self.selectedDayVM])
+			{
+				items = page.intervals;
+				weekVM.selectedPage = page;
+			}
+			else
+			{
+				weekVM.selectedPage = nil;
+			}
+		}
+		[infos addObject:[[TLIndexPathSectionInfo alloc] initWithItems:items name:[@(idx) description]]];
+	}];
+
+	self.indexPathController.dataModel = [[TLIndexPathDataModel alloc] initWithSectionInfos:infos
+																		  identifierKeyPath:nil];
+	[self.didSelectPageSubject sendNext:RACTuplePack(page, previousPage)];
+}
+
 #pragma mark SLRWeekHeaderViewDelegate
 
-- (void)weekHeaderView:(SLRWeekHeaderView *)weekHeaderView didSelectPage:(SLRPage *)page
+- (void)weekHeaderView:(SLRWeekHeaderView *)weekHeaderView didSelectDay:(SLRWeekDayVM *)dayVM
 {
-	if (self.page == page)
+	if (self.selectedDayVM == dayVM)
 	{
-		self.page.selected = NO;
+		self.selectedDayVM.selected = NO;
 		self.page = nil;
+		self.selectedDayVM = nil;
 	}
 	else
 	{
-		self.page.selected = NO;
-		page.selected = YES;
-		self.page = page;
+		self.selectedDayVM.selected = NO;
+		dayVM.selected = YES;
+		self.selectedDayVM = dayVM;
+
+		[self.didSelectDateSubject sendNext:dayVM.date];
 	}
 }
 
@@ -137,20 +235,28 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-	SLRWeekHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
-	headerView.weekVM = self.weekHeaderVMs[section];
-	headerView.delegate = self;
+	SLRBaseVM *headerVM = self.headerVMs[section];
+	SLRTableViewHeaderFooterView *headerView =
+		[tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([headerVM class])];
+	headerView.viewModel = headerVM;
+
+	if ([headerView isKindOfClass:[SLRWeekHeaderView class]])
+	{
+		SLRWeekHeaderView *weekHeaderView = (SLRWeekHeaderView *)headerView;
+		weekHeaderView.delegate = self;
+	}
+
 	return headerView;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-	return 100.0;
+	return 40.0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return self.weekHeaderVMs.count;
+	return self.headerVMs.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -160,20 +266,43 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return self.weekHeaderVMs[section].selectedPage.intervals.count;
+	NSUInteger rows = 0;
+	SLRBaseVM *baseVM = self.headerVMs[section];
+
+	if ([baseVM isKindOfClass:[SLRWeekHeaderVM class]])
+	{
+		SLRWeekHeaderVM *weekHeaderVM = (SLRWeekHeaderVM *)baseVM;
+		rows = weekHeaderVM.selectedPage.intervals.count;
+	}
+
+	return rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	SLRIntervalCell *cell = (SLRIntervalCell *)[tableView dequeueReusableCellWithIdentifier:@"cell"];
-	cell.intervalVM = self.weekHeaderVMs[indexPath.section].selectedPage.intervals[indexPath.row];
+	SLRBaseVM *baseVM = self.headerVMs[indexPath.section];
+
+	if ([baseVM isKindOfClass:[SLRWeekHeaderVM class]])
+	{
+		SLRWeekHeaderVM *weekHeaderVM = (SLRWeekHeaderVM *)baseVM;
+		cell.intervalVM = weekHeaderVM.selectedPage.intervals[indexPath.row];
+	}
+
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	[self didSelectInterval:self.weekHeaderVMs[indexPath.section].selectedPage.intervals[indexPath.row]];
+
+	SLRBaseVM *baseVM = self.headerVMs[indexPath.section];
+
+	if ([baseVM isKindOfClass:[SLRWeekHeaderVM class]])
+	{
+		SLRWeekHeaderVM *weekHeaderVM = (SLRWeekHeaderVM *)baseVM;
+		[self didSelectInterval:weekHeaderVM.selectedPage.intervals[indexPath.row]];
+	}
 }
 
 @end

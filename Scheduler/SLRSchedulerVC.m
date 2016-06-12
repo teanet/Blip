@@ -78,6 +78,7 @@
 	self.view.backgroundColor = [UIColor whiteColor];
 	_tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
 	_tableView.tableFooterView = [[UIView alloc] init];
+	_tableView.showsVerticalScrollIndicator = NO;
 	[self.view addSubview:_tableView];
 	[_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.edges.equalTo(self.view);

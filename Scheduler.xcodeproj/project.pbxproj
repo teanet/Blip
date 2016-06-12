@@ -49,6 +49,9 @@
 		3064DADE1D0D4455001B1D66 /* SLRFilialSchedulerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 3064DADD1D0D4455001B1D66 /* SLRFilialSchedulerVM.m */; };
 		3064DAE11D0D446E001B1D66 /* SLRFilialSchedulerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3064DAE01D0D446E001B1D66 /* SLRFilialSchedulerVC.m */; };
 		3064DAE41D0D4508001B1D66 /* SLRSchedulerPagesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3064DAE31D0D4508001B1D66 /* SLRSchedulerPagesProvider.m */; };
+		3064DAE71D0D75A0001B1D66 /* SLRMonthHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3064DAE61D0D75A0001B1D66 /* SLRMonthHeaderView.m */; };
+		3064DAEA1D0D7652001B1D66 /* SLRMonthHeaderVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 3064DAE91D0D7652001B1D66 /* SLRMonthHeaderVM.m */; };
+		3064DAED1D0D7DEE001B1D66 /* SLRWeekDayVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 3064DAEC1D0D7DEE001B1D66 /* SLRWeekDayVM.m */; };
 		307346F31CF0B4D80089A494 /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = 307346F21CF0B4D80089A494 /* services.json */; };
 		307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 307346F71CF0BD2E0089A494 /* SLRDetailsVM.m */; };
 		307346FC1CF218170089A494 /* SLRAPIMockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307346FB1CF218170089A494 /* SLRAPIMockController.m */; };
@@ -203,6 +206,12 @@
 		3064DAE01D0D446E001B1D66 /* SLRFilialSchedulerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFilialSchedulerVC.m; sourceTree = "<group>"; };
 		3064DAE21D0D4508001B1D66 /* SLRSchedulerPagesProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRSchedulerPagesProvider.h; sourceTree = "<group>"; };
 		3064DAE31D0D4508001B1D66 /* SLRSchedulerPagesProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRSchedulerPagesProvider.m; sourceTree = "<group>"; };
+		3064DAE51D0D75A0001B1D66 /* SLRMonthHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRMonthHeaderView.h; sourceTree = "<group>"; };
+		3064DAE61D0D75A0001B1D66 /* SLRMonthHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRMonthHeaderView.m; sourceTree = "<group>"; };
+		3064DAE81D0D7652001B1D66 /* SLRMonthHeaderVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRMonthHeaderVM.h; sourceTree = "<group>"; };
+		3064DAE91D0D7652001B1D66 /* SLRMonthHeaderVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRMonthHeaderVM.m; sourceTree = "<group>"; };
+		3064DAEB1D0D7DEE001B1D66 /* SLRWeekDayVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRWeekDayVM.h; sourceTree = "<group>"; };
+		3064DAEC1D0D7DEE001B1D66 /* SLRWeekDayVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRWeekDayVM.m; sourceTree = "<group>"; };
 		307346F21CF0B4D80089A494 /* services.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
 		307346F61CF0BD2E0089A494 /* SLRDetailsVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRDetailsVM.h; sourceTree = "<group>"; };
 		307346F71CF0BD2E0089A494 /* SLRDetailsVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDetailsVM.m; sourceTree = "<group>"; };
@@ -623,10 +632,16 @@
 				73830E581CE0C458006B6074 /* SLRIntervalVM.m */,
 				733708F71D03081E0071BC26 /* SLRWeekDayView.h */,
 				733708F81D03081E0071BC26 /* SLRWeekDayView.m */,
+				3064DAEB1D0D7DEE001B1D66 /* SLRWeekDayVM.h */,
+				3064DAEC1D0D7DEE001B1D66 /* SLRWeekDayVM.m */,
 				73AF6DF91D02FA3800F3968B /* SLRWeekHeaderView.h */,
 				73AF6DFA1D02FA3800F3968B /* SLRWeekHeaderView.m */,
 				733708F41D03017E0071BC26 /* SLRWeekHeaderVM.h */,
 				733708F51D03017E0071BC26 /* SLRWeekHeaderVM.m */,
+				3064DAE51D0D75A0001B1D66 /* SLRMonthHeaderView.h */,
+				3064DAE61D0D75A0001B1D66 /* SLRMonthHeaderView.m */,
+				3064DAE81D0D7652001B1D66 /* SLRMonthHeaderVM.h */,
+				3064DAE91D0D7652001B1D66 /* SLRMonthHeaderVM.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -1089,6 +1104,7 @@
 				738314CB1CF09B550048AFE2 /* SLRAPIController+SLRModels.m in Sources */,
 				73103FD71CF0B7AA00785073 /* SLRIntervalCell.m in Sources */,
 				30BB886F1CFA1F140046BEB5 /* SLRCartVC.m in Sources */,
+				3064DAED1D0D7DEE001B1D66 /* SLRWeekDayVM.m in Sources */,
 				301406331D0434D40002AFD6 /* SLRRootVM.m in Sources */,
 				301403071D030BD80002AFD6 /* SLRFilialVM.m in Sources */,
 				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
@@ -1109,6 +1125,7 @@
 				30470DCD1CF99DE000C57566 /* SLRDetailsPickerView.m in Sources */,
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
+				3064DAEA1D0D7652001B1D66 /* SLRMonthHeaderVM.m in Sources */,
 				30470DDD1CF9D5B700C57566 /* SLRDetailsSummaryVM.m in Sources */,
 				733708F91D03081E0071BC26 /* SLRWeekDayView.m in Sources */,
 				3097CD3F1CFA1FDC00E28EEB /* SLRStoreVM.m in Sources */,
@@ -1130,6 +1147,7 @@
 				3097D0511CFA266900E28EEB /* SLRStoreItemCell.m in Sources */,
 				30470DD01CF99FFB00C57566 /* SLRDetailsPickerVM.m in Sources */,
 				301406371D0451290002AFD6 /* SLRAppointmentCellVM.m in Sources */,
+				3064DAE71D0D75A0001B1D66 /* SLRMonthHeaderView.m in Sources */,
 				30470DE01CF9D5D800C57566 /* SLRDetailsSummaryView.m in Sources */,
 				30567E031CF0A9F900058477 /* SLRService.m in Sources */,
 				304B42581D0C3F05008EAF8B /* SLRPurpose.m in Sources */,

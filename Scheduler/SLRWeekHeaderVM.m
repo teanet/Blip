@@ -1,36 +1,37 @@
 #import "SLRWeekHeaderVM.h"
 
+#import "SLRWeekDayVM.h"
+
+static NSTimeInterval kSecondsInDay = 86400.0;
+
 @implementation SLRWeekHeaderVM
 
-- (instancetype)init
+- (instancetype)initWithStartDate:(NSDate *)startDate month:(NSInteger)month
 {
 	self = [super init];
 	if (self == nil) return nil;
 
-	_pages = @[
-		[SLRPage testPageWithDate:@"01-01-2010"],
-		[SLRPage testPageWithDate:@"02-01-2010"],
-		[SLRPage testPageWithDate:@"03-01-2010"],
-		[SLRPage testPageWithDate:@"04-01-2010"],
-		[SLRPage testPageWithDate:@"05-01-2010"],
-		[SLRPage testPageWithDate:@"06-01-2010"],
-		[SLRPage testPageWithDate:@"07-01-2010"],
-	];
+	[self createDayVMsWithStartDate:startDate month:month];
 
 	return self;
 }
 
-- (SLRPage *)selectedPage
+- (void)createDayVMsWithStartDate:(NSDate *)startDate month:(NSInteger)month
 {
-	__block SLRPage *selectedPage = nil;
-	[self.pages enumerateObjectsUsingBlock:^(SLRPage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-		if (obj.selected)
-		{
-			selectedPage = obj;
-			*stop = YES;
-		}
-	}];
-	return selectedPage;
+	NSMutableArray<SLRWeekDayVM *> *dayVMs = [[NSMutableArray alloc] initWithCapacity:7];
+
+	for (NSInteger i = 0; i < 7; i++)
+	{
+		NSDate *date = [startDate dateByAddingTimeInterval:i * kSecondsInDay];
+		SLRWeekDayVM *dayVM = [[SLRWeekDayVM alloc] initWithDate:date];
+		[dayVMs addObject:dayVM];
+	}
+
+	_dayVMs = [dayVMs copy];
+}
+
+- (void)didSelectDay:(SLRWeekDayVM *)selectedDayVM
+{
 }
 
 @end

@@ -7,6 +7,7 @@
 
 @interface SLROwnersVM : SLRBaseVM
 
+@property (nonatomic, copy, readonly) NSArray <SLROwner *> *owners;
 @property (nonatomic, copy, readonly) NSArray<SLROwnerVM *> *ownerVMs;
 
 /*! Сигнал о том, что выбран Owner

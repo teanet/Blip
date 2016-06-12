@@ -27,7 +27,7 @@
 				// SLRPurpose *purpose = filial.purposes.firstObject;
 				// SLRFilialSchedulerVM *returnVM = [[SLRFilialSchedulerVM alloc] initWithFilial:filial purpose:purpose];
 				SLROwner *owner = filial.owners.firstObject;
-				returnVM = [[SLRSchedulerVM alloc] initWithOwner:owner];
+//				returnVM = [[SLRSchedulerVM alloc] initWithOwner:owner];
 			}
 
 			return returnVM;
