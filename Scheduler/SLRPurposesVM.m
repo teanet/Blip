@@ -2,6 +2,8 @@
 
 #import "SLRPurposeCell.h"
 
+static CGFloat const kPurposeCellHeight = 200.0;
+
 @interface SLRPurposesVM () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, copy, readonly) NSArray <SLRPurpose *> *purposes;
@@ -19,14 +21,24 @@
 	if (self == nil) return nil;
 
 	_purposes = [purposes copy];
-
-	_purposeVMs = [[purposes rac_sequence]
-		   map:^SLRPurposeCellVM *(SLRPurpose *purpose) {
-			   return [[SLRPurposeCellVM alloc] initWithPurpose:purpose];
-		   }].array;
 	_purposeCellIdentifier = NSStringFromClass([SLRPurposeCellVM class]);
 
+	_purposeVMs = [[purposes rac_sequence]
+	   map:^SLRPurposeCellVM *(SLRPurpose *purpose) {
+		   return [[SLRPurposeCellVM alloc] initWithPurpose:purpose];
+	   }].array;
+
+	_didSelectPurposeSignal = [[[self rac_signalForSelector:@checkselector(self, didSelectPurpose:)]
+		map:^SLRPurpose *(RACTuple *tuple) {
+			return tuple.first;
+		}]
+		ignore:nil];
+
 	return self;
+}
+
+- (void)didSelectPurpose:(SLRPurpose *)purpose
+{
 }
 
 - (void)registerTableView:(UITableView *)tableView
@@ -38,7 +50,7 @@
 
 - (CGFloat)contentHeight
 {
-	return self.purposeVMs.count * 200.0;
+	return self.purposeVMs.count * kPurposeCellHeight;
 }
 
 // MARK: TableView
@@ -49,7 +61,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 200.0;
+	return kPurposeCellHeight;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -68,6 +80,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	SLRPurpose *purpose = nil;
+
+	if (indexPath.row < self.purposes.count)
+	{
+		purpose = [self.purposes objectAtIndex:indexPath.row];
+	}
+
+	[self didSelectPurpose:purpose];
 }
 
 @end

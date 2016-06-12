@@ -29,12 +29,24 @@
 	_ownerHeaderIdentifier = NSStringFromClass([SLRFilialOwnersView class]);
 	_purposesCellIdentifier = NSStringFromClass([SLRFilialPurposesCell class]);
 
-	_shouldShowSchedulerSignal = [self.ownersVM.didSelectOwnerSignal
+	[self setupReactiveStuff];
+
+	return self;
+}
+
+- (void)setupReactiveStuff
+{
+	RACSignal *shouldShowSchedulerForOwnerSignal = [self.ownersVM.didSelectOwnerSignal
 		map:^SLRSchedulerVM *(SLROwner *owner) {
 			return [[SLRSchedulerVM alloc] initWithOwner:owner];
 		}];
 
-	return self;
+	RACSignal *shouldShowSchedulerForPurposeSignal = [self.purposesVM.didSelectPurposeSignal
+		map:^SLRSchedulerVM *(SLROwner *owner) {
+			return [[SLRSchedulerVM alloc] initWithOwner:nil];
+		}];
+
+	_shouldShowSchedulerSignal = [shouldShowSchedulerForOwnerSignal merge:shouldShowSchedulerForPurposeSignal];
 }
 
 - (NSString *)title

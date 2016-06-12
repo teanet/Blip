@@ -1,40 +1,14 @@
 #import "SLRFilialPurposesCell.h"
 
 @interface SLRFilialTableView : UITableView
-
 @end
 
 @implementation SLRFilialTableView
 
-- (BOOL)                         gestureRecognizer: (UIGestureRecognizer*)gestureRecognizer
+- (BOOL)gestureRecognizer: (UIGestureRecognizer*)gestureRecognizer
 shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*)otherGestureRecognizer
 {
 	return YES;
-//	if ([gestureRecognizer isKindOfClass: [UIPanGestureRecognizer class]])
-//	{
-//		if ([((UIPanGestureRecognizer*)gestureRecognizer) velocityInView: self].y > 0)
-//		{
-//			// Up
-//			if (self.contentOffset.y <= 0)
-//			{
-//				self.bounces = NO;
-//				return YES;
-//			}
-//		}
-//		else
-//		{
-//			// Down
-//			if (self.contentOffset.y + self.frame.size.height >= self.contentSize.height)
-//			{
-//				self.bounces = NO;
-//				return YES;
-//			}
-//		}
-//	}
-//
-//	self.bounces = YES;
-
-	return NO;
 }
 
 @end
