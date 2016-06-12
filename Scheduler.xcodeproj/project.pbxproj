@@ -46,6 +46,9 @@
 		304B42751D0C909D008EAF8B /* SLRPurposeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 304B42741D0C909D008EAF8B /* SLRPurposeCell.m */; };
 		304B42781D0C90C4008EAF8B /* SLRPurposeCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 304B42771D0C90C4008EAF8B /* SLRPurposeCellVM.m */; };
 		30567E031CF0A9F900058477 /* SLRService.m in Sources */ = {isa = PBXBuildFile; fileRef = 30567E021CF0A9F900058477 /* SLRService.m */; };
+		3064DADE1D0D4455001B1D66 /* SLRFilialSchedulerVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 3064DADD1D0D4455001B1D66 /* SLRFilialSchedulerVM.m */; };
+		3064DAE11D0D446E001B1D66 /* SLRFilialSchedulerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3064DAE01D0D446E001B1D66 /* SLRFilialSchedulerVC.m */; };
+		3064DAE41D0D4508001B1D66 /* SLRSchedulerPagesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3064DAE31D0D4508001B1D66 /* SLRSchedulerPagesProvider.m */; };
 		307346F31CF0B4D80089A494 /* services.json in Resources */ = {isa = PBXBuildFile; fileRef = 307346F21CF0B4D80089A494 /* services.json */; };
 		307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 307346F71CF0BD2E0089A494 /* SLRDetailsVM.m */; };
 		307346FC1CF218170089A494 /* SLRAPIMockController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307346FB1CF218170089A494 /* SLRAPIMockController.m */; };
@@ -194,6 +197,12 @@
 		304B42771D0C90C4008EAF8B /* SLRPurposeCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRPurposeCellVM.m; sourceTree = "<group>"; };
 		30567E011CF0A9F900058477 /* SLRService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRService.h; sourceTree = "<group>"; };
 		30567E021CF0A9F900058477 /* SLRService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRService.m; sourceTree = "<group>"; };
+		3064DADC1D0D4455001B1D66 /* SLRFilialSchedulerVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFilialSchedulerVM.h; sourceTree = "<group>"; };
+		3064DADD1D0D4455001B1D66 /* SLRFilialSchedulerVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFilialSchedulerVM.m; sourceTree = "<group>"; };
+		3064DADF1D0D446E001B1D66 /* SLRFilialSchedulerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFilialSchedulerVC.h; sourceTree = "<group>"; };
+		3064DAE01D0D446E001B1D66 /* SLRFilialSchedulerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFilialSchedulerVC.m; sourceTree = "<group>"; };
+		3064DAE21D0D4508001B1D66 /* SLRSchedulerPagesProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRSchedulerPagesProvider.h; sourceTree = "<group>"; };
+		3064DAE31D0D4508001B1D66 /* SLRSchedulerPagesProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRSchedulerPagesProvider.m; sourceTree = "<group>"; };
 		307346F21CF0B4D80089A494 /* services.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = services.json; sourceTree = "<group>"; };
 		307346F61CF0BD2E0089A494 /* SLRDetailsVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRDetailsVM.h; sourceTree = "<group>"; };
 		307346F71CF0BD2E0089A494 /* SLRDetailsVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRDetailsVM.m; sourceTree = "<group>"; };
@@ -502,6 +511,19 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		3064DADB1D0D431C001B1D66 /* FilialScheduler */ = {
+			isa = PBXGroup;
+			children = (
+				3064DADC1D0D4455001B1D66 /* SLRFilialSchedulerVM.h */,
+				3064DADD1D0D4455001B1D66 /* SLRFilialSchedulerVM.m */,
+				3064DADF1D0D446E001B1D66 /* SLRFilialSchedulerVC.h */,
+				3064DAE01D0D446E001B1D66 /* SLRFilialSchedulerVC.m */,
+				3064DAE21D0D4508001B1D66 /* SLRSchedulerPagesProvider.h */,
+				3064DAE31D0D4508001B1D66 /* SLRSchedulerPagesProvider.m */,
+			);
+			name = FilialScheduler;
+			sourceTree = "<group>";
+		};
 		307346FD1CF218620089A494 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,6 +592,7 @@
 				3014062A1D04304B0002AFD6 /* Appointments */,
 				30BB886B1CFA1E760046BEB5 /* Cart */,
 				30470DC51CF99D0D00C57566 /* Details */,
+				3064DADB1D0D431C001B1D66 /* FilialScheduler */,
 				3014030B1D0310BF0002AFD6 /* Home */,
 				304B425D1D0C51F7008EAF8B /* Owners */,
 				304B425C1D0C4D56008EAF8B /* Purposes */,
@@ -1052,7 +1075,9 @@
 				30470DC01CF8B98C00C57566 /* SLRServiceCellVM.m in Sources */,
 				738314BD1CF09ACA0048AFE2 /* SLROwner.m in Sources */,
 				301406301D0431940002AFD6 /* SLRAppointmentsVC.m in Sources */,
+				3064DAE41D0D4508001B1D66 /* SLRSchedulerPagesProvider.m in Sources */,
 				738314CC1CF09B550048AFE2 /* SLRDataProvider.m in Sources */,
+				3064DADE1D0D4455001B1D66 /* SLRFilialSchedulerVM.m in Sources */,
 				733708F61D03017E0071BC26 /* SLRWeekHeaderVM.m in Sources */,
 				73AF6DFB1D02FA3800F3968B /* SLRWeekHeaderView.m in Sources */,
 				30DF0AD51CFAA65400DE287B /* UIColor+DGSCustomColor.m in Sources */,
@@ -1069,6 +1094,7 @@
 				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				30470DC41CF8D9BD00C57566 /* SLRAuthenticationManager.m in Sources */,
 				30DF0AD11CFA348800DE287B /* SLRStoreItemDetailsVM.m in Sources */,
+				3064DAE11D0D446E001B1D66 /* SLRFilialSchedulerVC.m in Sources */,
 				3014063A1D04514B0002AFD6 /* SLRAppointmentCell.m in Sources */,
 				73AF55AA1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
 				73830E591CE0C458006B6074 /* SLRIntervalVM.m in Sources */,

@@ -3,7 +3,7 @@
 #import "SLRFilial.h"
 #import "SLROwnersVM.h"
 #import "SLRPurposesVM.h"
-#import "SLRSchedulerVM.h"
+#import "SLRFilialSchedulerVM.h"
 #import "SLRFilialOwnersView.h"
 #import "SLRFilialPurposesCell.h"
 
@@ -38,12 +38,12 @@
 {
 	RACSignal *shouldShowSchedulerForOwnerSignal = [self.ownersVM.didSelectOwnerSignal
 		map:^SLRSchedulerVM *(SLROwner *owner) {
-			return [[SLRSchedulerVM alloc] initWithOwner:owner];
+			return nil;//[[SLRSchedulerVM alloc] initWithOwner:owner];
 		}];
 
 	RACSignal *shouldShowSchedulerForPurposeSignal = [self.purposesVM.didSelectPurposeSignal
-		map:^SLRSchedulerVM *(SLROwner *owner) {
-			return [[SLRSchedulerVM alloc] initWithOwner:nil];
+		map:^SLRFilialSchedulerVM *(SLRPurpose *purpose) {
+			return [[SLRFilialSchedulerVM alloc] initWithPurposes:@[purpose]];
 		}];
 
 	_shouldShowSchedulerSignal = [shouldShowSchedulerForOwnerSignal merge:shouldShowSchedulerForPurposeSignal];

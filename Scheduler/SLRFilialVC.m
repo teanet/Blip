@@ -1,7 +1,7 @@
 #import "SLRFilialVC.h"
 
 #import "SLROwnersVC.h"
-#import "SLRSchedulerVC.h"
+#import "SLRFilialSchedulerVC.h"
 #import "UIViewController+DGSAdditions.h"
 
 @interface SLRFilialVC () <UIGestureRecognizerDelegate>
@@ -59,10 +59,10 @@
 	@weakify(self);
 
 	[self.viewModel.shouldShowSchedulerSignal
-		subscribeNext:^(SLRSchedulerVM *viewModel) {
+		subscribeNext:^(SLRFilialSchedulerVM *viewModel) {
 			@strongify(self);
 
-			SLRSchedulerVC *vc = [[SLRSchedulerVC alloc] initWithViewModel:viewModel];
+			SLRFilialSchedulerVC *vc = [[SLRFilialSchedulerVC alloc] initWithViewModel:viewModel];
 			[self.navigationController pushViewController:vc animated:YES];
 		}];
 }

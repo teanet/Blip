@@ -16,7 +16,7 @@
 	self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
 	self.collectionView.showsHorizontalScrollIndicator = NO;
 	self.collectionView.showsVerticalScrollIndicator = NO;
-	self.collectionView.contentInset = UIEdgeInsetsMake(-45.0, 0.0, -74.0, 0.0);
+	self.collectionView.contentInset = UIEdgeInsetsMake(-45.0, 0.0, -30.0, 0.0);
 	self.collectionView.backgroundColor = [UIColor dgs_colorWithString:@"FBFAF9"];
 
 	[self.view addSubview:self.collectionView];
