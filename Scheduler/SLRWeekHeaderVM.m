@@ -23,7 +23,7 @@ static NSTimeInterval kSecondsInDay = 86400.0;
 	for (NSInteger i = 0; i < 7; i++)
 	{
 		NSDate *date = [startDate dateByAddingTimeInterval:i * kSecondsInDay];
-		SLRWeekDayVM *dayVM = [[SLRWeekDayVM alloc] initWithDate:date];
+		SLRWeekDayVM *dayVM = [[SLRWeekDayVM alloc] initWithDate:date month:month];
 		[dayVMs addObject:dayVM];
 	}
 

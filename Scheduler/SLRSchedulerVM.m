@@ -115,7 +115,7 @@ UITableViewDataSource
 		if (lastMonth != endDateComponents.month)
 		{
 			[schedulerHeaderVMs addObject:[[SLRMonthHeaderVM alloc] initWithDateComponents:endDateComponents]];
-			[schedulerHeaderVMs addObject:[[SLRWeekHeaderVM alloc] initWithStartDate:date month:startDateComponents.month]];
+			[schedulerHeaderVMs addObject:[[SLRWeekHeaderVM alloc] initWithStartDate:date month:endDateComponents.month]];
 			lastMonth = endDateComponents.month;
 		}
 	}];
@@ -180,6 +180,37 @@ UITableViewDataSource
 	}];
 
 	return canBook;
+}
+
+- (void)setPage:(SLRPage *)page forDate:(NSDate *)date
+{
+	NSDate *reducedDate = [self reducedDateFromDate:date];
+
+	[self.headerVMs enumerateObjectsUsingBlock:^(SLRBaseVM *baseVM, NSUInteger idx, BOOL *stop) {
+		if ([baseVM isKindOfClass:[SLRWeekHeaderVM class]])
+		{
+			SLRWeekHeaderVM *weekVM = (SLRWeekHeaderVM *)baseVM;
+			[weekVM.dayVMs enumerateObjectsUsingBlock:^(SLRWeekDayVM *day, NSUInteger _, BOOL *stop) {
+				NSDate *dayReducedDate = [self reducedDateFromDate:day.date];
+				if ([dayReducedDate isEqualToDate:reducedDate] && day.interactive)
+				{
+					self.selectedDayVM = day;
+					self.selectedDayVM.selected = YES;
+					self.page = page;
+					*stop = YES;
+				}
+			}];
+		}
+	}];
+}
+
+- (NSDate *)reducedDateFromDate:(NSDate *)date
+{
+	NSCalendarUnit units = NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay;
+	NSDateComponents *components = [[NSCalendar currentCalendar] components:units fromDate:date];
+	NSDate *reducedDate = [[NSCalendar currentCalendar] dateFromComponents:components];
+
+	return reducedDate;
 }
 
 - (void)setPage:(SLRPage *)page

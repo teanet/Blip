@@ -38,20 +38,25 @@
 			@strongify(self);
 
 			self.ownersVM = [[SLROwnersVM alloc] initWithOwners:owners];
-			return [self.pagesProvider fetchPageForOwners:owners date:[NSDate date]];
+			NSDate *date = [NSDate date];
+			return [[self.pagesProvider fetchPageForOwners:owners date:date]
+				zipWith:[RACSignal return:date]];
 		}]
-		subscribeNext:^(SLRPage *page) {
-			self.schedulerVM.page = page;
+		subscribeNext:^(RACTuple *t) {
+			RACTupleUnpack(SLRPage *page, NSDate *date) = t;
+			[self.schedulerVM setPage:page forDate:date];
 		}];
 
 	[[self.schedulerVM.didSelectDateSignal
 		flattenMap:^RACStream *(NSDate *date) {
 			@strongify(self);
 
-			return [self.pagesProvider fetchPageForOwners:self.ownersVM.owners date:date];
+			return [[self.pagesProvider fetchPageForOwners:self.ownersVM.owners date:date]
+				zipWith:[RACSignal return:date]];
 		}]
-		subscribeNext:^(SLRPage *page) {
-			self.schedulerVM.page = page;
+		subscribeNext:^(RACTuple *t) {
+			RACTupleUnpack(SLRPage *page, NSDate *date) = t;
+			[self.schedulerVM setPage:page forDate:date];
 		}];
 }
 

@@ -7,7 +7,7 @@
 
 @interface SLRSchedulerVM : SLRBaseVM
 
-@property (nonatomic, strong) SLRPage *page;
+@property (nonatomic, strong, readonly) SLRPage *page;
 
 @property (nonatomic, copy, readonly) NSString *title;
 
@@ -25,6 +25,8 @@
 /*! На два месяца */
 - (instancetype)init;
 - (instancetype)initWithWeeksCountSinceNow:(NSInteger)weeksCount;
+
+- (void)setPage:(SLRPage *)page forDate:(NSDate *)date;
 
 - (void)registerTableView:(UITableView *)tableView;
 
