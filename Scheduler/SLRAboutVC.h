@@ -3,5 +3,4 @@
 #import "SLRAboutVM.h"
 
 @interface SLRAboutVC : SLRBaseVC <SLRAboutVM *>
-
 @end

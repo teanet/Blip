@@ -4,11 +4,10 @@
 #import "SLRAPIMockController.h"
 #import "SLRAuthenticationManager.h"
 
-#define USE_MOCK_CONTROLLER
+//#define USE_MOCK_CONTROLLER
 
-static NSString *const kSLRShedulerAPIKey = @"ruczoy1743";
-static NSString *const kSLRShedulerApplicationKey = @"1234567890";
-static NSString *const kSLRShedulerUserId = @"0987654321";
+static NSString *const kSLRShedulerAPIKey = @"shedulerAPIKey";
+static NSString *const kSLRShedulerApplicationKey = @"1";
 
 @interface SLRDataProvider ()
 

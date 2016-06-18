@@ -1,14 +1,12 @@
-#import "SLRMapVM.h"
+#import "SLRFilialInfoVM.h"
 
-#import "SLRFilial.h"
-
-@interface SLRMapVM ()
+@interface SLRFilialInfoVM ()
 
 @property (nonatomic, strong, readonly) SLRFilial *filial;
 
 @end
 
-@implementation SLRMapVM
+@implementation SLRFilialInfoVM
 
 - (instancetype)initWithFilial:(SLRFilial *)filial
 {
@@ -16,10 +14,8 @@
 	if (self == nil) return nil;
 
 	_filial = filial;
-	_location = filial.location;
 
 	return self;
 }
 
 @end
-

@@ -6,7 +6,7 @@
 #define CURRENT_VERSION ([[NSBundle bundleForClass:self.class] objectForInfoDictionaryKey:@"CFBundleShortVersionString"])
 #define CURRENT_BUILD ([[NSBundle bundleForClass:self.class] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey])
 
-static NSString *const kSLRSchedulerAPIBaseURLString = @"http://catalog.api.2gis.ru/2.0/";
+static NSString *const kSLRSchedulerAPIBaseURLString = @"http://api.shtab.yanke.ru";
 
 @interface SLRAPIController ()
 
@@ -28,6 +28,7 @@ static NSString *const kSLRSchedulerAPIBaseURLString = @"http://catalog.api.2gis
 	_schedulerAPIKey = [schedulerAPIKey copy];
 	_applicationKey = [applicationKey copy];
 	_requestManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:kSLRSchedulerAPIBaseURLString]];
+
 	_requestManager.requestSerializer = [AFJSONRequestSerializer serializer];
 
 	NSDictionary *headers = @{
@@ -46,6 +47,8 @@ static NSString *const kSLRSchedulerAPIBaseURLString = @"http://catalog.api.2gis
 
 	_requestManager.requestSerializer.timeoutInterval = 10.0;
 	_requestManager.responseSerializer = [AFJSONResponseSerializer serializer];
+	NSSet *typesSet = [NSSet setWithArray:@[@"text/plain", @"application/json"]];
+	[_requestManager.responseSerializer setAcceptableContentTypes:typesSet];
 
 	return self;
 }

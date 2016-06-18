@@ -1,11 +1,5 @@
 #import "DGSTileOverlay.h"
 
-//NSString *template = @"http://tile2.retina.maps.2gis.com/tiles?x={x}&y={y}&z={z}&v=1";
-
-// http://tiles.salov.webapi.ostack.test/tiles?z={z}&x={x}&y={y}
-//static NSString *const kDGSMapViewTemplate = @"http://tile2.retina.maps.2gis.com/tiles?x={x}&y={y}&z={z}&v=1";
-//static NSString *const kDGSMapViewURLStringFormat = @"http://tile2.retina.maps.2gis.com/tiles?x=%ld&y=%ld&z=%ld&v=2";
-
 static NSString *const kDGSMapViewTemplate = @"http://tile2.maps.2gis.com/tiles?x={x}&y={y}&z={z}&v=1";
 static NSString *const kDGSMapViewURLStringFormat = @"http://tile2.maps.2gis.com/tiles?x=%ld&y=%ld&z=%ld&v=2";
 
@@ -17,7 +11,6 @@ static NSString *const kDGSMapViewURLStringFormat = @"http://tile2.maps.2gis.com
 	if (self == nil) return nil;
 
 	self.maximumZ = 18;
-//	self.tileSize = CGSizeMake(512.0, 512.0);
 	self.canReplaceMapContent = YES;
 
 	return self;
@@ -49,8 +42,8 @@ static NSString *const kDGSMapViewURLStringFormat = @"http://tile2.maps.2gis.com
 	else
 	{
 		[[NSData rac_readContentsOfURL:url
-								options:NSDataReadingMappedIfSafe
-							  scheduler:[RACScheduler scheduler]]
+							   options:NSDataReadingMappedIfSafe
+							 scheduler:[RACScheduler scheduler]]
 			subscribeNext:^(NSData *tileData) {
 				@strongify(self);
 

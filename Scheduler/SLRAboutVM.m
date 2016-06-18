@@ -1,20 +1,24 @@
 #import "SLRAboutVM.h"
 
+#import "SLRFilial.h"
 #import "SLRMapVM.h"
 
 @interface SLRAboutVM () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong, readonly) SLRFilial *filial;
 
 @end
 
 @implementation SLRAboutVM
 
-- (instancetype)init
+- (instancetype)initWithFilial:(SLRFilial *)filial
 {
 	self = [super init];
 	if (self == nil) return nil;
 
 	_title = @"Company";
-	_mapVM = [[SLRMapVM alloc] init];
+	_filial = filial;
+	_mapVM = [[SLRMapVM alloc] initWithFilial:filial];
 
 	return self;
 }

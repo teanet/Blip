@@ -4,34 +4,57 @@
 #import "SLRFilialVM.h"
 #import "SLRSchedulerVM.h"
 
+@interface SLRHomeVM ()
+
+@property (nonatomic, copy, readonly) NSArray<SLRFilial *> *filials;
+
+@end
+
 @implementation SLRHomeVM
 
 /*! Получаем данные о филиалах, используем только первый филиал.
 	Если в филиале только один purpose, то сразу показываем Scheduler.
 	Если в филиале много purpose, то показываем экран Purposes.
  */
-- (RACSignal *)initialViewModelSignal
+- (instancetype)initWithFilials:(NSArray<SLRFilial *> *)filials
 {
-	return [[[SLRDataProvider sharedProvider] fetchFilials]
-		map:^SLRBaseVM *(NSArray<SLRFilial *> *filials) {
-			SLRBaseVM *returnVM = nil;
-			SLRFilial *filial = filials.firstObject;
+	self = [super init];
+	if (self == nil) return nil;
 
-			if (filial.purposes.count > 1)
-			{
-				returnVM = [[SLRFilialVM alloc] initWithFilial:filial];
-			}
-			else
-			{
-				// Здесь нужно сделать SLRFilialSchedulerVM сразу для всех owner'ов
-				// SLRPurpose *purpose = filial.purposes.firstObject;
-				// SLRFilialSchedulerVM *returnVM = [[SLRFilialSchedulerVM alloc] initWithFilial:filial purpose:purpose];
-				SLROwner *owner = filial.owners.firstObject;
-//				returnVM = [[SLRSchedulerVM alloc] initWithOwner:owner];
-			}
-
-			return returnVM;
+	_filials = [filials copy];
+	_initialViewModelSignal = [[self rac_signalForSelector:@checkselector(self, showViewModel:)]
+		map:^SLRBaseVM *(RACTuple *tuple) {
+			return tuple.first;
 		}];
+
+	[self defineViewModelForShowing];
+
+	return self;
+}
+
+- (void)defineViewModelForShowing
+{
+	SLRBaseVM *showVM = nil;
+	SLRFilial *filial = self.filials.firstObject;
+
+	if (filial.purposes.count > 1)
+	{
+		showVM = [[SLRFilialVM alloc] initWithFilial:filial];
+	}
+	else
+	{
+		// Здесь нужно сделать SLRFilialSchedulerVM сразу для всех owner'ов
+		// SLRPurpose *purpose = filial.purposes.firstObject;
+		// SLRFilialSchedulerVM *returnVM = [[SLRFilialSchedulerVM alloc] initWithFilial:filial purpose:purpose];
+		SLROwner *owner = filial.owners.firstObject;
+		//				returnVM = [[SLRSchedulerVM alloc] initWithOwner:owner];
+	}
+
+	[self showViewModel:showVM];
+}
+
+- (void)showViewModel:(SLRBaseVM *)viewModel
+{
 }
 
 @end

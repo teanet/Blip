@@ -27,8 +27,17 @@
 
 @property (nonatomic, copy, readonly) NSString *id;
 @property (nonatomic, copy, readonly) NSString *title;
+@property (nonatomic, copy, readonly) NSString *subtitle;
+@property (nonatomic, copy, readonly) NSString *summary;
+@property (nonatomic, copy, readonly) NSString *mainImageURLString;
+@property (nonatomic, copy, readonly) NSString *logoImageURLString;
+@property (nonatomic, copy, readonly) CLLocation *location;
+
+
+
 @property (nonatomic, copy, readonly) NSString *address;
-@property (nonatomic, copy, readonly) NSString *contact;
+@property (nonatomic, copy, readonly) NSString *phone;
+
 @property (nonatomic, copy, readonly) NSArray<SLROwner *> *owners;
 @property (nonatomic, copy, readonly) NSArray<SLRPurpose *> *purposes;
 

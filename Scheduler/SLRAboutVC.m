@@ -25,14 +25,7 @@
 	[super viewDidLoad];
 
 	[self setupInterface];
-
 	[self setupReactiveStuff];
-
-	[[RACScheduler mainThreadScheduler]
-		afterDelay:1 schedule:^{
-			SLRMapVC *mvc = [[SLRMapVC alloc] initWithViewModel:self.viewModel.mapVM];
-			[self presentViewController:mvc animated:YES completion:nil];
-		}];
 }
 
 - (void)setupInterface
@@ -61,6 +54,12 @@
 //			SLRFilialSchedulerVC *vc = [[SLRFilialSchedulerVC alloc] initWithViewModel:viewModel];
 //			[self.navigationController pushViewController:vc animated:YES];
 //		}];
+	
+		[[RACScheduler mainThreadScheduler]
+			afterDelay:1 schedule:^{
+				SLRMapVC *mvc = [[SLRMapVC alloc] initWithViewModel:self.viewModel.mapVM];
+				[self presentViewController:mvc animated:YES completion:nil];
+			}];
 }
 
 @end

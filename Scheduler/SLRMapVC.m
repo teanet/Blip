@@ -35,6 +35,8 @@ static double const kMinimalZoomSquareSide = 2000.0;
 	self.mapView.delegate = self;
 	self.mapView.showsUserLocation = YES;
 	self.mapView.mapType = MKMapTypeStandard;
+	self.mapView.showsUserLocation = NO;
+
 //	self.mapView.layoutMargins = UIEdgeInsetsMake(14.0, 0.0, 0.0, 8.0);
 
 	[self.mapView addAnnotation:[[SLRFirmMapAnnotation alloc] initWithLocation:self.viewModel.location]];

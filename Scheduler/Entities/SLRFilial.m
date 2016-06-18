@@ -9,10 +9,26 @@
 
 	_id = dictionary[@"id"];
 	_title = dictionary[@"title"];
-	_address = dictionary[@"address"];
-	_contact = dictionary[@"contact"];
+	_subtitle = dictionary[@"subtitle"];
 
-	NSArray <NSDictionary *> *ownerDictionaries = dictionary[@"owners"];
+	NSDictionary *aboutDictionary = dictionary[@"about"];
+	_summary = aboutDictionary[@"description"];
+	_mainImageURLString = dictionary[@"image"];
+
+	NSDictionary *addressDictionary = dictionary[@"address"];
+	_address = addressDictionary[@"name"];
+	NSDictionary *pointDictionary = addressDictionary[@"point"];
+	NSString *latString = pointDictionary[@"lat"];
+	NSString *lonString = pointDictionary[@"lon"];
+	_location = [[CLLocation alloc] initWithLatitude:[latString doubleValue] longitude:[lonString doubleValue]];
+
+	_logoImageURLString = dictionary[@"logo"];
+
+	NSArray<NSDictionary *> *phoneDictionariesArray = dictionary[@"phones"];
+	NSDictionary *phoneDictionary = phoneDictionariesArray.firstObject;
+	_phone = phoneDictionary[@"value"];
+
+	NSArray <NSDictionary *> *ownerDictionaries = dictionary[@"masters"];
 	if ([ownerDictionaries isKindOfClass:[NSArray class]])
 	{
 		_owners = [[ownerDictionaries rac_sequence]
