@@ -69,6 +69,10 @@
 		30B868901D155DCB00D25E08 /* SLRFirmMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B8688F1D155DCB00D25E08 /* SLRFirmMapAnnotation.m */; };
 		30B868931D155FD500D25E08 /* SLRFirmAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B868921D155FD500D25E08 /* SLRFirmAnnotationView.m */; };
 		30B868971D156A0300D25E08 /* SLRFilialInfoVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B868961D156A0300D25E08 /* SLRFilialInfoVM.m */; };
+		30B8689A1D158A7000D25E08 /* SLRLoaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B868991D158A7000D25E08 /* SLRLoaderView.m */; };
+		30B8689E1D15A45200D25E08 /* SLRStatusBarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B8689D1D15A45200D25E08 /* SLRStatusBarHeaderView.m */; };
+		30B868A11D15A4A800D25E08 /* SLRFilialInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B868A01D15A4A800D25E08 /* SLRFilialInfoHeaderView.m */; };
+		30B868A41D15ABBB00D25E08 /* SLRProjectSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B868A31D15ABBB00D25E08 /* SLRProjectSettings.m */; };
 		30B876321CFA169F00F2499F /* SLRStoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B876311CFA169F00F2499F /* SLRStoreItem.m */; };
 		30BB886F1CFA1F140046BEB5 /* SLRCartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB886E1CFA1F140046BEB5 /* SLRCartVC.m */; };
 		30BB88721CFA1F240046BEB5 /* SLRCartVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB88711CFA1F240046BEB5 /* SLRCartVM.m */; };
@@ -255,6 +259,14 @@
 		30B868921D155FD500D25E08 /* SLRFirmAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFirmAnnotationView.m; sourceTree = "<group>"; };
 		30B868951D156A0300D25E08 /* SLRFilialInfoVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFilialInfoVM.h; sourceTree = "<group>"; };
 		30B868961D156A0300D25E08 /* SLRFilialInfoVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFilialInfoVM.m; sourceTree = "<group>"; };
+		30B868981D158A7000D25E08 /* SLRLoaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRLoaderView.h; sourceTree = "<group>"; };
+		30B868991D158A7000D25E08 /* SLRLoaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRLoaderView.m; sourceTree = "<group>"; };
+		30B8689C1D15A45200D25E08 /* SLRStatusBarHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStatusBarHeaderView.h; sourceTree = "<group>"; };
+		30B8689D1D15A45200D25E08 /* SLRStatusBarHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStatusBarHeaderView.m; sourceTree = "<group>"; };
+		30B8689F1D15A4A800D25E08 /* SLRFilialInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFilialInfoHeaderView.h; sourceTree = "<group>"; };
+		30B868A01D15A4A800D25E08 /* SLRFilialInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFilialInfoHeaderView.m; sourceTree = "<group>"; };
+		30B868A21D15ABBB00D25E08 /* SLRProjectSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRProjectSettings.h; sourceTree = "<group>"; };
+		30B868A31D15ABBB00D25E08 /* SLRProjectSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRProjectSettings.m; sourceTree = "<group>"; };
 		30B876301CFA169F00F2499F /* SLRStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreItem.h; sourceTree = "<group>"; };
 		30B876311CFA169F00F2499F /* SLRStoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItem.m; sourceTree = "<group>"; };
 		30BB886D1CFA1F140046BEB5 /* SLRCartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRCartVC.h; sourceTree = "<group>"; };
@@ -594,6 +606,7 @@
 		30B8687F1D154C1500D25E08 /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				30B8689B1D15A31000D25E08 /* StatusBar */,
 				30B868941D1569EA00D25E08 /* Info */,
 				30B868871D154C8800D25E08 /* Map */,
 			);
@@ -629,10 +642,21 @@
 		30B868941D1569EA00D25E08 /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				30B8689F1D15A4A800D25E08 /* SLRFilialInfoHeaderView.h */,
+				30B868A01D15A4A800D25E08 /* SLRFilialInfoHeaderView.m */,
 				30B868951D156A0300D25E08 /* SLRFilialInfoVM.h */,
 				30B868961D156A0300D25E08 /* SLRFilialInfoVM.m */,
 			);
 			name = Info;
+			sourceTree = "<group>";
+		};
+		30B8689B1D15A31000D25E08 /* StatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				30B8689C1D15A45200D25E08 /* SLRStatusBarHeaderView.h */,
+				30B8689D1D15A45200D25E08 /* SLRStatusBarHeaderView.m */,
+			);
+			name = StatusBar;
 			sourceTree = "<group>";
 		};
 		30BB886B1CFA1E760046BEB5 /* Cart */ = {
@@ -735,6 +759,8 @@
 			isa = PBXGroup;
 			children = (
 				738314CD1CF09B8A0048AFE2 /* SLRSerializableProtocol.h */,
+				30B868A21D15ABBB00D25E08 /* SLRProjectSettings.h */,
+				30B868A31D15ABBB00D25E08 /* SLRProjectSettings.m */,
 				738314B01CF09ACA0048AFE2 /* SLRFilial.h */,
 				738314B11CF09ACA0048AFE2 /* SLRFilial.m */,
 				738314B21CF09ACA0048AFE2 /* SLROwner.h */,
@@ -883,6 +909,8 @@
 				73AF55A61C9EC71B009FB75A /* SLRBaseVC.m */,
 				73AF52CC1C9EBBC6009FB75A /* SLRRootVC.h */,
 				73AF52CD1C9EBBC6009FB75A /* SLRRootVC.m */,
+				30B868981D158A7000D25E08 /* SLRLoaderView.h */,
+				30B868991D158A7000D25E08 /* SLRLoaderView.m */,
 				301406311D0434D40002AFD6 /* SLRRootVM.h */,
 				301406321D0434D40002AFD6 /* SLRRootVM.m */,
 				735E213E1CE8912100A4EB54 /* SLRSeporatorView.h */,
@@ -1168,6 +1196,7 @@
 				304B42721D0C8F52008EAF8B /* SLRFilialPurposesCell.m in Sources */,
 				30470DBD1CF8B7C500C57566 /* SLRTableViewCell.m in Sources */,
 				307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */,
+				30B868A11D15A4A800D25E08 /* SLRFilialInfoHeaderView.m in Sources */,
 				30470DDA1CF9D03400C57566 /* SLRDetailsServicesVM.m in Sources */,
 				3014030E1D0310DD0002AFD6 /* SLRHomeVC.m in Sources */,
 				30B868901D155DCB00D25E08 /* SLRFirmMapAnnotation.m in Sources */,
@@ -1196,7 +1225,9 @@
 				30BB886F1CFA1F140046BEB5 /* SLRCartVC.m in Sources */,
 				3064DAED1D0D7DEE001B1D66 /* SLRWeekDayVM.m in Sources */,
 				301406331D0434D40002AFD6 /* SLRRootVM.m in Sources */,
+				30B8689E1D15A45200D25E08 /* SLRStatusBarHeaderView.m in Sources */,
 				301403071D030BD80002AFD6 /* SLRFilialVM.m in Sources */,
+				30B868A41D15ABBB00D25E08 /* SLRProjectSettings.m in Sources */,
 				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
 				30B868831D154C2F00D25E08 /* SLRMapVM.m in Sources */,
 				30470DC41CF8D9BD00C57566 /* SLRAuthenticationManager.m in Sources */,
@@ -1237,6 +1268,7 @@
 				738314C01CF09ACA0048AFE2 /* SLRTimeGrid.m in Sources */,
 				73AF52A91C9EB953009FB75A /* main.m in Sources */,
 				301406201D0319D60002AFD6 /* UIViewController+DGSAdditions.m in Sources */,
+				30B8689A1D158A7000D25E08 /* SLRLoaderView.m in Sources */,
 				73830E561CE0AB13006B6074 /* SLRIntervalView.m in Sources */,
 				3097D0511CFA266900E28EEB /* SLRStoreItemCell.m in Sources */,
 				30470DD01CF99FFB00C57566 /* SLRDetailsPickerVM.m in Sources */,

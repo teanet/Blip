@@ -1,3 +1,5 @@
+#import "SLRProjectSettings.h"
+
 @interface SLRAPIController : NSObject
 
 @property (nonatomic, copy, readonly) NSString *schedulerAPIKey;
@@ -13,5 +15,7 @@
 
 /*! \return NSDictionary */
 - (RACSignal *)POST:(NSString *)method params:(NSDictionary *)params;
+
+- (void)setProjectSettings:(SLRProjectSettings *)projectSettings;
 
 @end

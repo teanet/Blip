@@ -16,8 +16,8 @@
 	_pricePerTimeUnit = [dictionary[@"price_per_time_unit"] integerValue];
 	_timeUnit = [dictionary[@"time_unit"] integerValue];
 	_canMultipleSelect = [dictionary[@"can_multiple_select"] boolValue];
-	_bookingIntervalMin = [dictionary[@"booking_interval_min"] integerValue];
-	_bookingIntervalMax = [dictionary[@"booking_interval_max"] integerValue];
+	_bookingIntervalMin = [dictionary[@"min_length"] integerValue];
+	_bookingIntervalMax = [dictionary[@"max_length"] integerValue];
 
 	return self;
 }

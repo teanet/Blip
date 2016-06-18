@@ -3,6 +3,7 @@
 #import "SLRPage.h"
 #import "SLRService.h"
 #import "SLRRequest.h"
+#import "SLRProjectSettings.h"
 #import "SLRStoreItem.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -14,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface SLRDataProvider (Authenticate)
+
+- (SLRProjectSettings *)projectSettings;
 
 /*! Текущий юзер, может быть nil */
 - (SLRUser *)user;

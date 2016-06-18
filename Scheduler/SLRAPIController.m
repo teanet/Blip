@@ -1,5 +1,6 @@
 #import "SLRAPIController.h"
 
+#import "SLRProjectSettings.h"
 #import <AFNetworking/AFNetworking.h>
 #import <UIDevice-Hardware.h>
 
@@ -11,6 +12,7 @@ static NSString *const kSLRSchedulerAPIBaseURLString = @"http://api.shtab.yanke.
 @interface SLRAPIController ()
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *requestManager;
+@property (nonatomic, strong, readwrite) SLRProjectSettings *projectSettings;
 
 @end
 

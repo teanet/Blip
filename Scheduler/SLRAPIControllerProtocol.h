@@ -4,8 +4,11 @@
 @class SLRUser;
 @class SLRRequest;
 @class SLRFilial;
+@class SLRProjectSettings;
 
 @protocol SLRAPIControllerProtocol <NSObject>
+
+@property (nonatomic, strong, readonly) SLRProjectSettings *projectSettings;
 
 /*! \return SLRUser */
 - (RACSignal *)fetchRegisteredUserForUser:(SLRUser *)user;

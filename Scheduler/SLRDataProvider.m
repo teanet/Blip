@@ -55,6 +55,11 @@ static NSString *const kSLRShedulerApplicationKey = @"1";
 
 @implementation SLRDataProvider (Authenticate)
 
+- (SLRProjectSettings *)projectSettings
+{
+	return self.apiController.projectSettings;
+}
+
 - (SLRUser *)user
 {
 	return self.authManager.user;

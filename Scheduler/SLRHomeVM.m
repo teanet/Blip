@@ -22,10 +22,10 @@
 	if (self == nil) return nil;
 
 	_filials = [filials copy];
-	_initialViewModelSignal = [[self rac_signalForSelector:@checkselector(self, showViewModel:)]
-		map:^SLRBaseVM *(RACTuple *tuple) {
-			return tuple.first;
-		}];
+//	_initialViewModelSignal = [[self rac_signalForSelector:@checkselector(self, showViewModel:)]
+//		map:^SLRBaseVM *(RACTuple *tuple) {
+//			return tuple.first;
+//		}];
 
 	[self defineViewModelForShowing];
 
@@ -34,12 +34,11 @@
 
 - (void)defineViewModelForShowing
 {
-	SLRBaseVM *showVM = nil;
 	SLRFilial *filial = self.filials.firstObject;
 
 	if (filial.purposes.count > 1)
 	{
-		showVM = [[SLRFilialVM alloc] initWithFilial:filial];
+		_showViewModel = [[SLRFilialVM alloc] initWithFilial:filial];
 	}
 	else
 	{
@@ -49,12 +48,6 @@
 		SLROwner *owner = filial.owners.firstObject;
 		//				returnVM = [[SLRSchedulerVM alloc] initWithOwner:owner];
 	}
-
-	[self showViewModel:showVM];
-}
-
-- (void)showViewModel:(SLRBaseVM *)viewModel
-{
 }
 
 @end

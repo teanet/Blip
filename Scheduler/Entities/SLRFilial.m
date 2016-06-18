@@ -37,8 +37,8 @@
 			}].array;
 	}
 
-	NSArray <NSDictionary *> *purposeDictionaries = dictionary[@"purposes"];
-	if ([ownerDictionaries isKindOfClass:[NSArray class]])
+	NSArray <NSDictionary *> *purposeDictionaries = dictionary[@"services"];
+	if ([purposeDictionaries isKindOfClass:[NSArray class]])
 	{
 		_purposes = [[purposeDictionaries rac_sequence]
 		   map:^SLRPurpose *(NSDictionary *purposDictionariy) {

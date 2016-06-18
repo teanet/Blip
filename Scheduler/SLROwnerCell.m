@@ -21,6 +21,7 @@
 
 	_imageView = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
 	_imageView.contentMode = UIViewContentModeScaleAspectFill;
+	_imageView.clipsToBounds = YES;
 	[self.contentView addSubview:_imageView];
 
 	UIView *filterView = [[UIView alloc] init];

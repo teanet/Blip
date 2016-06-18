@@ -1,6 +1,7 @@
 #import "SLRAboutVC.h"
 
 #import "SLRMapVC.h"
+#import "SLRDataProvider.h"
 
 @interface SLRAboutVC ()
 
@@ -35,6 +36,7 @@
 	self.tableView.tableFooterView = [[UIView alloc] init];
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	self.tableView.showsVerticalScrollIndicator = NO;
+	self.tableView.backgroundColor = [SLRDataProvider sharedProvider].projectSettings.navigaitionBarColor;
 	[self.view addSubview:self.tableView];
 	[self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.edges.equalTo(self.view);
@@ -55,11 +57,11 @@
 //			[self.navigationController pushViewController:vc animated:YES];
 //		}];
 	
-		[[RACScheduler mainThreadScheduler]
-			afterDelay:1 schedule:^{
-				SLRMapVC *mvc = [[SLRMapVC alloc] initWithViewModel:self.viewModel.mapVM];
-				[self presentViewController:mvc animated:YES completion:nil];
-			}];
+//		[[RACScheduler mainThreadScheduler]
+//			afterDelay:1 schedule:^{
+//				SLRMapVC *mvc = [[SLRMapVC alloc] initWithViewModel:self.viewModel.mapVM];
+//				[self presentViewController:mvc animated:YES completion:nil];
+//			}];
 }
 
 @end

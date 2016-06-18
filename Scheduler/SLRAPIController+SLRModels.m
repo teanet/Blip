@@ -11,10 +11,15 @@
 
 - (RACSignal *)fetchFilials
 {
-	NSString *methodName = [@"/api/1.0/project/info/" stringByAppendingString:self.applicationKey];
+	NSString *methodName = [NSString stringWithFormat:@"/api/1.0/project/%@/info", self.applicationKey];
 	return [[self GET:methodName params:nil]
 		map:^NSArray<SLRFilial *> *(NSDictionary *responseDictionary) {
 			NSArray<NSDictionary *> *filialDictionaies = responseDictionary[@"branches"];
+
+			NSDictionary *settingsDictionary = responseDictionary[@"settings"];
+			SLRProjectSettings *projectSettings = [[SLRProjectSettings alloc] initWithDictionary:settingsDictionary];
+			self.projectSettings = projectSettings;
+
 			return [filialDictionaies.rac_sequence map:^SLRFilial *(NSDictionary *filialDictionary) {
 				return [[SLRFilial alloc] initWithDictionary:filialDictionary];
 			}].array;

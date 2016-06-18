@@ -30,21 +30,8 @@
 - (void)viewDidLoad
 {
 	self.view.backgroundColor = [UIColor grayColor];
-
-	[self setupReactiveStuff];
-}
-
-- (void)setupReactiveStuff
-{
-	@weakify(self);
-
-	[self.viewModel.initialViewModelSignal
-		subscribeNext:^(SLRBaseVM *vm) {
-			@strongify(self);
-
-			UIViewController *showVC = [SLRHomeVC viewControllerForViewModel:vm];
-			[self dgs_showViewController:showVC inView:self.view];
-		}];
+	UIViewController *showVC = [SLRHomeVC viewControllerForViewModel:self.viewModel.showViewModel];
+	[self dgs_showViewController:showVC inView:self.view];
 }
 
 @end

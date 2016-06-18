@@ -23,4 +23,9 @@
 	return self.purpose.title;
 }
 
+- (NSString *)subtitle
+{
+	return self.purpose.subtitle;
+}
+
 @end
