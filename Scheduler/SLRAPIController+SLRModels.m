@@ -32,15 +32,27 @@
 	NSString *dateString = [[SLRAPIController dateFormatter] stringFromDate:date];
 
 	NSDictionary *params = @{
-		@"date" : dateString,
-		@"master_id" : owner.id
-	};
+			@"date" : dateString,
+			@"master_id" : owner.id
+		};
 
 	return [[self GET:methodName params:params]
 		map:^SLRPage *(NSDictionary *responseDictionary) {
 			return [[SLRPage alloc] initWithDictionary:responseDictionary];
 		}];
 }
+
+- (RACSignal *)fetchRegisteredUserForUser:(SLRUser *)user
+{
+	NSString *methodName = @"/api/1.0/user/register";
+	NSDictionary *params = user.dictionary;
+
+	return [[self POST:methodName params:params]
+		flattenMap:^RACStream *(id value) {
+			return [RACSignal return:user];
+		}];
+}
+
 
 + (NSDateFormatter *)dateFormatter
 {

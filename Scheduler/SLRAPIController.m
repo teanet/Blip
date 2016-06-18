@@ -7,7 +7,7 @@
 #define CURRENT_VERSION ([[NSBundle bundleForClass:self.class] objectForInfoDictionaryKey:@"CFBundleShortVersionString"])
 #define CURRENT_BUILD ([[NSBundle bundleForClass:self.class] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey])
 
-static NSString *const kSLRSchedulerAPIBaseURLString = @"http://api.shtab.yanke.ru";
+static NSString *const kSLRSchedulerAPIBaseURLString = @"http://10.77.12.148:8080";//@"http://api.shtab.yanke.ru";
 
 @interface SLRAPIController ()
 

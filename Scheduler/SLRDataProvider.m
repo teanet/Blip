@@ -67,7 +67,18 @@ static NSString *const kSLRShedulerApplicationKey = @"1";
 
 - (RACSignal *)fetchAuthenticatedUser
 {
-	return [self.authManager fetchAuthenticatedUser];
+#warning >>> HERE
+	if (self.user)
+	{
+		return [self.authManager fetchAuthenticatedUser];
+	}
+	else
+	{
+		return [[self.authManager fetchAuthenticatedUser]
+			flattenMap:^RACStream *(SLRUser *user) {
+				return [self fetchRegisteredUserForUser:user];
+			}];
+	}
 }
 
 @end
@@ -76,7 +87,7 @@ static NSString *const kSLRShedulerApplicationKey = @"1";
 
 - (RACSignal *)fetchEmptyBookingRequestForPage:(SLRPage *)page
 {
-	return [[self.authManager fetchAuthenticatedUser]
+	return [[self fetchAuthenticatedUser]
 		map:^SLRRequest *(SLRUser *user) {
 			return [self emptyBookingRequestForUser:user page:page];
 		}];
