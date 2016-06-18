@@ -60,6 +60,14 @@
 		3097CD3F1CFA1FDC00E28EEB /* SLRStoreVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 3097CD3E1CFA1FDC00E28EEB /* SLRStoreVM.m */; };
 		3097CD421CFA1FE700E28EEB /* SLRStoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3097CD411CFA1FE700E28EEB /* SLRStoreVC.m */; };
 		3097D0511CFA266900E28EEB /* SLRStoreItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3097D0501CFA266900E28EEB /* SLRStoreItemCell.m */; };
+		30B8687B1D15488A00D25E08 /* SLRAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B8687A1D15488A00D25E08 /* SLRAboutVC.m */; };
+		30B8687E1D15489900D25E08 /* SLRAboutVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B8687D1D15489900D25E08 /* SLRAboutVM.m */; };
+		30B868831D154C2F00D25E08 /* SLRMapVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B868821D154C2F00D25E08 /* SLRMapVM.m */; };
+		30B868861D154C4200D25E08 /* SLRMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B868851D154C4200D25E08 /* SLRMapVC.m */; };
+		30B8688A1D154D3D00D25E08 /* SLRMapHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B868891D154D3D00D25E08 /* SLRMapHeaderView.m */; };
+		30B8688D1D155ADE00D25E08 /* DGSTileOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B8688C1D155ADE00D25E08 /* DGSTileOverlay.m */; };
+		30B868901D155DCB00D25E08 /* SLRFirmMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B8688F1D155DCB00D25E08 /* SLRFirmMapAnnotation.m */; };
+		30B868931D155FD500D25E08 /* SLRFirmAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B868921D155FD500D25E08 /* SLRFirmAnnotationView.m */; };
 		30B876321CFA169F00F2499F /* SLRStoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B876311CFA169F00F2499F /* SLRStoreItem.m */; };
 		30BB886F1CFA1F140046BEB5 /* SLRCartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB886E1CFA1F140046BEB5 /* SLRCartVC.m */; };
 		30BB88721CFA1F240046BEB5 /* SLRCartVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB88711CFA1F240046BEB5 /* SLRCartVM.m */; };
@@ -228,6 +236,22 @@
 		3097CD411CFA1FE700E28EEB /* SLRStoreVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreVC.m; sourceTree = "<group>"; };
 		3097D04F1CFA266900E28EEB /* SLRStoreItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreItemCell.h; sourceTree = "<group>"; };
 		3097D0501CFA266900E28EEB /* SLRStoreItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItemCell.m; sourceTree = "<group>"; };
+		30B868791D15488A00D25E08 /* SLRAboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRAboutVC.h; sourceTree = "<group>"; };
+		30B8687A1D15488A00D25E08 /* SLRAboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRAboutVC.m; sourceTree = "<group>"; };
+		30B8687C1D15489900D25E08 /* SLRAboutVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRAboutVM.h; sourceTree = "<group>"; };
+		30B8687D1D15489900D25E08 /* SLRAboutVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRAboutVM.m; sourceTree = "<group>"; };
+		30B868811D154C2F00D25E08 /* SLRMapVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRMapVM.h; sourceTree = "<group>"; };
+		30B868821D154C2F00D25E08 /* SLRMapVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRMapVM.m; sourceTree = "<group>"; };
+		30B868841D154C4200D25E08 /* SLRMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRMapVC.h; sourceTree = "<group>"; };
+		30B868851D154C4200D25E08 /* SLRMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRMapVC.m; sourceTree = "<group>"; };
+		30B868881D154D3D00D25E08 /* SLRMapHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRMapHeaderView.h; sourceTree = "<group>"; };
+		30B868891D154D3D00D25E08 /* SLRMapHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRMapHeaderView.m; sourceTree = "<group>"; };
+		30B8688B1D155ADE00D25E08 /* DGSTileOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGSTileOverlay.h; sourceTree = "<group>"; };
+		30B8688C1D155ADE00D25E08 /* DGSTileOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGSTileOverlay.m; sourceTree = "<group>"; };
+		30B8688E1D155DCB00D25E08 /* SLRFirmMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFirmMapAnnotation.h; sourceTree = "<group>"; };
+		30B8688F1D155DCB00D25E08 /* SLRFirmMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFirmMapAnnotation.m; sourceTree = "<group>"; };
+		30B868911D155FD500D25E08 /* SLRFirmAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRFirmAnnotationView.h; sourceTree = "<group>"; };
+		30B868921D155FD500D25E08 /* SLRFirmAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFirmAnnotationView.m; sourceTree = "<group>"; };
 		30B876301CFA169F00F2499F /* SLRStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreItem.h; sourceTree = "<group>"; };
 		30B876311CFA169F00F2499F /* SLRStoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItem.m; sourceTree = "<group>"; };
 		30BB886D1CFA1F140046BEB5 /* SLRCartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRCartVC.h; sourceTree = "<group>"; };
@@ -551,6 +575,53 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		30B868781D15474700D25E08 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				30B868801D154C1B00D25E08 /* Cell */,
+				30B8687F1D154C1500D25E08 /* Header */,
+				30B868791D15488A00D25E08 /* SLRAboutVC.h */,
+				30B8687A1D15488A00D25E08 /* SLRAboutVC.m */,
+				30B8687C1D15489900D25E08 /* SLRAboutVM.h */,
+				30B8687D1D15489900D25E08 /* SLRAboutVM.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		30B8687F1D154C1500D25E08 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				30B868871D154C8800D25E08 /* Map */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
+		30B868801D154C1B00D25E08 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		30B868871D154C8800D25E08 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				30B8688E1D155DCB00D25E08 /* SLRFirmMapAnnotation.h */,
+				30B8688F1D155DCB00D25E08 /* SLRFirmMapAnnotation.m */,
+				30B868911D155FD500D25E08 /* SLRFirmAnnotationView.h */,
+				30B868921D155FD500D25E08 /* SLRFirmAnnotationView.m */,
+				30B8688B1D155ADE00D25E08 /* DGSTileOverlay.h */,
+				30B8688C1D155ADE00D25E08 /* DGSTileOverlay.m */,
+				30B868841D154C4200D25E08 /* SLRMapVC.h */,
+				30B868851D154C4200D25E08 /* SLRMapVC.m */,
+				30B868811D154C2F00D25E08 /* SLRMapVM.h */,
+				30B868821D154C2F00D25E08 /* SLRMapVM.m */,
+				30B868881D154D3D00D25E08 /* SLRMapHeaderView.h */,
+				30B868891D154D3D00D25E08 /* SLRMapHeaderView.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 		30BB886B1CFA1E760046BEB5 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
@@ -598,6 +669,7 @@
 		736EE2151CF95CD700C32225 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				30B868781D15474700D25E08 /* About */,
 				3014062A1D04304B0002AFD6 /* Appointments */,
 				30BB886B1CFA1E760046BEB5 /* Cart */,
 				30470DC51CF99D0D00C57566 /* Details */,
@@ -1074,15 +1146,18 @@
 				307346FC1CF218170089A494 /* SLRAPIMockController.m in Sources */,
 				304B42661D0C5311008EAF8B /* SLRPurposesVC.m in Sources */,
 				738314C11CF09ACA0048AFE2 /* SLRUser.m in Sources */,
+				30B8688A1D154D3D00D25E08 /* SLRMapHeaderView.m in Sources */,
 				30B876321CFA169F00F2499F /* SLRStoreItem.m in Sources */,
 				735E21401CE8912100A4EB54 /* SLRSeporatorView.m in Sources */,
 				30470DD31CF9A06800C57566 /* SLRTableViewHeaderFooterView.m in Sources */,
+				30B868931D155FD500D25E08 /* SLRFirmAnnotationView.m in Sources */,
 				73AF55B11C9EC882009FB75A /* SLRSchedulerVC.m in Sources */,
 				304B42721D0C8F52008EAF8B /* SLRFilialPurposesCell.m in Sources */,
 				30470DBD1CF8B7C500C57566 /* SLRTableViewCell.m in Sources */,
 				307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */,
 				30470DDA1CF9D03400C57566 /* SLRDetailsServicesVM.m in Sources */,
 				3014030E1D0310DD0002AFD6 /* SLRHomeVC.m in Sources */,
+				30B868901D155DCB00D25E08 /* SLRFirmMapAnnotation.m in Sources */,
 				73830E5C1CE0C46C006B6074 /* SLRWorkDayVM.m in Sources */,
 				301406271D03223D0002AFD6 /* SLROwnerVM.m in Sources */,
 				738314CA1CF09B550048AFE2 /* SLRAPIController.m in Sources */,
@@ -1098,6 +1173,7 @@
 				30DF0AD51CFAA65400DE287B /* UIColor+DGSCustomColor.m in Sources */,
 				304707A41CF8A66100C57566 /* SLRServiceCell.m in Sources */,
 				304B42691D0C532E008EAF8B /* SLRPurposesVM.m in Sources */,
+				30B8687B1D15488A00D25E08 /* SLRAboutVC.m in Sources */,
 				73AF55A71C9EC71B009FB75A /* SLRBaseVC.m in Sources */,
 				73830E5F1CE0C767006B6074 /* SLRRangeVM.m in Sources */,
 				738314BE1CF09ACA0048AFE2 /* SLRPage.m in Sources */,
@@ -1108,7 +1184,9 @@
 				301406331D0434D40002AFD6 /* SLRRootVM.m in Sources */,
 				301403071D030BD80002AFD6 /* SLRFilialVM.m in Sources */,
 				73AF55B91C9ECA56009FB75A /* SLRScheduleCell.m in Sources */,
+				30B868831D154C2F00D25E08 /* SLRMapVM.m in Sources */,
 				30470DC41CF8D9BD00C57566 /* SLRAuthenticationManager.m in Sources */,
+				30B8688D1D155ADE00D25E08 /* DGSTileOverlay.m in Sources */,
 				30DF0AD11CFA348800DE287B /* SLRStoreItemDetailsVM.m in Sources */,
 				3064DAE11D0D446E001B1D66 /* SLRFilialSchedulerVC.m in Sources */,
 				3014063A1D04514B0002AFD6 /* SLRAppointmentCell.m in Sources */,
@@ -1128,6 +1206,7 @@
 				3064DAEA1D0D7652001B1D66 /* SLRMonthHeaderVM.m in Sources */,
 				30470DDD1CF9D5B700C57566 /* SLRDetailsSummaryVM.m in Sources */,
 				733708F91D03081E0071BC26 /* SLRWeekDayView.m in Sources */,
+				30B868861D154C4200D25E08 /* SLRMapVC.m in Sources */,
 				3097CD3F1CFA1FDC00E28EEB /* SLRStoreVM.m in Sources */,
 				73AF55BD1C9ECC64009FB75A /* SLRScheduleModel.m in Sources */,
 				307347041CF21B230089A494 /* SLRDetailsVC.m in Sources */,
@@ -1136,6 +1215,7 @@
 				307347071CF2226B0089A494 /* SLRRequest.m in Sources */,
 				304B42631D0C526F008EAF8B /* SLROwnersVM.m in Sources */,
 				304B426E1D0C85F5008EAF8B /* SLRFilialOwnersView.m in Sources */,
+				30B8687E1D15489900D25E08 /* SLRAboutVM.m in Sources */,
 				73AF55B41C9EC8BC009FB75A /* SLRSchedulerVM.m in Sources */,
 				3014062D1D0431790002AFD6 /* SLRAppointmentsVM.m in Sources */,
 				301406241D0320230002AFD6 /* SLROwnerCell.m in Sources */,

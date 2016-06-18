@@ -2,6 +2,7 @@
 
 #import "SLRSchedulerVC.h"
 #import "SLRAppointmentsVC.h"
+#import "SLRAboutVC.h"
 #import "SLRStoreVC.h"
 #import "SLRHomeVC.h"
 #import "UIViewController+DGSAdditions.h"
@@ -17,8 +18,8 @@
 	self = [super initWithViewModel:viewModel];
 	if (self == nil) return nil;
 
-	SLRStoreVM *storeVM = [[SLRStoreVM alloc] init];
-	SLRStoreVC *storeVC = [[SLRStoreVC alloc] initWithViewModel:storeVM];
+	SLRAboutVM *avm = [[SLRAboutVM alloc] init];
+	SLRAboutVC *avc = [[SLRAboutVC alloc] initWithViewModel:avm];
 
 	SLRAppointmentsVM *appointmentsVM = [[SLRAppointmentsVM alloc] init];
 	SLRAppointmentsVC *appointmentsVC = [[SLRAppointmentsVC alloc] initWithViewModel:appointmentsVM];
@@ -27,7 +28,7 @@
 	SLRHomeVC *homeVC = [[SLRHomeVC alloc] initWithViewModel:homeVM];
 
 	UITabBarController *tc = [[UITabBarController alloc] init];
-	tc.viewControllers = @[homeVC, storeVC, appointmentsVC];
+	tc.viewControllers = @[avc, homeVC, appointmentsVC];
 
 	[self dgs_showViewController:tc inView:self.view];
 
