@@ -108,6 +108,15 @@ static NSString *const kSLRShedulerApplicationKey = @"1";
 	return [self.apiController fetchFilials];
 }
 
+- (RACSignal *)fetchPageForOwner:(SLROwner *)owner date:(NSDate *)date
+{
+	return [self.apiController fetchPageForOwner:owner date:date];
+}
+
+
+
+
+
 /*! \return @[SLRPurpose] */
 - (RACSignal *)fetchPurposesForFilial:(SLRFilial *)filial
 {
@@ -130,7 +139,7 @@ static NSString *const kSLRShedulerApplicationKey = @"1";
 - (RACSignal *)fetchPagesForOwner:(SLROwner *)owner
 							 date:(NSDate *)date
 {
-	return [self.apiController fetchPagesForOwner:owner date:date];
+	return [self.apiController fetchPageForOwner:owner date:date];
 }
 
 /*! \return @[SLRService] */

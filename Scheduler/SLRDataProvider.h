@@ -44,6 +44,15 @@ NS_ASSUME_NONNULL_BEGIN
  **/
 - (RACSignal *)fetchFilials;
 
+- (RACSignal *)fetchPageForOwner:(SLROwner *)owner date:(NSDate *)date;
+
+
+
+
+
+
+
+
 /*! Подтягивает все виды целевых услуг филиала
  *	\return @[SLRPurpose]
  **/

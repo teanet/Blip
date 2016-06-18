@@ -7,6 +7,10 @@
 /*! Этот объект просто решает вопросы мержа страниц для owner'ов.
  *	Он отдает смерженную страницу для owner'ов, которую мы просто сетим шедулеру.
  **/
+- (instancetype)initWithOwners:(NSArray<SLROwner *> *)owners
+					  purposes:(NSArray<SLRPurpose *> *)purposes NS_DESIGNATED_INITIALIZER;
+
+- (instancetype)init NS_UNAVAILABLE;
 
 /*! Сигнал со всеми owner'ами, которые могут оказать список услуг.
  *	\sendNext @[SLROwner]

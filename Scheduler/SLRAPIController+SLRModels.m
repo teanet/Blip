@@ -26,6 +26,36 @@
 		}];
 }
 
+- (RACSignal *)fetchPageForOwner:(SLROwner *)owner date:(NSDate *)date
+{
+	NSString *methodName = [NSString stringWithFormat:@"/api/1.0/project/%@/schedule", self.applicationKey];
+	NSString *dateString = [[SLRAPIController dateFormatter] stringFromDate:date];
+
+	NSDictionary *params = @{
+		@"date" : dateString,
+		@"master_id" : owner.id
+	};
+
+	return [[self GET:methodName params:params]
+		map:^SLRPage *(NSDictionary *responseDictionary) {
+			return [[SLRPage alloc] initWithDictionary:responseDictionary];
+		}];
+}
+
++ (NSDateFormatter *)dateFormatter
+{
+	static dispatch_once_t onceToken;
+	static NSDateFormatter *dateFormatter;
+	dispatch_once(&onceToken, ^{
+		dateFormatter = [[NSDateFormatter alloc] init];
+		[dateFormatter setDateFormat:@"yyyy-MM-dd"];
+		[dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ru_RU"]];
+		[dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+	});
+
+	return dateFormatter;
+}
+
 //- (RACSignal *)fetchSuggestsForSearchString:(NSString *)searchString
 //								   regionId:(NSString *)regionId
 //{

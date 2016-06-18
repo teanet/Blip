@@ -1,6 +1,7 @@
 #import "SLRFilialSchedulerVM.h"
 
 #import "SLROwnersVM.h"
+#import "SLROwner.h"
 #import "SLRPurpose.h"
 #import "SLRSchedulerPagesProvider.h"
 #import "SLRSchedulerVM.h"
@@ -11,19 +12,25 @@
 @property (nonatomic, strong) SLROwnersVM *ownersVM;
 @property (nonatomic, strong) SLRSchedulerVM *schedulerVM;
 @property (nonatomic, copy, readonly) NSArray <SLRPurpose *> *purposes;
+@property (nonatomic, copy, readonly) NSArray <SLROwner *> *owners;
 
 @end
 
 @implementation SLRFilialSchedulerVM
 
-- (instancetype)initWithPurposes:(NSArray <SLRPurpose *> *)purposes
+- (instancetype)initWithPurposes:(NSArray<SLRPurpose *> *)purposes owners:(NSArray<SLROwner *> *)owners
 {
 	self = [super init];
 	if (self == nil) return nil;
 
 	_purposes = [purposes copy];
-	_pagesProvider = [[SLRSchedulerPagesProvider alloc] init];
+	_owners = [owners copy];
+
+	_pagesProvider = [[SLRSchedulerPagesProvider alloc] initWithOwners:owners purposes:purposes];
+
 	_schedulerVM = [[SLRSchedulerVM alloc] init];
+	_ownersVM = [[SLROwnersVM alloc] initWithOwners:owners];
+
 	[self setupReactiveStuff];
 
 	return self;
@@ -33,25 +40,19 @@
 {
 	@weakify(self);
 
-	[[[self.pagesProvider fetchOwnersForPurposes:self.purposes]
-		flattenMap:^RACStream *(NSArray <SLROwner *> *owners) {
+	NSDate *dateToday = [NSDate date];
+	[[self.pagesProvider fetchPageForOwners:self.owners date:dateToday]
+		subscribeNext:^(SLRPage	*page) {
 			@strongify(self);
 
-			self.ownersVM = [[SLROwnersVM alloc] initWithOwners:owners];
-			NSDate *date = [NSDate date];
-			return [[self.pagesProvider fetchPageForOwners:owners date:date]
-				zipWith:[RACSignal return:date]];
-		}]
-		subscribeNext:^(RACTuple *t) {
-			RACTupleUnpack(SLRPage *page, NSDate *date) = t;
-			[self.schedulerVM setPage:page forDate:date];
+			[self.schedulerVM setPage:page forDate:dateToday];
 		}];
 
 	[[self.schedulerVM.didSelectDateSignal
 		flattenMap:^RACStream *(NSDate *date) {
 			@strongify(self);
 
-			return [[self.pagesProvider fetchPageForOwners:self.ownersVM.owners date:date]
+			return [[self.pagesProvider fetchPageForOwners:self.owners date:date]
 				zipWith:[RACSignal return:date]];
 		}]
 		subscribeNext:^(RACTuple *t) {

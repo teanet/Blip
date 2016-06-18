@@ -25,7 +25,7 @@
 	NSArray <NSDictionary *> *rangeHoldDictinaries = dictionary[@"ranges_hold"];
 	_rangesHold = [SLRPage rangesFromDictionaries:rangeHoldDictinaries];
 
-	_timeGrid = [[SLRTimeGrid alloc] initWithDictionary:dictionary[@"greed"]];
+	_timeGrid = [[SLRTimeGrid alloc] initWithDictionary:dictionary[@"grid"]];
 
 	NSMutableArray<SLRIntervalVM *> *intervals = [NSMutableArray array];
 	[self.rangesFree enumerateObjectsUsingBlock:^(SLRRange *freeRange, NSUInteger _, BOOL *__) {

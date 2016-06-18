@@ -43,7 +43,7 @@
 
 	RACSignal *shouldShowSchedulerForPurposeSignal = [self.purposesVM.didSelectPurposeSignal
 		map:^SLRFilialSchedulerVM *(SLRPurpose *purpose) {
-			return [[SLRFilialSchedulerVM alloc] initWithPurposes:@[purpose]];
+			return [[SLRFilialSchedulerVM alloc] initWithPurposes:@[purpose] owners:self.filial.owners];
 		}];
 
 	_shouldShowSchedulerSignal = [shouldShowSchedulerForOwnerSignal merge:shouldShowSchedulerForPurposeSignal];

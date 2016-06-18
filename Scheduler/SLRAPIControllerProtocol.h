@@ -16,6 +16,13 @@
 /*! \return @[SLRFilial] */
 - (RACSignal *)fetchFilials;
 
+/*! \return SLRPage
+ */
+- (RACSignal *)fetchPageForOwner:(SLROwner *)owner date:(NSDate *)date;
+
+
+
+
 /*! Подтягивает все виды целевых услуг филиала
  *	\return @[SLRPurpose]
  **/
@@ -23,10 +30,6 @@
 
 /*! \return @[SLRPage] */
 - (RACSignal *)fetchPagesForOwner:(SLROwner *)owner;
-
-/*! \return @[SLRPage] */
-- (RACSignal *)fetchPagesForOwner:(SLROwner *)owner
-							 date:(NSDate *)date;
 
 /*! \return @[SLRService] */
 - (RACSignal *)fetchServicesForPage:(SLRPage *)page
