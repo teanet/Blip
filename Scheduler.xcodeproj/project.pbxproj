@@ -73,6 +73,13 @@
 		30B8689E1D15A45200D25E08 /* SLRStatusBarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B8689D1D15A45200D25E08 /* SLRStatusBarHeaderView.m */; };
 		30B868A11D15A4A800D25E08 /* SLRFilialInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B868A01D15A4A800D25E08 /* SLRFilialInfoHeaderView.m */; };
 		30B868A41D15ABBB00D25E08 /* SLRProjectSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B868A31D15ABBB00D25E08 /* SLRProjectSettings.m */; };
+		30B86BB71D16062400D25E08 /* UIFont+DGSCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B86BB61D16062400D25E08 /* UIFont+DGSCustomFont.m */; };
+		30B86BB81D16063F00D25E08 /* MullerNarrow-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B868A51D1605F100D25E08 /* MullerNarrow-ExtraBold.otf */; };
+		30B86BB91D16064200D25E08 /* MullerNarrow-ExtraBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B868A61D1605F100D25E08 /* MullerNarrow-ExtraBoldItalic.otf */; };
+		30B86BBA1D16064400D25E08 /* MullerNarrow-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B868A71D1605F100D25E08 /* MullerNarrow-Light.otf */; };
+		30B86BBB1D16064600D25E08 /* MullerNarrow-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B868A81D1605F100D25E08 /* MullerNarrow-LightItalic.otf */; };
+		30B86BBE1D16110600D25E08 /* SLRAboutContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B86BBD1D16110600D25E08 /* SLRAboutContactCell.m */; };
+		30B86BC11D16114800D25E08 /* SLRAboutContactCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B86BC01D16114800D25E08 /* SLRAboutContactCellVM.m */; };
 		30B876321CFA169F00F2499F /* SLRStoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B876311CFA169F00F2499F /* SLRStoreItem.m */; };
 		30BB886F1CFA1F140046BEB5 /* SLRCartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB886E1CFA1F140046BEB5 /* SLRCartVC.m */; };
 		30BB88721CFA1F240046BEB5 /* SLRCartVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB88711CFA1F240046BEB5 /* SLRCartVM.m */; };
@@ -267,6 +274,16 @@
 		30B868A01D15A4A800D25E08 /* SLRFilialInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRFilialInfoHeaderView.m; sourceTree = "<group>"; };
 		30B868A21D15ABBB00D25E08 /* SLRProjectSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRProjectSettings.h; sourceTree = "<group>"; };
 		30B868A31D15ABBB00D25E08 /* SLRProjectSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRProjectSettings.m; sourceTree = "<group>"; };
+		30B868A51D1605F100D25E08 /* MullerNarrow-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MullerNarrow-ExtraBold.otf"; sourceTree = "<group>"; };
+		30B868A61D1605F100D25E08 /* MullerNarrow-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MullerNarrow-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
+		30B868A71D1605F100D25E08 /* MullerNarrow-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MullerNarrow-Light.otf"; sourceTree = "<group>"; };
+		30B868A81D1605F100D25E08 /* MullerNarrow-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MullerNarrow-LightItalic.otf"; sourceTree = "<group>"; };
+		30B86BB51D16062400D25E08 /* UIFont+DGSCustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+DGSCustomFont.h"; sourceTree = "<group>"; };
+		30B86BB61D16062400D25E08 /* UIFont+DGSCustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+DGSCustomFont.m"; sourceTree = "<group>"; };
+		30B86BBC1D16110600D25E08 /* SLRAboutContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRAboutContactCell.h; sourceTree = "<group>"; };
+		30B86BBD1D16110600D25E08 /* SLRAboutContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRAboutContactCell.m; sourceTree = "<group>"; };
+		30B86BBF1D16114800D25E08 /* SLRAboutContactCellVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRAboutContactCellVM.h; sourceTree = "<group>"; };
+		30B86BC01D16114800D25E08 /* SLRAboutContactCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRAboutContactCellVM.m; sourceTree = "<group>"; };
 		30B876301CFA169F00F2499F /* SLRStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreItem.h; sourceTree = "<group>"; };
 		30B876311CFA169F00F2499F /* SLRStoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItem.m; sourceTree = "<group>"; };
 		30BB886D1CFA1F140046BEB5 /* SLRCartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRCartVC.h; sourceTree = "<group>"; };
@@ -498,6 +515,8 @@
 		304B42591D0C41A4008EAF8B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				30B86BB51D16062400D25E08 /* UIFont+DGSCustomFont.h */,
+				30B86BB61D16062400D25E08 /* UIFont+DGSCustomFont.m */,
 				30DF0AD31CFAA65400DE287B /* UIColor+DGSCustomColor.h */,
 				30DF0AD41CFAA65400DE287B /* UIColor+DGSCustomColor.m */,
 				3014061E1D0319D60002AFD6 /* UIViewController+DGSAdditions.h */,
@@ -616,6 +635,10 @@
 		30B868801D154C1B00D25E08 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				30B86BBC1D16110600D25E08 /* SLRAboutContactCell.h */,
+				30B86BBD1D16110600D25E08 /* SLRAboutContactCell.m */,
+				30B86BBF1D16114800D25E08 /* SLRAboutContactCellVM.h */,
+				30B86BC01D16114800D25E08 /* SLRAboutContactCellVM.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -657,6 +680,17 @@
 				30B8689D1D15A45200D25E08 /* SLRStatusBarHeaderView.m */,
 			);
 			name = StatusBar;
+			sourceTree = "<group>";
+		};
+		30B868A91D1605F600D25E08 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				30B868A51D1605F100D25E08 /* MullerNarrow-ExtraBold.otf */,
+				30B868A61D1605F100D25E08 /* MullerNarrow-ExtraBoldItalic.otf */,
+				30B868A71D1605F100D25E08 /* MullerNarrow-Light.otf */,
+				30B868A81D1605F100D25E08 /* MullerNarrow-LightItalic.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		30BB886B1CFA1E760046BEB5 /* Cart */ = {
@@ -868,6 +902,7 @@
 		73AF52A71C9EB953009FB75A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				30B868A91D1605F600D25E08 /* Fonts */,
 				738314D21CF09C890048AFE2 /* json */,
 				73AF52D01C9EBCB6009FB75A /* Default-568h@2x.png */,
 				73AF52CF1C9EBC5A009FB75A /* Prefix-Header.h */,
@@ -1054,10 +1089,14 @@
 			files = (
 				738314D61CF09C890048AFE2 /* pages.json in Resources */,
 				307346F31CF0B4D80089A494 /* services.json in Resources */,
+				30B86BBA1D16064400D25E08 /* MullerNarrow-Light.otf in Resources */,
 				304B425B1D0C45EB008EAF8B /* purposes.json in Resources */,
 				301403011D0309840002AFD6 /* ownerDoctorTwo.json in Resources */,
+				30B86BB91D16064200D25E08 /* MullerNarrow-ExtraBoldItalic.otf in Resources */,
 				301402FD1D03096B0002AFD6 /* ownerHairdresser.json in Resources */,
 				301402FF1D03097A0002AFD6 /* ownerDoctorOne.json in Resources */,
+				30B86BBB1D16064600D25E08 /* MullerNarrow-LightItalic.otf in Resources */,
+				30B86BB81D16063F00D25E08 /* MullerNarrow-ExtraBold.otf in Resources */,
 				301403031D03098C0002AFD6 /* ownerDoctorThree.json in Resources */,
 				738314D51CF09C890048AFE2 /* filial.json in Resources */,
 				73AF52B41C9EB953009FB75A /* Assets.xcassets in Resources */,
@@ -1212,6 +1251,7 @@
 				30470DC01CF8B98C00C57566 /* SLRServiceCellVM.m in Sources */,
 				738314BD1CF09ACA0048AFE2 /* SLROwner.m in Sources */,
 				301406301D0431940002AFD6 /* SLRAppointmentsVC.m in Sources */,
+				30B86BC11D16114800D25E08 /* SLRAboutContactCellVM.m in Sources */,
 				3064DAE41D0D4508001B1D66 /* SLRSchedulerPagesProvider.m in Sources */,
 				738314CC1CF09B550048AFE2 /* SLRDataProvider.m in Sources */,
 				3064DADE1D0D4455001B1D66 /* SLRFilialSchedulerVM.m in Sources */,
@@ -1227,6 +1267,7 @@
 				738314BE1CF09ACA0048AFE2 /* SLRPage.m in Sources */,
 				738314CB1CF09B550048AFE2 /* SLRAPIController+SLRModels.m in Sources */,
 				73103FD71CF0B7AA00785073 /* SLRIntervalCell.m in Sources */,
+				30B86BBE1D16110600D25E08 /* SLRAboutContactCell.m in Sources */,
 				30BB886F1CFA1F140046BEB5 /* SLRCartVC.m in Sources */,
 				3064DAED1D0D7DEE001B1D66 /* SLRWeekDayVM.m in Sources */,
 				301406331D0434D40002AFD6 /* SLRRootVM.m in Sources */,
@@ -1254,6 +1295,7 @@
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
 				3064DAEA1D0D7652001B1D66 /* SLRMonthHeaderVM.m in Sources */,
+				30B86BB71D16062400D25E08 /* UIFont+DGSCustomFont.m in Sources */,
 				30470DDD1CF9D5B700C57566 /* SLRDetailsSummaryVM.m in Sources */,
 				733708F91D03081E0071BC26 /* SLRWeekDayView.m in Sources */,
 				30B868861D154C4200D25E08 /* SLRMapVC.m in Sources */,

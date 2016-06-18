@@ -5,4 +5,5 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <extobjc.h>
 #import "UIColor+DGSCustomColor.h"
+#import "UIFont+DGSCustomFont.h"
 #endif

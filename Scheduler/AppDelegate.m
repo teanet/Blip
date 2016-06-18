@@ -21,6 +21,8 @@
 	self.window.rootViewController = [[SLRRootVC alloc] initWithViewModel:rootVM];
 	[self.window makeKeyAndVisible];
 
+	[UIFont dgs_listOfFonts];
+
 	return YES;
 }
 

@@ -1,5 +1,7 @@
 #import "SLRFilialInfoVM.h"
 
+#import "SLRFilial.h"
+
 @interface SLRFilialInfoVM ()
 
 @property (nonatomic, strong, readonly) SLRFilial *filial;
@@ -16,6 +18,21 @@
 	_filial = filial;
 
 	return self;
+}
+
+- (NSString *)title
+{
+	return self.filial.title;
+}
+
+- (NSString *)logoImageURLString
+{
+	return self.filial.logoImageURLString;
+}
+
+- (NSString *)summary
+{
+	return self.filial.summary;
 }
 
 @end

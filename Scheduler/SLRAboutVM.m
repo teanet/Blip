@@ -5,6 +5,7 @@
 
 #import "SLRStatusBarHeaderView.h"
 #import "SLRFilialInfoHeaderView.h"
+#import "SLRAboutContactCell.h"
 
 typedef NS_ENUM(NSUInteger, SLRAboutSection) {
 	// Порядок важен - в таком порядке будут отображаться секции в таблице
@@ -18,8 +19,11 @@ typedef NS_ENUM(NSUInteger, SLRAboutSection) {
 @interface SLRAboutVM () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong, readonly) SLRFilial *filial;
+@property (nonatomic, strong, readonly) SLRFilialInfoVM *infoHeaderVM;
+@property (nonatomic, strong, readonly) SLRAboutContactCellVM *contactCellVM;
 @property (nonatomic, copy, readonly) NSString *infoHeaderIdentifier;
 @property (nonatomic, copy, readonly) NSString *statusBarHeaderIdentifier;
+@property (nonatomic, copy, readonly) NSString *contactCellIdentifier;
 
 @end
 
@@ -33,9 +37,12 @@ typedef NS_ENUM(NSUInteger, SLRAboutSection) {
 	_title = @"Company";
 	_filial = filial;
 	_mapVM = [[SLRMapVM alloc] initWithFilial:filial];
+	_infoHeaderVM = [[SLRFilialInfoVM alloc] initWithFilial:filial];
+	_contactCellVM = [[SLRAboutContactCellVM alloc] initWithFilial:filial];
 
 	_infoHeaderIdentifier = NSStringFromClass([SLRStatusBarHeaderView class]);
 	_statusBarHeaderIdentifier = NSStringFromClass([SLRFilialInfoHeaderView class]);
+	_contactCellIdentifier = NSStringFromClass([SLRAboutContactCell class]);
 
 	return self;
 }
@@ -46,6 +53,7 @@ typedef NS_ENUM(NSUInteger, SLRAboutSection) {
 {
 	[tableView registerClass:[SLRFilialInfoHeaderView class] forHeaderFooterViewReuseIdentifier:self.infoHeaderIdentifier];
 	[tableView registerClass:[SLRStatusBarHeaderView class] forHeaderFooterViewReuseIdentifier:self.statusBarHeaderIdentifier];
+	[tableView registerClass:[SLRAboutContactCell class] forCellReuseIdentifier:self.contactCellIdentifier];
 
 	tableView.delegate = self;
 	tableView.dataSource = self;
@@ -58,7 +66,7 @@ typedef NS_ENUM(NSUInteger, SLRAboutSection) {
 	if (section == SLRAboutSectionInfo)
 	{
 		headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:self.infoHeaderIdentifier];
-//		headerView.viewModel = self.ownersVM;
+		headerView.viewModel = self.infoHeaderVM;
 	}
 	else if (section == SLRAboutSectionStatusBar)
 	{
@@ -71,23 +79,15 @@ typedef NS_ENUM(NSUInteger, SLRAboutSection) {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//	SLRFilialPurposesCell *cell = [tableView dequeueReusableCellWithIdentifier:self.purposesCellIdentifier];
-//	cell.viewModel = self.purposesVM;
-//	return cell;
+	SLRTableViewCell *cell = nil;
 
-	static NSString *simpleTableIdentifier = @"SimpleTableItem";
-
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-
-	if (cell == nil)
+	if (indexPath.row == 0)
 	{
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-									  reuseIdentifier:simpleTableIdentifier];
+		cell = [tableView dequeueReusableCellWithIdentifier:self.contactCellIdentifier];
+		cell.viewModel = self.contactCellVM;
 	}
 
-	cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
 	return cell;
-
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -96,7 +96,7 @@ typedef NS_ENUM(NSUInteger, SLRAboutSection) {
 
 	if (section == SLRAboutSectionInfo)
 	{
-		returnHeight = 100.0;
+		returnHeight = 205.0;
 	}
 	else if (section == SLRAboutSectionStatusBar)
 	{
@@ -113,14 +113,21 @@ typedef NS_ENUM(NSUInteger, SLRAboutSection) {
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 30.0;
+	if (indexPath.section == SLRAboutSectionStatusBar)
+	{
+		return 70.0;
+	}
+	else
+	{
+		return 0;
+	}
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 	if (section == SLRAboutSectionStatusBar)
 	{
-		return 100;
+		return 1;
 	}
 	else
 	{
