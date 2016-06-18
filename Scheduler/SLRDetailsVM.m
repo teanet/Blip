@@ -50,7 +50,7 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 			return tuple.first;
 		}];
 
-	[self updateServices];
+//	[self updateServices];
 
 	return self;
 }
@@ -60,26 +60,26 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 	[_shouldUpdateTableViewSubject sendCompleted];
 }
 
-- (void)updateServices
-{
-	@weakify(self);
-
-	self.serviceProcessing = YES;
-
-	[[[SLRDataProvider sharedProvider] fetchServicesForPage:self.page range:self.range]
-		subscribeNext:^(NSArray<SLRService *> *services) {
-			@strongify(self);
-
-			self.serviceVMs = [services.rac_sequence
-				map:^id(SLRService *service) {
-					return [[SLRServiceCellVM alloc] initWithService:service];
-				}].array;
-
-			self.serviceProcessing = NO;
-
-			[self.shouldUpdateTableViewSubject sendNext:[RACUnit defaultUnit]];
-		}];
-}
+//- (void)updateServices
+//{
+//	@weakify(self);
+//
+//	self.serviceProcessing = YES;
+//
+//	[[[SLRDataProvider sharedProvider] fetchServicesForPage:self.page range:self.range]
+//		subscribeNext:^(NSArray<SLRService *> *services) {
+//			@strongify(self);
+//
+//			self.serviceVMs = [services.rac_sequence
+//				map:^id(SLRService *service) {
+//					return [[SLRServiceCellVM alloc] initWithService:service];
+//				}].array;
+//
+//			self.serviceProcessing = NO;
+//
+//			[self.shouldUpdateTableViewSubject sendNext:[RACUnit defaultUnit]];
+//		}];
+//}
 
 - (void)didTapBookButton
 {
@@ -87,14 +87,9 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 
 	self.serviceProcessing = YES;
 
-	[[[[self fetchRequestWithCurrentOptions]
+	[[[self fetchRequestWithCurrentOptions]
 		flattenMap:^RACStream *(SLRRequest *request) {
 			return [[SLRDataProvider sharedProvider] fetchProcessedRequestForRequest:request];
-		}]
-		flattenMap:^RACStream *(SLRRequest *req) {
-			return req.state == SLRRequestStateUndefined
-				? [RACSignal error:[NSError errorWithDomain:@"" code:0 userInfo:nil]]
-				: [RACSignal return:req];
 		}]
 		subscribeNext:^(SLRRequest *req) {
 			@strongify(self);

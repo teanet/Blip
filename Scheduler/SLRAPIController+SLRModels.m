@@ -4,8 +4,9 @@
 #import "SLROwner.h"
 #import "SLRPage.h"
 #import "SLRService.h"
-
+#import "SLRRequest.h"
 #import "SLRFilial.h"
+#import "SLRUser.h"
 
 @implementation SLRAPIController (TKSModels)
 
@@ -52,6 +53,29 @@
 			return [RACSignal return:user];
 		}];
 }
+
+- (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request user:(SLRUser *)user
+{
+#warning >>> HERE
+//	NSString *methodName = [NSString stringWithFormat:@"/api/1.0/project/%@/schedule/book", self.applicationKey];
+//	NSDictionary *params = @{
+//		@"date" : [[self.class dateFormatter] stringFromDate:request.date],
+//		@"location" : [NSString stringWithFormat:@"%ld", request.location],
+//		@"length" : @"30",//[NSString stringWithFormat:@"%ld", request.length],
+//		@"page_id" : request.page.id,
+//		@"user_id" : user.userId
+//	};
+
+	NSString *dateString = [[self.class dateFormatter] stringFromDate:request.date];
+	NSString *locString = [NSString stringWithFormat:@"%ld", request.location];
+	NSString *lenString = @"30";
+	NSString *methodName =
+	[NSString stringWithFormat:@"/api/1.0/project/%@/schedule/book?date=%@&location=%@&length=%@&page_id=%@&user_id=%@",
+	 self.applicationKey, dateString, locString, lenString, request.page.id, user.userId];
+
+	return [self POST:methodName params:nil];
+}
+
 
 
 + (NSDateFormatter *)dateFormatter

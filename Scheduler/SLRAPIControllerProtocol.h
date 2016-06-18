@@ -41,7 +41,7 @@
 /*! Отправляет букинг-реквест на сервер и возвращает обработанный реквест.
  *	\return SLRRequest
  **/
-- (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request;
+- (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request user:(SLRUser *)user;
 
 /*! Подтягивает все реквесты для пользователя.
  *	\return @[SLRRequest]

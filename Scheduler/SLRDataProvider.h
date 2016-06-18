@@ -49,10 +49,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-
-
-
-
 /*! Подтягивает все виды целевых услуг филиала
  *	\return @[SLRPurpose]
  **/
@@ -79,6 +75,9 @@ NS_ASSUME_NONNULL_BEGIN
  **/
 - (RACSignal *)fetchServicesForPage:(SLRPage *)page
 							  range:(SLRRange *)range;
+
+
+
 
 /*! Регистрирует пользователя с именем и телефоном. Возвращает уже зарегистрированного пользователя.
  *	\return @[SLRUser]

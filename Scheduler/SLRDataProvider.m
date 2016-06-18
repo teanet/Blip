@@ -162,7 +162,7 @@ static NSString *const kSLRShedulerApplicationKey = @"1";
 
 - (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request
 {
-	return [self.apiController fetchProcessedRequestForRequest:request];
+	return [self.apiController fetchProcessedRequestForRequest:request user:self.user];
 }
 
 - (RACSignal *)fetchRequests
