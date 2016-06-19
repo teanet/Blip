@@ -294,8 +294,8 @@
 		30B86BC61D168F6100D25E08 /* SLRNewsCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRNewsCellVM.m; sourceTree = "<group>"; };
 		30B86BC81D1691D100D25E08 /* SLRNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRNews.h; sourceTree = "<group>"; };
 		30B86BC91D1691D100D25E08 /* SLRNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRNews.m; sourceTree = "<group>"; };
-		30B86ED61D169FB000D25E08 /* SLRMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRMapView.h; sourceTree = "<group>"; };
-		30B86ED71D169FB000D25E08 /* SLRMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRMapView.m; sourceTree = "<group>"; };
+		30B86ED61D169FB000D25E08 /* SLRMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLRMapView.h; path = ../SLRMapView.h; sourceTree = "<group>"; };
+		30B86ED71D169FB000D25E08 /* SLRMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLRMapView.m; path = ../SLRMapView.m; sourceTree = "<group>"; };
 		30B876301CFA169F00F2499F /* SLRStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreItem.h; sourceTree = "<group>"; };
 		30B876311CFA169F00F2499F /* SLRStoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItem.m; sourceTree = "<group>"; };
 		30BB886D1CFA1F140046BEB5 /* SLRCartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRCartVC.h; sourceTree = "<group>"; };
@@ -662,6 +662,8 @@
 		30B868871D154C8800D25E08 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				30B86ED61D169FB000D25E08 /* SLRMapView.h */,
+				30B86ED71D169FB000D25E08 /* SLRMapView.m */,
 				30B8688E1D155DCB00D25E08 /* SLRFirmMapAnnotation.h */,
 				30B8688F1D155DCB00D25E08 /* SLRFirmMapAnnotation.m */,
 				30B868911D155FD500D25E08 /* SLRFirmAnnotationView.h */,
@@ -881,8 +883,6 @@
 		73AF529B1C9EB953009FB75A = {
 			isa = PBXGroup;
 			children = (
-				30B86ED61D169FB000D25E08 /* SLRMapView.h */,
-				30B86ED71D169FB000D25E08 /* SLRMapView.m */,
 				73AF52A61C9EB953009FB75A /* Scheduler */,
 				73AF52C01C9EB953009FB75A /* SchedulerTests */,
 				73AF52A51C9EB953009FB75A /* Products */,

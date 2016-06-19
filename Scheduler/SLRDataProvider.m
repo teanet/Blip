@@ -67,7 +67,6 @@ static NSString *const kSLRShedulerApplicationKey = @"1";
 
 - (RACSignal *)fetchAuthenticatedUser
 {
-#warning >>> HERE
 	if (self.user)
 	{
 		return [self.authManager fetchAuthenticatedUser];
@@ -79,6 +78,16 @@ static NSString *const kSLRShedulerApplicationKey = @"1";
 				return [self fetchRegisteredUserForUser:user];
 			}];
 	}
+}
+
+- (void)scheduleNotification
+{
+	UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+	localNotification.alertBody = @"Статус заказа изменился";
+	localNotification.alertAction = @"Посмотреть заказы";
+	localNotification.timeZone = [NSTimeZone defaultTimeZone];
+	localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:10.0];
+	[[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 }
 
 @end

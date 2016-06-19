@@ -2,11 +2,6 @@
 
 #import "SLRRequest.h"
 
-@interface SLRAppointmentCellVM ()
-
-@property (nonatomic, strong, readonly) SLRRequest *request;
-
-@end
 
 @implementation SLRAppointmentCellVM
 

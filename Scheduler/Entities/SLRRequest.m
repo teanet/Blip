@@ -54,7 +54,7 @@
 	{
 		_state = SLRRequestStateReview;
 	}
-	else if ([[stateString lowercaseString] isEqualToString:@"approve"])
+	else if ([[stateString lowercaseString] isEqualToString:@"book"])
 	{
 		_state = SLRRequestStateApprove;
 	}
@@ -73,6 +73,19 @@
 				return [[SLRService alloc] initWithDictionary:serviceDictionary];
 			}].array;
 	}
+
+	// ------- Hackathon -------
+	_dateString = dictionary[@"date"];
+
+	NSDictionary *addressDictionary = dictionary[@"address"];
+	_address = addressDictionary[@"name"];
+
+	NSDictionary *masterDictionary = dictionary[@"master"];
+	_masterImageURLString = masterDictionary[@"image"];
+	_masterTitle = masterDictionary[@"title"];
+
+	NSDictionary *serviceDictionary = dictionary[@"service"];
+	_serviceTitle = serviceDictionary[@"title"];
 
 	return self;
 }

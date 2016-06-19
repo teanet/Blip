@@ -4,6 +4,7 @@
 #import "SLRSchedulerVC.h"
 #import "UIViewController+DGSAdditions.h"
 #import "SLRDetailsVC.h"
+#import "SLRDataProvider.h"
 
 @interface SLRFilialSchedulerVC ()
 
@@ -74,6 +75,7 @@
 		@strongify(self);
 
 		[self.viewModel reloadCurrentPage];
+		[[SLRDataProvider sharedProvider] scheduleNotification];
 	}];
 }
 

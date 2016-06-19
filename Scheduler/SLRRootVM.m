@@ -29,6 +29,14 @@
 	return self;
 }
 
+- (void)registerUserIfNeeded
+{
+	if ([SLRDataProvider sharedProvider].user)
+	{
+		[[SLRDataProvider sharedProvider] fetchAuthenticatedUser];
+	}
+}
+
 - (void)fetchModels
 {
 	@weakify(self);

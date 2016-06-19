@@ -74,23 +74,23 @@ static NSString *const kKeychainAuthTokenSecret = @"authTokenSecret";
 {
 	SLRUser *user = nil;
 
-	NSString *appName = [self.class appName];
-
-	NSString *retreivedUserId = [SSKeychain passwordForService:appName account:kKeychainUserId];
-	NSString *retreivedPhone = [SSKeychain passwordForService:appName account:kKeychainPhone];
-	NSString *retreivedAuthToken = [SSKeychain passwordForService:appName account:kKeychainAuthToken];
-	NSString *retreivedAuthTokenSecret = [SSKeychain passwordForService:appName account:kKeychainAuthTokenSecret];
-
-	if (retreivedPhone.length > 0 &&
-		retreivedUserId.length > 0 &&
-		retreivedAuthToken.length > 0 &&
-		retreivedAuthTokenSecret.length > 0)
-	{
-		user = [[SLRUser alloc] initWithUserId:retreivedUserId
-									 authToken:retreivedAuthToken
-							   authTokenSecret:retreivedAuthTokenSecret
-										 phone:retreivedPhone];
-	}
+//	NSString *appName = [self.class appName];
+//
+//	NSString *retreivedUserId = [SSKeychain passwordForService:appName account:kKeychainUserId];
+//	NSString *retreivedPhone = [SSKeychain passwordForService:appName account:kKeychainPhone];
+//	NSString *retreivedAuthToken = [SSKeychain passwordForService:appName account:kKeychainAuthToken];
+//	NSString *retreivedAuthTokenSecret = [SSKeychain passwordForService:appName account:kKeychainAuthTokenSecret];
+//
+//	if (retreivedPhone.length > 0 &&
+//		retreivedUserId.length > 0 &&
+//		retreivedAuthToken.length > 0 &&
+//		retreivedAuthTokenSecret.length > 0)
+//	{
+//		user = [[SLRUser alloc] initWithUserId:retreivedUserId
+//									 authToken:retreivedAuthToken
+//							   authTokenSecret:retreivedAuthTokenSecret
+//										 phone:retreivedPhone];
+//	}
 
 	return user;
 }

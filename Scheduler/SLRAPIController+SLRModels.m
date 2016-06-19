@@ -75,10 +75,22 @@
 	NSString *locString = [NSString stringWithFormat:@"%ld", (long)request.location];
 	NSString *lenString = @"30";
 	NSString *methodName =
-	[NSString stringWithFormat:@"/api/1.0/project/%@/schedule/book?date=%@&location=%@&length=%@&page_id=%@&user_id=%@",
+	[NSString stringWithFormat:@"/api/1.0/project/%@/schedule/book?date=%@&location=%@&length=%@&page_id=%@&user_id=%@&service_id=1",
 	 self.applicationKey, dateString, locString, lenString, request.page.id, user.userId];
 
 	return [self POST:methodName params:nil];
+}
+
+- (RACSignal *)fetchRequestsForUser:(SLRUser *)user
+{
+	NSString *methodName = [NSString stringWithFormat:@"/api/1.0/user/bookings?user_id=%@", user.userId];
+	return [[self GET:methodName params:nil]
+		map:^NSArray<SLRRequest *> *(NSDictionary *bookingsDictionary) {
+			NSArray<NSDictionary *> *bookingsArray = bookingsDictionary[@"bookings"];
+			return [bookingsArray.rac_sequence map:^SLRRequest *(NSDictionary *requestDictionary) {
+				return [[SLRRequest alloc] initWithDictionary:requestDictionary];
+			}].array;
+		}];
 }
 
 + (NSDateFormatter *)dateFormatter
@@ -94,41 +106,5 @@
 
 	return dateFormatter;
 }
-
-//- (RACSignal *)fetchSuggestsForSearchString:(NSString *)searchString
-//								   regionId:(NSString *)regionId
-//{
-//	NSCParameterAssert(regionId);
-//
-//	if ((searchString.length == 0) || (regionId.length == 0)) return [RACSignal return:nil];
-//
-//	NSDictionary *params = @{
-//							 @"key": self.webAPIKey,
-//							 @"type": @"default",//@"street",
-//							 @"region_id" : regionId,
-//							 @"lang" : @"ru",
-//							 @"output" : @"json",
-//							 @"types" : @"adm_div.settlement,adm_div.city,address,street,branch",
-//							 @"q": searchString,
-//							 };
-//
-//	return [[self GET:@"suggest/list" service:TKSServiceWebAPI params:params]
-//			map:^NSArray<TKSSuggest *> *(NSDictionary *responseObject) {
-//				NSArray<TKSSuggest *> *returnArray = nil;
-//
-//				if ([responseObject isKindOfClass:[NSDictionary class]])
-//				{
-//					NSDictionary *resultDictionary = responseObject[@"result"];
-//					NSArray *hintDictionaries = resultDictionary[@"items"];
-//					returnArray = [hintDictionaries.rac_sequence
-//
-//								   map:^TKSSuggest *(NSDictionary *hintDictionary) {
-//									   return [[TKSSuggest alloc] initWithDictionary:hintDictionary];
-//								   }].array;
-//				}
-//				
-//				return returnArray;
-//			}];
-//}
 
 @end

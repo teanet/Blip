@@ -60,8 +60,10 @@
 			SLRAppointmentsVC *appointmentsVC = [[SLRAppointmentsVC alloc] initWithViewModel:self.viewModel.appointmentsVM];
 			SLRHomeVC *homeVC = [[SLRHomeVC alloc] initWithViewModel:self.viewModel.homeVM];
 
+			UINavigationController *apNC = [[UINavigationController alloc] initWithRootViewController:appointmentsVC];
+
 			UITabBarController *tc = [[UITabBarController alloc] init];
-			tc.viewControllers = @[aboutVC, homeVC, appointmentsVC];
+			tc.viewControllers = @[aboutVC, homeVC, apNC];
 
 			[self dgs_showViewController:tc inView:self.containerView];
 

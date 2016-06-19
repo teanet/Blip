@@ -40,6 +40,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SLRRequest : NSObject
 
+@property (nonatomic, copy, readonly) NSString *dateString;
+@property (nonatomic, copy, readonly) NSString *address;
+@property (nonatomic, copy, readonly) NSString *masterImageURLString;
+@property (nonatomic, copy, readonly) NSString *masterTitle;
+@property (nonatomic, copy, readonly) NSString *serviceTitle;
+
+
+
+
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, assign) NSInteger location;
 @property (nonatomic, assign) NSInteger length;

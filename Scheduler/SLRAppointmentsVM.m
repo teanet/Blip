@@ -92,6 +92,11 @@
 	return [self.appointmentVMs count];
 }
 
+- (void)refresh
+{
+	[self updateAppointments];
+}
+
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 }

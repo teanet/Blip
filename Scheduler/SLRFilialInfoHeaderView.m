@@ -30,6 +30,7 @@
 	_logoImageView = [[UIImageView alloc] init];
 	_logoImageView.layer.cornerRadius = 30.0;
 	_logoImageView.contentMode = UIViewContentModeScaleAspectFit;
+	_logoImageView.clipsToBounds = YES;
 	[self addSubview:_logoImageView];
 
 	_titleLabel = [[UILabel alloc] init];

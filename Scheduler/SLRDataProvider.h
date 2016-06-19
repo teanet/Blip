@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 /*! Авторизуем пользователя, запоминаем в кейчейн и возвращаем. */
 - (RACSignal *)fetchAuthenticatedUser;
 
+- (void)scheduleNotification;
+
 @end
 
 @interface SLRDataProvider (CreateEntities)

@@ -9,6 +9,7 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIButton *bookButton;
+@property (nonatomic, copy, readonly) UIImageView *mockImageView;
 
 @end
 
@@ -32,11 +33,15 @@
 	self.tableView.tableFooterView = [[UIView alloc] init];
 	[self.view addSubview:self.tableView];
 
+	_mockImageView = [[UIImageView alloc] init];
+	_mockImageView.image = [UIImage imageNamed:@"mock"];
+	[self.view addSubview:_mockImageView];
+
 	self.bookButton = [[UIButton alloc] init];
-	[self.bookButton setTitle:@"Book" forState:UIControlStateNormal];
-	[self.bookButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-	[self.bookButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
-	self.bookButton.backgroundColor = [UIColor dgs_colorWithString:@"1976D2"];
+//	[self.bookButton setTitle:@"Book" forState:UIControlStateNormal];
+//	[self.bookButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//	[self.bookButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+//	self.bookButton.backgroundColor = [UIColor dgs_colorWithString:@"1976D2"];
 	[self.bookButton addTarget:self.viewModel action:@selector(didTapBookButton)
 			  forControlEvents:UIControlEventTouchUpInside];
 	[self.view addSubview:self.bookButton];
@@ -49,11 +54,16 @@
 		make.bottom.equalTo(self.bookButton.mas_top);
 	}];
 
+	[_mockImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.edges.equalTo(self.view);
+	}];
+
 	[self.bookButton mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.height.equalTo(@40.0);
-		make.left.equalTo(self.view);
-		make.right.equalTo(self.view);
-		make.bottom.equalTo(self.view);
+//		make.height.equalTo(@40.0);
+//		make.left.equalTo(self.view);
+//		make.right.equalTo(self.view);
+//		make.bottom.equalTo(self.view);
+		make.edges.equalTo(self.view);
 	}];
 
 	[self setupReactiveStuff];

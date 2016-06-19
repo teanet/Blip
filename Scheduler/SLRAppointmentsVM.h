@@ -15,6 +15,7 @@
 @interface SLRAppointmentsVM (UITableView)
 
 - (RACSignal *)shouldUpdateTableViewSignal;
+- (void)refresh;
 
 - (SLRBaseVM *)cellVMForIndexPath:(NSIndexPath *)indexPath;
 - (NSUInteger)numberOfSections;
