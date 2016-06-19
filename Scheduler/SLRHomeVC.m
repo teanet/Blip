@@ -22,7 +22,8 @@
 	self = [super initWithViewModel:viewModel];
 	if (self == nil) return nil;
 
-	self.title = @"Home";
+	UIImage *bookImage = [UIImage imageNamed:@"bookItem"];
+	self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.viewModel.title image:bookImage tag:1];
 
 	return self;
 }

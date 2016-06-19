@@ -28,4 +28,9 @@
 	return self.purpose.subtitle;
 }
 
+- (NSString *)price
+{
+	return [[NSString stringWithFormat:@"%ld", self.purpose.price] stringByAppendingString:@"₽"];
+}
+
 @end

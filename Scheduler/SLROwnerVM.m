@@ -8,12 +8,13 @@
 
 @implementation SLROwnerVM
 
-- (instancetype)initWithOwner:(SLROwner *)owner
+- (instancetype)initWithOwner:(SLROwner *)owner selected:(BOOL)selected
 {
 	self = [super init];
 	if (self == nil) return nil;
 
 	_owner = owner;
+	_selected = selected;
 
 	return self;
 }

@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, SLRAboutSection) {
 	self = [super init];
 	if (self == nil) return nil;
 
-	_title = @"Company";
+	_title = @"О нас";
 	_filial = filial;
 	_mapVM = [[SLRMapVM alloc] initWithFilial:filial];
 	_infoHeaderVM = [[SLRFilialInfoVM alloc] initWithFilial:filial];
@@ -115,7 +115,9 @@ typedef NS_ENUM(NSUInteger, SLRAboutSection) {
 {
 	if (indexPath.section == SLRAboutSectionStatusBar)
 	{
-		return 70.0;
+		return self.contactCellVM.selected
+			? 270.0
+			: 70.0;
 	}
 	else
 	{
@@ -138,6 +140,15 @@ typedef NS_ENUM(NSUInteger, SLRAboutSection) {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+//	if (indexPath.row == 0)
+//	{
+//		self.contactCellVM.selected = !self.contactCellVM.selected;
+//		UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//		[UIView animateWithDuration: 0.3 animations: ^{ [cell.contentView layoutIfNeeded]; }];
+//		[tableView beginUpdates];
+//		[tableView endUpdates];
+//	}
 }
 
 @end

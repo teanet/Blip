@@ -17,6 +17,7 @@
 	self = [super init];
 	if (self == nil) return nil;
 
+	_title = @"Мои записи";
 	_shouldShowAuthenticateButtonSignal = [[[self rac_signalForSelector:@checkselector(self, showAuthenticateButton:)]
 		map:^NSNumber *(RACTuple *tuple) {
 			return tuple.first;

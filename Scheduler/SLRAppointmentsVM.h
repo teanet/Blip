@@ -4,6 +4,7 @@
 
 @interface SLRAppointmentsVM : SLRBaseVM
 
+@property (nonatomic, copy, readonly) NSString *title;
 @property (nonatomic, strong, readonly) RACSignal *shouldShowAuthenticateButtonSignal;
 
 - (void)authenticate;

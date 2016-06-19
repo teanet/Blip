@@ -36,17 +36,17 @@
 
 - (void)setupReactiveStuff
 {
-	RACSignal *shouldShowSchedulerForOwnerSignal = [self.ownersVM.didSelectOwnerSignal
-		map:^SLRSchedulerVM *(SLROwner *owner) {
-			return nil;//[[SLRSchedulerVM alloc] initWithOwner:owner];
-		}];
+//	RACSignal *shouldShowSchedulerForOwnerSignal = [self.ownersVM.didSelectOwnerSignal
+//		map:^SLRSchedulerVM *(SLROwner *owner) {
+//			return nil;//[[SLRSchedulerVM alloc] initWithOwner:owner];
+//		}];
 
 	RACSignal *shouldShowSchedulerForPurposeSignal = [self.purposesVM.didSelectPurposeSignal
 		map:^SLRFilialSchedulerVM *(SLRPurpose *purpose) {
 			return [[SLRFilialSchedulerVM alloc] initWithPurposes:@[purpose] owners:self.filial.owners];
 		}];
 
-	_shouldShowSchedulerSignal = [shouldShowSchedulerForOwnerSignal merge:shouldShowSchedulerForPurposeSignal];
+	_shouldShowSchedulerSignal = shouldShowSchedulerForPurposeSignal;
 }
 
 - (NSString *)title
@@ -85,7 +85,7 @@
 	if (section == 0)
 	{
 		returnHeight = self.filial.owners.count > 1
-			? 70.0
+			? 150.0
 			: 0.0;
 	}
 

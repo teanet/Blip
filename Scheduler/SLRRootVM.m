@@ -43,8 +43,22 @@
 			self.appointmentsVM = [[SLRAppointmentsVM alloc] init];
 			self.homeVM = [[SLRHomeVM alloc] initWithFilials:filials];
 
+			[self configureAppearance];
+
 			self.readyToUse = YES;
 		}];
+}
+
+- (void)configureAppearance
+{
+	[[UINavigationBar appearance] setTitleTextAttributes: @{
+		NSForegroundColorAttributeName: [UIColor whiteColor],
+		NSFontAttributeName: [UIFont dgs_boldDisplayTypeFontOfSize:18.0],
+	}];
+	
+	[[UINavigationBar appearance] setOpaque:YES];
+	[[UINavigationBar appearance] setBarTintColor:[SLRDataProvider sharedProvider].projectSettings.navigaitionBarColor];
+	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
 }
 
 @end

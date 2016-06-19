@@ -22,10 +22,7 @@
 	if (self == nil) return nil;
 
 	_filials = [filials copy];
-//	_initialViewModelSignal = [[self rac_signalForSelector:@checkselector(self, showViewModel:)]
-//		map:^SLRBaseVM *(RACTuple *tuple) {
-//			return tuple.first;
-//		}];
+	_title = @"Запись";
 
 	[self defineViewModelForShowing];
 

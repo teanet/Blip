@@ -16,7 +16,8 @@
 	self = [super initWithViewModel:viewModel];
 	if (self == nil) return nil;
 
-	self.title = self.viewModel.title;
+	UIImage *aboutImage = [UIImage imageNamed:@"aboutItem"];
+	self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.viewModel.title image:aboutImage tag:0];
 
 	return self;
 }

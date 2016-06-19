@@ -15,7 +15,7 @@
 	self = [super initWithReuseIdentifier:reuseIdentifier];
 	if (self == nil) return nil;
 
-	self.contentView.backgroundColor = [UIColor lightGrayColor];
+	self.contentView.backgroundColor = [UIColor whiteColor];
 
 	_days = [NSMutableArray arrayWithCapacity:7];
 	for (int i = 0; i < 7; i++)
@@ -29,7 +29,7 @@
 			make.bottom.equalTo(self.contentView);
 			if (i == 0)
 			{
-				make.leading.equalTo(self.contentView);
+				make.leading.equalTo(self.contentView).with.offset(18.0);
 
 			}
 			else
@@ -40,7 +40,7 @@
 		}];
 	}
 	[self.days[6] mas_updateConstraints:^(MASConstraintMaker *make) {
-		make.trailing.equalTo(self.contentView);
+		make.trailing.equalTo(self.contentView).with.offset(-18.0);;
 	}];
 
 	return self;

@@ -21,7 +21,25 @@
 
 - (NSString *)month
 {
-	return [[[NSCalendar currentCalendar] monthSymbols] objectAtIndex:self.components.month - 1];
+	return [[self.class monthes] objectAtIndex:self.components.month - 1];
+}
+
++ (NSArray<NSString *> *)monthes
+{
+	return @[
+		@"Январь",
+		@"Февраль",
+		@"Март",
+		@"Апрель",
+		@"Май",
+		@"Июнь",
+		@"Июль",
+		@"Август",
+		@"Сентябрь",
+		@"Октябрь",
+		@"Ноябрь",
+		@"Декабрь",
+	];
 }
 
 @end

@@ -2,7 +2,7 @@
 
 #import "SLRPurposeCell.h"
 
-static CGFloat const kPurposeCellHeight = 200.0;
+static CGFloat const kPurposeCellHeight = 79.0;
 
 @interface SLRPurposesVM () <UITableViewDelegate, UITableViewDataSource>
 

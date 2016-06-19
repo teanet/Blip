@@ -16,7 +16,8 @@
 	self = [super initWithViewModel:viewModel];
 	if (self == nil) return nil;
 
-	self.title = @"Appointments";
+	UIImage *appImage = [UIImage imageNamed:@"profileItem"];
+	self.tabBarItem = [[UITabBarItem alloc] initWithTitle:self.viewModel.title image:appImage tag:0];
 
 	return self;
 }

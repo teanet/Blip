@@ -9,6 +9,8 @@
 
 @property (nonatomic, strong, readonly) SLRPage *page;
 
+@property (nonatomic, strong, readonly) NSDate *selectedDate;
+
 @property (nonatomic, copy, readonly) NSString *title;
 
 /*! \sendNext NSDate */

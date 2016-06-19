@@ -160,4 +160,9 @@
 	return [self.viewModel heightForHeaderInSection:section];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+	return UIStatusBarStyleLightContent;
+}
+
 @end

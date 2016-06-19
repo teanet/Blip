@@ -6,6 +6,7 @@
 
 @property (nonatomic, copy, readonly) NSString *title;
 @property (nonatomic, copy, readonly) NSString *subtitle;
+@property (nonatomic, copy, readonly) NSString *price;
 
 - (instancetype)initWithPurpose:(SLRPurpose *)purpose;
 

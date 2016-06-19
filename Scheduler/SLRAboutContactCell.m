@@ -14,19 +14,26 @@
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	if (self == nil) return nil;
 
+	self.contentView.clipsToBounds = YES;
+
 	_addressLabel = [[UILabel alloc] init];
 	_addressLabel.font = [UIFont dgs_regularDisplayTypeFontOfSize:16.0];
 	_addressLabel.textAlignment = NSTextAlignmentCenter;
 	_addressLabel.numberOfLines = 2;
-	[self addSubview:_addressLabel];
+	[self.contentView addSubview:_addressLabel];
 
 	_pinImageView = [[UIImageView alloc] init];
 	UIImage *pinImage = [UIImage imageNamed:@"pinBlue"];
 	_pinImageView.image = pinImage;
-	[self addSubview:_pinImageView];
+	[self.contentView addSubview:_pinImageView];
+
+	UIView *bgColorView = [[UIView alloc] init];
+	bgColorView.backgroundColor = [UIColor clearColor];
+	[self setSelectedBackgroundView:bgColorView];
 
 	[_addressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.center.equalTo(self);
+		make.top.equalTo(self).with.offset(23.0);
+		make.centerX.equalTo(self);
 		make.width.lessThanOrEqualTo(self).with.offset(-64.0);
 	}];
 

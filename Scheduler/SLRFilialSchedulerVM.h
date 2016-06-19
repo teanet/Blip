@@ -11,6 +11,8 @@
 @property (nonatomic, strong, readonly) SLRSchedulerVM *schedulerVM;
 @property (nonatomic, assign, readonly) BOOL shouldShowOwnersPicker;
 
+@property (nonatomic, strong, readonly) RACSignal *shouldShowDetailsSignal;
+
 - (instancetype)initWithPurposes:(NSArray <SLRPurpose *> *)purposes owners:(NSArray<SLROwner *> *)owners;
 
 @end

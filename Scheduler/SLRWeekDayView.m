@@ -1,5 +1,7 @@
 #import "SLRWeekDayView.h"
 
+#import "SLRDataProvider.h"
+
 @implementation SLRWeekDayView
 
 - (instancetype)init
@@ -7,19 +9,39 @@
 	self = [super initWithFrame:CGRectZero];
 	if (self == nil) return nil;
 
-	self.titleLabel.adjustsFontSizeToFitWidth = YES;
-	self.layer.borderWidth = 1.0;
+	@weakify(self);
 
-	UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
-	[self addSubview:button];
-	[button mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.centerX.equalTo(self);
-		make.centerY.equalTo(self.mas_bottom);
+	self.titleLabel.font = [UIFont dgs_regularDisplayTypeFontOfSize:14.0];
+	[self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+	[self setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+
+	UIView *selectedView = [[UIView alloc] init];
+	selectedView.backgroundColor = [SLRDataProvider sharedProvider].projectSettings.navigaitionBarBGColor;
+	selectedView.layer.cornerRadius = 20.0;
+	selectedView.userInteractionEnabled = NO;
+	[self insertSubview:selectedView belowSubview:self.titleLabel];
+
+	[selectedView mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.center.equalTo(self.titleLabel);
+		make.size.mas_equalTo(CGSizeMake(40.0, 40.0));
 	}];
 
-	RAC(button, hidden) = [[RACObserve(self, viewModel.selected)
+	[[RACObserve(self, viewModel.selected)
 		ignore:nil]
-		not];
+		subscribeNext:^(NSNumber *selectedNumber) {
+			@strongify(self);
+
+			selectedView.hidden = !selectedNumber.boolValue;
+			self.titleLabel.font = selectedNumber.boolValue
+				? [UIFont dgs_boldDisplayTypeFontOfSize:14.0]
+				: [UIFont dgs_regularDisplayTypeFontOfSize:14.0];
+
+			UIColor *titleColor = selectedNumber.boolValue
+				? [UIColor whiteColor]
+				: [UIColor blackColor];
+
+			[self setTitleColor:titleColor forState:UIControlStateNormal];
+		}];
 
 	return self;
 }
@@ -27,9 +49,9 @@
 - (void)setViewModel:(SLRWeekDayVM *)viewModel
 {
 	_viewModel = viewModel;
-	self.backgroundColor = viewModel.interactive
-		? [UIColor brownColor]
-		: [UIColor lightGrayColor];
+	self.alpha = viewModel.interactive
+		? 1.0
+		: 0.0;
 	self.userInteractionEnabled = self.viewModel.interactive;
 	[self setTitle:viewModel.title forState:UIControlStateNormal];
 }

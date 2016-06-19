@@ -5,6 +5,8 @@
 #import "SLRPurpose.h"
 #import "SLRSchedulerPagesProvider.h"
 #import "SLRSchedulerVM.h"
+#import "SLRDetailsVM.h"
+#import "SLRRange.h"
 
 @interface SLRFilialSchedulerVM ()
 
@@ -31,6 +33,11 @@
 	_schedulerVM = [[SLRSchedulerVM alloc] init];
 	_ownersVM = [[SLROwnersVM alloc] initWithOwners:owners];
 
+	_shouldShowDetailsSignal = [self.schedulerVM.didSelectRangeSignal
+		map:^SLRDetailsVM *(SLRRange *range	) {
+			return [[SLRDetailsVM alloc] initWithPage:self.schedulerVM.page selectedRange:range];
+		}];
+
 	[self setupReactiveStuff];
 
 	return self;
@@ -40,6 +47,7 @@
 {
 	@weakify(self);
 
+	// Initial
 	NSDate *dateToday = [NSDate date];
 	[[self.pagesProvider fetchPageForOwners:self.owners date:dateToday]
 		subscribeNext:^(SLRPage	*page) {
@@ -54,6 +62,18 @@
 
 			return [[self.pagesProvider fetchPageForOwners:self.owners date:date]
 				zipWith:[RACSignal return:date]];
+		}]
+		subscribeNext:^(RACTuple *t) {
+			RACTupleUnpack(SLRPage *page, NSDate *date) = t;
+			[self.schedulerVM setPage:page forDate:date];
+		}];
+
+	[[self.ownersVM.didSelectOwnerSignal
+		flattenMap:^RACStream *(SLROwner *owner) {
+			@strongify(self);
+
+			return [[self.pagesProvider fetchPageForOwners:@[owner] date:self.schedulerVM.selectedDate]
+					zipWith:[RACSignal return:self.schedulerVM.selectedDate]];
 		}]
 		subscribeNext:^(RACTuple *t) {
 			RACTupleUnpack(SLRPage *page, NSDate *date) = t;

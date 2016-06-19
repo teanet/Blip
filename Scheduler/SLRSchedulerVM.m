@@ -155,6 +155,7 @@ UITableViewDataSource
 	[tableView registerClass:[SLRMonthHeaderView class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([SLRMonthHeaderVM class])];
 	tableView.delegate = self;
 	tableView.dataSource = self;
+	tableView.layoutMargins = UIEdgeInsetsMake(0.0, 20.0, 0.0, 20.0);
 }
 
 - (void)didSelectInterval:(SLRIntervalVM *)intervalVM
@@ -185,6 +186,7 @@ UITableViewDataSource
 - (void)setPage:(SLRPage *)page forDate:(NSDate *)date
 {
 	NSDate *reducedDate = [self reducedDateFromDate:date];
+	_selectedDate = reducedDate;
 
 	[self.headerVMs enumerateObjectsUsingBlock:^(SLRBaseVM *baseVM, NSUInteger idx, BOOL *stop) {
 		if ([baseVM isKindOfClass:[SLRWeekHeaderVM class]])
@@ -282,7 +284,7 @@ UITableViewDataSource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-	return 40.0;
+	return 60.0;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -292,7 +294,7 @@ UITableViewDataSource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 30.0;
+	return 50.0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

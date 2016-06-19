@@ -1,6 +1,7 @@
 #import "SLROwnerCell.h"
 
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import "SLRDataProvider.h"
 
 @interface SLROwnerCell ()
 
@@ -22,46 +23,56 @@
 	_imageView = [[UIImageView alloc] initWithFrame:self.contentView.bounds];
 	_imageView.contentMode = UIViewContentModeScaleAspectFill;
 	_imageView.clipsToBounds = YES;
+	_imageView.layer.cornerRadius = 31.0;
+	_imageView.layer.borderColor = [UIColor whiteColor].CGColor;
+	_imageView.layer.borderWidth = 2.0;
 	[self.contentView addSubview:_imageView];
 
 	UIView *filterView = [[UIView alloc] init];
-	filterView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+	filterView.backgroundColor = [[SLRDataProvider sharedProvider].projectSettings.navigaitionBarBGColor colorWithAlphaComponent:0.7];
 	[_imageView addSubview:filterView];
 
 	_titleLabel = [[UILabel alloc] init];
-	self.titleLabel.numberOfLines = 0;
-	self.titleLabel.textAlignment = NSTextAlignmentLeft;
-	self.titleLabel.font = [UIFont systemFontOfSize:12.0];
+	self.titleLabel.numberOfLines = 1;
+	self.titleLabel.textAlignment = NSTextAlignmentCenter;
+	self.titleLabel.font = [UIFont systemFontOfSize:16.0];
 	self.titleLabel.textColor = [UIColor whiteColor];
 	[self.contentView addSubview:self.titleLabel];
 
 	_subtitleLabel = [[UILabel alloc] init];
-	self.subtitleLabel.numberOfLines = 0;
-	self.subtitleLabel.textAlignment = NSTextAlignmentLeft;
-	self.subtitleLabel.font = [UIFont systemFontOfSize:10.0];
-	self.subtitleLabel.textColor = [UIColor lightGrayColor];
+	self.subtitleLabel.numberOfLines = 1;
+	self.subtitleLabel.textAlignment = NSTextAlignmentCenter;
+	self.subtitleLabel.font = [UIFont systemFontOfSize:12.0];
+	self.subtitleLabel.textColor = [UIColor whiteColor];
 	[self.contentView addSubview:self.subtitleLabel];
 
 	[self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.edges.equalTo(self.contentView);
+		make.top.equalTo(self.contentView).with.offset(24.0);
+		make.centerX.equalTo(self.contentView);
+		make.size.mas_offset(CGSizeMake(62.0, 62.0));
 	}];
 
 	[filterView mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.edges.equalTo(self.imageView);
+		make.center.equalTo(self.imageView);
+		make.size.mas_offset(CGSizeMake(62.0, 62.0));
 	}];
 
 	[self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-		make.bottom.equalTo(self.imageView.mas_centerY).with.offset(16.0);
-		make.leading.equalTo(self.imageView).with.offset(8.0);
-		make.trailing.equalTo(self.imageView).with.offset(-8.0);
+		make.top.equalTo(self.imageView.mas_bottom).with.offset(3.0);
+		make.leading.equalTo(self.contentView).with.offset(8.0);
+		make.trailing.equalTo(self.contentView).with.offset(-8.0);
 	}];
 
 	[self.subtitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(self.titleLabel.mas_bottom);
-		make.leading.equalTo(self.titleLabel);
-		make.trailing.equalTo(self.titleLabel);
-		make.bottom.equalTo(self.contentView).with.offset(-4.0);
+		make.leading.equalTo(self.contentView).with.offset(8.0);
+		make.trailing.equalTo(self.contentView).with.offset(-8.0);
 	}];
+
+	[RACObserve(self, ownerVM.selected)
+		subscribeNext:^(NSNumber *selectedNumber) {
+			filterView.hidden = selectedNumber.boolValue;
+		}];
 
 	return self;
 }

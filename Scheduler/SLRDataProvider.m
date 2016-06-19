@@ -168,9 +168,9 @@ static NSString *const kSLRShedulerApplicationKey = @"1";
 - (RACSignal *)fetchRequests
 {
 	return [[self.authManager fetchAuthenticatedUser]
-			flattenMap:^RACStream *(SLRUser *user) {
-				return [self.apiController fetchRequestsForUser:user];
-			}];
+		flattenMap:^RACStream *(SLRUser *user) {
+			return [self.apiController fetchRequestsForUser:user];
+		}];
 }
 
 @end

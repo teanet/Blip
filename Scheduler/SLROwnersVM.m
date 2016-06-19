@@ -23,8 +23,10 @@
 
 	_ownerVMs = [owners.rac_sequence
 		map:^SLROwnerVM *(SLROwner *owner) {
-			return [[SLROwnerVM alloc] initWithOwner:owner];
+			return [[SLROwnerVM alloc] initWithOwner:owner selected:NO];
 		}].array;
+	_ownerVMs.firstObject.selected = YES;
+	_selectedOwner = _owners.firstObject;
 
 	_didSelectOwnerSignal = [[[self rac_signalForSelector:@checkselector(self, didSelectOwnerAtIndexPath:)]
 		map:^SLROwner *(RACTuple *tuple) {
@@ -52,6 +54,11 @@
 
 - (void)didSelectOwnerAtIndexPath:(NSIndexPath *)indexPath
 {
+	[self.ownerVMs enumerateObjectsUsingBlock:^(SLROwnerVM *vm, NSUInteger idx, BOOL *_) {
+		vm.selected = idx == indexPath.row;
+	}];
+
+	_selectedOwner = [self.owners objectAtIndex:indexPath.row];
 }
 
 // MARK: CollectionView
