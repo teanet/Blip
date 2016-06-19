@@ -68,7 +68,13 @@
 
 - (void)done
 {
-	[self dismissViewControllerAnimated:YES completion:nil];
+	@weakify(self);
+
+	[self dismissViewControllerAnimated:YES completion:^{
+		@strongify(self);
+
+		[self.viewModel reloadCurrentPage];
+	}];
 }
 
 - (void)viewDidLoad

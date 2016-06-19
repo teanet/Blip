@@ -38,6 +38,7 @@
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	self.tableView.showsVerticalScrollIndicator = NO;
 	self.tableView.backgroundColor = [SLRDataProvider sharedProvider].projectSettings.navigaitionBarColor;
+	self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 49.0, 0.0);
 	[self.view addSubview:self.tableView];
 	[self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.edges.equalTo(self.view);

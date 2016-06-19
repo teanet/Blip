@@ -116,7 +116,7 @@ static NSString *const kKeychainAuthTokenSecret = @"authTokenSecret";
 - (RACSignal *)fetchAuthenticatedUser
 {
 	return self.user
-		? [self authenticateUserBySMSSignal]//[RACSignal return:self.user]
+		? /*[self authenticateUserBySMSSignal]//*/[RACSignal return:self.user]
 		: [self authenticateUserBySMSSignal];
 }
 

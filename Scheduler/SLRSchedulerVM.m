@@ -186,7 +186,7 @@ UITableViewDataSource
 - (void)setPage:(SLRPage *)page forDate:(NSDate *)date
 {
 	NSDate *reducedDate = [self reducedDateFromDate:date];
-	_selectedDate = reducedDate;
+	_selectedDate = date;
 
 	[self.headerVMs enumerateObjectsUsingBlock:^(SLRBaseVM *baseVM, NSUInteger idx, BOOL *stop) {
 		if ([baseVM isKindOfClass:[SLRWeekHeaderVM class]])

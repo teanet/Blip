@@ -124,7 +124,10 @@ static NSString *const kSLRShedulerApplicationKey = @"1";
 	return [self.apiController fetchPageForOwner:owner date:date];
 }
 
-
+- (RACSignal *)fetchNews
+{
+	return [self.apiController fetchNews];
+}
 
 
 

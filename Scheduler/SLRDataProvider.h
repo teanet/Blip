@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (RACSignal *)fetchPageForOwner:(SLROwner *)owner date:(NSDate *)date;
 
-
+- (RACSignal *)fetchNews;
 
 
 /*! Подтягивает все виды целевых услуг филиала

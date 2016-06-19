@@ -81,6 +81,16 @@
 		}];
 }
 
+- (void)reloadCurrentPage
+{
+	[[[self.pagesProvider fetchPageForOwners:@[self.ownersVM.selectedOwner] date:self.schedulerVM.selectedDate]
+		zipWith:[RACSignal return:self.schedulerVM.selectedDate]]
+		subscribeNext:^(RACTuple *t) {
+			RACTupleUnpack(SLRPage *page, NSDate *date) = t;
+			[self.schedulerVM setPage:page forDate:date];
+		}];
+}
+
 - (BOOL)shouldShowOwnersPicker
 {
 	return self.ownersVM.ownerVMs.count > 1;

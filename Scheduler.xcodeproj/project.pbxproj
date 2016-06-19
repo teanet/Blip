@@ -80,6 +80,9 @@
 		30B86BBB1D16064600D25E08 /* MullerNarrow-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 30B868A81D1605F100D25E08 /* MullerNarrow-LightItalic.otf */; };
 		30B86BBE1D16110600D25E08 /* SLRAboutContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B86BBD1D16110600D25E08 /* SLRAboutContactCell.m */; };
 		30B86BC11D16114800D25E08 /* SLRAboutContactCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B86BC01D16114800D25E08 /* SLRAboutContactCellVM.m */; };
+		30B86BC41D168F4B00D25E08 /* SLRNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B86BC31D168F4B00D25E08 /* SLRNewsCell.m */; };
+		30B86BC71D168F6100D25E08 /* SLRNewsCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B86BC61D168F6100D25E08 /* SLRNewsCellVM.m */; };
+		30B86BCA1D1691D100D25E08 /* SLRNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B86BC91D1691D100D25E08 /* SLRNews.m */; };
 		30B876321CFA169F00F2499F /* SLRStoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B876311CFA169F00F2499F /* SLRStoreItem.m */; };
 		30BB886F1CFA1F140046BEB5 /* SLRCartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB886E1CFA1F140046BEB5 /* SLRCartVC.m */; };
 		30BB88721CFA1F240046BEB5 /* SLRCartVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB88711CFA1F240046BEB5 /* SLRCartVM.m */; };
@@ -284,6 +287,12 @@
 		30B86BBD1D16110600D25E08 /* SLRAboutContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRAboutContactCell.m; sourceTree = "<group>"; };
 		30B86BBF1D16114800D25E08 /* SLRAboutContactCellVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRAboutContactCellVM.h; sourceTree = "<group>"; };
 		30B86BC01D16114800D25E08 /* SLRAboutContactCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRAboutContactCellVM.m; sourceTree = "<group>"; };
+		30B86BC21D168F4B00D25E08 /* SLRNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRNewsCell.h; sourceTree = "<group>"; };
+		30B86BC31D168F4B00D25E08 /* SLRNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRNewsCell.m; sourceTree = "<group>"; };
+		30B86BC51D168F6100D25E08 /* SLRNewsCellVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRNewsCellVM.h; sourceTree = "<group>"; };
+		30B86BC61D168F6100D25E08 /* SLRNewsCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRNewsCellVM.m; sourceTree = "<group>"; };
+		30B86BC81D1691D100D25E08 /* SLRNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRNews.h; sourceTree = "<group>"; };
+		30B86BC91D1691D100D25E08 /* SLRNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRNews.m; sourceTree = "<group>"; };
 		30B876301CFA169F00F2499F /* SLRStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreItem.h; sourceTree = "<group>"; };
 		30B876311CFA169F00F2499F /* SLRStoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItem.m; sourceTree = "<group>"; };
 		30BB886D1CFA1F140046BEB5 /* SLRCartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRCartVC.h; sourceTree = "<group>"; };
@@ -639,6 +648,10 @@
 				30B86BBD1D16110600D25E08 /* SLRAboutContactCell.m */,
 				30B86BBF1D16114800D25E08 /* SLRAboutContactCellVM.h */,
 				30B86BC01D16114800D25E08 /* SLRAboutContactCellVM.m */,
+				30B86BC21D168F4B00D25E08 /* SLRNewsCell.h */,
+				30B86BC31D168F4B00D25E08 /* SLRNewsCell.m */,
+				30B86BC51D168F6100D25E08 /* SLRNewsCellVM.h */,
+				30B86BC61D168F6100D25E08 /* SLRNewsCellVM.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -815,6 +828,8 @@
 				738314B91CF09ACA0048AFE2 /* SLRTimeGrid.m */,
 				738314BA1CF09ACA0048AFE2 /* SLRUser.h */,
 				738314BB1CF09ACA0048AFE2 /* SLRUser.m */,
+				30B86BC81D1691D100D25E08 /* SLRNews.h */,
+				30B86BC91D1691D100D25E08 /* SLRNews.m */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1229,6 +1244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				307346FC1CF218170089A494 /* SLRAPIMockController.m in Sources */,
+				30B86BCA1D1691D100D25E08 /* SLRNews.m in Sources */,
 				304B42661D0C5311008EAF8B /* SLRPurposesVC.m in Sources */,
 				738314C11CF09ACA0048AFE2 /* SLRUser.m in Sources */,
 				30B8688A1D154D3D00D25E08 /* SLRMapHeaderView.m in Sources */,
@@ -1239,6 +1255,7 @@
 				73AF55B11C9EC882009FB75A /* SLRSchedulerVC.m in Sources */,
 				304B42721D0C8F52008EAF8B /* SLRFilialPurposesCell.m in Sources */,
 				30470DBD1CF8B7C500C57566 /* SLRTableViewCell.m in Sources */,
+				30B86BC71D168F6100D25E08 /* SLRNewsCellVM.m in Sources */,
 				307346F81CF0BD2E0089A494 /* SLRDetailsVM.m in Sources */,
 				30B868A11D15A4A800D25E08 /* SLRFilialInfoHeaderView.m in Sources */,
 				30470DDA1CF9D03400C57566 /* SLRDetailsServicesVM.m in Sources */,
@@ -1294,6 +1311,7 @@
 				30470DCD1CF99DE000C57566 /* SLRDetailsPickerView.m in Sources */,
 				73AF52CE1C9EBBC6009FB75A /* SLRRootVC.m in Sources */,
 				73AF52AC1C9EB953009FB75A /* AppDelegate.m in Sources */,
+				30B86BC41D168F4B00D25E08 /* SLRNewsCell.m in Sources */,
 				3064DAEA1D0D7652001B1D66 /* SLRMonthHeaderVM.m in Sources */,
 				30B86BB71D16062400D25E08 /* UIFont+DGSCustomFont.m in Sources */,
 				30470DDD1CF9D5B700C57566 /* SLRDetailsSummaryVM.m in Sources */,

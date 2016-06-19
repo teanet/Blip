@@ -15,4 +15,6 @@
 
 - (instancetype)initWithPurposes:(NSArray <SLRPurpose *> *)purposes owners:(NSArray<SLROwner *> *)owners;
 
+- (void)reloadCurrentPage;
+
 @end

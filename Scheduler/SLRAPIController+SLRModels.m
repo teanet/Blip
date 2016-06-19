@@ -7,6 +7,7 @@
 #import "SLRRequest.h"
 #import "SLRFilial.h"
 #import "SLRUser.h"
+#import "SLRNews.h"
 
 @implementation SLRAPIController (TKSModels)
 
@@ -54,18 +55,22 @@
 		}];
 }
 
+// sendNext @[SLRNews]
+- (RACSignal *)fetchNews
+{
+	NSString *methodName = [NSString stringWithFormat:@"/api/1.0/project/%@/news", self.applicationKey];
+
+	return [[self GET:methodName params:nil]
+		map:^NSArray<SLRNews *> *(NSDictionary *responseDictionary) {
+			NSArray<NSDictionary *> *newsArray = responseDictionary[@"news"];
+			return [newsArray.rac_sequence map:^SLRNews *(NSDictionary *newsDictionary) {
+						return [[SLRNews alloc] initWithDictionary:newsDictionary];
+					}].array;
+		}];
+}
+
 - (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request user:(SLRUser *)user
 {
-#warning >>> HERE
-//	NSString *methodName = [NSString stringWithFormat:@"/api/1.0/project/%@/schedule/book", self.applicationKey];
-//	NSDictionary *params = @{
-//		@"date" : [[self.class dateFormatter] stringFromDate:request.date],
-//		@"location" : [NSString stringWithFormat:@"%ld", request.location],
-//		@"length" : @"30",//[NSString stringWithFormat:@"%ld", request.length],
-//		@"page_id" : request.page.id,
-//		@"user_id" : user.userId
-//	};
-
 	NSString *dateString = [[self.class dateFormatter] stringFromDate:request.date];
 	NSString *locString = [NSString stringWithFormat:@"%ld", request.location];
 	NSString *lenString = @"30";
@@ -75,8 +80,6 @@
 
 	return [self POST:methodName params:nil];
 }
-
-
 
 + (NSDateFormatter *)dateFormatter
 {
