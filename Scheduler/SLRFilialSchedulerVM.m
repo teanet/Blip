@@ -60,7 +60,7 @@
 		flattenMap:^RACStream *(NSDate *date) {
 			@strongify(self);
 
-			return [[self.pagesProvider fetchPageForOwners:self.owners date:date]
+			return [[self.pagesProvider fetchPageForOwners:@[self.ownersVM.selectedOwner] date:date]
 				zipWith:[RACSignal return:date]];
 		}]
 		subscribeNext:^(RACTuple *t) {

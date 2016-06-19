@@ -72,7 +72,7 @@
 - (RACSignal *)fetchProcessedRequestForRequest:(SLRRequest *)request user:(SLRUser *)user
 {
 	NSString *dateString = [[self.class dateFormatter] stringFromDate:request.date];
-	NSString *locString = [NSString stringWithFormat:@"%ld", request.location];
+	NSString *locString = [NSString stringWithFormat:@"%ld", (long)request.location];
 	NSString *lenString = @"30";
 	NSString *methodName =
 	[NSString stringWithFormat:@"/api/1.0/project/%@/schedule/book?date=%@&location=%@&length=%@&page_id=%@&user_id=%@",
