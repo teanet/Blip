@@ -19,7 +19,7 @@
 	_user = user;
 	_page = page;
 	_state = SLRRequestStateUndefined;
-	_date = [NSDate date];
+	_date = page.date;
 
 	return self;
 }

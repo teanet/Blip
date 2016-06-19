@@ -21,6 +21,9 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 @property (nonatomic, strong, readonly) SLRRange *range;
 @property (nonatomic, strong, readonly) SLRRequest *request;
 
+@property (nonatomic, copy, readonly) NSDate *date;
+
+
 @property (nonatomic, strong) SLRDetailsPickerVM *pickerVM;
 @property (nonatomic, strong) SLRDetailsServicesVM *servicesVM;
 @property (nonatomic, strong) SLRDetailsSummaryVM *summaryVM;
@@ -34,13 +37,14 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 
 @implementation SLRDetailsVM
 
-- (instancetype)initWithPage:(SLRPage *)page selectedRange:(SLRRange *)selectedRange
+- (instancetype)initWithPage:(SLRPage *)page selectedRange:(SLRRange *)selectedRange date:(NSDate *)date
 {
 	self = [super init];
 	if (self == nil) return nil;
 
 	_page = page;
 	_range = selectedRange;
+	_date = [date copy];
 	_shouldUpdateTableViewSubject = [RACSubject subject];
 	_pickerVM = [[SLRDetailsPickerVM alloc] initWithPage:page selectedRange:selectedRange];
 	_servicesVM = [[SLRDetailsServicesVM alloc] initWithTitle:@"Дополнительные услуги:"];
@@ -117,6 +121,7 @@ typedef NS_ENUM(NSUInteger, SLRSection) {
 			request.location = self.range.location;
 			request.length = self.pickerVM.totalSelectedLength;
 			request.summary = self.summaryVM.summary;
+			request.date = self.date;
 			request.services = [[self.serviceVMs.rac_sequence
 				filter:^BOOL(SLRServiceCellVM *vm) {
 					return vm.service.selected;

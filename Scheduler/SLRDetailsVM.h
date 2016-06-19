@@ -21,7 +21,7 @@
  **/
 @property (atomic, assign, readonly, getter=isServiceProcessing) BOOL serviceProcessing;
 
-- (instancetype)initWithPage:(SLRPage *)page selectedRange:(SLRRange *)selectedRange;
+- (instancetype)initWithPage:(SLRPage *)page selectedRange:(SLRRange *)selectedRange date:(NSDate *)date;
 - (instancetype)init NS_UNAVAILABLE;
 
 /*! Обрабатываем нажатие на кнопку букинга

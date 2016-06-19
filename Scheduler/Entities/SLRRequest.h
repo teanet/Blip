@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SLRRequest : NSObject
 
-@property (nonatomic, copy, readonly) NSDate *date;
+@property (nonatomic, copy) NSDate *date;
 @property (nonatomic, assign) NSInteger location;
 @property (nonatomic, assign) NSInteger length;
 @property (nonatomic, copy, nullable) NSString *summary;

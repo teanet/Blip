@@ -35,7 +35,7 @@
 
 	_shouldShowDetailsSignal = [self.schedulerVM.didSelectRangeSignal
 		map:^SLRDetailsVM *(SLRRange *range	) {
-			return [[SLRDetailsVM alloc] initWithPage:self.schedulerVM.page selectedRange:range];
+			return [[SLRDetailsVM alloc] initWithPage:self.schedulerVM.page selectedRange:range date:self.schedulerVM.selectedDate];
 		}];
 
 	[self setupReactiveStuff];
