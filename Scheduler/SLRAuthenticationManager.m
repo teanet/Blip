@@ -1,6 +1,7 @@
 #import "SLRAuthenticationManager.h"
 
 #import "SLRUser.h"
+#import "SLRDataProvider.h"
 #import <DigitsKit/DigitsKit.h>
 #import <SSKeychain.h>
 
@@ -115,7 +116,7 @@ static NSString *const kKeychainAuthTokenSecret = @"authTokenSecret";
 - (RACSignal *)fetchAuthenticatedUser
 {
 	return self.user
-		? [RACSignal return:self.user]
+		? [self authenticateUserBySMSSignal]//[RACSignal return:self.user]
 		: [self authenticateUserBySMSSignal];
 }
 
@@ -125,8 +126,8 @@ static NSString *const kKeychainAuthTokenSecret = @"authTokenSecret";
 		DGTAuthenticationConfiguration *c = [[DGTAuthenticationConfiguration alloc] initWithAccountFields:0];
 		DGTAppearance *a = [[DGTAppearance alloc] init];
 		a.backgroundColor = [UIColor whiteColor];
-		a.accentColor = [UIColor dgs_colorWithString:@"1976D2"];
-		a.logoImage = [UIImage imageNamed:@"logo"];
+		a.accentColor = [SLRDataProvider sharedProvider].projectSettings.navigaitionBarBGColor;
+		a.logoImage = [SLRDataProvider sharedProvider].projectSettings.logoImage;
 		c.appearance = a;
 		[[Digits sharedInstance] authenticateWithViewController:nil
 												  configuration:c

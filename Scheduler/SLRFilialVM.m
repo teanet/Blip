@@ -23,7 +23,7 @@
 	if (self == nil) return nil;
 
 	_filial = filial;
-	_ownersVM = [[SLROwnersVM alloc] initWithOwners:filial.owners];
+	_ownersVM = [[SLROwnersVM alloc] initWithOwners:filial.owners selectedPurpose:nil];
 	_purposesVM = [[SLRPurposesVM alloc] initWithPurposes:filial.purposes];
 
 	_ownerHeaderIdentifier = NSStringFromClass([SLRFilialOwnersView class]);

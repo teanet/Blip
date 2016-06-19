@@ -1,5 +1,7 @@
 #import "SLRProjectSettings.h"
 
+#import <AFNetworking/UIImage+AFNetworking.h>
+
 @implementation SLRProjectSettings
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary
@@ -28,6 +30,9 @@
 	{
 		_navigaitionBarBGColor = [UIColor darkGrayColor];
 	}
+
+	_logoImageURLString = dictionary[@"logo"];
+	_logoImage = [UIImage imageWithContentsOfFile:_logoImageURLString];
 
 	return self;
 }

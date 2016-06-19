@@ -4,10 +4,12 @@
 
 @class SLROwner;
 @class SLROwnerVM;
+@class SLRPurpose;
 
 @interface SLROwnersVM : SLRBaseVM
 
 @property (nonatomic, strong, readonly) SLROwner *selectedOwner;
+@property (nonatomic, strong, readonly) SLRPurpose *selectedPurpose;
 @property (nonatomic, copy, readonly) NSArray <SLROwner *> *owners;
 @property (nonatomic, copy, readonly) NSArray<SLROwnerVM *> *ownerVMs;
 
@@ -16,7 +18,7 @@
  **/
 @property (nonatomic, strong, readonly) RACSignal *didSelectOwnerSignal;
 
-- (instancetype)initWithOwners:(NSArray <SLROwner *> *)owners;
+- (instancetype)initWithOwners:(NSArray <SLROwner *> *)owners selectedPurpose:(SLRPurpose *)purpose;
 
 - (void)registerCollectionView:(UICollectionView *)collectionView;
 

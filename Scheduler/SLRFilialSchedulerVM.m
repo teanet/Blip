@@ -31,7 +31,7 @@
 	_pagesProvider = [[SLRSchedulerPagesProvider alloc] initWithOwners:owners purposes:purposes];
 
 	_schedulerVM = [[SLRSchedulerVM alloc] init];
-	_ownersVM = [[SLROwnersVM alloc] initWithOwners:owners];
+	_ownersVM = [[SLROwnersVM alloc] initWithOwners:owners selectedPurpose:purposes.firstObject];
 
 	_shouldShowDetailsSignal = [self.schedulerVM.didSelectRangeSignal
 		map:^SLRDetailsVM *(SLRRange *range	) {

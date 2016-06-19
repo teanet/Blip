@@ -2,6 +2,7 @@
 
 #import "SLROwner.h"
 #import "SLROwnerVM.h"
+#import "SLRPurpose.h"
 
 @interface SLROwnersVM () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -11,7 +12,7 @@
 
 @implementation SLROwnersVM
 
-- (instancetype)initWithOwners:(NSArray <SLROwner *> *)owners
+- (instancetype)initWithOwners:(NSArray <SLROwner *> *)owners selectedPurpose:(SLRPurpose *)purpose
 {
 	self = [super init];
 	if (self == nil) return nil;
@@ -20,6 +21,7 @@
 
 	_owners = [owners copy];
 	_ownerCellReuseIdentifier = NSStringFromClass([SLROwnerVM class]);
+	_selectedPurpose = purpose;
 
 	_ownerVMs = [owners.rac_sequence
 		map:^SLROwnerVM *(SLROwner *owner) {
