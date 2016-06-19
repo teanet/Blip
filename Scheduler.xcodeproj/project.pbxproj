@@ -83,6 +83,7 @@
 		30B86BC41D168F4B00D25E08 /* SLRNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B86BC31D168F4B00D25E08 /* SLRNewsCell.m */; };
 		30B86BC71D168F6100D25E08 /* SLRNewsCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B86BC61D168F6100D25E08 /* SLRNewsCellVM.m */; };
 		30B86BCA1D1691D100D25E08 /* SLRNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B86BC91D1691D100D25E08 /* SLRNews.m */; };
+		30B86ED81D169FB000D25E08 /* SLRMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B86ED71D169FB000D25E08 /* SLRMapView.m */; };
 		30B876321CFA169F00F2499F /* SLRStoreItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B876311CFA169F00F2499F /* SLRStoreItem.m */; };
 		30BB886F1CFA1F140046BEB5 /* SLRCartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB886E1CFA1F140046BEB5 /* SLRCartVC.m */; };
 		30BB88721CFA1F240046BEB5 /* SLRCartVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BB88711CFA1F240046BEB5 /* SLRCartVM.m */; };
@@ -293,6 +294,8 @@
 		30B86BC61D168F6100D25E08 /* SLRNewsCellVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRNewsCellVM.m; sourceTree = "<group>"; };
 		30B86BC81D1691D100D25E08 /* SLRNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRNews.h; sourceTree = "<group>"; };
 		30B86BC91D1691D100D25E08 /* SLRNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRNews.m; sourceTree = "<group>"; };
+		30B86ED61D169FB000D25E08 /* SLRMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRMapView.h; sourceTree = "<group>"; };
+		30B86ED71D169FB000D25E08 /* SLRMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRMapView.m; sourceTree = "<group>"; };
 		30B876301CFA169F00F2499F /* SLRStoreItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRStoreItem.h; sourceTree = "<group>"; };
 		30B876311CFA169F00F2499F /* SLRStoreItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRStoreItem.m; sourceTree = "<group>"; };
 		30BB886D1CFA1F140046BEB5 /* SLRCartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRCartVC.h; sourceTree = "<group>"; };
@@ -878,6 +881,8 @@
 		73AF529B1C9EB953009FB75A = {
 			isa = PBXGroup;
 			children = (
+				30B86ED61D169FB000D25E08 /* SLRMapView.h */,
+				30B86ED71D169FB000D25E08 /* SLRMapView.m */,
 				73AF52A61C9EB953009FB75A /* Scheduler */,
 				73AF52C01C9EB953009FB75A /* SchedulerTests */,
 				73AF52A51C9EB953009FB75A /* Products */,
@@ -1300,6 +1305,7 @@
 				3014063A1D04514B0002AFD6 /* SLRAppointmentCell.m in Sources */,
 				73AF55AA1C9EC74C009FB75A /* SLRBaseVM.m in Sources */,
 				73830E591CE0C458006B6074 /* SLRIntervalVM.m in Sources */,
+				30B86ED81D169FB000D25E08 /* SLRMapView.m in Sources */,
 				739AA9321C9EEF1200565CB7 /* SLRFreeInterval.m in Sources */,
 				304B42751D0C909D008EAF8B /* SLRPurposeCell.m in Sources */,
 				73AF55C91C9EDF32009FB75A /* SLRVisitorInterval.m in Sources */,

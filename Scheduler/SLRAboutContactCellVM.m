@@ -1,6 +1,7 @@
 #import "SLRAboutContactCellVM.h"
 
 #import "SLRFilial.h"
+#import "SLRMapVC.h"
 
 @interface SLRAboutContactCellVM ()
 
@@ -16,6 +17,7 @@
 	if (self == nil) return nil;
 
 	_filial = filial;
+	_mapVM = [[SLRMapVM alloc] initWithFilial:filial];
 
 	return self;
 }

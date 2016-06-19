@@ -1,9 +1,12 @@
 #import "SLRAboutContactCell.h"
 
+#import "SLRMapView.h"
+
 @interface SLRAboutContactCell ()
 
 @property (nonatomic, strong, readonly) UIImageView *pinImageView;
 @property (nonatomic, strong, readonly) UILabel *addressLabel;
+@property (nonatomic, strong, readonly) SLRMapView *mapView;
 
 @end
 
@@ -31,6 +34,15 @@
 	bgColorView.backgroundColor = [UIColor clearColor];
 	[self setSelectedBackgroundView:bgColorView];
 
+	_mapView = [[SLRMapView alloc] initWithFrame:CGRectZero];
+	[self addSubview:_mapView];
+	[_mapView mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.top.equalTo(self).with.offset(70.0);
+		make.centerX.equalTo(self);
+		make.width.equalTo(self);
+		make.bottom.equalTo(self);
+	}];
+
 	[_addressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(self).with.offset(23.0);
 		make.centerX.equalTo(self);
@@ -50,6 +62,7 @@
 	[super setViewModel:viewModel];
 
 	self.addressLabel.text = self.viewModel.address;
+	self.mapView.viewModel = self.viewModel.mapVM;
 }
 
 @end
